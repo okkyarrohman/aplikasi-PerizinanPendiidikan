@@ -7,7 +7,16 @@ use Illuminate\Http\Request;
 
 class PemohonController extends Controller
 {
+
+    public function tracking(){
+        $trackings = Perizinan::all();
+
+        return view('pemohon.tracking',compact('trackings'));
+    }
+
     public function create(){
+
+
         return view('pemohon.create');
     }
 
@@ -118,7 +127,7 @@ class PemohonController extends Controller
                 $request->file('surat_keterangan_praktek')->getClientOriginalName()),$fotoName);
             $perizinan->surat_keterangan_praktek = $request->file('surat_keterangan_praktek')->getClientOriginalName();
         }
-        $perizinan->status_permohonan = $request->tracking;
+        $perizinan->status_permohonan = $request->status_permohonan;
 
         $perizinan->save();
         return redirect()->route('pemohon')->with('succes','data berhasil ditambahkan');

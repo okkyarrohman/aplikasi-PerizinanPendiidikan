@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\PemohonController;
 
 
@@ -73,6 +74,11 @@ Route::group(['middleware' => 'role:auditor'], function(){
 // Route operator
 Route::group(['middleware' => 'role:operator'], function(){
     Route::get('/operator',[HomeController::class,'index_operator'])->name('operator');
+    Route::get('/operator/tracking',[OperatorController::class,'index']);
+    Route::get('/operator/edit-tracking/{id}',[OperatorController::class,'edit']);
+    Route::post('/operator/update-status',[OperatorController::class,'update'])->name('operator.update');
+    Route::get('/download-ktp/{id}',[OperatorController::class,'download_ktp']);
+
 });
 // End Route operator
 
@@ -81,6 +87,7 @@ Route::group(['middleware' => 'role:pemohon'], function(){
     Route::get('/pemohon',[HomeController::class,'index_pemohon'])->name('pemohon');
     Route::get('/create-pemohon',[PemohonController::class,'create']);
     Route::post('/create-pemohon',[PemohonController::class,'store'])->name('pemohon.store');
+    Route::get('/tracking',[PemohonController::class,'tracking']);
 });
 // End Route pemohon
 

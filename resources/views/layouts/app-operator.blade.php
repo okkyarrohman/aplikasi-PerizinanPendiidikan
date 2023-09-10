@@ -14,7 +14,9 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+
     <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
@@ -34,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        @include('layouts.components.sideBar-pemohon')
+                        @include('layouts.components.sideBar-operator')
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -82,6 +84,7 @@
         </main>
     </div>
     @yield('content')
+    @yield('script')
 </body>
 
 </html>

@@ -66,7 +66,7 @@ class LoginController extends Controller
         if($user->hasRole('operator')){
             return redirect()->route('operator');
         }
-        return redirect()->route('pemohon');
+        return redirect()->route('pemohon')->with('success','sukses login');
 
 
 

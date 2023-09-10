@@ -59,7 +59,9 @@
         <input type="file" name="surat_keterangan_praktek">
         <br>
 
-        <input type="hidden" name="status_permohonan" value="proses operator" hidden>
+        <select name="status_permohonan" id="status_permohonan" hidden>
+            <option value="Operator" selected></option>
+        </select>
 
 
 
