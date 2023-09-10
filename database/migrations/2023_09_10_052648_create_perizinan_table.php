@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+ * Run the migrations
      */
     public function up(): void
     {
@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('nama');
             $table->string('alamat_praktek');
             $table->bigInteger('telepon');
+            $table->string('status_permohonan')->nullable();
             $table->integer('nomor_berkas')->nullable();
-            $table->string('surat_permohonan')->nullable();
+            $table->string('surat_pemohonan')->nullable();
             $table->string('pas_foto')->nullable();
             $table->string('ktp')->nullable();
             $table->string('ijazah')->nullable();

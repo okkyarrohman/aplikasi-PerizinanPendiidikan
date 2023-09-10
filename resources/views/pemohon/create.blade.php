@@ -20,7 +20,7 @@
         <input type="hidden" name="nomor_berkas" placeholder="masukkan nama">
 
         <label for="">Surat Pemohonan</label>
-        <input type="file" name="surat_permohonan">
+        <input type="file" name="surat_pemohonan">
         <br>
 
         <label for="">Pas foto</label>
@@ -31,7 +31,7 @@
         <input type="file" name="ktp">
         <br>
 
-        <label for="">Surat Pemohonan</label>
+        <label for="">Ijazah</label>
         <input type="file" name="ijazah">
         <br>
 
@@ -58,6 +58,8 @@
         <label for="">Surat Keterangan Praktek</label>
         <input type="file" name="surat_keterangan_praktek">
         <br>
+
+        <input type="hidden" name="status_permohonan" value="proses operator" hidden>
 
 
 
