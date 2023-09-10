@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@perizinan.com',
             'password' => bcrypt('admin123'),
         ]);
-        $admin->assignRoles('admin');
+        $admin->assignRole('admin');
 
 
         $dinas = User::create([
@@ -26,56 +26,56 @@ class UserSeeder extends Seeder
             'email' => 'dinas@perizinan.com',
             'password' => bcrypt('dinas123'),
         ]);
-        $dinas->assignRoles('dinas');
+        $dinas->assignRole('dinas');
 
         $walikota = User::create([
             'name' => 'walikota Role',
             'email' => 'walikota@perizinan.com',
             'password' => bcrypt('walikota123'),
         ]);
-        $walikota->assignRoles('walikota');
+        $walikota->assignRole('walikota');
 
         $kepala_dinas = User::create([
             'name' => 'kepala-dinas Role',
             'email' => 'kepala_dinas@perizinan.com',
             'password' => bcrypt('kepaladinas123'),
         ]);
-        $kepala_dinas->assignRoles('kepala-dinas');
+        $kepala_dinas->assignRole('kepala-dinas');
 
         $penyelia = User::create([
             'name' => 'penyelia Role',
             'email' => 'penyelia@perizinan.com',
             'password' => bcrypt('penyelia123'),
         ]);
-        $penyelia->assignRoles('penyelia');
+        $penyelia->assignRole('penyelia');
 
         $surveyor = User::create([
             'name' => 'surveyor Role',
             'email' => 'surveyor@perizinan.com',
             'password' => bcrypt('surveyor123'),
         ]);
-        $surveyor->assignRoles('surveyor');
+        $surveyor->assignRole('surveyor');
 
         $auditor = User::create([
             'name' => 'auditor Role',
             'email' => 'auditor@perizinan.com',
             'password' => bcrypt('auditor123'),
         ]);
-        $auditor->assignRoles('auditor');
+        $auditor->assignRole('auditor');
 
         $operator = User::create([
             'name' => 'operator Role',
             'email' => 'operator@perizinan.com',
             'password' => bcrypt('operator123'),
         ]);
-        $operator->assignRoles('operator');
+        $operator->assignRole('operator');
 
         $pemohon = User::create([
             'name' => 'pemohon Role',
             'email' => 'pemohon@perizinan.com',
             'password' => bcrypt('pemohon123'),
         ]);
-        $pemohon->assignRoles('pemohon');
+        $pemohon->assignRole('pemohon');
 
     }
 }
