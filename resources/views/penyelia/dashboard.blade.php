@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-verifikator')
 
 @section('content')
     <div class="container">
@@ -16,7 +16,7 @@
 
                         {{ __('You are logged in!') }}
 
-                        <h1>Penyelia dashboard</h1>
+                        <h1>Penyelia/Verifikator dashboard</h1>
                         <h4>Feature penyelia : </h4>
                         <p>verifikator dapat melihat dokumen yang diajukan oleh pemohon dan dapat melihat
                             hasil pekerjaan dari surveyor. verifikator dapat melakukan verifikasi dan pengecekan
