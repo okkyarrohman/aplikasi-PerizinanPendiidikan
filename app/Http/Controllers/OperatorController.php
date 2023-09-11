@@ -86,4 +86,11 @@ class OperatorController extends Controller
 
         return response()->download($lokasiFile);
     }
+
+    public function download_dokumenSurvey($id){
+        $perizinan = Perizinan::where('id',$id)->first();
+        $lokasiFile = storage_path("app/public/berkas/dokumen_survey/". $perizinan->dokumen_survey);
+
+        return response()->download($lokasiFile);
+    }
 }

@@ -58,11 +58,13 @@ Route::group(['middleware' => 'role:kepala-dinas'], function(){
 Route::group(['middleware' => 'role:penyelia'], function(){
     Route::get('/penyelia',[HomeController::class,'index_penyelia'])->name('penyelia');
     Route::get('/tracking/pemohon',[PenyeliaController::class,'tracking_pemohon']);
-    Route::get('/tracking/surveyor',[PenyeliaController::class,'tracking_surveyor']);
+    Route::get('/tracking/surveyor',[PenyeliaController::class,'tracking_surveyor'])->name('penyelia-surveyor.index');
     Route::get('/penyelia/edit-tracking-pemohon/{id}',[PenyeliaController::class,'edit_trackingPemohon']);
     Route::post('/penyelia/update-status',[PenyeliaController::class,'update'])->name('penyelia.update');
     Route::post('/tugaskan/surveyor',[PenyeliaController::class,'is_survey'])->name('tugaskan.update');
     Route::get('/lihat-hasil/survey/{id}',[PenyeliaController::class,'after_survey']);
+
+    Route::post('/penyelia/after-survey',[PenyeliaController::class,'update_survey'])->name('hasil-survey.update');
 
 });
 // End Route penyelia
@@ -117,6 +119,7 @@ Route::group(['middleware' => 'role:pemohon'], function(){
     Route::get('/download/surat-pernyataan-praktik/{id}',[OperatorController::class,'download_suratPernyataanPraktik']);
     Route::get('/download/surat-rekomendasi-profesi/{id}',[OperatorController::class,'download_suratRekomendasiProfesi']);
     Route::get('/download/surat-keterangan-praktek/{id}',[OperatorController::class,'download_suratKeteranganPraktek']);
+    Route::get('/download/dokumen-hasil-survey/{id}',[OperatorController::class,'download_dokumenSurvey']);
 // End Download Berkas
 
 

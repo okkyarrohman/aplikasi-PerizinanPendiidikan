@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <form action="{{ route('penyelia.update') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('hasil-survey.update') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="parent d-flex w-100 bg-gray-100">
             <div class="child-1">
@@ -102,12 +102,12 @@
             <div class="mb-2 m-5 w-75">
                 <label for="exampleInputEmail1" class="form-label">Surat Perizinan Permohonan</label>
                 <input type="file" name="surat_perizinan_permohonan" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp">
+                    aria-describedby="emailHelp" required>
             </div>
 
             <div class="mb-3 m-5 w-50">
                 <label for="disabledSelect" class="form-label">Pilih status permohonan</label>
-                <select id="disabledSelect" class="form-select" name="status_permohonan">
+                <select id="disabledSelect" class="form-select" name="status_permohonan" required>
                     <option value="Terbitkan Izin">Terbitkan Izin Permohonan</option>
                     <option value="Tolak Permohonan">Tolak Izin Permohonan</option>
                 </select>

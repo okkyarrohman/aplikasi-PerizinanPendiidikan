@@ -56,7 +56,23 @@ class PenyeliaController extends Controller
         return view('penyelia.afterSurvey',compact('perizinan'));
     }
 
+    public function update_survey(Request $request){
+        $perizinan = Perizinan::find($request->id);
+        $perizinan->status_permohonan = $request->status_permohonan;
 
+        if($request->hasFile('surat_perizinan_permohonan')){
+            $surat_perizinan_permohonan = $request->file('surat_perizinan_permohonan');
+            $extension = $surat_perizinan_permohonan->getClientOriginalName();
+            $fotoName = $extension;
+            $surat_perizinan_permohonan->move(storage_path('app/public/berkas/surat_perizinan_permohonan',
+                $request->file('surat_perizinan_permohonan')->getClientOriginalName()),$fotoName);
+            $perizinan->surat_perizinan_permohonan = $request->file('surat_perizinan_permohonan')->getClientOriginalName();
+        }
+        $perizinan->save();
+
+        return redirect()->route('penyelia-surveyor.index')->with('success','data berhasil diupdate');
+
+    }
 
 
 }
