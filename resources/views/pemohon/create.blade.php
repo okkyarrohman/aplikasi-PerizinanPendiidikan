@@ -4,68 +4,104 @@
     {{-- Content --}}
     <form action="{{ route('pemohon.store') }}" method="post" enctype="multipart/form-data">
         @csrf
-        <label for="">Nama</label>
-        <input type="text" name="nama">
-        <br>
 
-        <label for="">Alamat Praktek</label>
-        <input type="text" name="alamat_praktek">
-        <br>
+        <div class="parent d-flex w-100 bg-gray-100">
+            <div class="child-1">
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">nama</label>
+                    <input type="text" name="nama" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                </div>
 
-        <label for="">telepon</label>
-        <input type="number" name="telepon" placeholder="masukkan nama">
-        <br>
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Alamat Praktek</label>
+                    <input type="text" name="alamat_praktek" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                </div>
 
-        <label for="" hidden>Nomor Berkas</label>
-        <input type="hidden" name="nomor_berkas" placeholder="masukkan nama">
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">No Telepon</label>
+                    <input type="number" name="telepon" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                </div>
 
-        <label for="">Surat Pemohonan</label>
-        <input type="file" name="surat_pemohonan">
-        <br>
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Pas Foto</label>
+                    <input type="file" name="pas_foto" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                </div>
+            </div>
 
-        <label for="">Pas foto</label>
-        <input type="file" name="pas_foto">
-        <br>
+            <div class="child-2">
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Surat Pemohonan</label>
+                    <input type="file" name="surat_pemohonan" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                </div>
 
-        <label for="">KTP</label>
-        <input type="file" name="ktp">
-        <br>
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">KTP</label>
+                    <input type="file" name="ktp" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
 
-        <label for="">Ijazah</label>
-        <input type="file" name="ijazah">
-        <br>
+                </div>
 
-        <label for="">Surat Tanda Registrasi</label>
-        <input type="file" name="surat_tanda_regist">
-        <br>
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Ijazah</label>
+                    <input type="file" name="ijazah" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
 
-        <label for="">Surat Persetujuan Kerja</label>
-        <input type="file" name="surat_persetujuan_kerja">
-        <br>
+                </div>
 
-        <label for="">Surat Pernyataan Praktik</label>
-        <input type="file" name="surat_pernyataan_praktik">
-        <br>
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Surat Tanda Registrasi</label>
+                    <input type="file" name="surat_tanda_regist" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                </div>
+            </div>
 
-        <label for="">Surat Pemohonan</label>
-        <input type="file" name="surat_sehat">
-        <br>
+            <div class="child-3">
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Surat Persetujuan Kerja</label>
+                    <input type="file" name="surat_persetujuan_kerja" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
 
-        <label for="">Surat Rekomendasi Profesi</label>
-        <input type="file" name="surat_rekomendasi_profesi">
-        <br>
+                </div>
 
-        <label for="">Surat Keterangan Praktek</label>
-        <input type="file" name="surat_keterangan_praktek">
-        <br>
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Surat Pernyataan Praktik</label>
+                    <input type="file" name="surat_pernyataan_praktik" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
 
-        <select name="status_permohonan" id="status_permohonan" hidden>
-            <option value="Operator" selected></option>
-        </select>
+                </div>
 
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Surat Rekomendasi Profesi</label>
+                    <input type="file" name="surat_rekomendasi_profesi" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
 
+                </div>
 
-        <button type="submit">Submit</button>
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Surat Keterangan Praktek</label>
+                    <input type="file" name="surat_keterangan_praktek" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="parent-2 m-3 d-flex">
+            <div class="mb-3 m-5 w-50">
+                <select id="disabledSelect" class="form-select" name="status_permohonan" hidden>
+                    <option value="Operator" selected>Operator</option>
+                    <option value="Checking Berkas">Check Berkas Verifikator</option>
+                </select>
+            </div>
+        </div>
+        <div class="parent-3 m-3 d-inline-block w-100">
+            <button type="submit" class="btn btn-outline-primary w-100 justify-center align-items-center">Submit</button>
+        </div>
     </form>
     {{-- End Content --}}
 @endsection

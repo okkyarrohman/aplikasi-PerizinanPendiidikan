@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('asset/css/styles.min.css') }}" />
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 </head>
 
 <body>

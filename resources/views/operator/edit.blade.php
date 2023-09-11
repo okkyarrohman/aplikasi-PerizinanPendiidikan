@@ -36,24 +36,24 @@
                 <div class="mb-2 m-5 w-75">
                     <label for="exampleInputEmail1" class="form-label">Surat Pemohonan</label>
                     <br>
-                    <a href="/download-surat-pemohonan/{{ $perizinan->id }}">Download Surat</a>
+                    <a href="/download/surat-pemohonan/{{ $perizinan->id }}">Download Surat</a>
                 </div>
 
                 <div class="mb-2 m-5 w-50">
                     <label for="exampleInputEmail1" class="form-label">KTP</label>
                     <br>
-                    <a href="/download-ktp/{{ $perizinan->id }}">download ktp</a>
+                    <a href="/download/ktp/{{ $perizinan->id }}">download ktp</a>
                 </div>
 
                 <div class="mb-2 m-5 w-50">
                     <label for="exampleInputEmail1" class="form-label">Ijazah</label>
                     <br>
-                    <a href="/download-ijazah/{{ $perizinan->id }}">Download ijazah</a>
+                    <a href="/download/ijazah/{{ $perizinan->id }}">Download ijazah</a>
                 </div>
 
                 <div class="mb-2 m-5 w-50">
                     <label for="exampleInputEmail1" class="form-label">Surat Tanda Registrasi</label>
-                    <a href="/download-surat-tanda-regist/{{ $perizinan->id }}">Download Surat</a>
+                    <a href="/download/surat-tanda-regist/{{ $perizinan->id }}">Download Surat</a>
                 </div>
             </div>
 
@@ -61,25 +61,25 @@
                 <div class="mb-2 m-5 w-50">
                     <label for="exampleInputEmail1" class="form-label">Surat Persetujuan Kerja</label>
                     <br>
-                    <a href="/download-surat-persetujuan-kerja/{{ $perizinan->id }}">Download Surat</a>
+                    <a href="/download/surat-persetujuan-kerja/{{ $perizinan->id }}">Download Surat</a>
                 </div>
 
                 <div class="mb-2 m-5 w-50">
                     <label for="exampleInputEmail1" class="form-label">Surat Pernyataan Praktik</label>
                     <br>
-                    <a href="/download-surat-pernyataan-praktik/{{ $perizinan->id }}">Download Surat</a>
+                    <a href="/download/surat-pernyataan-praktik/{{ $perizinan->id }}">Download Surat</a>
                 </div>
 
                 <div class="mb-2 m-5 w-50">
                     <label for="exampleInputEmail1" class="form-label">Surat Rekomendasi Profesi</label>
                     <br>
-                    <a href="/download-surat-rekomendasi-profesi/{{ $perizinan->id }}">Download Surat</a>
+                    <a href="/download/surat-rekomendasi-profesi/{{ $perizinan->id }}">Download Surat</a>
                 </div>
 
                 <div class="mb-2 m-5 w-50">
                     <label for="exampleInputEmail1" class="form-label">Surat Keterangan Praktek</label>
                     <br>
-                    <a href="/download-surat-keterangan-praktek/{{ $perizinan->id }}">Download Surat</a>
+                    <a href="/download/surat-keterangan-praktek/{{ $perizinan->id }}">Download Surat</a>
                 </div>
             </div>
         </div>

@@ -77,8 +77,18 @@ Route::group(['middleware' => 'role:operator'], function(){
     Route::get('/operator/tracking',[OperatorController::class,'index']);
     Route::get('/operator/edit-tracking/{id}',[OperatorController::class,'edit']);
     Route::post('/operator/update-status',[OperatorController::class,'update'])->name('operator.update');
-    Route::get('/download-ktp/{id}',[OperatorController::class,'download_ktp']);
 
+    // Download Berkas
+    Route::get('/download/surat-pemohonan/{id}',[OperatorController::class,'download_suratPemohon']);
+    Route::get('/download/ktp/{id}',[OperatorController::class,'download_ktp']);
+    Route::get('/download/ijazah/{id}',[OperatorController::class,'download_ijazah']);
+    Route::get('/download/surat-tanda-regist/{id}',[OperatorController::class,'download_suratTandaRegist']);
+    Route::get('/download/surat-persetujuan-kerja/{id}',[OperatorController::class,'download_suratPersetujuanKerja']);
+    Route::get('/download/surat-pernyataan-praktik/{id}',[OperatorController::class,'download_suratPernyataanPraktik']);
+    Route::get('/download/surat-rekomendasi-profesi/{id}',[OperatorController::class,'download_suratRekomendasiProfesi']);
+    Route::get('/download/surat-keterangan-praktek/{id}',[OperatorController::class,'download_suratKeteranganPraktek']);
+
+    // End Download Berkas
 });
 // End Route operator
 
