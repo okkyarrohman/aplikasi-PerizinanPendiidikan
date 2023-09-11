@@ -48,8 +48,14 @@
                         </div>
                     </td>
                     <td class="border-bottom-0">
-                        <span class="badge bg-succes rounded-3 fw-semibold"></span>
+                        <a href="/penyelia/edit-tracking-pemohon/{{ $tracking->id }}">
+                            <span class="badge bg-success rounded-3 fw-semibold">Lihat</span>
+                        </a>
+                        <a href="#">
+                            <span class="badge bg-danger rounded-3 fw-semibold">Delete</span>
+                        </a>
                     </td>
+
                 </tr>
             </tbody>
         @endforeach

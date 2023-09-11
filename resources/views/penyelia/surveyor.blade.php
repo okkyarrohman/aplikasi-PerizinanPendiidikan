@@ -30,33 +30,93 @@
             $no = 1;
         @endphp
         @foreach ($trackings as $tracking)
-            <tbody>
-                <tr>
-                    <td class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">{{ $no++ }}</h6>
-                    </td>
-                    <td class="border-bottom-0">
-                        <h6 class="fw-semibold mb-1">{{ $tracking->nama }}</h6>
-                        <span class="fw-normal">Pemohon</span>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="mb-0 fw-normal">{{ $tracking->telepon }}</p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <div class="d-flex align-items-center gap-2">
-                            <span class="badge bg-primary rounded-3 fw-semibold">{{ $tracking->status_permohonan }}</span>
-                        </div>
-                    </td>
-                    <td class="border-bottom-0">
-                        <a href="/penyelia/edit-tracking-pemohon/{{ $tracking->id }}">
-                            <span class="badge bg-success rounded-3 fw-semibold">Lihat</span>
-                        </a>
-                        <a href="#">
-                            <span class="badge bg-danger rounded-3 fw-semibold">Delete</span>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
+            @if ($tracking->status_permohonan == 'Dokumen Valid')
+                <tbody>
+                    <tr>
+                        <td class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">{{ $no++ }}</h6>
+                        </td>
+                        <td class="border-bottom-0">
+                            <h6 class="fw-semibold mb-1">{{ $tracking->nama }}</h6>
+                            <span class="fw-normal">Pemohon</span>
+                        </td>
+                        <td class="border-bottom-0">
+                            <p class="mb-0 fw-normal">{{ $tracking->telepon }}</p>
+                        </td>
+                        <td class="border-bottom-0">
+                            <div class="d-flex align-items-center gap-2">
+                                <span
+                                    class="badge bg-primary rounded-3 fw-semibold">{{ $tracking->status_permohonan }}</span>
+                            </div>
+                        </td>
+                        <td class="border-bottom-0">
+                            <form action="{{ route('tugaskan.update') }}" method="post">
+                                @csrf
+                                <input type="hidden" name="id" value="{{ $tracking->id }}" hidden>
+                                <select name="status_permohonan" id="status_permohonan" hidden>
+                                    <option value="Sedang Disurvey" selected hidden></option>
+                                </select>
+                                <button type="submit" class="btn bg-primary rounded-3 fw-semibold">
+                                    Tugaskan Surveyor
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            @elseif ($tracking->status_permohonan == 'Sedang Disurvey')
+                <tbody>
+                    <tr>
+                        <td class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">{{ $no++ }}</h6>
+                        </td>
+                        <td class="border-bottom-0">
+                            <h6 class="fw-semibold mb-1">{{ $tracking->nama }}</h6>
+                            <span class="fw-normal">Pemohon</span>
+                        </td>
+                        <td class="border-bottom-0">
+                            <p class="mb-0 fw-normal">{{ $tracking->telepon }}</p>
+                        </td>
+                        <td class="border-bottom-0">
+                            <div class="d-flex align-items-center gap-2">
+                                <span
+                                    class="badge bg-primary rounded-3 fw-semibold">{{ $tracking->status_permohonan }}</span>
+                            </div>
+                        </td>
+                        <td class="border-bottom-0">
+                            <span class="badge bg-warning">Sedang Disurvey</span>
+                        </td>
+                    </tr>
+                </tbody>
+            @elseif ($tracking->status_permohonan == 'Telah Disurvey')
+                <tbody>
+                    <tr>
+                        <td class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">{{ $no++ }}</h6>
+                        </td>
+                        <td class="border-bottom-0">
+                            <h6 class="fw-semibold mb-1">{{ $tracking->nama }}</h6>
+                            <span class="fw-normal">Pemohon</span>
+                        </td>
+                        <td class="border-bottom-0">
+                            <p class="mb-0 fw-normal">{{ $tracking->telepon }}</p>
+                        </td>
+                        <td class="border-bottom-0">
+                            <div class="d-flex align-items-center gap-2">
+                                <span
+                                    class="badge bg-success rounded-3 fw-semibold">{{ $tracking->status_permohonan }}</span>
+                            </div>
+                        </td>
+                        <td class="border-bottom-0">
+                            <a href="/penyelia/edit-tracking-pemohon/{{ $tracking->id }}">
+                                <span class="badge bg-success rounded-3 fw-semibold">Lihat</span>
+                            </a>
+                            <a href="#">
+                                <span class="badge bg-danger rounded-3 fw-semibold">Delete</span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            @endif
         @endforeach
     </table>
 @endsection

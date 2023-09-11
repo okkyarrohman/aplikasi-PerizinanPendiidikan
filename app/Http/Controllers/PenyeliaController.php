@@ -16,10 +16,12 @@ class PenyeliaController extends Controller
 
     public function tracking_surveyor(){
 
-        $trackings = Perizinan::where(['status_permohonan' => 'Dokumen Valid'])->get();
+        $trackings = Perizinan::all();
 
         return view('penyelia.surveyor',compact('trackings'));
     }
+
+
 
 
     public function edit_trackingPemohon($id){
@@ -36,6 +38,19 @@ class PenyeliaController extends Controller
 
         return redirect()->route('penyelia')->with('success','data berhasil diupdate');
     }
+
+    public function is_survey(Request $request){
+
+        $perizinan = Perizinan::find($request->id);
+
+        $perizinan->status_permohonan = $request->status_permohonan;
+
+        $perizinan->save();
+
+        return back();
+    }
+
+
 
 
 }
