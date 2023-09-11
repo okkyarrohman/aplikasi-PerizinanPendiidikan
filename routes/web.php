@@ -123,7 +123,9 @@ Route::group(['middleware' => 'role:pemohon'], function(){
 // End Download Berkas
 
 
-
+Route::get('/testing', function(){
+    return view('testing.index');
+});
 
 
 

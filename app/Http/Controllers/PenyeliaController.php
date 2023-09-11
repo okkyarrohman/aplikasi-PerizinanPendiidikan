@@ -52,7 +52,7 @@ class PenyeliaController extends Controller
 
     public function after_survey($id){
 
-         $perizinan = Perizinan::find($id);
+        $perizinan = Perizinan::find($id);
         return view('penyelia.afterSurvey',compact('perizinan'));
     }
 
