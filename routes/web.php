@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\PemohonController;
 use App\Http\Controllers\PenyeliaController;
-
+use App\Http\Controllers\SurveyorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +70,12 @@ Route::group(['middleware' => 'role:penyelia'], function(){
 // Route surveyor
 Route::group(['middleware' => 'role:surveyor'], function(){
     Route::get('/surveyor',[HomeController::class,'index_surveyor'])->name('surveyor');
+    Route::get('/surveyor/tracking',[SurveyorController::class,'tracking']);
+    Route::get('/surveyor/status',[SurveyorController::class,'status'])->name('surveyor.index');
+    Route::get('/surveyor/edit/{id}',[SurveyorController::class,'create']);
+
+    Route::post('/surveyor/store',[SurveyorController::class,'update'])->name('surveyor.update');
+
 });
 // End Route surveyor
 
@@ -96,6 +102,7 @@ Route::group(['middleware' => 'role:pemohon'], function(){
     Route::get('/create-pemohon',[PemohonController::class,'create']);
     Route::post('/create-pemohon',[PemohonController::class,'store'])->name('pemohon.store');
     Route::get('/tracking',[PemohonController::class,'tracking']);
+
 });
 // End Route pemohon
 
