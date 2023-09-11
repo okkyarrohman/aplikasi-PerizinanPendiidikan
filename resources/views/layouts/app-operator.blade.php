@@ -16,8 +16,11 @@
 
 
     <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+    <link rel="stylesheet" href="{{ asset('asset/css/styles.min.css') }}" />
 </head>
 
 <body>
@@ -80,11 +83,20 @@
         </nav>
 
         <main class="py-4">
-
+            @yield('content')
         </main>
     </div>
-    @yield('content')
+
     @yield('script')
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="{{ asset('asset/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('asset/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('asset/js/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('asset/js/app.min.js') }}"></script>
+    <script src="{{ asset('asset/libs/simplebar/dist/simplebar.js') }}"></script>
+    <script src=" {{ asset('asset/js/dashboard.js') }}"></script>
+
 </body>
 
 </html>

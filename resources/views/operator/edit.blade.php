@@ -3,81 +3,109 @@
 @section('content')
     <form action="{{ route('operator.update') }}" method="post" enctype="multipart/form-data">
         @csrf
-        <input type="hidden" name="id" value="{{ $perizinan->id }}">
+        <div class="parent d-flex w-100 bg-gray-100">
+            <div class="child-1">
+                <input type="hidden" name="id" value="{{ $perizinan->id }}">
 
-        <label for="">Nama</label>
-        <input type="text" name="nama" value="{{ old('nama', $perizinan->nama) }}" disabled>
-        <br>
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">nama</label>
+                    <input type="text" value="{{ old('nama', $perizinan->nama) }}" name="nama" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp" disabled>
+                </div>
 
-        <label for="">Alamat Praktek</label>
-        <input type="text" name="alamat_praktek" value="{{ $perizinan->alamat_praktek }}" disabled>
-        <br>
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Alamat Praktek</label>
+                    <input type="text" value="{{ old('nama', $perizinan->alamat_praktek) }}" name="alamat_praktek"
+                        class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" disabled>
+                </div>
 
-        <label for="">telepon</label>
-        <input type="number" name="telepon" value="{{ $perizinan->telepon }}" disabled>
-        <br>
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">No Telepon</label>
+                    <input type="number" value="{{ old('nama', $perizinan->telepon) }}" name="telepon" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp" disabled>
+                </div>
 
-        <label for="">Surat Pemohonan</label>
-        <img id="fotoPreview" src="{{ asset('storage/berkas/surat_pemohonan/' . $perizinan->surat_pemohonan) }}"
-            alt="" class="w-96 mx-auto mb-5 rounded-lg" width="100px" height="100px">
-        <input type="file" name="surat_pemohonan" hidden>
-        <br>
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Pas Foto</label>
+                    <input type="file" name="pas_foto" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" disabled>
+                </div>
+            </div>
 
-        <label for="">Pas foto</label>
-        <input type="file" name="pas_foto" hidden>
-        <br>
+            <div class="child-2">
+                <div class="mb-2 m-5 w-75">
+                    <label for="exampleInputEmail1" class="form-label">Surat Pemohonan</label>
+                    <br>
+                    <a href="/download-surat-pemohonan/{{ $perizinan->id }}">Download Surat</a>
+                </div>
 
-        <label for="">KTP {{ $perizinan->ktp }}
-            <a href="/download-ktp/{{ $perizinan->id }}">download ktp</a>
-        </label>
-        <input type="file" name="ktp" hidden>
-        <br>
+                <div class="mb-2 m-5 w-50">
+                    <label for="exampleInputEmail1" class="form-label">KTP</label>
+                    <br>
+                    <a href="/download-ktp/{{ $perizinan->id }}">download ktp</a>
+                </div>
 
-        <label for="">Ijazah</label>
-        <input type="file" name="ijazah" hidden>
-        <br>
+                <div class="mb-2 m-5 w-50">
+                    <label for="exampleInputEmail1" class="form-label">Ijazah</label>
+                    <br>
+                    <a href="/download-ijazah/{{ $perizinan->id }}">Download ijazah</a>
+                </div>
 
-        <label for="">Surat Tanda Registrasi</label>
-        <input type="file" name="surat_tanda_regist" hidden>
-        <br>
+                <div class="mb-2 m-5 w-50">
+                    <label for="exampleInputEmail1" class="form-label">Surat Tanda Registrasi</label>
+                    <a href="/download-surat-tanda-regist/{{ $perizinan->id }}">Download Surat</a>
+                </div>
+            </div>
 
-        <label for="">Surat Persetujuan Kerja</label>
-        <input type="file" name="surat_persetujuan_kerja" hidden>
-        <br>
+            <div class="child-3">
+                <div class="mb-2 m-5 w-50">
+                    <label for="exampleInputEmail1" class="form-label">Surat Persetujuan Kerja</label>
+                    <br>
+                    <a href="/download-surat-persetujuan-kerja/{{ $perizinan->id }}">Download Surat</a>
+                </div>
 
-        <label for="">Surat Pernyataan Praktik</label>
-        <input type="file" name="surat_pernyataan_praktik" hidden>
-        <br>
+                <div class="mb-2 m-5 w-50">
+                    <label for="exampleInputEmail1" class="form-label">Surat Pernyataan Praktik</label>
+                    <br>
+                    <a href="/download-surat-pernyataan-praktik/{{ $perizinan->id }}">Download Surat</a>
+                </div>
 
-        <label for="">Surat Pemohonan</label>
-        <input type="file" name="surat_sehat" hidden>
-        <br>
+                <div class="mb-2 m-5 w-50">
+                    <label for="exampleInputEmail1" class="form-label">Surat Rekomendasi Profesi</label>
+                    <br>
+                    <a href="/download-surat-rekomendasi-profesi/{{ $perizinan->id }}">Download Surat</a>
+                </div>
 
-        <label for="">Surat Rekomendasi Profesi</label>
-        <input type="file" name="surat_rekomendasi_profesi" hidden>
-        <br>
+                <div class="mb-2 m-5 w-50">
+                    <label for="exampleInputEmail1" class="form-label">Surat Keterangan Praktek</label>
+                    <br>
+                    <a href="/download-surat-keterangan-praktek/{{ $perizinan->id }}">Download Surat</a>
+                </div>
+            </div>
+        </div>
 
-        <label for="">Surat Keterangan Praktek</label>
-        <input type="file" name="surat_keterangan_praktek" hidden>
-        <br>
-        <br>
+        <div class="parent-2 m-3 d-flex">
+            <div class="mb-2 m-5 w-50">
+                <label for="exampleInputEmail1" class="form-label">Nomor Berkas</label>
+                <input type="number" name="nomor_berkas" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+            </div>
 
-        <label for="">Nomor Berkas</label>
-        <input type="text" name="nomor_berkas" placeholder="Masukkan No berkas">
-        <br>
-        <br>
+            <div class="mb-3 m-5 w-50">
+                <label for="disabledSelect" class="form-label">Pilih status permohonan</label>
+                <select id="disabledSelect" class="form-select" name="status_permohonan">
+                    <option value="Operator">Operator</option>
+                    <option value="Checking Berkas">Check Berkas Verifikator</option>
+                </select>
+            </div>
+        </div>
+        <div class="parent-3 m-3 d-inline-block w-100">
+            <button type="submit" class="btn btn-outline-primary w-100 justify-center align-items-center">Submit</button>
+        </div>
+    </form>
+@endsection
 
-        <select name="status_permohonan" id="status_permohonan">
-            <option selected>Pilih status permohonan</option>
-            <option value="Operator">Operator</option>
-            <option value="Checking Berkas">Check Berkas Verifikator</option>
-        </select>
-        <br>
 
-        <button type="submit">submit</button>
-    @endsection
-
-
-    @section('script')
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js"></script>
-    @endsection
+@section('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js"></script>
+@endsection

@@ -8,7 +8,7 @@ use App\Models\Perizinan;
 class OperatorController extends Controller
 {
     public function index(){
-        $trackings = Perizinan::where(['status_permohonan' => 'Operator'])->get();
+        $trackings = Perizinan::all();
 
         return view('operator.status',compact('trackings'));
     }
