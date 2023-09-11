@@ -107,7 +107,7 @@
                             </div>
                         </td>
                         <td class="border-bottom-0">
-                            <a href="/penyelia/edit-tracking-pemohon/{{ $tracking->id }}">
+                            <a href="/lihat-hasil/survey/{{ $tracking->id }}">
                                 <span class="badge bg-success rounded-3 fw-semibold">Lihat</span>
                             </a>
                             <a href="#">

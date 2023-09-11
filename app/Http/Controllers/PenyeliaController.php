@@ -50,6 +50,12 @@ class PenyeliaController extends Controller
         return back();
     }
 
+    public function after_survey($id){
+
+         $perizinan = Perizinan::find($id);
+        return view('penyelia.afterSurvey',compact('perizinan'));
+    }
+
 
 
 

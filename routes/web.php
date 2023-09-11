@@ -62,6 +62,7 @@ Route::group(['middleware' => 'role:penyelia'], function(){
     Route::get('/penyelia/edit-tracking-pemohon/{id}',[PenyeliaController::class,'edit_trackingPemohon']);
     Route::post('/penyelia/update-status',[PenyeliaController::class,'update'])->name('penyelia.update');
     Route::post('/tugaskan/surveyor',[PenyeliaController::class,'is_survey'])->name('tugaskan.update');
+    Route::get('/lihat-hasil/survey/{id}',[PenyeliaController::class,'after_survey']);
 
 });
 // End Route penyelia

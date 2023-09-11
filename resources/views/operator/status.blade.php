@@ -30,24 +30,26 @@
             $no = 1;
         @endphp
         @foreach ($trackings as $tracking)
-            <tbody>
-                <tr>
-                    <td class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">{{ $no++ }}</h6>
-                    </td>
-                    <td class="border-bottom-0">
-                        <h6 class="fw-semibold mb-1">{{ $tracking->nama }}</h6>
-                        <span class="fw-normal">Pemohon</span>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="mb-0 fw-normal">{{ $tracking->telepon }}</p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <div class="d-flex align-items-center gap-2">
-                            <span class="badge bg-primary rounded-3 fw-semibold">{{ $tracking->status_permohonan }}</span>
-                        </div>
-                    </td>
-                    @if ($tracking->status_permohonan == 'Operator')
+            @if ($tracking->status_permohonan == 'Operator')
+                <tbody>
+                    <tr>
+                        <td class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">{{ $no++ }}</h6>
+                        </td>
+                        <td class="border-bottom-0">
+                            <h6 class="fw-semibold mb-1">{{ $tracking->nama }}</h6>
+                            <span class="fw-normal">Pemohon</span>
+                        </td>
+                        <td class="border-bottom-0">
+                            <p class="mb-0 fw-normal">{{ $tracking->telepon }}</p>
+                        </td>
+                        <td class="border-bottom-0">
+                            <div class="d-flex align-items-center gap-2">
+                                <span
+                                    class="badge bg-primary rounded-3 fw-semibold">{{ $tracking->status_permohonan }}</span>
+                            </div>
+                        </td>
+
                         <td class="border-bottom-0">
                             <a href="/operator/edit-tracking/{{ $tracking->id }}">
                                 <span class="badge bg-success rounded-3 fw-semibold">Edit</span>
@@ -56,18 +58,10 @@
                                 <span class="badge bg-danger rounded-3 fw-semibold">Delete</span>
                             </a>
                         </td>
-                    @else
-                        <td class="border-bottom-0">
-                            <a href="#">
-                                <span class="badge bg-light  rounded-3 fw-semibold">Edit</span>
-                            </a>
-                            <a href="#">
-                                <span class="badge bg-light rounded-3 fw-semibold">Delete</span>
-                            </a>
-                        </td>
-                    @endif
-                </tr>
-            </tbody>
+
+                    </tr>
+                </tbody>
+            @endif
         @endforeach
     </table>
 @endsection

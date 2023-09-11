@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('alamat_praktek');
-            $table->bigInteger('telepon');
+            $table->string('telepon');
             $table->string('status_permohonan')->nullable();
             $table->integer('nomor_berkas')->nullable();
             $table->string('surat_pemohonan')->nullable();
@@ -25,9 +25,10 @@ return new class extends Migration
             $table->string('surat_tanda_regist')->nullable();
             $table->string('surat_persetujuan_kerja')->nullable();
             $table->string('surat_pernyataan_praktik')->nullable();
-            $table->string('surat_sehat')->nullable();
             $table->string('surat_rekomendasi_profesi')->nullable();
             $table->string('surat_keterangan_praktek')->nullable();
+            $table->string('dokumen_survey')->nullable();
+            $table->string('surat_perizinan_permohonan')->nullable();
             $table->timestamps();
         });
     }
