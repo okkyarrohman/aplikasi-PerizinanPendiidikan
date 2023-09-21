@@ -23,8 +23,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // Routes Admin
 Route::group(['middleware' => 'role:admin'], function(){
@@ -100,6 +101,7 @@ Route::group(['middleware' => 'role:operator'], function(){
 
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon'], function(){
+
     Route::get('/pemohon',[HomeController::class,'index_pemohon'])->name('pemohon');
     Route::get('/create-pemohon',[PemohonController::class,'create']);
     Route::post('/create-pemohon',[PemohonController::class,'store'])->name('pemohon.store');
@@ -126,9 +128,7 @@ Route::group(['middleware' => 'role:pemohon'], function(){
 // End Download Berkas
 
 
-Route::get('/testing', function(){
-    return view('testing.index');
-});
+
 
 
 

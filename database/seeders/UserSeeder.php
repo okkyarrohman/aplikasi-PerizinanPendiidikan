@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
     {
         $admin = User::create([
             'name' => 'Admin Role',
+            'roles_id' => 1,
             'email' => 'admin@perizinan.com',
             'password' => bcrypt('admin123'),
         ]);
@@ -23,6 +24,7 @@ class UserSeeder extends Seeder
 
         $dinas = User::create([
             'name' => 'dinas Role',
+            'roles_id' => 2,
             'email' => 'dinas@perizinan.com',
             'password' => bcrypt('dinas123'),
         ]);
@@ -30,6 +32,7 @@ class UserSeeder extends Seeder
 
         $walikota = User::create([
             'name' => 'walikota Role',
+            'roles_id' => 3,
             'email' => 'walikota@perizinan.com',
             'password' => bcrypt('walikota123'),
         ]);
@@ -37,6 +40,7 @@ class UserSeeder extends Seeder
 
         $kepala_dinas = User::create([
             'name' => 'kepala-dinas Role',
+            'roles_id' => 4,
             'email' => 'kepala_dinas@perizinan.com',
             'password' => bcrypt('kepaladinas123'),
         ]);
@@ -44,6 +48,7 @@ class UserSeeder extends Seeder
 
         $penyelia = User::create([
             'name' => 'penyelia Role',
+            'roles_id' => 5,
             'email' => 'penyelia@perizinan.com',
             'password' => bcrypt('penyelia123'),
         ]);
@@ -51,6 +56,7 @@ class UserSeeder extends Seeder
 
         $surveyor = User::create([
             'name' => 'surveyor Role',
+            'roles_id' => 6,
             'email' => 'surveyor@perizinan.com',
             'password' => bcrypt('surveyor123'),
         ]);
@@ -58,6 +64,7 @@ class UserSeeder extends Seeder
 
         $auditor = User::create([
             'name' => 'auditor Role',
+            'roles_id' => 7,
             'email' => 'auditor@perizinan.com',
             'password' => bcrypt('auditor123'),
         ]);
@@ -65,6 +72,7 @@ class UserSeeder extends Seeder
 
         $operator = User::create([
             'name' => 'operator Role',
+            'roles_id' => 8,
             'email' => 'operator@perizinan.com',
             'password' => bcrypt('operator123'),
         ]);
@@ -72,6 +80,7 @@ class UserSeeder extends Seeder
 
         $pemohon = User::create([
             'name' => 'pemohon Role',
+            'roles_id' => 9,
             'email' => 'pemohon@perizinan.com',
             'password' => bcrypt('pemohon123'),
         ]);

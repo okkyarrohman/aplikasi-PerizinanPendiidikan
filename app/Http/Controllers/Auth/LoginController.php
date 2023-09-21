@@ -40,7 +40,7 @@ class LoginController extends Controller
     }
 
 
-     protected function authenticated(Request $request, $user)
+    protected function authenticated(Request $request, $user)
     {
         if($user->hasRole('admin')){
             return redirect()->route('admin');
@@ -65,6 +65,9 @@ class LoginController extends Controller
         }
         if($user->hasRole('operator')){
             return redirect()->route('operator');
+        }
+        if($user->hasRole('pemohon')){
+            return redirect()->route('pemohon');
         }
         return redirect()->route('pemohon')->with('success','sukses login');
 
