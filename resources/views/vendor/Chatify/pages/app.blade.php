@@ -13,12 +13,14 @@
                 </nav>
             </nav>
             {{-- Search input --}}
-            {{-- <input type="text" class="messenger-search" placeholder="Search" /> --}}
+            {{-- <form method="GET">
+                <input type="text" class="messenger-search" placeholder="Search" name="search_item" />
+            </form> --}}
             {{-- Tabs --}}
-            <div class="messenger-listView-tabs">
-                <a href="/chatify/users" class="active-tab" data-view="users">
-                    <span class="far fa-user"></span> Contacts</a>
-            </div>
+            {{-- <div class="messenger-listView-tabs">
+                <a href="{{ Auth::user()->id }}" class="active-tab" data-view="users">
+                    <span class="far fa-user"></span> Contacts</a> --}}
+            {{-- </div> --}}
         </div>
         {{-- tabs and lists --}}
         <div class="m-body contacts-container">
@@ -69,11 +71,11 @@
                 </nav>
             </nav>
             {{-- Internet connection --}}
-            <div class="internet-connection">
+            {{-- <div class="internet-connection">
                 <span class="ic-connected">Connected</span>
                 <span class="ic-connecting">Connecting...</span>
                 <span class="ic-noInternet">No internet access</span>
-            </div>
+            </div> --}}
         </div>
 
         {{-- Messaging area --}}
@@ -81,9 +83,7 @@
             <div class="messages">
                 <p class="message-hint center-el">
                     <a href="/chatify/2" class="send-button">
-                        <span>Chat with admin
-                            <span class="fas fa-paper-plane"></span>
-                        </span>
+                        <span>Chat with admin</span>
                     </a>
                 </p>
 
