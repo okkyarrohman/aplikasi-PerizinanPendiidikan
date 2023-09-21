@@ -13,12 +13,12 @@
                 </nav>
             </nav>
             {{-- Search input --}}
-            <input type="text" class="messenger-search" placeholder="Search" />
+            {{-- <input type="text" class="messenger-search" placeholder="Search" /> --}}
             {{-- Tabs --}}
-            {{-- <div class="messenger-listView-tabs">
-                <a href="#" class="active-tab" data-view="users">
+            <div class="messenger-listView-tabs">
+                <a href="/chatify/users" class="active-tab" data-view="users">
                     <span class="far fa-user"></span> Contacts</a>
-            </div> --}}
+            </div>
         </div>
         {{-- tabs and lists --}}
         <div class="m-body contacts-container">
@@ -81,7 +81,7 @@
             <div class="messages">
                 <p class="message-hint center-el">
                     <a href="/chatify/2" class="send-button">
-                        <span>Chat with admin dinas
+                        <span>Chat with admin
                             <span class="fas fa-paper-plane"></span>
                         </span>
                     </a>
