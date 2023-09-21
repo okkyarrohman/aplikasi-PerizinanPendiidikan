@@ -104,6 +104,9 @@ Route::group(['middleware' => 'role:pemohon'], function(){
     Route::get('/create-pemohon',[PemohonController::class,'create']);
     Route::post('/create-pemohon',[PemohonController::class,'store'])->name('pemohon.store');
     Route::get('/tracking',[PemohonController::class,'tracking']);
+    Route::get('/chat/index',[PemohonController::class,'livechat']);
+    Route::post('broadcast',[PemghonController::class,'broadcast']);
+    Route::post('recieve',[PemghonController::class,'recieve']);
 
 });
 // End Route pemohon
