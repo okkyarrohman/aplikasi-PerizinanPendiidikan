@@ -16,7 +16,7 @@
             <thead class="text-dark fs-4">
                 <tr>
                     <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Nomor</h6>
+                        <h6 class="fw-semibold mb-0">Nomor Berkas</h6>
                     </th>
                     <th class="border-bottom-0">
                         <h6 class="fw-semibold mb-0">Nama</h6>
@@ -55,5 +55,6 @@
                 </tbody>
             @endforeach
         </table>
+        {{ $trackings->links() }}
     </div>
 @endsection

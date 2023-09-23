@@ -10,7 +10,7 @@ class DinasController extends Controller
 
 
     public function tracking(){
-        $trackings = Perizinan::all();
+        $trackings = Perizinan::paginate(10);
 
         return view('dinas.tracking',compact('trackings'));
     }

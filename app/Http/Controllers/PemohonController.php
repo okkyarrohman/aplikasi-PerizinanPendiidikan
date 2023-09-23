@@ -11,7 +11,7 @@ class PemohonController extends Controller
 {
 
     public function tracking(){
-        $trackings = Perizinan::all();
+        $trackings = Perizinan::paginate(10);
 
         return view('pemohon.tracking',compact('trackings'));
     }
