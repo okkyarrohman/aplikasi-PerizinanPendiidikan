@@ -13,7 +13,7 @@
                 </nav>
             </nav>
             {{-- Search input --}}
-            <input type="text" class="messenger-search" placeholder="Search" />
+            {{-- <input type="text" class="messenger-search" placeholder="Search" /> --}}
             {{-- Tabs --}}
             {{-- <div class="messenger-listView-tabs">
                 <a href="#" class="active-tab" data-view="users">
@@ -36,6 +36,17 @@
                 {{-- Contact --}}
                 <p class="messenger-title"><span>All Messages</span></p>
                 <div class="listOfContacts" style="width: 100%;height: calc(100% - 272px);position: relative;"></div>
+
+                @if (Auth::user()->hasRole('dinas'))
+                    <div class="return-dashboard m-4 justify-content-center">
+                        <a href="/dinas" class="btn btn-primary"><span>Return to Dashboard</span></a>
+                    </div>
+                @endif
+                @if (Auth::user()->hasRole('pemohon'))
+                    <div class="return-dashboard m-4 justify-content-lg-center">
+                        <a href="/pemohon" class="btn btn-primary"><span>Return to Dashboard</span></a>
+                    </div>
+                @endif
             </div>
             {{-- ---------------- [ Search Tab ] ---------------- --}}
             <div class="messenger-tab search-tab app-scroll" data-view="search">
@@ -79,7 +90,11 @@
         {{-- Messaging area --}}
         <div class="m-body messages-container app-scroll">
             <div class="messages">
-                <p class="message-hint center-el"><span>Chat Admin</span></p>
+                <div class="message-hint center-el">
+                    <a href="/chatify/{{ $id = '2' }}">
+                        <span>Chat Admin</span>
+                    </a>
+                </div>
             </div>
             {{-- Typing indicator --}}
             <div class="typing-indicator">

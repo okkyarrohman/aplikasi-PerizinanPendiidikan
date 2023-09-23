@@ -8,5 +8,5 @@
 </div>
 
 <div class="link3 m-3">
-    <a href="/chat/index">Chat With Admin</a>
+    <a href="/chatify">Chat With Admin</a>
 </div>

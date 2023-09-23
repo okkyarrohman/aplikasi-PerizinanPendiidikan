@@ -1,11 +1,13 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\PemohonController;
 use App\Http\Controllers\PenyeliaController;
 use App\Http\Controllers\SurveyorController;
+use App\Http\Controllers\DinasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +41,8 @@ Route::group(['middleware' => 'role:admin'], function(){
 // Route dinas
 Route::group(['middleware' => 'role:dinas'], function(){
     Route::get('/dinas',[HomeController::class,'index_dinas'])->name('dinas');
+    Route::get('/dinas/tracking',[DinasController::class,'tracking']);
+
 });
 // End Route dinas
 

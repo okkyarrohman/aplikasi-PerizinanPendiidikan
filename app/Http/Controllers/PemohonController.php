@@ -137,22 +137,7 @@ class PemohonController extends Controller
     }
 
 
-    public function livechat(){
-        return view('pemohon.liveChat.index');
-    }
 
-    public function broadcast(Request $request){
-        broadcast(new PusherBroadcast($request->get('message')))->toOthers();
-
-        return view('pemohon.liveChat.broadcast',['message' => $request->get('message')]);
-    }
-
-    public function recieve(Request $request){
-
-
-        return view('pemohon.liveChat.receive', ['message' => $request->get('message')]);
-
-    }
 
 
 }
