@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Admin Dashboard</title>
 
-    <link rel="stylesheet" href="{{ asset('dashboard/assets/css/main/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('dashboard/assets/css/main/app-dark.css') }}">
-    <link rel="shortcut icon" href="{{ asset('dashboard/assets/images/logo/favicon.svg') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('dashboard/assets/images/logo/favicon.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/main/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/main/app-dark.css') }}">
+    <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.svg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.png') }}" type="image/png">
 
-    <link rel="stylesheet" href="{{ asset('dashboard/assets/extensions/quill/quill.snow.css') }}">
-    <link rel="stylesheet" href="{{ asset('dashboard/assets/extensions/quill/quill.bubble.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/extensions/quill/quill.snow.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/extensions/quill/quill.bubble.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('dashboard/assets/css/shared/iconly.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/shared/iconly.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('dashboard/assets/extensions/filepond/filepond.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/extensions/filepond/filepond.css') }}">
     <link rel="stylesheet"
-        href="{{ asset('dashboard/assets/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css') }}">
-    <link rel="stylesheet" href="{{ asset('dashboard/assets/extensions/toastify-js/src/toastify.css') }}">
-    <link rel="stylesheet" href="{{ asset('dashboard/assets/css/pages/filepond.css') }}">
+        href="{{ asset('dashboard/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/extensions/toastify-js/src/toastify.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/pages/filepond.css') }}">
 </head>
 
 <body>
@@ -71,78 +71,8 @@
                     </div>
                 </div>
 
-                {{-- Side Bar Start --}}
-                <div class="sidebar-menu">
-                    <ul class="menu">
-                        <li class="sidebar-title">Menu</li>
-                        <li class="sidebar-item active ">
-                            <a href="/admin-dashboard" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
+                @include('layouts.components.sideBar-operator')
 
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-people-fill"></i>
-                                <span>Data Users</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="/admin/data-guru" class='sidebar-link'>
-                                        <i class="bi bi-people-fill"></i>
-                                        <span>Data Guru</span>
-                                    </a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="/admin/data-murid" class='sidebar-link'>
-                                        <i class="bi bi-people-fill"></i>
-                                        <span>Data Murid</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-book-fill"></i>
-                                <span>Materi</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="/admin/tambah-materi">Tambah Materi</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="/admin/list-materi">List Materi</a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-list-ul"></i>
-                                <span>Tugas</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="/admin/tambah-tugas">Tambah Tugas</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="/admin/list-tugas">Lihat Tugas</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="sidebar-item  ">
-                            <a href="/admin/list-penilaian" class='sidebar-link'>
-                                <i class="bi bi-list-columns"></i>
-                                <span>Penilaian</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -158,18 +88,18 @@
     {{-- @include('layouts.extras.footer') --}}
 
 
-    <script src="{{ asset('dashboard/assets/js/bootstrap.js') }}"></script>
-    <script src="{{ asset('dashboard/assets/js/app.js') }}"></script>
+    <script src="{{ asset('dashboard/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('dashboard/js/app.js') }}"></script>
 
     <!-- Need: Apexcharts -->
-    <script src="{{ asset('dashboard/assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('dashboard/assets/js/pages/dashboard.js') }}"></script>
-    <script src="{{ asset('dashboard/assets/extensions/quill/quill.min.js') }}"></script>
-    <script src="{{ asset('dashboard/assets/js/pages/quill.js') }}"></script>
+    <script src="{{ asset('dashboard/extensions/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/pages/dashboard.js') }}"></script>
+    <script src="{{ asset('dashboard/extensions/quill/quill.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/pages/quill.js') }}"></script>
 
-    <script src="{{ asset('dashboard/assets/extensions/filepond/filepond.js') }}"></script>
-    <script src="{{ asset('dashboard/assets/extensions/toastify-js/src/toastify.js') }}"></script>
-    <script src="{{ asset('dashboard/assets/js/pages/filepond.js') }}"></script>
+    <script src="{{ asset('dashboard/extensions/filepond/filepond.js') }}"></script>
+    <script src="{{ asset('dashboard/extensions/toastify-js/src/toastify.js') }}"></script>
+    <script src="{{ asset('dashboard/js/pages/filepond.js') }}"></script>
 </body>
 
 </html>
