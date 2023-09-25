@@ -14,11 +14,26 @@ class PenyeliaController extends Controller
         return view('penyelia.status',compact('trackings'));
     }
 
-    public function tracking_surveyor(){
 
-        $trackings = Perizinan::all();
+    public function dokumen_valid(){
+        $trackings = Perizinan::where(['status_permohonan' => 'Dokumen Valid'])->get();
 
-        return view('penyelia.surveyor',compact('trackings'));
+        return view('penyelia.tracking.dokumenValid', compact('trackings'));
+    }
+
+    public function sedang_disurvey(){
+        $trackings = Perizinan::where(['status_permohonan' => 'Sedang Disurvey'])->get();
+
+        return view('penyelia.tracking.sedangDisurvey', compact('trackings'));
+    }
+
+
+
+    public function telah_disurvey(){
+
+        $trackings = Perizinan::where(['status_permohonan' => 'Telah Disurvey'])->get();
+
+        return view('penyelia.tracking.telahDisurvey',compact('trackings'));
     }
 
 

@@ -1,7 +1,76 @@
-<div class="margin m-2">
-    <a href="/tracking/pemohon" class="btn btn-light">Tracking Status Pemohonan</a>
-</div>
+{{-- Side Bar Start --}}
+<div class="sidebar-menu">
+    <ul class="menu">
+        <li class="sidebar-title">Account</li>
+        <!-- Authentication Links -->
+        @guest
+            @if (Route::has('login'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+            @endif
 
-<div class="margin m-2">
-    <a href="/tracking/surveyor" class="btn btn-light">Tracking Surveyor</a>
+            @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+            @endif
+        @else
+            <li class="sidebar-item has-sub">
+                <a href="#" class="sidebar-link">
+                    <h6 class="user-dropdown-name">{{ Auth::user()->name }}</h6>
+                </a>
+
+                <ul class="submenu">
+                    <li class="submenut-item"><a href="" class="sidebar-link">My Account</a></li>
+                    <li class="submenut-item"><a href="" class="sidebar-link" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                </ul>
+            </li>
+
+
+        @endguest
+
+        <br>
+        <li class="sidebar-title">Menu</li>
+        <li class="sidebar-item active ">
+            <a href="/penyelia" class='sidebar-link'>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item  has-sub">
+            <a href="#" class='sidebar-link'>
+                <span>Tracking Perizinan</span>
+            </a>
+            <ul class="submenu ">
+                <li class="submenu-item ">
+                    <a href="/verifikator/check-berkas" class='sidebar-link'>
+                        <span>Checking Berkas</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/verifikator/dokumen-valid" class='sidebar-link'>
+                        <span>Dokumen Valid</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/verifikator/sedang-disurvey" class='sidebar-link'>
+                        <span>Sedang Disurvey</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/verifikator/telah-disurvey" class='sidebar-link'>
+                        <span>Telah Disurvey</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
 </div>

@@ -39,7 +39,7 @@
         <br>
         <li class="sidebar-title">Menu</li>
         <li class="sidebar-item active ">
-            <a href="/admin-dashboard" class='sidebar-link'>
+            <a href="/operator" class='sidebar-link'>
                 <span>Dashboard</span>
             </a>
         </li>

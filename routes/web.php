@@ -62,7 +62,11 @@ Route::group(['middleware' => 'role:kepala-dinas'], function(){
 // Route penyelia
 Route::group(['middleware' => 'role:penyelia'], function(){
     Route::get('/penyelia',[HomeController::class,'index_penyelia'])->name('penyelia');
-    Route::get('/tracking/pemohon',[PenyeliaController::class,'tracking_pemohon']);
+    Route::get('/verifikator/check-berkas',[PenyeliaController::class,'tracking_pemohon']);
+    Route::get('/verifikator/dokumen-valid',[PenyeliaController::class,'dokumen_valid']);
+    Route::get('/verifikator/sedang-disurvey',[PenyeliaController::class,'sedang_disurvey']);
+    Route::get('/verifikator/telah-disurvey',[PenyeliaController::class,'telah_disurvey']);
+
     Route::get('/tracking/surveyor',[PenyeliaController::class,'tracking_surveyor'])->name('penyelia-surveyor.index');
     Route::get('/penyelia/edit-tracking-pemohon/{id}',[PenyeliaController::class,'edit_trackingPemohon']);
     Route::post('/penyelia/update-status',[PenyeliaController::class,'update'])->name('penyelia.update');
