@@ -13,8 +13,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
-    <link rel="stylesheet" href="{{ asset('asset/css/styles.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('template-assets/css/main/app.css') }}">
+    <link rel="shortcut icon" href="{{ asset('template-assets/images/logo/favicon.svg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('tempalte-assets/images/logo/favicon.png') }}" type="image/png">
+
+    <link rel="stylesheet" href="{{ asset('template-assets/css/shared/iconly.css') }}">
 
     <!-- Scripts -->
     <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
@@ -31,12 +34,14 @@
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        @include('layouts.components.sideBar-pemohon')
-                    </ul>
+                    <nav class="main-navbar d-flex">
+                        <div class="container d-flex">
+                            @include('layouts.components.sideBar-pemohon')
+                        </div>
+                    </nav>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -54,29 +59,44 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                            <div class="header-top-right">
+                                <div class="dropdown">
+                                    <a href="#" id="topbarUserDropdown"
+                                        class="user-dropdown d-flex align-items-center dropend dropdown-toggle "
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <div class="text">
+                                            <h6 class="user-dropdown-name">{{ Auth::user()->name }}</h6>
+                                            <p class="user-dropdown-status text-sm text-muted">
+                                                {{ Auth::user()->role }}
+                                            </p>
+                                        </div>
                                     </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                                    <ul class="dropdown-menu dropdown-menu-end shadow-lg"
+                                        aria-labelledby="topbarUserDropdown">
+                                        <li><a class="dropdown-item" href="#">My Account</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </li>
+                                <!-- Burger button responsive -->
+                                <a href="#" class="burger-btn d-block d-xl-none">
+                                    <i class="bi bi-justify fs-3"></i>
+                                </a>
+                            </div>
                         @endguest
                     </ul>
                 </div>
             </div>
         </nav>
+
 
         <main class="py-4">
             @yield('content')
@@ -86,12 +106,11 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="{{ asset('asset/libs/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('asset/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('asset/js/sidebarmenu.js') }}"></script>
-    <script src="{{ asset('asset/js/app.min.js') }}"></script>
-    <script src="{{ asset('asset/libs/simplebar/dist/simplebar.js') }}"></script>
-    <script src=" {{ asset('asset/js/dashboard.js') }}"></script>
+    <script src="{{ asset('template-assets/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('template-assets/js/app.js') }}"></script>
+    <script src="{{ asset('template-assets/js/pages/horizontal-layout.js') }}"></script>
+    <script src="{{ asset('template-assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('template-assets/js/pages/dashboard.js') }}"></script>
 </body>
 
 </html>
