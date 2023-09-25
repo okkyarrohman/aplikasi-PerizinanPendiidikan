@@ -9,12 +9,37 @@ use Illuminate\Http\Request;
 
 class PemohonController extends Controller
 {
+    public function data_pemohon(){
+
+        return view('pemohon.account.edit');
+    }
+
+    public function izin_pendirian()
+    {
+        return view('pemohon.permohonan.izinPendirian');
+    }
+
+    public function izin_penyelenggaraan()
+    {
+        return view('pemohon.permohonan.izinPenyelenggaraan');
+    }
+
+    public function pinjam_fasilitas()
+    {
+        return view('pemohon.permohonan.pinjamFasilitasPemerintah');
+    }
+
+
+
+
+
 
     public function tracking(){
         $trackings = Perizinan::paginate(10);
 
         return view('pemohon.tracking',compact('trackings'));
     }
+
 
     public function create(){
 

@@ -16,6 +16,18 @@ class SurveyorController extends Controller
         return view('surveyor.status',compact('trackings'));
     }
 
+    public function sedang_disurvey(){
+        $trackings = Perizinan::where(['status_permohonan' => 'Sedang Disurvey'])->get();
+
+        return view('surveyor.tracking.sedangDisurvey',compact('trackings'));
+    }
+
+    public function telah_disurvey(){
+        $trackings = Perizinan::where(['status_permohonan' => 'Telah Disurvey'])->get();
+
+        return view('surveyor.tracking.telahDisurvey',compact('trackings'));
+    }
+
     public function create($id){
         $perizinan = Perizinan::find($id);
 

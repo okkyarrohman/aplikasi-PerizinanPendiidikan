@@ -1,10 +1,10 @@
-@extends('layouts.app-dinas')
+@extends('layouts.app-admin')
 
 @section('content')
     <div class="container">
         <div class="head-container d-flex justify-content-lg-around">
             <div class="title">
-                <h4>Table Perizinan </h4>
+                <h4>Table Perizinan</h4>
             </div>
             <form action="" method="">
                 <div class="search">
@@ -55,6 +55,5 @@
                 </tbody>
             @endforeach
         </table>
-        {{ $trackings->links() }}
     </div>
 @endsection

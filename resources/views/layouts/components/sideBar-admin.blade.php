@@ -39,8 +39,14 @@
         <br>
         <li class="sidebar-title">Menu</li>
         <li class="sidebar-item active ">
-            <a href="/surveyor" class='sidebar-link'>
+            <a href="/admin" class='sidebar-link'>
                 <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item  ">
+            <a href="/admin/data-pengguna" class='sidebar-link'>
+                <span>Account Pengguna</span>
             </a>
         </li>
 
@@ -49,15 +55,40 @@
                 <span>Tracking Perizinan</span>
             </a>
             <ul class="submenu ">
+
                 <li class="submenu-item ">
-                    <a href="/surveyor/sedang-disurvey" class='sidebar-link'>
+                    <a href="/admin/dokumen-ditolak" class='sidebar-link'>
+                        <span>Dokumen Ditolak</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/checking-berkas" class='sidebar-link'>
+                        <span>Checking Berkas</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/dokumen-valid" class='sidebar-link'>
+                        <span>Dokumen Valid</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/dokumen-tidak-valid" class='sidebar-link'>
+                        <span>Dokumen Tidak Valid</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/sedang-disurvey" class='sidebar-link'>
                         <span>Sedang Disurvey</span>
                     </a>
                 </li>
-
                 <li class="submenu-item ">
-                    <a href="/surveyor/telah-disurvey" class='sidebar-link'>
-                        <span>Telah Disurvey</span>
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Telah Disurey</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/izin-terbit" class='sidebar-link'>
+                        <span>Izin Diterbitkan</span>
                     </a>
                 </li>
                 {{-- <li class="submenu-item ">
@@ -67,6 +98,13 @@
                 </li> --}}
             </ul>
         </li>
+
+        <li class="sidebar-item  ">
+            <a href="/chatify" class='sidebar-link'>
+                <span>Chat</span>
+            </a>
+        </li>
+
 
     </ul>
 </div>

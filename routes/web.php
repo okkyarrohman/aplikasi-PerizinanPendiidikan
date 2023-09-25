@@ -8,6 +8,7 @@ use App\Http\Controllers\PemohonController;
 use App\Http\Controllers\PenyeliaController;
 use App\Http\Controllers\SurveyorController;
 use App\Http\Controllers\DinasController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,14 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Routes Admin
 Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/admin',[HomeController::class,'index_admin'])->name('admin');
+    Route::get('/admin/data-pengguna',[AdminController::class,'data_pengguna']);
+    Route::get('/admin/dokumen-ditolak',[AdminController::class,'dokumen_ditolak']);
+    Route::get('/admin/checking-berkas',[AdminController::class,'checking_berkas']);
+    Route::get('/admin/dokumen-valid',[AdminController::class,'dokumen_valid']);
+    Route::get('/admin/dokumen-tidak-valid',[AdminController::class,'dokumenTidak_valid']);
+    Route::get('/admin/sedang-disurvey',[AdminController::class,'sedang_disurvey']);
+    Route::get('/admin/telah-disurvey',[AdminController::class,'telah_disurvey']);
+    Route::get('/admin/izin-terbit',[AdminController::class,'izin_terbit']);
 
 });
 // End Routes Admin
@@ -42,6 +51,15 @@ Route::group(['middleware' => 'role:admin'], function(){
 Route::group(['middleware' => 'role:dinas'], function(){
     Route::get('/dinas',[HomeController::class,'index_dinas'])->name('dinas');
     Route::get('/dinas/tracking',[DinasController::class,'tracking']);
+    Route::get('/dinas/dokumen-ditolak',[DinasController::class,'dokumen_ditolak']);
+    Route::get('/dinas/checking-berkas',[DinasController::class,'checking_berkas']);
+    Route::get('/dinas/dokumen-valid',[DinasController::class,'dokumen_valid']);
+    Route::get('/dinas/dokumen-tidak-valid',[DinasController::class,'dokumenTidak_valid']);
+    Route::get('/dinas/sedang-disurvey',[DinasController::class,'sedang_disurvey']);
+    Route::get('/dinas/telah-disurvey',[DinasController::class,'telah_disurvey']);
+    Route::get('/dinas/izin-terbit',[DinasController::class,'izin_terbit']);
+
+
 
 });
 // End Route dinas
@@ -66,7 +84,6 @@ Route::group(['middleware' => 'role:penyelia'], function(){
     Route::get('/verifikator/dokumen-valid',[PenyeliaController::class,'dokumen_valid']);
     Route::get('/verifikator/sedang-disurvey',[PenyeliaController::class,'sedang_disurvey']);
     Route::get('/verifikator/telah-disurvey',[PenyeliaController::class,'telah_disurvey']);
-
     Route::get('/tracking/surveyor',[PenyeliaController::class,'tracking_surveyor'])->name('penyelia-surveyor.index');
     Route::get('/penyelia/edit-tracking-pemohon/{id}',[PenyeliaController::class,'edit_trackingPemohon']);
     Route::post('/penyelia/update-status',[PenyeliaController::class,'update'])->name('penyelia.update');
@@ -82,7 +99,8 @@ Route::group(['middleware' => 'role:penyelia'], function(){
 Route::group(['middleware' => 'role:surveyor'], function(){
     Route::get('/surveyor',[HomeController::class,'index_surveyor'])->name('surveyor');
     Route::get('/surveyor/tracking',[SurveyorController::class,'tracking']);
-    Route::get('/surveyor/status',[SurveyorController::class,'status'])->name('surveyor.index');
+    Route::get('/surveyor/sedang-disurvey',[SurveyorController::class,'sedang_disurvey'])->name('surveyor.index');
+    Route::get('/surveyor/telah-disurvey',[SurveyorController::class,'telah_disurvey'])->name('surveyor.index');
     Route::get('/surveyor/edit/{id}',[SurveyorController::class,'create']);
 
     Route::post('/surveyor/store',[SurveyorController::class,'update'])->name('surveyor.update');
@@ -111,12 +129,14 @@ Route::group(['middleware' => 'role:operator'], function(){
 Route::group(['middleware' => 'role:pemohon'], function(){
 
     Route::get('/pemohon',[HomeController::class,'index_pemohon'])->name('pemohon');
+    Route::get('/data-pemohon',[PemohonController::class,'data_pemohon']);
     Route::get('/create-pemohon',[PemohonController::class,'create']);
     Route::post('/create-pemohon',[PemohonController::class,'store'])->name('pemohon.store');
     Route::get('/tracking',[PemohonController::class,'tracking']);
-    Route::get('/chat/index',[PemohonController::class,'livechat']);
-    Route::post('broadcast',[PemghonController::class,'broadcast']);
-    Route::post('recieve',[PemghonController::class,'recieve']);
+    Route::get('/pemohon/izin-pendirian',[PemohonController::class,'izin_pendirian']);
+    Route::get('/pemohon/izin-penyelenggaraan',[PemohonController::class,'izin_penyelenggaraan']);
+    Route::get('/pemohon/pinjam-fasilitas',[PemohonController::class,'pinjam_fasilitas']);
+
 
 });
 // End Route pemohon

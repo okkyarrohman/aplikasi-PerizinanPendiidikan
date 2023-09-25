@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                @include('layouts.components.sideBar-pemohon')
+                @include('layouts.components.sideBar-admin')
 
             </div>
         </div>

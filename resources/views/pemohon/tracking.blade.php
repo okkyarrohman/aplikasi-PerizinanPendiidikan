@@ -4,7 +4,7 @@
     <div class="container">
         <div class="head-container d-flex justify-content-lg-around">
             <div class="title">
-                <h4>Table cok Perizinan </h4>
+                <h4>Table Perizinan </h4>
             </div>
             <form action="" method="">
                 <div class="search">
@@ -13,7 +13,7 @@
             </form>
         </div>
 
-        <table class="table text-nowrap mb-0 align-middle table-hover">
+        <table class="table text-nowrap mb-0 align-middle table-hover" hidden>
             <thead class="text-dark fs-4">
                 <tr>
                     <th class="border-bottom-0">

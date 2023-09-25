@@ -1,10 +1,10 @@
-@extends('layouts.app-dinas')
+@extends('layouts.app-admin')
 
 @section('content')
     <div class="container">
         <div class="head-container d-flex justify-content-lg-around">
             <div class="title">
-                <h4>Table Perizinan </h4>
+                <h4>Table Perizinan</h4>
             </div>
             <form action="" method="">
                 <div class="search">
@@ -16,45 +16,42 @@
             <thead class="text-dark fs-4">
                 <tr>
                     <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Nomor Berkas</h6>
+                        <h6 class="fw-semibold mb-0">Nomor</h6>
                     </th>
                     <th class="border-bottom-0">
                         <h6 class="fw-semibold mb-0">Nama</h6>
                     </th>
                     <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">No Telepon</h6>
+                        <h6 class="fw-semibold mb-0">Email</h6>
                     </th>
                     <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Status Permohonan</h6>
+                        <h6 class="fw-semibold mb-0">Action</h6>
                     </th>
                 </tr>
             </thead>
             @php
                 $no = 1;
             @endphp
-            @foreach ($trackings as $tracking)
+            @foreach ($users as $user)
                 <tbody>
                     <tr>
                         <td class="border-bottom-0">
                             <h6 class="fw-semibold mb-0">{{ $no++ }}</h6>
                         </td>
                         <td class="border-bottom-0">
-                            <h6 class="fw-semibold mb-1">{{ $tracking->nama }}</h6>
+                            <h6 class="fw-semibold mb-1">{{ $user->name }}</h6>
                             <span class="fw-normal">Pemohon</span>
                         </td>
                         <td class="border-bottom-0">
-                            <p class="mb-0 fw-normal">{{ $tracking->telepon }}</p>
+                            <p class="mb-0 fw-normal">{{ $user->email }}</p>
                         </td>
                         <td class="border-bottom-0">
-                            <div class="d-flex align-items-center gap-2">
-                                <span
-                                    class="badge bg-primary rounded-3 fw-semibold">{{ $tracking->status_permohonan }}</span>
-                            </div>
+                            <span>lihat</span>
                         </td>
                     </tr>
                 </tbody>
             @endforeach
         </table>
-        {{ $trackings->links() }}
+        {{ $users->links() }}
     </div>
 @endsection
