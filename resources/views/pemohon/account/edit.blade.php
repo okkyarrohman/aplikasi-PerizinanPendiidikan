@@ -18,6 +18,19 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="form-group with-title">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="100"></textarea>
+                                <label>Alamat</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -31,16 +44,24 @@
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <label>Name</label>
+                                            <label>Name Lengkap</label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
                                                     <input type="text" class="form-control" placeholder="Name"
                                                         id="first-name-icon">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-person"></i>
-                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Nama Pekerjaan</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="form-group has-icon-left">
+                                                <div class="position-relative">
+                                                    <input type="text" class="form-control" placeholder="Email"
+                                                        id="first-name-icon">
                                                 </div>
                                             </div>
                                         </div>
@@ -50,24 +71,7 @@
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
-                                                    <input type="email" class="form-control" placeholder="Email"
-                                                        id="first-name-icon">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-envelope"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>Mobile</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="number" class="form-control" placeholder="Mobile">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-phone"></i>
-                                                    </div>
+                                                    <input type="email" class="form-control" placeholder="Mobile">
                                                 </div>
                                             </div>
                                         </div>
@@ -78,17 +82,6 @@
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
                                                     <input type="password" class="form-control" placeholder="Password">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-lock"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-8 offset-md-4">
-                                            <div class='form-check'>
-                                                <div class="checkbox">
-                                                    <input type="checkbox" id="checkbox2" class='form-check-input' checked>
-                                                    <label for="checkbox2">Remember Me</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -107,65 +100,67 @@
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <label>Name</label>
+                                            <label>No Telepon</label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
                                                     <input type="text" class="form-control" placeholder="Name"
                                                         id="first-name-icon">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-person"></i>
-                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Email</label>
+                                            <label>NIK</label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
-                                                    <input type="email" class="form-control" placeholder="Email"
+                                                    <input type="number" class="form-control" placeholder="Email"
                                                         id="first-name-icon">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-envelope"></i>
-                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Mobile</label>
+                                            <label>Tempat Lahir </label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
-                                                    <input type="number" class="form-control" placeholder="Mobile">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-phone"></i>
-                                                    </div>
+                                                    <input type="city" class="form-control" placeholder="Mobile">
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Password</label>
+                                            <label>Tanggal Lahir</label>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group has-icon-left">
                                                 <div class="position-relative">
-                                                    <input type="password" class="form-control" placeholder="Password">
-                                                    <div class="form-control-icon">
-                                                        <i class="bi bi-lock"></i>
-                                                    </div>
+                                                    <input type="date" class="form-control" placeholder="Password">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group col-md-8 offset-md-4">
-                                            <div class='form-check'>
-                                                <div class="checkbox">
-                                                    <input type="checkbox" id="checkbox2" class='form-check-input'
-                                                        checked>
-                                                    <label for="checkbox2">Remember Me</label>
+                                        <div class="col-md-4">
+                                            <label>Alamat</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="form-group has-icon-left">
+                                                <div class="position-relative">
+                                                    <input type="text" class="form-control" placeholder="Password">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Domisili</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="form-group has-icon-left">
+                                                <div class="position-relative">
+                                                    <input type="text" class="form-control" placeholder="Password">
                                                 </div>
                                             </div>
                                         </div>
@@ -180,8 +175,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="button">
-                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                    <div class="parent-3 d-inline-block w-100">
+                        <button type="submit"
+                            class="btn btn-outline-primary w-100 justify-center align-items-center">Submit</button>
                     </div>
                 </div>
             </div>
