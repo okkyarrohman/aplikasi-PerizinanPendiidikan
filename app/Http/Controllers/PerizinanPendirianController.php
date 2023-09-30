@@ -17,10 +17,16 @@ class PerizinanPendirianController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create_tk()
     {
 
-        return view('admin.perizinanPendirian.create');
+        return view('admin.perizinanPendirian.createTk');
+    }
+
+    public function create_sd()
+    {
+
+        return view('admin.perizinanPendirian.createSd');
     }
 
     /**

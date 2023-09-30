@@ -6,7 +6,9 @@
             <div class="col-md-12 ">
                 <div class="card align-items-center">
                     <div class="card-header align-items-center">
-                        <h4 class="card-title align-items-center">Form Pengajuan Permohonan Perizinan Pendirian TK</h4>
+                        <h4 class="card-title align-items-center">Form Pengajuan Permohonan Perizinan Penyelenggaraan
+                            Pendidikan Khusus dan Lembaga Pelatihan Keterampilan
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -16,7 +18,6 @@
                         <div class="card">
                             <div class="card-content">
                                 <div class="card-body">
-
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-12">
@@ -38,16 +39,6 @@
                                                     <label for="contact-info-vertical">No Whatsapp</label>
                                                     <input type="number" id="contact-info-vertical" class="form-control"
                                                         name="contact" placeholder="Mobile">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="password-vertical">Tipe Pemohonan</label>
-                                                    <select class="form-select" id="inputGroupSelect01">
-                                                        <option selected>Choose...</option>
-                                                        <option value="1">Pendirian TK</option>
-                                                        <option value="2">Pendirian SD/SMP/SMA</option>
-                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -91,7 +82,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 col-12">
+                    <div class="col-md-6 col-12">
                         <div class="card">
                             <div class="card-content">
                                 <div class="card-body">
@@ -99,35 +90,22 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
+                                                    <label for="first-name-vertical">Scan Surat permohonan</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
                                                         name="fname" placeholder="First Name">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
+                                                    <label for="first-name-vertical">Scan KTP penanggung Jawab</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
                                                         name="fname" placeholder="First Name">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="fname" placeholder="First Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="fname" placeholder="First Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
+                                                    <label for="first-name-vertical">Scan Surat keterangan domisili dari
+                                                        kepala desa/ lurah</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
                                                         name="fname" placeholder="First Name">
                                                 </div>
@@ -139,7 +117,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-12">
+                    <div class="col-md-6 col-12">
                         <div class="card">
                             <div class="card-content">
                                 <div class="card-body">
@@ -147,75 +125,24 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
+                                                    <label for="first-name-vertical">Scan atas Hak Tanah
+                                                        (sertifikat/segel/akta jual tanah)</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
                                                         name="fname" placeholder="First Name">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
+                                                    <label for="first-name-vertical">Scan Akta Pendirian Badan Hukum yang
+                                                        telah disahkan</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
                                                         name="fname" placeholder="First Name">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="fname" placeholder="First Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="fname" placeholder="First Name">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-12">
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="card-body">
-                                    <div class="form-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="fname" placeholder="First Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="fname" placeholder="First Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="fname" placeholder="First Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="fname" placeholder="First Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
+                                                    <label for="first-name-vertical">Scan akta perubahan badan hukum yang
+                                                        telah disahkan (S&K berlaku)</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
                                                         name="fname" placeholder="First Name">
                                                 </div>
@@ -229,8 +156,9 @@
                 </div>
                 <div class="row">
                     <div class="card align-items-center">
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="card-footer d-inline-block w-100"">
+                            <button type="submit"
+                                class="btn btn-primary w-100 justify-center align-items-center">Submit</button>
                         </div>
                     </div>
                 </div>

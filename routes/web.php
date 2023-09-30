@@ -10,6 +10,7 @@ use App\Http\Controllers\SurveyorController;
 use App\Http\Controllers\DinasController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PerizinanPendirianController;
+use App\Http\Controllers\PerizinanPenyelenggaraanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,11 +45,22 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/admin/izin-terbit',[AdminController::class,'izin_terbit']);
 
     //Route Perizinan Pendirian
+    Route::get('/admin/perizinanPendirian/create-tk',[PerizinanPendirianController::class,'create_tk']);
+    Route::get('/admin/perizinanPendirian/create-sd',[PerizinanPendirianController::class,'create_sd']);
     route::resource('admin/perizinanPendirian',PerizinanPendirianController::class,);
-
-
     //End Route Perizinan Pendirian
 
+    // Route Perizinan Penyelenggaraan
+    Route::get('admin/perizinanPenyelenggaraan/create-sd-smp',[PerizinanPenyelenggaraanController::class,'create_sd_smp']);
+    Route::get('admin/perizinanPenyelenggaraan/create-lpnp',[PerizinanPenyelenggaraanController::class,'create_lpnp']);
+    Route::get('admin/perizinanPenyelenggaraan/create-lpp',[PerizinanPenyelenggaraanController::class,'create_lpp']);
+    Route::get('admin/perizinanPenyelenggaraan/create-lpts',[PerizinanPenyelenggaraanController::class,'create_lpts']);
+    Route::get('admin/perizinanPenyelenggaraan/create-pklpk',[PerizinanPenyelenggaraanController::class,'create_pklpk']);
+    Route::get('admin/perizinanPenyelenggaraan/create-ppo',[PerizinanPenyelenggaraanController::class,'create_ppo']);
+    Route::get('admin/perizinanPenyelenggaraan/create-ptn-univ',[PerizinanPenyelenggaraanController::class,'create_ptn_univ']);
+
+    route::resource('admin/perizinanPenyelenggaraan',PerizinanPenyelenggaraanController::class,);
+    // End Route Perizinan Penyelenggaraan
 
     //Arsip
     Route::get('/admin/arsip',[AdminController::class,'arsip']);

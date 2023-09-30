@@ -61,16 +61,62 @@
                     </a>
                 </li>
                 <li class="submenu-item">
-                    <a href="/admin/perizinanPendirian/create" class='sidebar-link'>Form Pengajuan</a>
+                    <a href="/admin/perizinanPendirian/create-tk" class='sidebar-link'>Form Pendirian TK</a>
+                </li>
+                <li class="submenu-item">
+                    <a href="/admin/perizinanPendirian/create-sd" class='sidebar-link'>Form Pendirian SD/SMP/SMA</a>
                 </li>
             </ul>
         </li>
 
-        <li class="sidebar-item  ">
-            <a href="/admin/index-perizinan-penyelenggaraan" class='sidebar-link'>
+
+        <li class="sidebar-item has-sub">
+            <a href="#" class="sidebar-link">
                 <span>Permohonan Perizinan Penyelenggaraan</span>
             </a>
+            <ul class="submenu">
+                <li class="submenu-item">
+                    <a href="/admin/perizinanPenyelenggaraan" class='sidebar-link'>
+                        <span>Persyaratan</span>
+                    </a>
+                </li>
+                <li class="submenu-item">
+                    <a href="/admin/perizinanPenyelenggaraan/create-sd-smp" class='sidebar-link'>Form Sekolah Dasar dan
+                        Menengah</a>
+                </li>
+                <li class="submenu-item">
+                    <a href="/admin/perizinanPenyelenggaraan/create-ptn-univ" class='sidebar-link'>Form Perguruan Tinggi
+                        dan Universitas</a>
+                </li>
+
+                <li class="submenu-item">
+                    <a href="/admin/perizinanPenyelenggaraan/create-lpp" class='sidebar-link'>Form Lembaga Pelatihan
+                        Profesi</a>
+                </li>
+
+                <li class="submenu-item">
+                    <a href="/admin/perizinanPenyelenggaraan/create-lpnp" class='sidebar-link'>Form Lembaga Pendidikan
+                        Non-Pemerintah</a>
+                </li>
+
+                <li class="submenu-item">
+                    <a href="/admin/perizinanPenyelenggaraan/create-ppo" class='sidebar-link'>Form Pusat Pembelajaran
+                        Online</a>
+                </li>
+
+                <li class="submenu-item">
+                    <a href="/admin/perizinanPenyelenggaraan/create-lpts" class='sidebar-link'>Form Lembaga Pendidikan
+                        Tinggi Swasta</a>
+                </li>
+
+                <li class="submenu-item">
+                    <a href="/admin/perizinanPenyelenggaraan/create-pklpk" class='sidebar-link'>Form Pendidikan Khusus
+                        dan Lembaga Pelatihan Keterampilan</a>
+                </li>
+            </ul>
         </li>
+
+
 
         <li class="sidebar-item  ">
             <a href="/admin/index-peminjaman-fasilitas" class='sidebar-link'>
