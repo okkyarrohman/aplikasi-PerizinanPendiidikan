@@ -100,6 +100,7 @@
     <script src="{{ asset('dashboard/extensions/filepond/filepond.js') }}"></script>
     <script src="{{ asset('dashboard/extensions/toastify-js/src/toastify.js') }}"></script>
     <script src="{{ asset('dashboard/js/pages/filepond.js') }}"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 
 </html>

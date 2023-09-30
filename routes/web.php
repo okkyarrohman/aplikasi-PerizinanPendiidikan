@@ -9,6 +9,7 @@ use App\Http\Controllers\PenyeliaController;
 use App\Http\Controllers\SurveyorController;
 use App\Http\Controllers\DinasController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PerizinanPendirianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,16 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/admin/sedang-disurvey',[AdminController::class,'sedang_disurvey']);
     Route::get('/admin/telah-disurvey',[AdminController::class,'telah_disurvey']);
     Route::get('/admin/izin-terbit',[AdminController::class,'izin_terbit']);
+
+    //Route Perizinan Pendirian
+    route::resource('admin/perizinanPendirian',PerizinanPendirianController::class,);
+
+
+    //End Route Perizinan Pendirian
+
+
+    //Arsip
+    Route::get('/admin/arsip',[AdminController::class,'arsip']);
 
 });
 // End Routes Admin

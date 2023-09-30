@@ -50,6 +50,34 @@
             </a>
         </li>
 
+        <li class="sidebar-item has-sub">
+            <a href="#" class="sidebar-link">
+                <span>Permohonan Perizinan Pendirian</span>
+            </a>
+            <ul class="submenu">
+                <li class="submenu-item">
+                    <a href="/admin/perizinanPendirian" class='sidebar-link'>
+                        <span>Persyaratan</span>
+                    </a>
+                </li>
+                <li class="submenu-item">
+                    <a href="/admin/perizinanPendirian/create" class='sidebar-link'>Form Pengajuan</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sidebar-item  ">
+            <a href="/admin/index-perizinan-penyelenggaraan" class='sidebar-link'>
+                <span>Permohonan Perizinan Penyelenggaraan</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item  ">
+            <a href="/admin/index-peminjaman-fasilitas" class='sidebar-link'>
+                <span>Permohonan Peminjaman Fasilitas Pemerintah</span>
+            </a>
+        </li>
+
         <li class="sidebar-item  has-sub">
             <a href="#" class='sidebar-link'>
                 <span>Tracking Perizinan</span>
@@ -105,6 +133,13 @@
             </a>
         </li>
 
+        <li class="sidebar-item ">
+            <a href="/admin/arsip" class="sidebar-link">
+                <span>
+                    History & Arsip Perizinan
+                </span>
+            </a>
+        </li>
 
     </ul>
 </div>

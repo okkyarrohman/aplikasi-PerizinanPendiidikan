@@ -65,5 +65,11 @@ class AdminController extends Controller
     }
 
 
+    public function arsip()
+    {
+        $trackings = Perizinan::paginate(10);
+        return view('admin.arsip',compact('trackings'));
+    }
+
 }
 
