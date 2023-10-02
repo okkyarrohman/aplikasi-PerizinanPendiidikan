@@ -9,6 +9,7 @@ use App\Http\Controllers\PenyeliaController;
 use App\Http\Controllers\SurveyorController;
 use App\Http\Controllers\DinasController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PeminjamanFasilitasController;
 use App\Http\Controllers\PerizinanPendirianController;
 use App\Http\Controllers\PerizinanPenyelenggaraanController;
 
@@ -61,6 +62,15 @@ Route::group(['middleware' => 'role:admin'], function(){
 
     route::resource('admin/perizinanPenyelenggaraan',PerizinanPenyelenggaraanController::class,);
     // End Route Perizinan Penyelenggaraan
+
+    // Route Peminjaman Fasilitas
+    Route::get('/admin/peminjamanFasilitas/create-pk',[PeminjamanFasilitasController::class,'create_pk']);
+    Route::get('/admin/peminjamanFasilitas/create-lk',[PeminjamanFasilitasController::class,'create_lk']);
+    Route::get('/admin/peminjamanFasilitas/create-gsp',[PeminjamanFasilitasController::class,'create_gsp']);
+    Route::get('/admin/peminjamanFasilitas/create-tk',[PeminjamanFasilitasController::class,'create_tk']);
+
+
+    // End Route Peminjaman Fasilitas
 
     //Arsip
     Route::get('/admin/arsip',[AdminController::class,'arsip']);

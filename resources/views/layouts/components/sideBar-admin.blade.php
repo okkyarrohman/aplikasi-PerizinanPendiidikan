@@ -32,12 +32,10 @@
                     </li>
                 </ul>
             </li>
-
-
         @endguest
 
-        <br>
         <li class="sidebar-title">Menu</li>
+        <hr>
         <li class="sidebar-item active ">
             <a href="/admin" class='sidebar-link'>
                 <span>Dashboard</span>
@@ -50,6 +48,8 @@
             </a>
         </li>
 
+        <li class="sidebar-title">Form Pengajuan</li>
+        <hr>
         <li class="sidebar-item has-sub">
             <a href="#" class="sidebar-link">
                 <span>Permohonan Perizinan Pendirian</span>
@@ -116,20 +116,40 @@
             </ul>
         </li>
 
-
-
-        <li class="sidebar-item  ">
-            <a href="/admin/index-peminjaman-fasilitas" class='sidebar-link'>
+        <li class="sidebar-item has-sub">
+            <a href="#" class="sidebar-link">
                 <span>Permohonan Peminjaman Fasilitas Pemerintah</span>
             </a>
+            <ul class="submenu">
+                <li class="submenu-item">
+                    <a href="/admin/peminjamanFasilitas" class='sidebar-link'>
+                        <span>Persyaratan</span>
+                    </a>
+                </li>
+                <li class="submenu-item">
+                    <a href="/admin/peminjamanFasilitas/create-pk" class='sidebar-link'>Form Pendopo Kota</a>
+                </li>
+                <li class="submenu-item">
+                    <a href="/admin/peminjamanFasilitas/create-lk" class='sidebar-link'>Form Lapangan Kota</a>
+                </li>
+                <li class="submenu-item">
+                    <a href="/admin/peminjamanFasilitas/create-gsp" class='sidebar-link'>Form Gedung Serbaguna
+                        Pemkot</a>
+                </li>
+                <li class="submenu-item">
+                    <a href="/admin/peminjamanFasilitas/create-tk" class='sidebar-link'>Form Taman Kota</a>
+                </li>
+            </ul>
         </li>
 
+
+        <li class="sidebar-title">Tracking</li>
+        <hr>
         <li class="sidebar-item  has-sub">
             <a href="#" class='sidebar-link'>
-                <span>Tracking Perizinan</span>
+                <span>Perizinan Pendirian</span>
             </a>
             <ul class="submenu ">
-
                 <li class="submenu-item ">
                     <a href="/admin/dokumen-ditolak" class='sidebar-link'>
                         <span>Dokumen Ditolak</span>
@@ -160,19 +180,195 @@
                         <span>Telah Disurey</span>
                     </a>
                 </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Survey Sedang Dicheck</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Hasil Survey Diterima</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Hasil Survey Ditolak</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Proses Tanda Tangan Kepala Dinas</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Proses Tanda Tangan Walikota</span>
+                    </a>
+                </li>
+
                 <li class="submenu-item ">
                     <a href="/admin/izin-terbit" class='sidebar-link'>
                         <span>Izin Diterbitkan</span>
                     </a>
                 </li>
-                {{-- <li class="submenu-item ">
-                    <a href="/admin/data-murid" class='sidebar-link'>
-                        <span>Data Murid</span>
-                    </a>
-                </li> --}}
             </ul>
         </li>
 
+        <li class="sidebar-item  has-sub">
+            <a href="#" class='sidebar-link'>
+                <span>Perizinan Penyelenggaraan</span>
+            </a>
+            <ul class="submenu ">
+                <li class="submenu-item ">
+                    <a href="/admin/dokumen-ditolak" class='sidebar-link'>
+                        <span>Dokumen Ditolak</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/checking-berkas" class='sidebar-link'>
+                        <span>Checking Berkas</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/dokumen-valid" class='sidebar-link'>
+                        <span>Dokumen Valid</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/dokumen-tidak-valid" class='sidebar-link'>
+                        <span>Dokumen Tidak Valid</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/sedang-disurvey" class='sidebar-link'>
+                        <span>Sedang Disurvey</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Telah Disurey</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Survey Sedang Dicheck</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Hasil Survey Diterima</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Hasil Survey Ditolak</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Proses Tanda Tangan Kepala Dinas</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Proses Tanda Tangan Walikota</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/izin-terbit" class='sidebar-link'>
+                        <span>Izin Diterbitkan</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sidebar-item  has-sub">
+            <a href="#" class='sidebar-link'>
+                <span>Peminjaman Fasililtas</span>
+            </a>
+            <ul class="submenu ">
+                <li class="submenu-item ">
+                    <a href="/admin/dokumen-ditolak" class='sidebar-link'>
+                        <span>Dokumen Ditolak</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/checking-berkas" class='sidebar-link'>
+                        <span>Checking Berkas</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/dokumen-valid" class='sidebar-link'>
+                        <span>Dokumen Valid</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/dokumen-tidak-valid" class='sidebar-link'>
+                        <span>Dokumen Tidak Valid</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/sedang-disurvey" class='sidebar-link'>
+                        <span>Sedang Disurvey</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Telah Disurey</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Survey Sedang Dicheck</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Hasil Survey Diterima</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Hasil Survey Ditolak</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Proses Tanda Tangan Kepala Dinas</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/telah-disurvey" class='sidebar-link'>
+                        <span>Proses Tanda Tangan Walikota</span>
+                    </a>
+                </li>
+
+                <li class="submenu-item ">
+                    <a href="/admin/izin-terbit" class='sidebar-link'>
+                        <span>Izin Diterbitkan</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sidebar-title">Feature Lainnya</li>
+        <hr>
         <li class="sidebar-item  ">
             <a href="/chatify" class='sidebar-link'>
                 <span>Chat</span>

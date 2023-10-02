@@ -41,6 +41,8 @@
                                                         name="contact" placeholder="Mobile">
                                                 </div>
                                             </div>
+                                            <input type="hidden" name="tipe_dokumen" value="Perizinan Pendirian SD" hidden>
+                                            <input type="hidden" name="status_dokumen" value="Checking Berkas" hidden>
                                         </div>
                                     </div>
                                 </div>
