@@ -100,6 +100,12 @@
                     <option value="Dokumen Tidak Valid">Tolak Dokumen Permohonan</option>
                 </select>
             </div>
+
+            <div class="mb-3 m-5 w-50">
+                {!! QrCode::size(250)->color(150, 90, 10)->backgroundColor(10, 14, 244)->generate('Make me a QrCode!') !!}
+                {!! QrCode::format('png')->size(399)->color(40, 40, 40)->generate('Make me a QrCode!') !!}
+
+            </div>
         </div>
         <div class="parent-3 m-3 d-inline-block w-100">
             <button type="submit" class="btn btn-outline-primary w-100 justify-center align-items-center">Submit</button>

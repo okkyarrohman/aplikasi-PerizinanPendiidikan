@@ -87,7 +87,7 @@
 
     {{-- @include('layouts.extras.footer') --}}
 
-
+    @stack('scripts')
     <script src="{{ asset('dashboard/js/bootstrap.js') }}"></script>
     <script src="{{ asset('dashboard/js/app.js') }}"></script>
 
