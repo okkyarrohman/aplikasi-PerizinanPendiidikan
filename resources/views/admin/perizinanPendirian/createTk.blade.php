@@ -72,7 +72,7 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Lokasi Lengkap</label>
-                                                    <textarea type="lokasi" id="first-name-vertical" class="form-control" name="fname" placeholder="First Name"></textarea>
+                                                    <textarea type="lokasi" id="first-name-vertical" class="form-control" name="lokasi" placeholder="First Name"></textarea>
                                                 </div>
                                             </div>
                                         </div>

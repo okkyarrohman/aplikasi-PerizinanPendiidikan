@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('longtitude');
             $table->string('latitude');
             $table->string('lokasi')->nullable();
+            // PerizinanpPendirianTK
             $table->string('surat_permohonan')->nullable();
             $table->string('ktp')->nullable();
             $table->string('suket_domisili')->nullable();
@@ -35,6 +36,11 @@ return new class extends Migration
             $table->string('sk_izinOperasional')->nullable();
             $table->string('sertif_bpjs_sehat')->nullable();
             $table->string('sertif_bpjs_kerja')->nullable();
+
+            // PendirianSD/SMP/SMA
+
+            $table->string('dokumen_survey')->nullable();
+            $table->string('surat_terbit')->nullable();
             $table->timestamps();
         });
     }
