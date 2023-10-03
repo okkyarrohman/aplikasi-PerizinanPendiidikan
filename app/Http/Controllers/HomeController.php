@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
 
     /**
@@ -22,8 +23,10 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function index(){
-        return view('pemohon.dashboard');
+    public function index(Request $request){
+        $verified   =  User::where($request->id)->get();
+
+        return view('pemohon.dashboard',compact('verified'));
     }
 
     public function index_admin(){

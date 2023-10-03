@@ -10,7 +10,8 @@
                     </div>
                 </div>
             </div>
-            <form class="form form-vertical">
+            <form class="form" method="POST" action="{{ route('store.tk') }}" enctype="multipart/form-data">
+                @csrf
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="card">
@@ -91,8 +92,14 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Scan Surat permohonan</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="surat_permohonan" placeholder="First Name">
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('surat_permohonan') is-invalid @enderror"
+                                                        name="surat_permohonan" placeholder="First Name" accept="pdf*/">
+                                                    @error('surat_permohonan')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -239,6 +246,5 @@
                 </div>
             </form>
         </div>
-    </div>
     </div>
 @endsection

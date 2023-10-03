@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -53,6 +54,18 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'telepon' => ['required', 'string'],
+            'pekerjaan' => ['required', 'string'],
+            'nik' => ['required', 'string'],
+            'tanggal_lahir' => ['required', 'string'],
+            'alamat' => ['required', 'string'],
+            'domisili' => ['required', 'string'],
+            'kode_pos' => ['required', 'string'],
+            'kota' => ['required', 'string'],
+            'kecamatan' => ['required', 'string'],
+            'kelurahan' => ['required', 'string'],
+            'desa' => ['required', 'string'],
+
         ]);
     }
 
@@ -68,7 +81,19 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'telepon' => $data['telepon'],
+            'pekerjaan' => $data['pekerjaan'],
+            'nik' => $data['nik'],
+            'tanggal_lahir' => $data['tanggal_lahir'],
+            'alamat' => $data['alamat'],
+            'domisili' => $data['domisili'],
+            'kode_pos' => $data['kode_pos'],
+            'kota' => $data['kota'],
+            'kecamatan' => $data['kecamatan'],
+            'kelurahan' => $data['kelurahan'],
+            'desa' => $data['desa'],
         ]);
+
         return $newUser->assignRole('pemohon');
     }
 }
