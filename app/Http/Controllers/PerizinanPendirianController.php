@@ -87,15 +87,15 @@ class PerizinanPendirianController extends Controller
 
     public function store_tk(Request $req)
     {
-        $validate = $req->validate([
-            'nama' => ['required','string'],
-            'email' => ['required','string'],
-            'contact' => ['required'],
-            'tipe_dokumen' => ['required'],
-            'status_dokumen' => ['required'],
-            'longtitude' => ['required'],
-            'latitude' => ['required'],
-            'lokasi' => ['required'],
+        $req->validate([
+            'nama' => ['string'],
+            'email' => ['string'],
+            'telepon' => ['required'],
+            // 'tipe_dokumen' => ['required'],
+            // 'status_dokumen' => ['required'],
+            // 'longtitude' => ['required'],
+            // 'latitude' => ['required'],
+
 
             // Validate File Untuk Pendirian TK
             'surat_permohonan' => ['max:300','mimes:pdf'], //Maks = 300Kb
@@ -116,48 +116,31 @@ class PerizinanPendirianController extends Controller
 
         ]);
 
-
         $permohonan = New PerizinanPendirian;
         $permohonan->nama = $req->nama;
         $permohonan->email = $req->email;
-        $permohonan->contact = $req->contact;
-        $permohonan->tipe_dokumen = $req->tipe_dokumen;
+        $permohonan->telepon = $req->telepon;
         $permohonan->status_dokumen = $req->status_dokumen;
+        $permohonan->tipe_dokumen = $req->tipe_dokumen;
         $permohonan->longtitude = $req->longtitude;
         $permohonan->latitude = $req->latitude;
         $permohonan->lokasi = $req->lokasi;
 
+
         // File
-        // $permohonan->surat_permohonan = $surat_permohonan;
+        if($req->hasFile('surat_permohonan')){
+            $surat_permohonan = $req->file('surat_permohonan');
+            $extension = $surat_permohonan->getClientOriginalName();
+            $fotoName = date('YmdHis').".".$extension;
+            $surat_permohonan->move(storage_path('app/public/perizinanPendirian/tk/surat_permohonan',date('YmdHis').".".$req->file('surat_permohonan')->getClientOriginalName()),$fotoName);
+            $permohonan->surat_permohonan = date('YmdHis').".".$req->file('surat_permohonan')->getClientOriginalName();
+        }
 
-
-        dd($permohonan);
+        // dd($permohonan);
         $permohonan->save();
 
-        // if($req->tipe_dokumen == 'Perizinan Pendirian TK')
-        // {
-        //     if($req->hasFile('surat_permohonan'))
-        //     {
-        //         $surat_permohonan = $req->file('surat_permohonan');
-        //         $extension = time().'_'.$surat_permohonan->getClientOriginalName();
-        //         $fotoName = $extension;
-        //         $surat_permohonan->move(storage_path('app/public/perizinanPendirian/tk/surat_permohonan',time().'_'.$req->file('surat_permohonan')->getClientOriginalName()),$fotoName);
-        //         $permohonan->surat_permohonan = $req->file('surat_permohonan')->getClientOriginalName();
-        //     }
-        //     dd($permohonan);
-        //     $permohonan->save();
-        //     return redirect()->route('admin')->with('success','Permohonan Berhasil');
 
-        // }
-        // if($req->tipe_dokumen == 'Perizinan Pendirian SD')
-        // {
-
-        // }
-
-
-
-
-
+        return redirect()->route('admin')->with('success','Permohonan Berhasil');
         }
 
 

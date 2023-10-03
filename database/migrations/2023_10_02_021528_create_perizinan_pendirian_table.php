@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('status_dokumen');
             $table->string('longtitude');
             $table->string('latitude');
-            $table->string('lokasi');
+            $table->string('lokasi')->nullable();
             $table->string('surat_permohonan')->nullable();
             $table->string('ktp')->nullable();
             $table->string('suket_domisili')->nullable();
