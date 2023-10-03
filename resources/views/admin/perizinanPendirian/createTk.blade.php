@@ -105,31 +105,55 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Scan KTP penanggung Jawab</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('ktp') is-invalid @enderror"
                                                         name="ktp" placeholder="First Name">
+                                                    @error('ktp')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Scan Surat keterangan domisili dari
                                                         kepala desa/ lurah</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('suket_domisili') is-invalid @enderror"
                                                         name="suket_domisili" placeholder="First Name">
+                                                    @error('suket_domisili')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Susunan pengurus dan rincian
                                                         tugas</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('pengurus') is-invalid @enderror"
                                                         name="pengurus" placeholder="First Name">
+                                                    @error('pengurus')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Scan Izin Mendirikan Bangunan</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('suket_mendirikan') is-invalid @enderror"
                                                         name="suket_mendirikan" placeholder="First Name">
+                                                    @error('suket_mendirikan')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
@@ -149,32 +173,56 @@
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Scan atas Hak Tanah
                                                         (sertifikat/segel/akta jual tanah)</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('suket_tanah') is-invalid @enderror"
                                                         name="suket_tanah" placeholder="First Name">
+                                                    @error('suket_tanah')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Scan Akta Pendirian Badan Hukum yang
                                                         telah disahkan</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('suket_pbh') is-invalid @enderror"
                                                         name="suket_pbh" placeholder="First Name">
+                                                    @error('suket_pbh')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Scan akta perubahan badan hukum yang
                                                         telah disahkan (S&K berlaku)</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('suket_perubahanPBH') is-invalid @enderror"
                                                         name="suket_perubahanPBH" placeholder="First Name">
+                                                    @error('suket_perubahanPBH')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Rencana Induk Pengembangan TK(S&K
                                                         berlaku)</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('suket_rip') is-invalid @enderror"
                                                         name="suket_rip" placeholder="First Name">
+                                                    @error('suket_rip')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
@@ -193,40 +241,70 @@
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Rencana pencapaian standar
                                                         penyelenggaraan</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('suket_psp') is-invalid @enderror"
                                                         name="suket_psp" placeholder="First Name">
+                                                    @error('suket_psp')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Surat kuasa perizinan (S&K
                                                         berlaku)</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('sukas_perizinan') is-invalid @enderror"
                                                         name="sukas_perizinan" placeholder="First Name">
+                                                    @error('sukas_perizinan')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Scan SK dan izin Operasional
                                                         sebelumnya (S&K berlaku)</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('sk_izinOperasional') is-invalid @enderror"
                                                         name="sk_izinOperasional" placeholder="First Name">
+                                                    @error('sk_izinOperasional')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Scan sertifikat keikutsertaan BPJS
                                                         kesehatan</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('sertif_bpjs_sehat') is-invalid @enderror"
                                                         name="sertif_bpjs_sehat" placeholder="First Name">
+                                                    @error('sertif_bpjs_sehat')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Scan sertifikat keikutsertaan BPJS
                                                         ketenagakerjaan</label>
-                                                    <input type="file" id="first-name-vertical" class="form-control"
+                                                    <input type="file" id="first-name-vertical"
+                                                        class="form-control @error('sertif_bpjs_kerja') is-invalid @enderror"
                                                         name="sertif_bpjs_kerja" placeholder="First Name">
+                                                    @error('sertif_bpjs_kerja')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>

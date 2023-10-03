@@ -80,7 +80,10 @@ class PerizinanPendirianController extends Controller
         $permohonan->lokasi = $req->lokasi;
 
 
-        // File
+        // Upload File Pendirian TK
+        if($req->file())
+        {
+
         if($req->hasFile('surat_permohonan')){
             $surat_permohonan = $req->file('surat_permohonan');
             $extension = $surat_permohonan->getClientOriginalName();
@@ -192,17 +195,10 @@ class PerizinanPendirianController extends Controller
             $sertif_bpjs_kerja->move(storage_path('app/public/perizinanPendirian/tk/sertif_bpjs_kerja',date('YmdHis').".".$req->file('sertif_bpjs_kerja')->getClientOriginalName()),$fotoName);
             $permohonan->sertif_bpjs_kerja = date('YmdHis').".".$req->file('sertif_bpjs_kerja')->getClientOriginalName();
         }
+        }
 
-
-
-        // dd($permohonan);
 
         $permohonan->save();
-
-
-
-
-
         return redirect()->route('admin')->with('success','Permohonan Berhasil');
         }
 
