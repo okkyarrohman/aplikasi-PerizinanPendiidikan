@@ -17,6 +17,14 @@ class PerizinanPendirianController extends Controller
         return view('admin.perizinanPendirian.index');
     }
 
+    public function trackings($id)
+    {
+        $permohonan = PerizinanPendirian::find($id);
+
+        return view('admin.perizinanPendirian.tracking',compact('permohonan'));
+
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -44,15 +52,14 @@ class PerizinanPendirianController extends Controller
             'nama' => ['string'],
             'email' => ['string'],
             'telepon' => ['required'],
-            // 'tipe_dokumen' => ['required'],
-            // 'status_dokumen' => ['required'],
-            // 'longtitude' => ['required'],
-            // 'latitude' => ['required'],
-
+            'tipe_dokumen' => ['required'],
+            'status_dokumen' => ['required'],
+            'longtitude' => ['required'],
+            'latitude' => ['required'],
 
             // Validate File Untuk Pendirian TK
             'surat_permohonan' => ['max:300','mimes:pdf'], //Maks = 300Kb
-            'ktp' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'ktp' => ['max:300','mimes:pdf,jpg,jpeg,png'], //Maks = 300Kb
             'suket_domisili' => ['max:300','mimes:pdf'], //Maks = 300Kb
             'pengurus' => ['max:300','mimes:pdf'], //Maks = 300Kb
             'suket_mendirikan' => ['max:300','mimes:pdf'], //Maks = 300Kb
@@ -70,6 +77,7 @@ class PerizinanPendirianController extends Controller
         ]);
 
         $permohonan = New PerizinanPendirian;
+        $permohonan->id = $req->id;
         $permohonan->nama = $req->nama;
         $permohonan->email = $req->email;
         $permohonan->telepon = $req->telepon;
@@ -199,8 +207,8 @@ class PerizinanPendirianController extends Controller
 
 
         $permohonan->save();
-        return redirect()->route('admin')->with('success','Permohonan Berhasil');
-        }
+        return redirect()->route('trackings')->with('id','Permohonan Berhasil');
+    }
 
 
 
@@ -208,9 +216,9 @@ class PerizinanPendirianController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show_tk_cb(string $id)
     {
-        //
+
     }
 
     /**

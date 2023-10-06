@@ -36,6 +36,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Routes Admin
 Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/admin',[HomeController::class,'index_admin'])->name('admin');
+    Route::get('/admin/tracking/{id}',[PerizinanPendirianController::class,'trackings'])->name('trackings');
+
+    // Tracking
     Route::get('/admin/data-pengguna',[AdminController::class,'data_pengguna']);
     Route::get('/admin/dokumen-ditolak',[AdminController::class,'dokumen_ditolak']);
     Route::get('/admin/checking-berkas',[AdminController::class,'checking_berkas']);
@@ -44,6 +47,7 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/admin/sedang-disurvey',[AdminController::class,'sedang_disurvey']);
     Route::get('/admin/telah-disurvey',[AdminController::class,'telah_disurvey']);
     Route::get('/admin/izin-terbit',[AdminController::class,'izin_terbit']);
+    // Tracking
 
     //Route Perizinan Pendirian
     Route::get('/admin/perizinanPendirian/create-tk',[PerizinanPendirianController::class,'create_tk']);

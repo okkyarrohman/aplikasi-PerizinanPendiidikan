@@ -47,8 +47,7 @@
                         </td>
                         <td class="border-bottom-0">
                             <div class="d-flex align-items-center gap-2">
-                                <span
-                                    class="badge bg-primary rounded-3 fw-semibold">{{ $tracking->status_permohonan }}</span>
+                                <span class="badge bg-primary rounded-3 fw-semibold">{{ $tracking->status_dokumen }}</span>
                             </div>
                         </td>
                     </tr>
