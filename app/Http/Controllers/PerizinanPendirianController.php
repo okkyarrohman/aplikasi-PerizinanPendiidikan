@@ -207,7 +207,10 @@ class PerizinanPendirianController extends Controller
 
 
         $permohonan->save();
-        return redirect()->route('trackings')->with('id','Permohonan Berhasil');
+        return redirect()
+            ->route('trackings')
+            ->with('success','Permohonan Berhasil');
+
     }
 
 
