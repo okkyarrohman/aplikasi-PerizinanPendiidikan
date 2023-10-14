@@ -13,6 +13,25 @@ return new class extends Migration
     {
         Schema::create('perizinan_penyelenggaraan', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('email');
+            $table->string('telepon');
+            $table->string('tipe_dokumen');
+            $table->string('status_dokumen');
+            $table->string('longtitude');
+            $table->string('latitude');
+            $table->string('lokasi')->nullable();
+            // file
+            $table->string('doc_pendirian')->nullable();
+            $table->string('identitas_pemilik')->nullable();
+            $table->string('identitas_pengajar')->nullable();
+            $table->string('kualifikasi_pengajar')->nullable();
+            $table->string('kurikulum')->nullable();
+            $table->string('doc_keuangan')->nullable();
+            $table->string('surat_otorisasi')->nullable();
+            $table->string('program_akademik')->nullable();
+            $table->string('sarpras')->nullable();
+            // end file
             $table->timestamps();
         });
     }

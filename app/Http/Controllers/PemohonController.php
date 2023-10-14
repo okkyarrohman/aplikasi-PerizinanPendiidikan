@@ -14,38 +14,62 @@ class PemohonController extends Controller
         return view('pemohon.account.edit');
     }
 
-    public function izin_pendirian()
+    // Create view for Perizinan Pendirian
+    public function create_tk()
     {
-        return view('pemohon.permohonan.izinPendirian');
+
+        return view('pemohon.perizinanPendirian.createTk');
     }
 
-    public function izin_penyelenggaraan()
+    public function create_sd()
     {
-        return view('pemohon.permohonan.izinPenyelenggaraan');
+        return view('pemohon.perizinanPendirian.createSd');
     }
 
-    public function pinjam_fasilitas()
+    // End Create view for Perizinan Pendirian
+
+
+    // Create View for Perizinan Penyelenggaraan
+    public function create_sd_smp()
     {
-        return view('pemohon.permohonan.pinjamFasilitasPemerintah');
+        return view('pemohon.perizinanPenyelenggaraan.sd-smp.create');
     }
 
+    public function create_ptn_univ()
+    {
+        return view('pemohon.perizinanPenyelenggaraan.ptn-univ.create');
 
-
-
-
-
-    public function tracking(){
-        $trackings = Perizinan::paginate(10);
-
-        return view('pemohon.tracking',compact('trackings'));
     }
 
-
-    public function create(){
-
-
-        return view('pemohon.create');
+    public function create_lpp()
+    {
+        return view('pemohon.perizinanPenyelenggaraan.lpp.create');
     }
+
+    public function create_lpnp()
+    {
+        return view('pemohon.perizinanPenyelenggaraan.lpnp.create');
+    }
+
+    public function create_ppo()
+    {
+        return view('pemohon.perizinanPenyelenggaraan.ppo.create');
+    }
+
+    public function create_lpts()
+    {
+        return view('pemohon.perizinanPenyelenggaraan.lpts.create');
+    }
+
+    public function create_pklpk()
+    {
+        return view('pemohon.perizinanPenyelenggaraan.pklpk.create');
+    }
+    //  End Create view for Perizinan Penyelenggaraan
+
+
+
+
 
 
     public function store(Request $request){

@@ -1,4 +1,4 @@
-@extends('layouts.app-admin')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -6,8 +6,8 @@
             <div class="col-md-12 ">
                 <div class="card align-items-center">
                     <div class="card-header align-items-center">
-                        <h4 class="card-title align-items-center">Form Pengajuan Permohonan Peminjaman Fasilitas Gedung
-                            Serbaguna Pemkot
+                        <h4 class="card-title align-items-center">Form Pengajuan Permohonan Perizinan Penyelenggaraan
+                            Pendidikan Khusus dan Lembaga Pelatihan Keterampilan
                         </h4>
                     </div>
                 </div>

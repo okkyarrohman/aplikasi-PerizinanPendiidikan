@@ -36,7 +36,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Routes Admin
 Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/admin',[HomeController::class,'index_admin'])->name('admin');
-    Route::get('/admin/tracking/{id}',[PerizinanPendirianController::class,'trackings'])->name('trackings');
+    Route::get('/admin/tracking',[PerizinanPendirianController::class,'trackings'])->name('trackings');
 
     // Tracking
     Route::get('/admin/data-pengguna',[AdminController::class,'data_pengguna']);
@@ -175,10 +175,21 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::get('/create-pemohon',[PemohonController::class,'create']);
     Route::post('/create-pemohon',[PemohonController::class,'store'])->name('pemohon.store');
     Route::get('/tracking',[PemohonController::class,'tracking']);
-    Route::get('/pemohon/izin-pendirian',[PemohonController::class,'izin_pendirian']);
-    Route::get('/pemohon/izin-penyelenggaraan',[PemohonController::class,'izin_penyelenggaraan']);
-    Route::get('/pemohon/pinjam-fasilitas',[PemohonController::class,'pinjam_fasilitas']);
 
+    // Perizinan Pendirian create
+    Route::get('/pemohon/perizinanPendirian/create-tk',[PemohonController::class,'create_tk']);
+    Route::get('/pemohon/perizinanPendirian/create-sd',[PemohonController::class,'create_sd']);
+    // End Perizinan Pendirian create
+
+    // Perizinan Penyelenggaraan create
+    Route::get('/pemohon/perizinanPenyelenggaraan/create_sd_smp',[PemohonController::class,'create_sd_smp']);
+    Route::get('/pemohon/perizinanPenyelenggaraan/create_ptn_univ',[PemohonController::class,'create_ptn_univ']);
+    Route::get('/pemohon/perizinanPenyelenggaraan/create_lpp',[PemohonController::class,'create_lpp']);
+    Route::get('/pemohon/perizinanPenyelenggaraan/create_lpnp',[PemohonController::class,'create_lpnp']);
+    Route::get('/pemohon/perizinanPenyelenggaraan/create_ppo',[PemohonController::class,'create_ppo']);
+    Route::get('/pemohon/perizinanPenyelenggaraan/create_lpts',[PemohonController::class,'create_lpts']);
+    Route::get('/pemohon/perizinanPenyelenggaraan/create_pklpk',[PemohonController::class,'create_pklpk']);
+    // End Perizinan Penyelenggaraan create
 
 });
 // End Route pemohon
@@ -197,6 +208,8 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::get('/download/dokumen-hasil-survey/{id}',[OperatorController::class,'download_dokumenSurvey']);
 // End Download Berkas
 
+//My  Account
+Route::get('/my_account/{id}',[HomeController::class,'my_account']);
 
 
 

@@ -207,11 +207,14 @@ class PerizinanPendirianController extends Controller
 
 
         $permohonan->save();
+
+
         return redirect()
-            ->route('trackings')
+            ->route('admin')
             ->with('success','Permohonan Berhasil');
 
     }
+
 
 
 

@@ -29,6 +29,7 @@ class HomeController extends Controller
         return view('pemohon.dashboard',compact('verified'));
     }
 
+
     public function index_admin(){
         return view('admin.dashboard');
     }
@@ -63,6 +64,13 @@ class HomeController extends Controller
 
     public function index_pemohon(){
         return view('pemohon.dashboard');
+    }
+
+    public function my_account($id)
+    {
+        $account = User::find($id)->get();
+
+        return view('my_account.dashboard');
     }
 
 
