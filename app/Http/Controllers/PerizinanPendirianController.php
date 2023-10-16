@@ -77,7 +77,6 @@ class PerizinanPendirianController extends Controller
         ]);
 
         $permohonan = New PerizinanPendirian;
-        $permohonan->id = $req->id;
         $permohonan->nama = $req->nama;
         $permohonan->email = $req->email;
         $permohonan->telepon = $req->telepon;

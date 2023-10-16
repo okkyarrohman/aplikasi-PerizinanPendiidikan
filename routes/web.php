@@ -60,13 +60,13 @@ Route::group(['middleware' => 'role:admin'], function(){
     //End Route Perizinan Pendirian
 
     // Route Perizinan Penyelenggaraan
-    Route::get('admin/perizinanPenyelenggaraan/create-sd-smp',[PerizinanPenyelenggaraanController::class,'create_sd_smp']);
-    Route::get('admin/perizinanPenyelenggaraan/create-lpnp',[PerizinanPenyelenggaraanController::class,'create_lpnp']);
-    Route::get('admin/perizinanPenyelenggaraan/create-lpp',[PerizinanPenyelenggaraanController::class,'create_lpp']);
-    Route::get('admin/perizinanPenyelenggaraan/create-lpts',[PerizinanPenyelenggaraanController::class,'create_lpts']);
-    Route::get('admin/perizinanPenyelenggaraan/create-pklpk',[PerizinanPenyelenggaraanController::class,'create_pklpk']);
-    Route::get('admin/perizinanPenyelenggaraan/create-ppo',[PerizinanPenyelenggaraanController::class,'create_ppo']);
-    Route::get('admin/perizinanPenyelenggaraan/create-ptn-univ',[PerizinanPenyelenggaraanController::class,'create_ptn_univ']);
+    Route::get('admin/perizinanPenyelenggaraan/create-sd-smp',[AdminController::class,'create_sd_smp']);
+    Route::get('admin/perizinanPenyelenggaraan/create-lpnp',[AdminController::class,'create_lpnp']);
+    Route::get('admin/perizinanPenyelenggaraan/create-lpp',[AdminController::class,'create_lpp']);
+    Route::get('admin/perizinanPenyelenggaraan/create-lpts',[AdminController::class,'create_lpts']);
+    Route::get('admin/perizinanPenyelenggaraan/create-pklpk',[AdminController::class,'create_pklpk']);
+    Route::get('admin/perizinanPenyelenggaraan/create-ppo',[AdminController::class,'create_ppo']);
+    Route::get('admin/perizinanPenyelenggaraan/create-ptn-univ',[AdminController::class,'create_ptn_univ']);
 
 
     route::resource('admin/perizinanPenyelenggaraan',PerizinanPenyelenggaraanController::class,);
@@ -190,6 +190,8 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::get('/pemohon/perizinanPenyelenggaraan/create_lpts',[PemohonController::class,'create_lpts']);
     Route::get('/pemohon/perizinanPenyelenggaraan/create_pklpk',[PemohonController::class,'create_pklpk']);
     // End Perizinan Penyelenggaraan create
+
+    Route::post('/pemohon/perizinanPenyelenggaraan/create_sd_smp',[PerizinanPenyelenggaraanController::class,'store'])->name('penyelenggaraan.store');
 
 });
 // End Route pemohon
