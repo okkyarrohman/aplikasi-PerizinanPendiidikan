@@ -22,8 +22,7 @@
                                 <div class="card-body">
                                     <div class="form-body">
                                         <div class="row">
-                                            <input type="hidden" name="tipe_dokumen"
-                                                value="Perizinan Penyelenggaraan SD/SMP/SMA" hidden>
+                                            <input type="hidden" name="tipe_dokumen" value="SD/SMP/SMA" hidden>
                                             <input type="hidden" name="status_dokumen" value="Checking Berkas" hidden>
                                             <div class="col-12">
                                                 <div class="form-group">
