@@ -41,6 +41,16 @@
                 <span>Dashboard</span>
             </a>
         </li>
+        <li class="sidebar-item active ">
+            <a href="/pemohon/persyaratan" class='sidebar-link'>
+                <span>Persyaratan</span>
+            </a>
+        </li>
+        <li class="sidebar-item active ">
+            <a href="/pemohon/tracking" class='sidebar-link'>
+                <span>Tracking</span>
+            </a>
+        </li>
 
         <li class="sidebar-title">Form Pengajuan</li>
         <hr>
@@ -50,15 +60,10 @@
             </a>
             <ul class="submenu">
                 <li class="submenu-item">
-                    <a href="/admin/perizinanPendirian" class='sidebar-link'>
-                        <span>Persyaratan</span>
-                    </a>
+                    <a href="/pemohon/perizinanPendirian/create-tk" class='sidebar-link'>TK</a>
                 </li>
                 <li class="submenu-item">
-                    <a href="/pemohon/perizinanPendirian/create-tk" class='sidebar-link'>Form Pendirian TK</a>
-                </li>
-                <li class="submenu-item">
-                    <a href="/pemohon/perizinanPendirian/create-sd" class='sidebar-link'>Form Pendirian SD/SMP/SMA</a>
+                    <a href="/pemohon/perizinanPendirian/create-sd" class='sidebar-link'>SD/SMP/SMA</a>
                 </li>
             </ul>
         </li>
@@ -70,43 +75,38 @@
             </a>
             <ul class="submenu">
                 <li class="submenu-item">
-                    <a href="/pemohon/perizinanPenyelenggaraan" class='sidebar-link'>
-                        <span>Persyaratan</span>
-                    </a>
-                </li>
-                <li class="submenu-item">
-                    <a href="/pemohon/perizinanPenyelenggaraan/create_sd_smp" class='sidebar-link'>Form Sekolah Dasar
+                    <a href="/pemohon/perizinanPenyelenggaraan/create_sd_smp" class='sidebar-link'>Sekolah Dasar
                         dan
                         Menengah</a>
                 </li>
                 <li class="submenu-item">
-                    <a href="/pemohon/perizinanPenyelenggaraan/create_ptn_univ" class='sidebar-link'>Form Perguruan
+                    <a href="/pemohon/perizinanPenyelenggaraan/create_ptn_univ" class='sidebar-link'>Perguruan
                         Tinggi
                         dan Universitas</a>
                 </li>
 
                 <li class="submenu-item">
-                    <a href="/pemohon/perizinanPenyelenggaraan/create_lpp" class='sidebar-link'>Form Lembaga Pelatihan
+                    <a href="/pemohon/perizinanPenyelenggaraan/create_lpp" class='sidebar-link'>Lembaga Pelatihan
                         Profesi</a>
                 </li>
 
                 <li class="submenu-item">
-                    <a href="/pemohon/perizinanPenyelenggaraan/create_lpnp" class='sidebar-link'>Form Lembaga Pendidikan
+                    <a href="/pemohon/perizinanPenyelenggaraan/create_lpnp" class='sidebar-link'>Lembaga Pendidikan
                         Non-Pemerintah</a>
                 </li>
 
                 <li class="submenu-item">
-                    <a href="/pemohon/perizinanPenyelenggaraan/create_ppo" class='sidebar-link'>Form Pusat Pembelajaran
+                    <a href="/pemohon/perizinanPenyelenggaraan/create_ppo" class='sidebar-link'>Pusat Pembelajaran
                         Online</a>
                 </li>
 
                 <li class="submenu-item">
-                    <a href="/pemohon/perizinanPenyelenggaraan/create_lpts" class='sidebar-link'>Form Lembaga Pendidikan
+                    <a href="/pemohon/perizinanPenyelenggaraan/create_lpts" class='sidebar-link'>Lembaga Pendidikan
                         Tinggi Swasta</a>
                 </li>
 
                 <li class="submenu-item">
-                    <a href="/pemohon/perizinanPenyelenggaraan/create_pklpk" class='sidebar-link'>Form Pendidikan Khusus
+                    <a href="/pemohon/perizinanPenyelenggaraan/create_pklpk" class='sidebar-link'>Pendidikan Khusus
                         dan Lembaga Pelatihan Keterampilan</a>
                 </li>
             </ul>

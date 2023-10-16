@@ -9,8 +9,8 @@ class PerizinanPendirian extends Model
 {
     use HasFactory;
 
-    protected $table = "perizinan_pendirian";
-    protected $guarded = [];
+        protected $table = "perizinan_pendirian";
+        protected $guarded = [];
     protected $fillable = [
             'nama',
             'email',
@@ -36,5 +36,19 @@ class PerizinanPendirian extends Model
             'sertif_bpjs_sehat',
             'sertif_bpjs_kerja',
 
+            'denah',
+            'gedung',
+            'akta_pendirian',
+            'surper_kades',
+            'surper_camat',
+            'surat_tanah',
+            'patuh_aturan',
+            'daftar_siswa',
+            'daftar_TKK',
+            'daftar_TKnK',
+            'kurikulum',
+            'sarpras',
+            'sk_yayasan',
+            'studi_layak'
     ];
 }

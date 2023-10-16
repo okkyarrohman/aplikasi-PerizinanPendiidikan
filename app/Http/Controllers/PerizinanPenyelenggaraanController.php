@@ -141,7 +141,8 @@ class PerizinanPenyelenggaraanController extends Controller
         }
         }
         //  END REQUEST FILE PerizinanPenyelenggaraan
-dd($permohonan);
+
+
         $permohonan->save();
 
         return back()->with('success', 'data berhasil dikirim');

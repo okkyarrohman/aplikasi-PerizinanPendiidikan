@@ -53,7 +53,7 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/admin/perizinanPendirian/create-tk',[PerizinanPendirianController::class,'create_tk']);
     Route::get('/admin/perizinanPendirian/create-sd',[PerizinanPendirianController::class,'create_sd']);
 
-    Route::post('/admin/perizinanPendirian/create-tk',[PerizinanPendirianController::class,'store_tk'])->name('store.tk');
+
 
 
     route::resource('admin/perizinanPendirian',PerizinanPendirianController::class,);
@@ -72,14 +72,6 @@ Route::group(['middleware' => 'role:admin'], function(){
     route::resource('admin/perizinanPenyelenggaraan',PerizinanPenyelenggaraanController::class,);
     // End Route Perizinan Penyelenggaraan
 
-    // Route Peminjaman Fasilitas
-    Route::get('/admin/peminjamanFasilitas/create-pk',[PeminjamanFasilitasController::class,'create_pk']);
-    Route::get('/admin/peminjamanFasilitas/create-lk',[PeminjamanFasilitasController::class,'create_lk']);
-    Route::get('/admin/peminjamanFasilitas/create-gsp',[PeminjamanFasilitasController::class,'create_gsp']);
-    Route::get('/admin/peminjamanFasilitas/create-tk',[PeminjamanFasilitasController::class,'create_tk']);
-
-
-    // End Route Peminjaman Fasilitas
 
     //Arsip
     Route::get('/admin/arsip',[AdminController::class,'arsip']);
@@ -191,10 +183,13 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::get('/pemohon/perizinanPenyelenggaraan/create_pklpk',[PemohonController::class,'create_pklpk']);
     // End Perizinan Penyelenggaraan create
 
-    Route::post('/pemohon/perizinanPenyelenggaraan/create_sd_smp',[PerizinanPenyelenggaraanController::class,'store'])->name('penyelenggaraan.store');
 
 });
 // End Route pemohon
+
+    Route::post('/pemohon/perizinanPendirian',[PerizinanPendirianController::class,'store'])->name('pendirian.store');
+    Route::post('/pemohon/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'store'])->name('penyelenggaraan.store');
+
 
 
 

@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            <form class="form" method="POST" action="{{ route('store.tk') }}" enctype="multipart/form-data">
+            <form class="form" method="POST" action="{{ route('pendirian.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-md-6 col-12">

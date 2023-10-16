@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('longtitude');
             $table->string('latitude');
             $table->string('lokasi')->nullable();
+            $table->string('dokumen_survey')->nullable();
+            $table->string('surat_terbit')->nullable();
             // file
             $table->string('doc_pendirian')->nullable();
             $table->string('identitas_pemilik')->nullable();

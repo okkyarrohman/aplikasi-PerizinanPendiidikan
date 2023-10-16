@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('longtitude');
             $table->string('latitude');
             $table->string('lokasi')->nullable();
+            $table->string('dokumen_survey')->nullable();
+            $table->string('surat_terbit')->nullable();
             // PerizinanpPendirianTK
             $table->string('surat_permohonan')->nullable();
             $table->string('ktp')->nullable();
@@ -36,11 +38,25 @@ return new class extends Migration
             $table->string('sk_izinOperasional')->nullable();
             $table->string('sertif_bpjs_sehat')->nullable();
             $table->string('sertif_bpjs_kerja')->nullable();
+            // End Pendirian TK
 
             // PendirianSD/SMP/SMA
 
-            $table->string('dokumen_survey')->nullable();
-            $table->string('surat_terbit')->nullable();
+            // End Pendirian SD
+            $table->string('denah')->nullable();
+            $table->string('gedung')->nullable();
+            $table->string('akta_pendirian')->nullable();
+            $table->string('surper_kades')->nullable();
+            $table->string('surper_camat')->nullable();
+            $table->string('surat_tanah')->nullable();
+            $table->string('patuh_aturan')->nullable();
+            $table->string('daftar_siswa')->nullable();
+            $table->string('daftar_TKK')->nullable();
+            $table->string('daftar_TKnK')->nullable();
+            $table->string('kurikulum')->nullable();
+            $table->string('sarpras')->nullable();
+            $table->string('sk_yayasan')->nullable();
+            $table->string('studi_layak')->nullable();
             $table->timestamps();
         });
     }
