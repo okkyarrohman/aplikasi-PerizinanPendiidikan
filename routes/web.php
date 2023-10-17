@@ -50,8 +50,8 @@ Route::group(['middleware' => 'role:admin'], function(){
     // Tracking
 
     //Route Perizinan Pendirian
-    Route::get('/admin/perizinanPendirian/create-tk',[PerizinanPendirianController::class,'create_tk']);
-    Route::get('/admin/perizinanPendirian/create-sd',[PerizinanPendirianController::class,'create_sd']);
+    Route::get('/admin/perizinanPendirian/create-tk',[AdminController::class,'create_tk']);
+    Route::get('/admin/perizinanPendirian/create-sd',[AdminController::class,'create_sd']);
 
 
 
@@ -183,13 +183,20 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::get('/pemohon/perizinanPenyelenggaraan/create_pklpk',[PemohonController::class,'create_pklpk']);
     // End Perizinan Penyelenggaraan create
 
+    // Pemohon Tracking
+    Route::get('/pemohon/tracking',[PemohonController::class,'tracking']);
+    Route::get('/pemohon/show',[PemohonController::class,'show']);
+
+    // End Pemohon Tracking
+
 
 });
 // End Route pemohon
 
+    // POST Perizinan
     Route::post('/pemohon/perizinanPendirian',[PerizinanPendirianController::class,'store'])->name('pendirian.store');
     Route::post('/pemohon/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'store'])->name('penyelenggaraan.store');
-
+    // END POST Perizinan
 
 
 

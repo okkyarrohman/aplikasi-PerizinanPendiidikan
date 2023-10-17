@@ -90,6 +90,22 @@ class AdminController extends Controller
         return view('admin.arsip',compact('trackings'));
     }
 
+
+
+    // PerizinanPendirian
+    public function create_tk()
+    {
+
+        return view('admin.perizinanPendirian.createTk');
+    }
+
+    public function create_sd()
+    {
+
+        return view('admin.perizinanPendirian.createSd');
+    }
+
+    // Perizinan Penyelenggaraan
     public function create_sd_smp()
     {
 
@@ -125,8 +141,9 @@ class AdminController extends Controller
     public function create_ptn_univ()
     {
                 return view('admin.perizinanPenyelenggaraan.ptn-univ.create');
-
     }
+
+
 
 }
 

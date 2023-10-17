@@ -28,17 +28,7 @@ class PerizinanPendirianController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create_tk()
-    {
 
-        return view('admin.perizinanPendirian.createTk');
-    }
-
-    public function create_sd()
-    {
-
-        return view('admin.perizinanPendirian.createSd');
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -72,6 +62,20 @@ class PerizinanPendirianController extends Controller
             'sk_izinOperasional' => ['max:300','mimes:pdf'], //Maks = 300Kb
             'sertif_bpjs_sehat' => ['max:300','mimes:pdf'], //Maks = 300Kb
             'sertif_bpjs_kerja' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'denah' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'gedung' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'akta_pendirian' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'surper_kades' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'surper_camat' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'surat_tanah' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'patuh_aturan' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'daftar_siswa' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'daftar_TKK' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'daftar_TKnK' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'kurikulum' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'sarpras' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'sk_yayasan' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'studi_layak' => ['max:300','mimes:pdf'], //Maks = 300Kb
              //End Validate File Untuk Pendirian TK
 
         ]);
@@ -87,7 +91,7 @@ class PerizinanPendirianController extends Controller
         $permohonan->lokasi = $req->lokasi;
 
 
-        // Upload File Pendirian TK
+        // Upload File Pendirian
         if($req->file())
         {
 
@@ -316,8 +320,7 @@ class PerizinanPendirianController extends Controller
         }
 
         }
-
-        dd($permohonan);
+        // End Upload File Pendirian
 
         $permohonan->save();
 
@@ -333,7 +336,7 @@ class PerizinanPendirianController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show_tk_cb(string $id)
+    public function show(string $id)
     {
 
     }
