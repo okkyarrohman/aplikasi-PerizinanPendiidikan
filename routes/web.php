@@ -162,11 +162,15 @@ Route::group(['middleware' => 'role:operator'], function(){
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
-    Route::get('/pemohon',[HomeController::class,'index_pemohon'])->name('pemohon');
     Route::get('/data-pemohon',[PemohonController::class,'data_pemohon']);
-    Route::get('/create-pemohon',[PemohonController::class,'create']);
-    Route::post('/create-pemohon',[PemohonController::class,'store'])->name('pemohon.store');
-    Route::get('/tracking',[PemohonController::class,'tracking']);
+
+    // Menu
+    Route::get('/pemohon',[HomeController::class,'index_pemohon'])->name('pemohon');
+    Route::get('/pemohon/persyaratan', function(){
+        return view('pemohon.persyaratan');
+    });
+
+    // Menu
 
     // Perizinan Pendirian create
     Route::get('/pemohon/perizinanPendirian/create-tk',[PemohonController::class,'create_tk']);
@@ -183,10 +187,12 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::get('/pemohon/perizinanPenyelenggaraan/create_pklpk',[PemohonController::class,'create_pklpk']);
     // End Perizinan Penyelenggaraan create
 
-    // Pemohon Tracking
-    Route::get('/pemohon/tracking',[PemohonController::class,'tracking']);
-    Route::get('/pemohon/show',[PemohonController::class,'show']);
+    // Pemohon tracking_pendirian
+    Route::get('/pemohon/tracking_pendirian',[PemohonController::class,'tracking_pendirian']);
+    Route::get('/pemohon/tracking_penyelenggaraan',[PemohonController::class,'tracking_penyelenggaraan']);
 
+    Route::get('/pemohon/show_pendirian/{id}',[PemohonController::class,'show_pendirian']);
+    Route::get('/pemohon/show_penyelenggaraan/{id}',[PemohonController::class,'show_penyelenggaraan']);
     // End Pemohon Tracking
 
 

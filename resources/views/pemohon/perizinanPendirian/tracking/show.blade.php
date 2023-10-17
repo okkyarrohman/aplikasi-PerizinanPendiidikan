@@ -15,23 +15,23 @@
                 <div class="card">
                     <div class="content-1 m-lg-4">
                         <label for="">Nama Pemohon : </label>
-                        <input type="text" value="" class="form-control" disabled>
+                        <input type="text" placeholder="{{ $permohonans->nama }}" class="form-control" disabled>
                     </div>
                     <div class="content-2 m-lg-4">
                         <label for="">No Telepon : </label>
-                        <input type="text" value="" class="form-control" disabled>
+                        <input type="text" placeholder="{{ $permohonans->telepon }}" class="form-control" disabled>
                     </div>
                     <div class="content-3 m-lg-4">
                         <label for="">Lokasi Permohonan : </label>
-                        <input type="text" value="" class="form-control" disabled>
+                        <input type="text" placeholder="{{ $permohonans->lokasi }}" class="form-control" disabled>
                     </div>
                     <div class="content-3 m-lg-4">
                         <label for="">Tipe Pengajuan : </label>
-                        <input type="text" value="" class="form-control" disabled>
+                        <input type="text" placeholder="{{ $permohonans->tipe_dokumen }}" class="form-control" disabled>
                     </div>
                     <div class="content-3 m-lg-4">
                         <label for="">Surat izin Terbit : </label>
-                        <input type="text" value="" class="form-control" disabled>
+                        <input type="text" placeholder="{{ $permohonans->surat_terbit }}" class="form-control" disabled>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <div class="card bg-warning">
                     <div class="content-1 m-4">
                         <h6 for="">Status Permohonan Perizinan Anda Sedang Dalam Tahap : </h6>
-                        <h1>Checking Berkas</h1>
+                        <h1>{{ $permohonans->status_dokumen }}</h1>
                     </div>
                 </div>
 

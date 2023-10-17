@@ -34,29 +34,24 @@
             </li>
         @endguest
 
-        <li class="sidebar-title">Menu</li>
+        <li class="sidebar-title ">Menu</li>
         <hr>
-        <li class="sidebar-item active ">
+        <li class="sidebar-item">
             <a href="/pemohon" class='sidebar-link'>
                 <span>Dashboard</span>
             </a>
         </li>
-        <li class="sidebar-item active ">
+        <li class="sidebar-item">
             <a href="/pemohon/persyaratan" class='sidebar-link'>
                 <span>Persyaratan</span>
             </a>
         </li>
-        <li class="sidebar-item active ">
-            <a href="/pemohon/tracking" class='sidebar-link'>
-                <span>Tracking</span>
-            </a>
-        </li>
 
-        <li class="sidebar-title">Form Pengajuan</li>
+        <li class="sidebar-title">Form Pengajuan Permohonan</li>
         <hr>
         <li class="sidebar-item has-sub">
             <a href="#" class="sidebar-link">
-                <span>Permohonan Perizinan Pendirian</span>
+                <span>Perizinan Pendirian</span>
             </a>
             <ul class="submenu">
                 <li class="submenu-item">
@@ -71,7 +66,7 @@
 
         <li class="sidebar-item has-sub">
             <a href="#" class="sidebar-link">
-                <span>Permohonan Perizinan Penyelenggaraan</span>
+                <span>Perizinan Penyelenggaraan</span>
             </a>
             <ul class="submenu">
                 <li class="submenu-item">
@@ -112,6 +107,16 @@
             </ul>
         </li>
 
+        <li class="sidebar-title">Tracking Pemohonan</li>
+        <hr>
+        <li class="sidebar-item  ">
+            <a href="/pemohon/tracking_pendirian" class='sidebar-link'>
+                <span>Perizinan Pendirian</span>
+            </a>
+            <a href="/pemohon/tracking_penyelenggaraan" class='sidebar-link'>
+                <span>Perizinan Penyelenggaraan</span>
+            </a>
+        </li>
 
 
 
@@ -123,14 +128,5 @@
                 <span>Chat</span>
             </a>
         </li>
-
-        <li class="sidebar-item ">
-            <a href="/admin/arsip" class="sidebar-link">
-                <span>
-                    History & Arsip Perizinan
-                </span>
-            </a>
-        </li>
-
     </ul>
 </div>

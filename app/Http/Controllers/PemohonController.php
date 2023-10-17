@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Events\PusherBroadcast;
 use App\Models\Perizinan;
+use App\Models\PerizinanPendirian;
+use App\Models\PerizinanPenyelenggaraan;
 use Illuminate\Http\Request;
 
 
@@ -70,15 +72,39 @@ class PemohonController extends Controller
 
 
     // Show Tracking
-    public function show()
+
+
+    public function tracking_pendirian()
     {
-        return view('pemohon.tracking.show');
+        $permohonans =   PerizinanPendirian::all();
+
+        return view('pemohon.perizinanPendirian.tracking.tracking',compact('permohonans'));
     }
 
-    public function tracking()
+     public function tracking_penyelenggaraan()
     {
+        $permohonans =   PerizinanPenyelenggaraan::all();
 
-        return view('pemohon.tracking.tracking');
+
+        return view('pemohon.perizinanPenyelenggaraan.tracking.tracking',compact('permohonans'));
+    }
+
+    public function show_pendirian($id)
+    {
+        $permohonans = PerizinanPendirian::where('id',$id)->first();
+
+        return view('pemohon.perizinanPendirian.tracking.show',[
+            'permohonans' => $permohonans,
+        ]);
+    }
+
+    public function show_penyelenggaraan($id)
+    {
+        $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
+
+        return view('pemohon.perizinanPenyelenggaraan.tracking.show',[
+            'permohonans' => $permohonans,
+        ]);
     }
 
 
