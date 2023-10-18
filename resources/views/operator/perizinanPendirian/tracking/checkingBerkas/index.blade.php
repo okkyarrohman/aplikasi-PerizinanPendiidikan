@@ -51,7 +51,7 @@
                             <p class="mb-0 fw-normal">{{ $tracking->status_dokumen }}</p>
                         </td>
                         <td class="border-bottom-0">
-                            <a href="/operator/tracking/edit/{{ $tracking->id }}" class="btn btn-success">Edit</a>
+                            <a href="/operator/tracking/pendirian/edit/{{ $tracking->id }}" class="btn btn-success">Edit</a>
                         </td>
                     </tr>
                 </tbody>

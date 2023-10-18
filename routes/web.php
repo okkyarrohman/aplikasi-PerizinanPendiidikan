@@ -161,7 +161,9 @@ Route::group(['middleware' => 'role:operator'], function(){
     Route::get('/operator/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan',[OperatorController::class,'dokumen_valid_penyelenggaraan']);
     Route::get('/operator/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan',[OperatorController::class,'dokumen_tidak_valid_penyelenggaraan']);
 
-    Route::get('/operator/tracking/edit/{id}',[OperatorController::class,'edit']);
+    Route::get('/operator/tracking/pendirian/edit/{id}',[OperatorController::class,'edit']);
+    Route::get('/operator/tracking/penyelenggaraan/edit/{id}',[OperatorController::class,'edit']);
+
     // End Tracking Operator
 
 });
@@ -208,8 +210,8 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
 // End Route pemohon
 
     // POST Perizinan
-    Route::post('/pemohon/perizinanPendirian',[PerizinanPendirianController::class,'store'])->name('pendirian.store');
-    Route::post('/pemohon/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'store'])->name('penyelenggaraan.store');
+    Route::post('/store/perizinanPendirian',[PerizinanPendirianController::class,'store'])->name('pendirian.store');
+    Route::post('/store/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'store'])->name('penyelenggaraan.store');
     // END POST Perizinan
 
 

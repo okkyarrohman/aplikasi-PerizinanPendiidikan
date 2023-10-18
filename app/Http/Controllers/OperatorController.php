@@ -73,7 +73,7 @@ class OperatorController extends Controller
     {
         $permohonans = PerizinanPendirian::where('id',$id)->first();
 
-        return view('operator.edit',compact('permohonans'));
+        return view('operator.perizinanPendirian.edit',compact('permohonans'));
     }
 
 }
