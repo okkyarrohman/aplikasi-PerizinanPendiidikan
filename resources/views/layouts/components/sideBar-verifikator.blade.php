@@ -40,7 +40,7 @@
         <li class="sidebar-title">Menu</li>
         <hr>
         <li class="sidebar-item active ">
-            <a href="/operator" class='sidebar-link'>
+            <a href="/penyelia" class='sidebar-link'>
                 <span>Dashboard</span>
             </a>
         </li>
