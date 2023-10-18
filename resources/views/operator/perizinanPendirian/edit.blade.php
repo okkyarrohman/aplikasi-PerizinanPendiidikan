@@ -100,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-
+                {{-- Untuk SD/SMP/SMA --}}
                 @if ($permohonans->tipe_dokumen == 'SD/SMP/SMA')
                     <div class="row">
                         <div class="col-md-4 col-12">
@@ -501,6 +501,7 @@
                             </div>
                         </div>
                     </div>
+
                     {{-- Untuk TK --}}
                 @elseif($permohonans->tipe_dokumen == 'TK')
                     <div class="row">
@@ -560,13 +561,13 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <h6 for="first-name-vertical">Izin Mendirikan Bangunan Tempat
-                                                            Mendirikan Usaha</h6>
+                                                        <h6 for="first-name-vertical">Susunan pengurus dan rincian
+                                                            tugas</h6>
                                                         <div class="download justify-content-between">
                                                             <div class="nama-file">
                                                                 <input
-                                                                    value="{{ old('suket_mendirikan', $permohonans->suket_mendirikan) }}"
-                                                                    class="form-control" name="suket_mendirikan" hidden>
+                                                                    value="{{ old('pengurus', $permohonans->pengurus) }}"
+                                                                    class="form-control" name="pengurus" hidden>
                                                             </div>
                                                             <div class="action">
                                                                 <a href="" class="btn btn-danger">Download</a>
@@ -577,12 +578,13 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <h6 for="first-name-vertical">Atas Hak Tanah</h6>
+                                                        <h6 for="first-name-vertical">Izin Mendirikan Bangunan Tempat
+                                                            Mendirikan Usaha</h6>
                                                         <div class="download justify-content-between">
                                                             <div class="nama-file">
                                                                 <input
-                                                                    value="{{ old('suket_tanah', $permohonans->suket_tanah) }}"
-                                                                    class="form-control" name="suket_tanah" hidden>
+                                                                    value="{{ old('suket_mendirikan', $permohonans->suket_mendirikan) }}"
+                                                                    class="form-control" name="suket_mendirikan" hidden>
                                                             </div>
                                                             <div class="action">
                                                                 <a href="" class="btn btn-danger">Download</a>
@@ -606,42 +608,13 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <h6 for="first-name-vertical">Gambar Denah Tanah</h6>
-                                                        <div class="download justify-content-between">
-                                                            <div class="nama-file">
-                                                                <input value="{{ old('denah', $permohonans->denah) }}"
-                                                                    class="form-control" name="denah" hidden>
-                                                            </div>
-                                                            <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <h6 for="first-name-vertical">Foto Gedung/Bangunan</h6>
-                                                        <div class="download justify-content-between">
-                                                            <div class="nama-file">
-                                                                <input value="{{ old('gedung', $permohonans->gedung) }}"
-                                                                    class="form-control" name="gedung" hidden>
-                                                            </div>
-                                                            <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <h6 for="first-name-vertical">Akta Pendirian Cabang</h6>
+                                                        <h6 for="first-name-vertical">Scan atas Hak Tanah
+                                                            (sertifikat/segel/akta jual tanah)</h6>
                                                         <div class="download justify-content-between">
                                                             <div class="nama-file">
                                                                 <input
-                                                                    value="{{ old('akta_pendirian', $permohonans->akta_pendirian) }}"
-                                                                    class="form-control" name="akta_pendirian" hidden>
+                                                                    value="{{ old('suket_tanah', $permohonans->suket_tanah) }}"
+                                                                    class="form-control" name="suket_tanah" hidden>
                                                             </div>
                                                             <div class="action">
                                                                 <a href="" class="btn btn-danger">Download</a>
@@ -652,12 +625,13 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <h6 for="first-name-vertical">Surat Persetujuan Desa</h6>
+                                                        <h6 for="first-name-vertical">Scan Akta Pendirian Badan Hukum yang
+                                                            telah disahkan</h6>
                                                         <div class="download justify-content-between">
                                                             <div class="nama-file">
                                                                 <input
-                                                                    value="{{ old('surper_kades', $permohonans->surper_kades) }}"
-                                                                    class="form-control" name="surper_kades" hidden>
+                                                                    value="{{ old('suket_pbh', $permohonans->suket_pbh) }}"
+                                                                    class="form-control" name="suket_pbh" hidden>
                                                             </div>
                                                             <div class="action">
                                                                 <a href="" class="btn btn-danger">Download</a>
@@ -668,12 +642,47 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <h6 for="first-name-vertical">Surat Persetujuan Camat</h6>
+                                                        <h6 for="first-name-vertical">Scan akta perubahan badan hukum yang
+                                                            telah disahkan (S&K berlaku)</h6>
                                                         <div class="download justify-content-between">
                                                             <div class="nama-file">
                                                                 <input
-                                                                    value="{{ old('surper_camat', $permohonans->surper_camat) }}"
-                                                                    class="form-control" name="surper_camat" hidden>
+                                                                    value="{{ old('suket_perubahanPBH', $permohonans->suket_perubahanPBH) }}"
+                                                                    class="form-control" name="suket_perubahanPBH" hidden>
+                                                            </div>
+                                                            <div class="action">
+                                                                <a href="" class="btn btn-danger">Download</a>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <h6 for="first-name-vertical">Rencana Induk Pengembangan TK(S&K
+                                                            berlaku)</h6>
+                                                        <div class="download justify-content-between">
+                                                            <div class="nama-file">
+                                                                <input
+                                                                    value="{{ old('suket_rip', $permohonans->suket_rip) }}"
+                                                                    class="form-control" name="suket_rip" hidden>
+                                                            </div>
+                                                            <div class="action">
+                                                                <a href="" class="btn btn-danger">Download</a>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <h6 for="first-name-vertical">Rencana pencapaian standar
+                                                            penyelenggaraan</h6>
+                                                        <div class="download justify-content-between">
+                                                            <div class="nama-file">
+                                                                <input
+                                                                    value="{{ old('suket_psp', $permohonans->suket_psp) }}"
+                                                                    class="form-control" name="suket_psp" hidden>
                                                             </div>
                                                             <div class="action">
                                                                 <a href="" class="btn btn-danger">Download</a>
@@ -698,13 +707,13 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <h6 for="first-name-vertical">Daftar Tenaga Kerja
-                                                            Kependidikan</h6>
+                                                        <h6 for="first-name-vertical">Surat kuasa perizinan (S&K
+                                                            berlaku)</h6>
                                                         <div class="download justify-content-between">
                                                             <div class="nama-file">
                                                                 <input
-                                                                    value="{{ old('daftar_TKK', $permohonans->daftar_TKK) }}"
-                                                                    class="form-control" name="daftar_TKK" hidden>
+                                                                    value="{{ old('sukas_perizinan', $permohonans->sukas_perizinan) }}"
+                                                                    class="form-control" name="sukas_perizinan" hidden>
                                                             </div>
                                                             <div class="action">
                                                                 <a href="" class="btn btn-danger">Download</a>
@@ -715,13 +724,14 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <h6 for="first-name-vertical">Daftar Tenaha Kerja Non
-                                                            Kependidikan</label>
+                                                        <h6 for="first-name-vertical">Scan SK dan izin Operasional
+                                                            sebelumnya (S&K berlaku)</label>
                                                             <div class="download justify-content-between">
                                                                 <div class="nama-file">
                                                                     <input
-                                                                        value="{{ old('daftar_TKnK', $permohonans->daftar_TKnK) }}"
-                                                                        class="form-control" name="daftar_TKnK" hidden>
+                                                                        value="{{ old('sk_izinOperasional', $permohonans->sk_izinOperasional) }}"
+                                                                        class="form-control" name="sk_izinOperasional"
+                                                                        hidden>
                                                                 </div>
                                                                 <div class="action">
                                                                     <a href="" class="btn btn-danger">Download</a>
@@ -732,13 +742,13 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <h6 for="first-name-vertical">Kurikulum/Program Kegiatan
-                                                            Belajar</h6>
+                                                        <h6 for="first-name-vertical">Scan sertifikat keikutsertaan BPJS
+                                                            kesehatan</h6>
                                                         <div class="download justify-content-between">
                                                             <div class="nama-file">
                                                                 <input
-                                                                    value="{{ old('kurikulum', $permohonans->kurikulum) }}"
-                                                                    class="form-control" name="kurikulum" hidden>
+                                                                    value="{{ old('sertif_bpjs_sehat', $permohonans->sertif_bpjs_sehat) }}"
+                                                                    class="form-control" name="sertif_bpjs_sehat" hidden>
                                                             </div>
                                                             <div class="action">
                                                                 <a href="" class="btn btn-danger">Download</a>
@@ -749,11 +759,13 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <h6 for="first-name-vertical">Daftar Sarana dan Prasarana</h6>
+                                                        <h6 for="first-name-vertical">Scan sertifikat keikutsertaan BPJS
+                                                            ketenagakerjaan</h6>
                                                         <div class="download justify-content-between">
                                                             <div class="nama-file">
-                                                                <input value="{{ old('sarpras', $permohonans->sarpras) }}"
-                                                                    class="form-control" name="sarpras" hidden>
+                                                                <input
+                                                                    value="{{ old('sertif_bpjs_kerja', $permohonans->sertif_bpjs_kerja) }}"
+                                                                    class="form-control" name="sertif_bpjs_kerja" hidden>
                                                             </div>
                                                             <div class="action">
                                                                 <a href="" class="btn btn-danger">Download</a>
@@ -769,6 +781,7 @@
                             </div>
                         </div>
                     </div>
+                    {{-- END UNTUK SEMUA --}}
                 @endif
                 <div class="row">
                     <div class="col-md-12">
@@ -776,7 +789,6 @@
                             <div class="content-1 m-4">
                                 <label for="" class="text my-2">Status Dokumen</label>
                                 <select name="status_dokumen" id="" class="form-select form-select">
-                                    <option value="Checking Berkas Operator" selected>Checking Berkas Operator</option>
                                     <option value="Dokumen Valid">Dokumen Valid</option>
                                     <option value="Dokumen Tidak Valid">Dokumen Tidak Valid</option>
                                 </select>
