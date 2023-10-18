@@ -214,7 +214,7 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::post('/store/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'store'])->name('penyelenggaraan.store');
 
     Route::post('/update/perizinanPendirian',[PerizinanPendirianController::class,'update'])->name('pendirian.update');
-
+    Route::post('/update/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'update'])->name('penyelenggaraan.update');
     // END POST Perizinan
 
 
