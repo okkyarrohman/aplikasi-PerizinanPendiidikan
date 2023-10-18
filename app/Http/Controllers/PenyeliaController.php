@@ -101,5 +101,27 @@ class PenyeliaController extends Controller
     }
 
 
+    public function edit_dokumen_valid($id)
+    {
+        $permohonans = PerizinanPendirian::where('id',$id)->first();
+
+        return view('penyelia.tracking.perizinanPendirian.dokumenValid.edit',compact('permohonans'));
+    }
+
+    public function edit_checking_berkas_pendirian($id)
+    {
+        $permohonans = PerizinanPendirian::where('id',$id)->first();
+
+        if($permohonans->tipe_dokumen == 'TK')
+        {
+            return view('penyelia.tracking.perizinanPendirian.checkingBerkas.editTk',compact('permohonans'));
+        }
+        else{
+            return view('penyelia.tracking.perizinanPendirian.checkingBerkas.editSd',compact('permohonans'));
+        }
+
+
+    }
+
 }
 

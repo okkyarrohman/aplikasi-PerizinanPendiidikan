@@ -1,4 +1,4 @@
-@extends('layouts.app-operator')
+@extends('layouts.app-verifikator')
 
 @section('content')
     <div class="container">
@@ -51,12 +51,9 @@
                             <p class="mb-0 fw-normal">{{ $tracking->status_dokumen }}</p>
                         </td>
                         <td class="border-bottom-0">
-                            <form action="{{ route('pendirian.update') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <input type="hidden" name="status_dokumen" value="Sedang Disurvey">
-                            </form>
-                            <button type="submit" class="btn btn-success">Tugaskan
-                                Surveyor</button>
+                            <a href="/penyelia/tracking/pendirian/edit/dokumen_valid/{{ $tracking->id }}"
+                                class="btn btn-success">Tugaskan
+                                Surveyor</a>
                         </td>
                     </tr>
                 </tbody>

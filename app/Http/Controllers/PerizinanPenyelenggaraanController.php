@@ -7,24 +7,6 @@ use Illuminate\Http\Request;
 
 class PerizinanPenyelenggaraanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-
-
-        return view('admin.perizinanPenyelenggaraan.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $req)
     {
         $req->validate([
@@ -147,26 +129,6 @@ class PerizinanPenyelenggaraanController extends Controller
 
         return back()->with('success', 'data berhasil dikirim');
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $req)
     {
 
@@ -266,13 +228,5 @@ class PerizinanPenyelenggaraanController extends Controller
         $permohonan->save();
 
         return back()->with('success', 'data berhasil dikirim');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }

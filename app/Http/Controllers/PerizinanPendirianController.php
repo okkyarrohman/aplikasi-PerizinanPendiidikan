@@ -2,40 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PerizinanPendirianRequest;
+
 use App\Models\PerizinanPendirian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class PerizinanPendirianController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return view('admin.perizinanPendirian.index');
-    }
-
-    public function trackings($id)
-    {
-        $permohonan = PerizinanPendirian::find($id);
-
-        return view('admin.perizinanPendirian.tracking',compact('permohonan'));
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-
-
-    /**
-     * Store a newly created resource in storage.
-     */
-
-
-
     public function store(Request $req)
     {
         $req->validate([
@@ -329,29 +302,6 @@ class PerizinanPendirianController extends Controller
 
     }
 
-
-
-
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $req)
     {
 
@@ -604,11 +554,14 @@ class PerizinanPendirianController extends Controller
         return back()->with('success','Permohonan Berhasil');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function status_dokumenUpdate(Request $req,$id)
     {
-        //
+        $permohonan = PerizinanPendirian::find($id);
+
+        $permohonan->status_dokumen = $req->status_dokumen;
+        $permohonan->save();
+        return back()->with('success','Permohonan Berhasil');
     }
+
 }
+
