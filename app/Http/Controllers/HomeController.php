@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\PerizinanPenyelenggaraan;
+use App\Models\PerizinanPendirian;
 
 class HomeController extends Controller
 {
@@ -59,7 +61,35 @@ class HomeController extends Controller
     }
 
     public function index_operator(){
-        return view('operator.dashboard');
+        $checkingBerkasPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Checking Berkas Operator'
+        ])->count();
+        $checkingBerkasPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Checking Berkas Operator'
+        ])->count();
+        $totalCheckingBerkas = $checkingBerkasPendirian + $checkingBerkasPenyelenggaraan;
+
+        $dokumenValidPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $dokumenValidPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $totalDokumenValid = $dokumenValidPendirian + $dokumenValidPenyelenggaraan;
+
+        $dokumenTidakValidPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Tidak Valid'
+        ])->count();
+        $dokumenTidakValidPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Tidak Valid'
+        ])->count();
+        $totalDokumenTidakValid = $dokumenTidakValidPendirian + $dokumenTidakValidPenyelenggaraan;
+
+        return view('operator.dashboard',[
+            'totalCheckingBerkas' => $totalCheckingBerkas,
+            'totalDokumenValid' => $totalDokumenValid,
+            'totalDokumenTidakValid' => $totalDokumenTidakValid,
+        ]);
     }
 
     public function index_pemohon(){

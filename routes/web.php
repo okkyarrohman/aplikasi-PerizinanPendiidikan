@@ -151,10 +151,18 @@ Route::group(['middleware' => 'role:auditor'], function(){
 // Route operator
 Route::group(['middleware' => 'role:operator'], function(){
     Route::get('/operator',[HomeController::class,'index_operator'])->name('operator');
-    Route::get('/operator/tracking',[OperatorController::class,'index']);
-    Route::get('/operator/edit-tracking/{id}',[OperatorController::class,'edit']);
-    Route::post('/operator/update-status',[OperatorController::class,'update'])->name('operator.update');
 
+    // Tracking Operator
+    Route::get('/operator/tracking/pendirian/checking_berkas_pendirian',[OperatorController::class,'checking_berkas_pendirian']);
+    Route::get('/operator/tracking/pendirian/dokumen_valid_pendirian',[OperatorController::class,'dokumen_valid_pendirian']);
+    Route::get('/operator/tracking/pendirian/dokumen_tidak_valid_pendirian',[OperatorController::class,'dokumen_tidak_valid_pendirian']);
+
+    Route::get('/operator/tracking/penyelenggaraan/checking_berkas_penyelenggaraan',[OperatorController::class,'checking_berkas_penyelenggaraan']);
+    Route::get('/operator/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan',[OperatorController::class,'dokumen_valid_penyelenggaraan']);
+    Route::get('/operator/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan',[OperatorController::class,'dokumen_tidak_valid_penyelenggaraan']);
+
+    Route::get('/operator/tracking/edit/{id}',[OperatorController::class,'edit']);
+    // End Tracking Operator
 
 });
 // End Route operator
