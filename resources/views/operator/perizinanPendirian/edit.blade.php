@@ -6,7 +6,7 @@
             <div class="col-md-12 ">
                 <div class="card align-items-center">
                     <div class="card-header align-items-center">
-                        <h4 class="card-title align-items-center">Edit Permohonan Perizinan Pendirian
+                        <h4 class="card-title align-items-center">Edit Permohonan Perizinan Penyelenggaraan
                         </h4>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Lokasi Lengkap</label>
                                                     <h6>
-                                                    {{ $permohonans->lokasi }}
+                                                        {{ $permohonans->lokasi }}
                                                     </h6>
                                                     <input type="text" id="first-name-vertical" class="form-control"
                                                         name="lokasi" value="{{ $permohonans->lokasi }}" hidden>

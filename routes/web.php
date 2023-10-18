@@ -161,8 +161,8 @@ Route::group(['middleware' => 'role:operator'], function(){
     Route::get('/operator/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan',[OperatorController::class,'dokumen_valid_penyelenggaraan']);
     Route::get('/operator/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan',[OperatorController::class,'dokumen_tidak_valid_penyelenggaraan']);
 
-    Route::get('/operator/tracking/pendirian/edit/{id}',[OperatorController::class,'edit']);
-    Route::get('/operator/tracking/penyelenggaraan/edit/{id}',[OperatorController::class,'edit']);
+    Route::get('/operator/tracking/pendirian/edit/{id}',[OperatorController::class,'edit_pendirian']);
+    Route::get('/operator/tracking/penyelenggaraan/edit/{id}',[OperatorController::class,'edit_penyelenggaraan']);
 
     // End Tracking Operator
 

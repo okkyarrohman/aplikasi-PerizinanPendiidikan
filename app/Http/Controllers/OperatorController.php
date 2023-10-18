@@ -69,11 +69,18 @@ class OperatorController extends Controller
     // End Perizinan Penyelenggaraan
 
 
-    public function edit($id)
+    public function edit_pendirian($id)
     {
         $permohonans = PerizinanPendirian::where('id',$id)->first();
 
         return view('operator.perizinanPendirian.edit',compact('permohonans'));
+    }
+
+    public function edit_penyelenggaraan($id)
+    {
+        $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
+
+        return view('operator.perizinanPenyelenggaraan.edit',compact('permohonans'));
     }
 
 }

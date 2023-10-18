@@ -51,7 +51,7 @@
                             <p class="mb-0 fw-normal">{{ $tracking->status_dokumen }}</p>
                         </td>
                         <td class="border-bottom-0">
-                            <a href="" class="btn btn-success">Edit</a>
+                            <h4>-</h4>
                         </td>
                     </tr>
                 </tbody>
