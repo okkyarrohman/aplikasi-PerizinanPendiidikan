@@ -29,7 +29,6 @@ class PerizinanPendirianFactory extends Factory
                 'Dokumen Valid',
                 'Dokumen Tidak Valid',
                 'Sedang Disurvey',
-                'Telah Disurvey',
                 'Checking Berkas Verifikator',
                 'Dokumen Sesuai',
                 'Dokumen Tidak Sesuai',
