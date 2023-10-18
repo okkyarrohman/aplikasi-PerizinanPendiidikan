@@ -212,6 +212,9 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     // POST Perizinan
     Route::post('/store/perizinanPendirian',[PerizinanPendirianController::class,'store'])->name('pendirian.store');
     Route::post('/store/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'store'])->name('penyelenggaraan.store');
+
+    Route::post('/update/perizinanPendirian',[PerizinanPendirianController::class,'update'])->name('pendirian.update');
+
     // END POST Perizinan
 
 

@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <form class="form form-vertical" method="POST" action="{{ route('pendirian.store') }}"
+            <form class="form form-vertical" method="POST" action="{{ route('pendirian.update') }}"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="row">
@@ -22,40 +22,38 @@
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-12">
-                                                <input type="hidden" name="id" value="{{ $permohonans->id }}" hidden>
+                                                <input type="hidden" name="id" value="{{ $permohonans->id }}">
                                                 <div class="form-group">
-                                                    <label for="first-name-vertical">Nama Lengkap</label>
+                                                    <label for="first-name-vertical">Nama Lengkap : </label>
+                                                    <h6>{{ $permohonans->nama }}</h6>
                                                     <input type="text" id="first-name-vertical" class="form-control"
-                                                        name="nama" value="{{ old('nama', $permohonans->nama) }}"
-                                                        disabled>
+                                                        name="nama" value="{{ $permohonans->nama }}" hidden>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="email-id-vertical">Email</label>
+                                                    <h6>{{ $permohonans->email }}</h6>
                                                     <input type="email" id="email-id-vertical" class="form-control"
-                                                        name="email" value="{{ old('email', $permohonans->email) }}"
-                                                        disabled>
+                                                        name="email" value="{{ $permohonans->email }}" hidden>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="contact-info-vertical">No Whatsapp</label>
+                                                    <h6>{{ $permohonans->telepon }}</h6>
                                                     <input type="number" id="contact-info-vertical" class="form-control"
-                                                        name="telepon" value="{{ old('telepon', $permohonans->telepon) }}"
-                                                        disabled>
+                                                        name="telepon" value="{{ $permohonans->telepon }}" hidden>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="contact-info-vertical">Tipe Dokumen</label>
+                                                    <h6>{{ $permohonans->tipe_dokumen }}</h6>
                                                     <input type="text" id="contact-info-vertical" class="form-control"
-                                                        name="tipe_dokumen"
-                                                        value="{{ old('tipe_dokumen', $permohonans->tipe_dokumen) }}"
-                                                        disabled>
+                                                        name="tipe_dokumen" value="{{ $permohonans->tipe_dokumen }}" hidden>
                                                 </div>
                                             </div>
-                                            <input type="hidden" name="status_dokumen" value="Checking Berkas" hidden>
                                         </div>
                                     </div>
                                 </div>
@@ -72,25 +70,27 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Longtitude</label>
+                                                    <h6>{{ $permohonans->longtitude }}</h6>
                                                     <input type="text" id="first-name-vertical" class="form-control"
-                                                        name="longtitude"
-                                                        value="{{ old('longtitude', $permohonans->longtitude) }}" disabled>
+                                                        name="longtitude" value="{{ $permohonans->longtitude }}" hidden>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Latitude</label>
+                                                    <h6>{{ $permohonans->latitude }}</h6>
                                                     <input type="text" id="first-name-vertical" class="form-control"
-                                                        name="latitude"
-                                                        value="{{ old('latitude', $permohonans->latitude) }}" disabled>
+                                                        name="latitude" value="{{ $permohonans->latitude }}" hidden>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Lokasi Lengkap</label>
+                                                    <h6>
+                                                    {{ $permohonans->lokasi }}
+                                                    </h6>
                                                     <input type="text" id="first-name-vertical" class="form-control"
-                                                        name="lokasi" value="{{ old('lokasi', $permohonans->lokasi) }}"
-                                                        disabled>
+                                                        name="lokasi" value="{{ $permohonans->lokasi }}" hidden>
                                                 </div>
                                             </div>
                                         </div>
