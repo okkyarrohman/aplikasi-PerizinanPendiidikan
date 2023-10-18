@@ -3,90 +3,101 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Perizinan;
+use App\Models\PerizinanPendirian;
+use App\Models\PerizinanPenyelenggaraan;
 
 class PenyeliaController extends Controller
 {
-    public function tracking_pemohon(){
+    // Pendirian
+    public function dokumen_valid_pendirian()
+    {
+        $permohonans = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->get();
 
-        $trackings = Perizinan::where(['status_permohonan' => 'Checking Berkas'])->get();
-
-        return view('penyelia.status',compact('trackings'));
+        return view('penyelia.tracking.perizinanPendirian.dokumenValid.index',compact('permohonans'));
     }
 
+    public function sedang_disurvey_pendirian()
+    {
+        $permohonans = PerizinanPendirian::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->get();
 
-    public function dokumen_valid(){
-        $trackings = Perizinan::where(['status_permohonan' => 'Dokumen Valid'])->get();
-
-        return view('penyelia.tracking.dokumenValid', compact('trackings'));
+        return view('penyelia.tracking.perizinanPendirian.sedangDisurvey.index',compact('permohonans'));
     }
 
-    public function sedang_disurvey(){
-        $trackings = Perizinan::where(['status_permohonan' => 'Sedang Disurvey'])->get();
+    public function checking_berkas_pendirian()
+    {
+        $permohonans = PerizinanPendirian::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->get();
 
-        return view('penyelia.tracking.sedangDisurvey', compact('trackings'));
+        return view('penyelia.tracking.perizinanPendirian.checkingBerkas.index',compact('permohonans'));
     }
 
+    public function dokumen_sesuai_pendirian()
+    {
+        $permohonans = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->get();
 
-
-    public function telah_disurvey(){
-
-        $trackings = Perizinan::where(['status_permohonan' => 'Telah Disurvey'])->get();
-
-        return view('penyelia.tracking.telahDisurvey',compact('trackings'));
+        return view('penyelia.tracking.perizinanPendirian.dokumenSesuai.index',compact('permohonans'));
     }
 
+    public function dokumen_tidak_sesuai_pendirian()
+    {
+        $permohonans = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Tidak Sesuai'
+        ])->get();
 
-
-
-    public function edit_trackingPemohon($id){
-        $perizinan = Perizinan::find($id);
-        return view('penyelia.edit',compact('perizinan'));
+        return view('penyelia.tracking.perizinanPendirian.dokumenTidakSesuai.index',compact('permohonans'));
     }
 
-    public function update(Request $request){
-        $perizinan = Perizinan::find($request->id);
+    // Penyelenggaraan
+    public function dokumen_valid_penyelenggaraan()
+    {
+        $permohonans = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->get();
 
-        $perizinan->status_permohonan = $request->status_permohonan;
-
-        $perizinan->save();
-
-        return redirect()->route('penyelia')->with('success','data berhasil diupdate');
+        return view('penyelia.tracking.perizinanPenyelenggaraan.dokumenValid.index',compact('permohonans'));
     }
 
-    public function is_survey(Request $request){
+    public function sedang_disurvey_penyelenggaraan()
+    {
+        $permohonans = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->get();
 
-        $perizinan = Perizinan::find($request->id);
-
-        $perizinan->status_permohonan = $request->status_permohonan;
-
-        $perizinan->save();
-
-        return back();
+        return view('penyelia.tracking.perizinanPenyelenggaraan.sedangDisurvey.index',compact('permohonans'));
     }
 
-    public function after_survey($id){
+    public function checking_berkas_penyelenggaraan()
+    {
+        $permohonans = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->get();
 
-        $perizinan = Perizinan::find($id);
-        return view('penyelia.afterSurvey',compact('perizinan'));
+        return view('penyelia.tracking.perizinanPenyelenggaraan.checkingBerkas.index',compact('permohonans'));
     }
 
-    public function update_survey(Request $request){
-        $perizinan = Perizinan::find($request->id);
-        $perizinan->status_permohonan = $request->status_permohonan;
+    public function dokumen_sesuai_penyelenggaraan()
+    {
+        $permohonans = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->get();
 
-        if($request->hasFile('surat_perizinan_permohonan')){
-            $surat_perizinan_permohonan = $request->file('surat_perizinan_permohonan');
-            $extension = $surat_perizinan_permohonan->getClientOriginalName();
-            $fotoName = $extension;
-            $surat_perizinan_permohonan->move(storage_path('app/public/berkas/surat_perizinan_permohonan',
-                $request->file('surat_perizinan_permohonan')->getClientOriginalName()),$fotoName);
-            $perizinan->surat_perizinan_permohonan = $request->file('surat_perizinan_permohonan')->getClientOriginalName();
-        }
-        $perizinan->save();
+        return view('penyelia.tracking.perizinanPenyelenggaraan.dokumenSesuai.index',compact('permohonans'));
+    }
 
-        return redirect()->route('penyelia-surveyor.index')->with('success','data berhasil diupdate');
+    public function dokumen_tidak_sesuai_penyelenggaraan()
+    {
+        $permohonans = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Tidak Sesuai'
+        ])->get();
 
+        return view('penyelia.tracking.perizinanPenyelenggaraan.dokumenTidakSesuai.index',compact('permohonans'));
     }
 
 

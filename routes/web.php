@@ -111,21 +111,24 @@ Route::group(['middleware' => 'role:kepala-dinas'], function(){
 });
 // End Route kepala-dinas
 
-// Route penyelia
+// Route penyelia / Verifikator
 Route::group(['middleware' => 'role:penyelia'], function(){
     Route::get('/penyelia',[HomeController::class,'index_penyelia'])->name('penyelia');
-    Route::get('/verifikator/check-berkas',[PenyeliaController::class,'tracking_pemohon']);
-    Route::get('/verifikator/dokumen-valid',[PenyeliaController::class,'dokumen_valid']);
-    Route::get('/verifikator/sedang-disurvey',[PenyeliaController::class,'sedang_disurvey']);
-    Route::get('/verifikator/telah-disurvey',[PenyeliaController::class,'telah_disurvey']);
-    Route::get('/tracking/surveyor',[PenyeliaController::class,'tracking_surveyor'])->name('penyelia-surveyor.index');
-    Route::get('/penyelia/edit-tracking-pemohon/{id}',[PenyeliaController::class,'edit_trackingPemohon']);
-    Route::post('/penyelia/update-status',[PenyeliaController::class,'update'])->name('penyelia.update');
-    Route::post('/tugaskan/surveyor',[PenyeliaController::class,'is_survey'])->name('tugaskan.update');
-    Route::get('/lihat-hasil/survey/{id}',[PenyeliaController::class,'after_survey']);
+    // Tracking Perizinan
+    Route::get('/penyelia/tracking/pendirian/dokumen_valid_pendirian',[PenyeliaController::class,'dokumen_valid_pendirian']);
+    Route::get('/penyelia/tracking/pendirian/sedang_disurvey_pendirian',[PenyeliaController::class,'sedang_disurvey_pendirian']);
+    Route::get('/penyelia/tracking/pendirian/checking_berkas_pendirian',[PenyeliaController::class,'checking_berkas_pendirian']);
+    Route::get('/penyelia/tracking/pendirian/dokumen_sesuai_pendirian',[PenyeliaController::class,'dokumen_sesuai_pendirian']);
+    Route::get('/penyelia/tracking/pendirian/dokumen_tidak_sesuai_pendirian',[PenyeliaController::class,'dokumen_tidak_sesuai_pendirian']);
 
-    Route::post('/penyelia/after-survey',[PenyeliaController::class,'update_survey'])->name('hasil-survey.update');
+    Route::get('/penyelia/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan',[PenyeliaController::class,'dokumen_valid_penyelenggaraan']);
+    Route::get('/penyelia/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan',[PenyeliaController::class,'sedang_disurvey_penyelenggaraan']);
+    Route::get('/penyelia/tracking/penyelenggaraan/checking_berkas_penyelenggaraan',[PenyeliaController::class,'checking_berkas_penyelenggaraan']);
+    Route::get('/penyelia/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan',[PenyeliaController::class,'dokumen_sesuai_penyelenggaraan']);
+    Route::get('/penyelia/tracking/penyelenggaraan/dokumen_tidak_sesuai_penyelenggaraan',[PenyeliaController::class,'dokumen_tidak_sesuai_penyelenggaraan']);
 
+
+    // End Tracking Perizinan
 });
 // End Route penyelia
 

@@ -55,18 +55,28 @@
             </a>
             <ul class="submenu ">
                 <li class="submenu-item ">
-                    <a href="/operator/tracking/pendirian/checking_berkas_pendirian" class='sidebar-link'>
-                        <span>Checking Berkas</span>
-                    </a>
-                </li>
-                <li class="submenu-item ">
-                    <a href="/operator/tracking/pendirian/dokumen_valid_pendirian" class='sidebar-link'>
+                    <a href="/penyelia/tracking/pendirian/dokumen_valid_pendirian" class='sidebar-link'>
                         <span>Dokumen Valid</span>
                     </a>
                 </li>
                 <li class="submenu-item ">
-                    <a href="/operator/tracking/pendirian/dokumen_tidak_valid_pendirian" class='sidebar-link'>
-                        <span>Dokumen Tidak Valid</span>
+                    <a href="/penyelia/tracking/pendirian/sedang_disurvey_pendirian" class='sidebar-link'>
+                        <span>Sedang Disurvey</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/penyelia/tracking/pendirian/checking_berkas_pendirian" class='sidebar-link'>
+                        <span>Checking Berkas Verifikator</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/penyelia/tracking/pendirian/dokumen_sesuai_pendirian" class='sidebar-link'>
+                        <span>Dokumen Sesuai</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/penyelia/tracking/pendirian/dokumen_tidak_sesuai_pendirian" class='sidebar-link'>
+                        <span>Dokumen Tidak Sesuai</span>
                     </a>
                 </li>
             </ul>
@@ -78,19 +88,29 @@
             </a>
             <ul class="submenu ">
                 <li class="submenu-item ">
-                    <a href="/operator/tracking/penyelenggaraan/checking_berkas_penyelenggaraan" class='sidebar-link'>
-                        <span>Checking Berkas</span>
-                    </a>
-                </li>
-                <li class="submenu-item ">
-                    <a href="/operator/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan" class='sidebar-link'>
+                    <a href="/penyelia/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan" class='sidebar-link'>
                         <span>Dokumen Valid</span>
                     </a>
                 </li>
                 <li class="submenu-item ">
-                    <a href="/operator/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan"
+                    <a href="/penyelia/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan" class='sidebar-link'>
+                        <span>Sedang Disurvey</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/penyelia/tracking/penyelenggaraan/checking_berkas_penyelenggaraan" class='sidebar-link'>
+                        <span>Checking Berkas Verifikator</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/penyelia/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan" class='sidebar-link'>
+                        <span>Dokumen Sesuai</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/penyelia/tracking/penyelenggaraan/dokumen_tidak_sesuai_penyelenggaraan"
                         class='sidebar-link'>
-                        <span>Dokumen Tidak Valid</span>
+                        <span>Dokumen Tidak Sesuai</span>
                     </a>
                 </li>
             </ul>
