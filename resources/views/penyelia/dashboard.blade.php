@@ -87,7 +87,7 @@
                             </div>
                             <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                 <h6 class="text-muted font-semibold">Dokumen Valid</h6>
-                                <h6 class="font-extrabold mb-0">78</h6>
+                                <h6 class="font-extrabold mb-0">{{ $totalDokumenValid }}</h6>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                             </div>
                             <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                 <h6 class="text-muted font-semibold">Sedang Disurvey</h6>
-                                <h6 class="font-extrabold mb-0">23</h6>
+                                <h6 class="font-extrabold mb-0">{{ $totalSedangSurvey }}</h6>
                             </div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                             </div>
                             <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                 <h6 class="text-muted font-semibold">Checking Berkas</h6>
-                                <h6 class="font-extrabold mb-0">23</h6>
+                                <h6 class="font-extrabold mb-0">{{ $totalCheckingBerkas }}</h6>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                             </div>
                             <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                 <h6 class="text-muted font-semibold">Dokumen Sesuai</h6>
-                                <h6 class="font-extrabold mb-0">23</h6>
+                                <h6 class="font-extrabold mb-0">{{ $totalDokumenSesuai }}</h6>
                             </div>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
                             </div>
                             <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                 <h6 class="text-muted font-semibold">Dokumen Tidak Sesuai</h6>
-                                <h6 class="font-extrabold mb-0">23</h6>
+                                <h6 class="font-extrabold mb-0">{{ $totalDokumenTidakSesuai }}</h6>
                             </div>
                         </div>
                     </div>

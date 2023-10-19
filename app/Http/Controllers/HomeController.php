@@ -49,7 +49,54 @@ class HomeController extends Controller
     }
 
     public function index_penyelia(){
-        return view('penyelia.dashboard');
+        $dokumenValidPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $dokumenValidPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $totalDokumenValid = $dokumenValidPendirian + $dokumenValidPenyelenggaraan;
+
+        $sedangSurveyPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $sedangSurveyPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $totalSedangSurvey = $sedangSurveyPendirian + $sedangSurveyPenyelenggaraan;
+
+        $checkingBerkasPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $checkingBerkasPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $totalCheckingBerkas = $checkingBerkasPendirian + $checkingBerkasPenyelenggaraan;
+
+        $dokumenSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $dokumenSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $totalDokumenSesuai = $dokumenSesuaiPendirian + $dokumenSesuaiPenyelenggaraan;
+
+        $dokumenTidakSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Tidak Sesuai'
+        ])->count();
+        $dokumenTidakSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Tidak Sesuai'
+        ])->count();
+        $totalDokumenTidakSesuai = $dokumenTidakSesuaiPendirian + $dokumenTidakSesuaiPenyelenggaraan;
+
+
+        return view('penyelia.dashboard',[
+            'totalDokumenValid' => $totalDokumenValid,
+            'totalSedangSurvey' => $totalSedangSurvey,
+            'totalCheckingBerkas' => $totalCheckingBerkas,
+            'totalDokumenSesuai' => $totalDokumenSesuai,
+            'totalDokumenTidakSesuai' => $totalDokumenTidakSesuai,
+        ]);
     }
 
     public function index_surveyor(){

@@ -101,7 +101,7 @@ class PenyeliaController extends Controller
     }
 
 
-    public function edit_dokumen_valid($id)
+    public function edit_dokumen_valid_pendirian($id)
     {
         $permohonans = PerizinanPendirian::where('id',$id)->first();
 
@@ -119,8 +119,41 @@ class PenyeliaController extends Controller
         else{
             return view('penyelia.tracking.perizinanPendirian.checkingBerkas.editSd',compact('permohonans'));
         }
+    }
 
+    public function edit_dokumen_valid_penyelenggaraan($id)
+    {
+        $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
 
+        return view('penyelia.tracking.perizinanPenyelenggaraan.dokumenValid.edit',compact('permohonans'));
+    }
+
+    public function edit_checking_berkas_penyelenggaraan($id)
+    {
+        $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
+
+        if($permohonans->tipe_dokumen == 'SD/SMP/SMA')
+        {
+            return view('penyelia.tracking.perizinanPenyelenggaraan.checkingBerkas.editSd',compact('permohonans'));
+        }
+        elseif($permohonans->tipe_dokumen == 'Universitas/PT'){
+            return view('penyelia.tracking.perizinanPenyelenggaraan.checkingBerkas.editUniv',compact('permohonans'));
+        }
+        elseif($permohonans->tipe_dokumen == 'Lembaga Pelatihan Profesional'){
+            return view('penyelia.tracking.perizinanPenyelenggaraan.checkingBerkas.editLPP',compact('permohonans'));
+        }
+        elseif($permohonans->tipe_dokumen == 'Lembaga Pendidikan Non Pemerintah'){
+            return view('penyelia.tracking.perizinanPenyelenggaraan.checkingBerkas.editLPNP',compact('permohonans'));
+        }
+        elseif($permohonans->tipe_dokumen == 'Pusat Pembelajaran Online'){
+            return view('penyelia.tracking.perizinanPenyelenggaraan.checkingBerkas.editPPO',compact('permohonans'));
+        }
+        elseif($permohonans->tipe_dokumen == 'Lembaga Pendidikan Tinggi Swasta'){
+            return view('penyelia.tracking.perizinanPenyelenggaraan.checkingBerkas.editLPTS',compact('permohonans'));
+        }
+        elseif($permohonans->tipe_dokumen == 'Pendidikan Khusus dan Lembaga Pelatihan Keterampilan'){
+            return view('penyelia.tracking.perizinanPenyelenggaraan.checkingBerkas.editPKLPK',compact('permohonans'));
+        }
     }
 
 }

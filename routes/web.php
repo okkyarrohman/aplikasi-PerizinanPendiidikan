@@ -128,8 +128,11 @@ Route::group(['middleware' => 'role:penyelia'], function(){
     Route::get('/penyelia/tracking/penyelenggaraan/dokumen_tidak_sesuai_penyelenggaraan',[PenyeliaController::class,'dokumen_tidak_sesuai_penyelenggaraan']);
     // End Tracking Perizinan
 
-    Route::get('/penyelia/tracking/pendirian/edit/dokumen_valid/{id}',[PenyeliaController::class,'edit_dokumen_valid']);
+    Route::get('/penyelia/tracking/pendirian/edit/dokumen_valid/{id}',[PenyeliaController::class,'edit_dokumen_valid_pendirian']);
     Route::get('/penyelia/tracking/pendirian/edit/checking_berkas/{id}',[PenyeliaController::class,'edit_checking_berkas_pendirian']);
+
+    Route::get('/penyelia/tracking/penyelenggaraan/edit/dokumen_valid/{id}',[PenyeliaController::class,'edit_dokumen_valid_penyelenggaraan']);
+    Route::get('/penyelia/tracking/penyelenggaraan/edit/checking_berkas/{id}',[PenyeliaController::class,'edit_checking_berkas_penyelenggaraan']);
 
 
 
@@ -221,7 +224,6 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::post('/store/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'store'])->name('penyelenggaraan.store');
 
     Route::post('/update/perizinanPendirian',[PerizinanPendirianController::class,'update'])->name('pendirian.update');
-    Route::post('/test/{id}',[PerizinanPendirianController::class,'status_dokumenUpdate'])->name('pendirian.update1');
     Route::post('/update/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'update'])->name('penyelenggaraan.update');
     // END POST Perizinan
 
