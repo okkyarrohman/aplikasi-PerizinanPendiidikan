@@ -320,6 +320,13 @@ class PerizinanPendirianController extends Controller
         // Upload File Pendirian
         if($req->file())
         {
+        if($req->hasFile('dokumen_survey')){
+            $dokumen_survey = $req->file('dokumen_survey');
+            $extension = $dokumen_survey->getClientOriginalName();
+            $fotoName = date('YmdHis').".".$extension;
+            $dokumen_survey->move(storage_path('app/public/perizinanPendirian/dokumen_survey',date('YmdHis').".".$req->file('dokumen_survey')->getClientOriginalName()),$fotoName);
+            $permohonan->dokumen_survey = date('YmdHis').".".$req->file('dokumen_survey')->getClientOriginalName();
+        }
 
         if($req->hasFile('surat_permohonan')){
             $surat_permohonan = $req->file('surat_permohonan');

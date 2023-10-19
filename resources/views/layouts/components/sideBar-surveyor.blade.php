@@ -38,34 +38,59 @@
 
         <br>
         <li class="sidebar-title">Menu</li>
+        <hr>
         <li class="sidebar-item active ">
-            <a href="/surveyor" class='sidebar-link'>
+            <a href="/operator" class='sidebar-link'>
                 <span>Dashboard</span>
             </a>
         </li>
 
+
+        <li class="sidebar-title">Tracking</li>
+        <hr>
+
         <li class="sidebar-item  has-sub">
             <a href="#" class='sidebar-link'>
-                <span>Tracking Perizinan</span>
+                <span>Perizinan Pendirian</span>
             </a>
             <ul class="submenu ">
                 <li class="submenu-item ">
-                    <a href="/surveyor/sedang-disurvey" class='sidebar-link'>
+                    <a href="/surveyor/tracking/pendirian/sedang_disurvey_pendirian" class='sidebar-link'>
                         <span>Sedang Disurvey</span>
                     </a>
                 </li>
-
                 <li class="submenu-item ">
-                    <a href="/surveyor/telah-disurvey" class='sidebar-link'>
+                    <a href="/surveyor/tracking/pendirian/telah_disurvey_pendirian" class='sidebar-link'>
                         <span>Telah Disurvey</span>
                     </a>
                 </li>
-                {{-- <li class="submenu-item ">
-                    <a href="/admin/data-murid" class='sidebar-link'>
-                        <span>Data Murid</span>
-                    </a>
-                </li> --}}
             </ul>
+        </li>
+
+        <li class="sidebar-item  has-sub">
+            <a href="#" class='sidebar-link'>
+                <span>Perizinan Penyelenggaraan</span>
+            </a>
+            <ul class="submenu ">
+                <li class="submenu-item ">
+                    <a href="/surveyor/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan" class='sidebar-link'>
+                        <span>Sedang Disurvey</span>
+                    </a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="/surveyor/tracking/penyelenggaraan/telah_disurvey_penyelenggaraan" class='sidebar-link'>
+                        <span>Telah Disurvey</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sidebar-title">Feature Lainnya</li>
+        <hr>
+        <li class="sidebar-item  ">
+            <a href="/chatify" class='sidebar-link'>
+                <span>Chat</span>
+            </a>
         </li>
 
     </ul>

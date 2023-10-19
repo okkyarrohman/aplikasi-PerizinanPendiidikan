@@ -149,6 +149,13 @@ class PerizinanPenyelenggaraanController extends Controller
         if($req->file())
         {
 
+        if($req->hasFile('dokumen_survey')){
+            $dokumen_survey = $req->file('dokumen_survey');
+            $extension = $dokumen_survey->getClientOriginalName();
+            $fotoName = date('YmdHis').".".$extension;
+            $dokumen_survey->move(storage_path('app/public/perizinanPenyelenggaraan/dokumen_survey',date('YmdHis').".".$req->file('dokumen_survey')->getClientOriginalName()),$fotoName);
+            $permohonan->dokumen_survey = date('YmdHis').".".$req->file('dokumen_survey')->getClientOriginalName();
+        }
 
         if($req->hasFile('doc_pendirian')){
             $doc_pendirian = $req->file('doc_pendirian');

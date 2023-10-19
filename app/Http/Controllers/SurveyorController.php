@@ -3,52 +3,60 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Perizinan;
+use App\Models\PerizinanPendirian;
+use App\Models\PerizinanPenyelenggaraan;
 
 class SurveyorController extends Controller
 {
+    public function sedang_disurvey_pendirian()
+    {
+        $permohonans = PerizinanPendirian::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->get();
 
-
-
-    public function status(){
-        $trackings = Perizinan::all();
-
-        return view('surveyor.status',compact('trackings'));
+        return view('surveyor.perizinanPendirian.tracking.sedangDisurvey.index',compact('permohonans'));;
     }
 
-    public function sedang_disurvey(){
-        $trackings = Perizinan::where(['status_permohonan' => 'Sedang Disurvey'])->get();
+    public function telah_disurvey_pendirian()
+    {
+        $permohonans = PerizinanPendirian::where([
+            'status_dokumen' => 'Telah Disurvey'
+        ])->get();
 
-        return view('surveyor.tracking.sedangDisurvey',compact('trackings'));
+        return view('surveyor.perizinanPendirian.tracking.telahDisurvey.index',compact('permohonans'));;
     }
 
-    public function telah_disurvey(){
-        $trackings = Perizinan::where(['status_permohonan' => 'Telah Disurvey'])->get();
+    public function sedang_disurvey_penyelenggaraan()
+    {
+        $permohonans = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->get();
 
-        return view('surveyor.tracking.telahDisurvey',compact('trackings'));
+        return view('surveyor.perizinanPenyelenggaraan.tracking.sedangDisurvey.index',compact('permohonans'));;
     }
 
-    public function create($id){
-        $perizinan = Perizinan::find($id);
+    public function telah_disurvey_penyelenggaraan()
+    {
+        $permohonans = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Telah Disurvey'
+        ])->get();
 
-        return view('surveyor.edit',compact('perizinan'));
+        return view('surveyor.perizinanPenyelenggaraan.tracking.telahDisurvey.index',compact('permohonans'));;
+    }
+
+    public function edit_sedang_disurvey_pendirian($id)
+    {
+        $permohonans = PerizinanPendirian::where('id',$id)->first();
+
+        return view('surveyor.perizinanPendirian.tracking.sedangDisurvey.edit',compact('permohonans'));
+    }
+
+    public function edit_sedang_disurvey_penyelenggaraan($id)
+    {
+        $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
+
+        return view('surveyor.perizinanPenyelenggaraan.tracking.sedangDisurvey.edit',compact('permohonans'));
     }
 
 
-    public function update(Request $request){
-        $perizinan = Perizinan::find($request->id);
-        $perizinan->status_permohonan = $request->status_permohonan;
-
-        if($request->hasFile('dokumen_survey')){
-            $dokumen_survey = $request->file('dokumen_survey');
-            $extension = $dokumen_survey->getClientOriginalName();
-            $fotoName = $extension;
-            $dokumen_survey->move(storage_path('app/public/berkas/dokumen_survey',
-                $request->file('dokumen_survey')->getClientOriginalName()),$fotoName);
-            $perizinan->dokumen_survey = $request->file('dokumen_survey')->getClientOriginalName();
-        }
-
-        $perizinan->save();
-        return redirect()->route('surveyor.index')->with('success','data berhasil diupdate');
-    }
 }

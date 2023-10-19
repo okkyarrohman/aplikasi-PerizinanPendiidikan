@@ -128,12 +128,13 @@ Route::group(['middleware' => 'role:penyelia'], function(){
     Route::get('/penyelia/tracking/penyelenggaraan/dokumen_tidak_sesuai_penyelenggaraan',[PenyeliaController::class,'dokumen_tidak_sesuai_penyelenggaraan']);
     // End Tracking Perizinan
 
+    // Edit Tracking Perizinan
     Route::get('/penyelia/tracking/pendirian/edit/dokumen_valid/{id}',[PenyeliaController::class,'edit_dokumen_valid_pendirian']);
     Route::get('/penyelia/tracking/pendirian/edit/checking_berkas/{id}',[PenyeliaController::class,'edit_checking_berkas_pendirian']);
 
     Route::get('/penyelia/tracking/penyelenggaraan/edit/dokumen_valid/{id}',[PenyeliaController::class,'edit_dokumen_valid_penyelenggaraan']);
     Route::get('/penyelia/tracking/penyelenggaraan/edit/checking_berkas/{id}',[PenyeliaController::class,'edit_checking_berkas_penyelenggaraan']);
-
+    // End Edit Tracking Perizinan
 
 
 });
@@ -142,13 +143,20 @@ Route::group(['middleware' => 'role:penyelia'], function(){
 // Route surveyor
 Route::group(['middleware' => 'role:surveyor'], function(){
     Route::get('/surveyor',[HomeController::class,'index_surveyor'])->name('surveyor');
-    Route::get('/surveyor/tracking',[SurveyorController::class,'tracking']);
-    Route::get('/surveyor/sedang-disurvey',[SurveyorController::class,'sedang_disurvey'])->name('surveyor.index');
-    Route::get('/surveyor/telah-disurvey',[SurveyorController::class,'telah_disurvey'])->name('surveyor.index');
-    Route::get('/surveyor/edit/{id}',[SurveyorController::class,'create']);
 
-    Route::post('/surveyor/store',[SurveyorController::class,'update'])->name('surveyor.update');
+    // Tracking Perizinan
+    Route::get('/surveyor/tracking/pendirian/sedang_disurvey_pendirian',[SurveyorController::class,'sedang_disurvey_pendirian']);
+    Route::get('/surveyor/tracking/pendirian/telah_disurvey_pendirian',[SurveyorController::class,'telah_disurvey_pendirian']);
 
+    Route::get('/surveyor/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan',[SurveyorController::class,'sedang_disurvey_penyelenggaraan']);
+    Route::get('/surveyor/tracking/penyelenggaraan/telah_disurvey_penyelenggaraan',[SurveyorController::class,'telah_disurvey_penyelenggaraan']);
+    //  End Tracking Perizinan
+
+    // Edit Tracking Perizinan
+    Route::get('/surveyor/tracking/pendirian/edit/sedang_disurvey/{id}',[SurveyorController::class,'edit_sedang_disurvey_pendirian']);
+    Route::get('/surveyor/tracking/penyelenggaraan/edit/sedang_disurvey/{id}',[SurveyorController::class,'edit_sedang_disurvey_penyelenggaraan']);
+
+    // End Tracking Perizinan
 });
 // End Route surveyor
 
