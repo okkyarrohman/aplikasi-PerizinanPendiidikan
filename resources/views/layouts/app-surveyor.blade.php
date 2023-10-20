@@ -1,3 +1,4 @@
+w
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +22,12 @@
         href="{{ asset('dashboard/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/toastify-js/src/toastify.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/css/pages/filepond.css') }}">
+
+    {{-- leaflet --}}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 
 <body>
@@ -83,6 +90,7 @@
             </a>
         </header>
         @yield('content')
+
     </div>
 
     {{-- @include('layouts.extras.footer') --}}
@@ -100,6 +108,8 @@
     <script src="{{ asset('dashboard/extensions/filepond/filepond.js') }}"></script>
     <script src="{{ asset('dashboard/extensions/toastify-js/src/toastify.js') }}"></script>
     <script src="{{ asset('dashboard/js/pages/filepond.js') }}"></script>
+
+    @stack('js')
 </body>
 
 </html>
