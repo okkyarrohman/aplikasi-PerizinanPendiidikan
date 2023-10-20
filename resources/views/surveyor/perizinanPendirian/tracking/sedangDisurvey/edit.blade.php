@@ -101,6 +101,7 @@
                     </div>
                 </div>
 
+                <div id="map" style="width:100%; height: 320px;"></div>
 
                 <div class="row">
                     <div class="col-md-6">
@@ -142,3 +143,20 @@
             </form>
         </div>
     @endsection
+
+    @push('js')
+        <script>
+            var longtitude = JSON.parse('{!! $permohonans->longtitude !!}')
+            var latitude = JSON.parse('{!! $permohonans->latitude !!}')
+
+
+            var map = L.map('map').setView([longtitude, latitude], 13);
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            var marker = L.marker([longtitude, latitude]).addTo(map);
+        </script>
+    @endpush
