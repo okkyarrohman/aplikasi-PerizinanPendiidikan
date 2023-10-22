@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\KepalaDinasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OperatorController;
@@ -9,7 +10,6 @@ use App\Http\Controllers\PenyeliaController;
 use App\Http\Controllers\SurveyorController;
 use App\Http\Controllers\DinasController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PeminjamanFasilitasController;
 use App\Http\Controllers\PerizinanPendirianController;
 use App\Http\Controllers\PerizinanPenyelenggaraanController;
 
@@ -108,6 +108,19 @@ Route::group(['middleware' => 'role:walikota'], function(){
 // Route kepala-dinas
 Route::group(['middleware' => 'role:kepala-dinas'], function(){
     Route::get('/kepala-dinas',[HomeController::class,'index_kepalaDinas'])->name('kepala-dinas');
+    Route::get('/kepala-dinas/notifikasi',[KepalaDinasController::class,'notifikasi']);
+
+
+    // Tracking Dokumen
+    Route::get('/kepala-dinas/tracking/pendirian/dokumen_sesuai_pendirian',[KepalaDinasController::class,'dokumen_sesuai_pendirian']);
+    Route::get('/kepala-dinas/tracking/pendirian/ttd_walikota_pendirian',[KepalaDinasController::class,'ttd_walikota_pendirian']);
+
+    Route::get('/kepala-dinas/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan',[KepalaDinasController::class,'dokumen_sesuai_penyelenggaraan']);
+    Route::get('/kepala-dinas/tracking/penyelenggaraan/ttd_walikota_penyelenggaraan',[KepalaDinasController::class,'ttd_walikota_penyelenggaraan']);
+
+    // End Tracking Dokumen
+
+
 });
 // End Route kepala-dinas
 
