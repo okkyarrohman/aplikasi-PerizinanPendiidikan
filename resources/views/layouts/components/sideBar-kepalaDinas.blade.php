@@ -60,8 +60,8 @@
             </a>
             <ul class="submenu ">
                 <li class="submenu-item ">
-                    <a href="/kepala-dinas/tracking/pendirian/dokumen_sesuai_pendirian" class='sidebar-link'>
-                        <span>Dokumen Sesuai</span>
+                    <a href="/kepala-dinas/tracking/pendirian/ttd_kepalaDinas_pendirian" class='sidebar-link'>
+                        <span>Tanda Tangan Kepala Dinas</span>
                     </a>
                 </li>
                 <li class="submenu-item ">
@@ -78,9 +78,9 @@
             </a>
             <ul class="submenu ">
                 <li class="submenu-item ">
-                    <a href="/kepala-dinas/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan"
+                    <a href="/kepala-dinas/tracking/penyelenggaraan/ttd_kepalaDinas_penyelenggaraan"
                         class='sidebar-link'>
-                        <span>Dokumen Sesuai</span>
+                        <span>Tanda Tangan Kepala Dinas</span>
                     </a>
                 </li>
                 <li class="submenu-item ">

@@ -112,13 +112,20 @@ Route::group(['middleware' => 'role:kepala-dinas'], function(){
 
 
     // Tracking Dokumen
-    Route::get('/kepala-dinas/tracking/pendirian/dokumen_sesuai_pendirian',[KepalaDinasController::class,'dokumen_sesuai_pendirian']);
+    Route::get('/kepala-dinas/tracking/pendirian/ttd_kepalaDinas_pendirian',[KepalaDinasController::class,'ttd_kepalaDinas_pendirian']);
     Route::get('/kepala-dinas/tracking/pendirian/ttd_walikota_pendirian',[KepalaDinasController::class,'ttd_walikota_pendirian']);
 
-    Route::get('/kepala-dinas/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan',[KepalaDinasController::class,'dokumen_sesuai_penyelenggaraan']);
+    Route::get('/kepala-dinas/tracking/penyelenggaraan/ttd_kepalaDinas_penyelenggaraan',[KepalaDinasController::class,'ttd_kepalaDinas_penyelenggaraan']);
     Route::get('/kepala-dinas/tracking/penyelenggaraan/ttd_walikota_penyelenggaraan',[KepalaDinasController::class,'ttd_walikota_penyelenggaraan']);
-
     // End Tracking Dokumen
+
+    // Edit Tracking Perizinan
+    Route::get('/kepala-dinas/tracking/pendirian/edit/ttd_kepalaDinas/{id}',[KepalaDinasController::class,'edit_ttd_kepalaDinas_pendirian']);
+    Route::get('/kepala-dinas/tracking/penyelenggaraan/edit/ttd_kepalaDinas/{id}',[KepalaDinasController::class,'edit_ttd_kepalaDinas_penyelenggaraan']);
+    // End Edit Tracking Perizinan
+
+    // Izin Terbit PDF
+    Route::get('/kepla-dinas/pendirian/tracking/izin_terbit_pendirian_pdf/{id}',[KepalaDinasController::class,'izin_terbit_pendirian_pdf']);
 
 
 });
@@ -148,6 +155,7 @@ Route::group(['middleware' => 'role:penyelia'], function(){
     Route::get('/penyelia/tracking/penyelenggaraan/edit/dokumen_valid/{id}',[PenyeliaController::class,'edit_dokumen_valid_penyelenggaraan']);
     Route::get('/penyelia/tracking/penyelenggaraan/edit/checking_berkas/{id}',[PenyeliaController::class,'edit_checking_berkas_penyelenggaraan']);
     // End Edit Tracking Perizinan
+
 
 
 });
