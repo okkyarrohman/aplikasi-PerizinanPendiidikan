@@ -236,4 +236,13 @@ class PerizinanPenyelenggaraanController extends Controller
 
         return back()->with('success', 'data berhasil dikirim');
     }
+
+    public function update_status_dokumen(Request $req)
+    {
+        $permohonan = PerizinanPenyelenggaraan::find($req->id);
+
+        $permohonan->status_dokumen = $req->status_dokumen;
+        $permohonan->save();
+        return back()->with('success','Permohonan Berhasil');
+    }
 }

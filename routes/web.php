@@ -244,8 +244,13 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::post('/store/perizinanPendirian',[PerizinanPendirianController::class,'store'])->name('pendirian.store');
     Route::post('/store/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'store'])->name('penyelenggaraan.store');
 
+
     Route::post('/update/perizinanPendirian',[PerizinanPendirianController::class,'update'])->name('pendirian.update');
     Route::post('/update/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'update'])->name('penyelenggaraan.update');
+
+    Route::post('/update/pendirian/statusDokumen',[PerizinanPendirianController::class,'update_status_dokumen'])->name('statusPendirian.update');
+    Route::post('/update/penyelenggaraan/statusDokumen',[PerizinanPenyelenggaraanController::class,'update_status_dokumen'])->name('statusPenyelenggaraan.update');
+
     // END POST Perizinan
 
 

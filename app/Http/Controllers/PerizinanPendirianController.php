@@ -561,9 +561,9 @@ class PerizinanPendirianController extends Controller
         return back()->with('success','Permohonan Berhasil');
     }
 
-    public function status_dokumenUpdate(Request $req,$id)
+    public function update_status_dokumen(Request $req)
     {
-        $permohonan = PerizinanPendirian::find($id);
+        $permohonan = PerizinanPendirian::find($req->id);
 
         $permohonan->status_dokumen = $req->status_dokumen;
         $permohonan->save();

@@ -11,6 +11,9 @@ class KepalaDinasController extends Controller
 
     }
 
+    public function index()
+    {
 
+    }
 
 }
