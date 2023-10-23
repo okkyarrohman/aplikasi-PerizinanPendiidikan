@@ -58,7 +58,6 @@
 
         <div style="width: 50%; text-align: left; float: right;">Purwodadi, 20 Januari 2020</div><br>
         <div style="width: 50%; text-align: left; float: right;">Yang bertanda tangan,</div>
-        {!! QrCode::format('png')->size(200)->generate('Make me into a QrCode!') !!}
         <div style="width: 50%; text-align: left; float: right;">Kepala Dinas</div>
         @endforeach
     </div>

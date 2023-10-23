@@ -58,6 +58,16 @@ class KepalaDinasController extends Controller
         return view('kepalaDinas.perizinanPendirian.tracking.ttdKepalaDinas.edit',compact('permohonans'));
     }
 
+    public function edit_ttd_kepalaDinas_penyelenggaraan($id)
+    {
+        $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
+
+        return view('kepalaDinas.perizinanPenyelenggaraan.tracking.ttdKepalaDinas.edit',compact('permohonans'));
+    }
+
+
+
+
     public function izin_terbit_pendirian_pdf($id)
     {
         $permohonans = PerizinanPendirian::where('id',$id)->get();

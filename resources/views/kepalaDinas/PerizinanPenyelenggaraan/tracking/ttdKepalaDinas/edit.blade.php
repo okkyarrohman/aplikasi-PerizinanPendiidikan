@@ -103,18 +103,18 @@
                     </div>
                 </div>
 
-                <div id="map" style="width:100%; height: 320px;"></div>
+
 
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card m-4">
                             <div class="content-1 m-4">
-                                <h6 for="first-name-vertical">Dokumen Hasil Survey</h6>
+                                <h6 for="first-name-vertical">Dokumen Izin Terbit Sementara</h6>
                                 <div class="download">
                                     <div class="nama-file">
-                                        <input type="file"
-                                            value="{{ old('dokumen_survey', $permohonans->dokumen_survey) }}"
-                                            class="form-control" name="dokumen_survey">
+                                        <a href="/kepla-dinas/pendirian/tracking/izin_terbit_pendirian_pdf/{{ $permohonans->id }}"
+                                            class="btn btn-danger">Download Izin
+                                            Terbit</a>
                                     </div>
                                 </div>
                             </div>
@@ -126,8 +126,8 @@
                             <div class="content-1 m-4">
                                 <label for="" class="text">Status Dokumen</label>
                                 <select name="status_dokumen" id="" class="form-select form-select">
-                                    <option value="Sedang Disurvey">Sedang Disurvey</option>
-                                    <option value="Telah Disurvey">Telah Disurvey</option>
+                                    <option value="Tanda Tangan Walikota">Ajukan Ke Walikota</option>
+                                    <option value="Tolak Dokumen">Tolak Dokumen</option>
                                 </select>
                             </div>
                         </div>
@@ -145,20 +145,3 @@
             </form>
         </div>
     @endsection
-
-    @push('js')
-        <script>
-            var longtitude = JSON.parse('{!! $permohonans->longtitude !!}')
-            var latitude = JSON.parse('{!! $permohonans->latitude !!}')
-
-
-            var map = L.map('map').setView([longtitude, latitude], 13);
-
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            }).addTo(map);
-
-            var marker = L.marker([longtitude, latitude]).addTo(map);
-        </script>
-    @endpush

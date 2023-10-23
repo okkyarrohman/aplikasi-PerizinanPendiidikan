@@ -53,8 +53,8 @@
                         <td class="border-bottom-0">
                             <a href="/kepala-dinas/tracking/pendirian/edit/ttd_kepalaDinas/{{ $tracking->id }}"
                                 class="btn btn-success">Edit</a>
-                            <a href="/kepla-dinas/pendirian/tracking/izin_terbit_pendirian_pdf/{{ $tracking->id }}"
-                                class="btn btn-danger">Download Izin Terbit</a>
+                            {{-- <a href="/kepla-dinas/pendirian/tracking/izin_terbit_pendirian_pdf/{{ $tracking->id }}"
+                                class="btn btn-danger">Download Izin Terbit</a> --}}
                         </td>
                     </tr>
                 </tbody>
