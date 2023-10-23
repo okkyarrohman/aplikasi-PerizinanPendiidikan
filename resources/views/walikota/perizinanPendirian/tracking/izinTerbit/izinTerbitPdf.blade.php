@@ -41,35 +41,70 @@
     .center font {
         text-align: center;
     }
+
+    td .center font {
+        text-align: center;
+    }
+
+    td font {
+        text-align: center;
+    }
+
+    .row .items-1 {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .row .items-2 {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .row .items-3 {
+        text-align: center;
+        justify-content: center;
+    }
 </style>
 
 <body>
-    <center border="1">
-        <table border="1">
-            <tr>
-                <td>
-                    <center class="center">
-                        <font size="2"><b>LAMPIRAN</b></font><br>
-                        <font size="2"><b>PENGUMUMAN BERSAMA</b></font><br>
-                        <font size="2"><b>DINAS PERIZINAN KOTA SURABAYA</b></font>
-                    </center>
-                </td>
-            </tr>
-        </table>
-        <table border="1">
-            <tr>
-                <td>
-                    <center class="center">
-                        <img src="{{ asset('ttd QRCode/garuda.png') }}" width="90" height="90"><br>
-                        <font size="3"><b>PEMERINTAH REPUBLIK INDONESIA</b></font><br><br>
-                        <font size="5"><b>IZIN PENDIRIAN</b></font><br>
-                    </center>
-                </td>
-            </tr>
-        </table>
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="items-1">
+                    <font size="2"><b>LAMPIRAN</b></h4>
+                </div>
+                <div class="items-2">
+                    <font size="2"><b>PENGUMUMAN BERSAMA</b></font>
+                </div>
+                <div class="items-3">
+                    <font size="2"><b>DINAS PERIZINAN KOTA SURABAYA</b></font>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="container">
+            <div class="row">
+                <div class="items-1">
+                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('QRCode/garuda.png'))) }}"
+                        width="90" height="90">
+                    <br>
+                </div>
+                <div class="items-2">
+                    <font size="3"><b>PEMERINTAH REPUBLIK INDONESIA</b></font>
+                </div><br>
+                <div class="items-3">
+                    <font size="5"><b>IZIN PENDIRIAN</b></font><br>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
         <br>
-        <table border="1">
+        <table>
             <tr>
                 <td class="text" width="625">Lembaga Pemerintahan Peraturan Pemerintah (PP) No.66/2010 tentang
                     Perubahan atas PP
@@ -81,7 +116,7 @@
         <br>
         @foreach ($permohonans as $pemohonan)
             <div class="data-diri">
-                <table border="1">
+                <table>
                     <tr>
                         <td>Nama Pemohon</td>
                         <td width="500">: {{ $pemohonan->nama }}</td>
@@ -106,7 +141,7 @@
             </div>
             <br>
         @endforeach
-        <table border="1">
+        <table>
             <tr>
                 <td class="text" width="625">Surat Izin ini berlaku selama pemohon melakukan kegiatan operasional
                     sesuai ketentuan
@@ -115,25 +150,26 @@
         </table>
         <br>
 
-        <table border="1">
+        <table>
             <tr>
                 <td class="dikeluarkan" width="625">Dikeluarkan Tanggal : Sabtu, 20 Oktober 2023</td>
             </tr>
         </table>
         <br>
 
-        <table border="1">
+        <table>
             <tr>
                 <td class="ttd-kepalaDinas" width="300">Kepala Dinas Perizinan kota Surabaya
                     <br>
-                    {{-- <img src="{{ asset('ttd QRCode/kepala-dinas.svg') }}" width="90" height="90" alt=""> --}}
-                    <br>
+
+                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('QRCode/KepalaDinas.png'))) }}"
+                        width="90" height="90"><br>
                     <b>Prof Dr Samsul Huda,. SPD,MP,D</b>
                 </td>
                 <td class="ttd-walikota" width="300">Walikota Surabaya
                     <br>
-                    {{-- <img src="{{ asset('ttd QRCode/Walikota.png') }}" width="90" height="90" alt=""> --}}
-                    <br>
+                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('QRCode/Walikota.png'))) }}"
+                        width="90" height="90"><br>
                     <b>Prof,Dr Eri Cahyadi S.T,. M.Kom</b>
                 </td>
             </tr>
