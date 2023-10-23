@@ -62,11 +62,7 @@ class KepalaDinasController extends Controller
     {
         $permohonans = PerizinanPendirian::where('id',$id)->get();
 
-        $pdf = Pdf::loadview('kepalaDinas.perizinanPendirian.tracking.ttdKepalaDinas.izinTerbitPdf',[
-            'permohonans' => $permohonans,
-        ]);
 
-        return $pdf->download(time().'-'.'.pdf');
     }
 
 }

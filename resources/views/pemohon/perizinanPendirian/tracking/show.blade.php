@@ -46,7 +46,9 @@
                 <div class="card bg-warning">
                     <div class="content-2 m-4">
                         <div class="visible-print text-center">
-                            {!! QrCode::size(250)->generate(Request::url()) !!}
+                            <img src="data:image/png;base64, {!! base64_encode(
+                                QrCode::format('png')->size(197)->generate(Request::url()),
+                            ) !!} ">
                             <br>
                             <a href="" class="btn btn-primary m-3">
                                 <span>Download QR Code</span>

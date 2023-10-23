@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <title>Contoh Surat Pernyataan</title>
-    <meta charset="utf-8">
+
     <style>
         #judul {
             text-align: center;
