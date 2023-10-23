@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\KepalaDinasController;
+use App\Http\Controllers\WalikotaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OperatorController;
@@ -102,6 +103,35 @@ Route::group(['middleware' => 'role:dinas'], function(){
 // Route walikota
 Route::group(['middleware' => 'role:walikota'], function(){
     Route::get('/walikota',[HomeController::class,'index_walikota'])->name('walikota');
+    Route::get('/walikota/notifikasi',[WalikotaController::class,'notifikasi']);
+
+    // Tracking Dokumen
+    Route::get('/walikota/tracking/pendirian/ttd_walikota_pendirian',[WalikotaController::class,'ttd_walikota_pendirian']);
+    Route::get('/walikota/tracking/pendirian/tolak_pendirian',[WalikotaController::class,'tolak_pendirian']);
+    Route::get('/walikota/tracking/pendirian/izin_terbit_pendirian',[WalikotaController::class,'izin_terbit_pendirian']);
+
+
+    Route::get('/walikota/tracking/penyelenggaraan/ttd_walikota_penyelenggaraan',[WalikotaController::class,'ttd_walikota_penyelenggaraan']);
+    Route::get('/walikota/tracking/penyelenggaraan/tolak_pendirian',[WalikotaController::class,'tolak_penyelenggaraan']);
+    Route::get('/walikota/tracking/penyelenggaraan/izin_terbit_penyelenggaraan',[WalikotaController::class,'izin_terbit_penyelenggaraan']);
+
+    // End Tracking Dokumen
+
+    // Edit Tracking Perizinan
+    Route::get('/walikota/tracking/pendirian/edit/ttd_walikota_pendirian/{id}',[WalikotaController::class,'edit_ttd_walikota_pendirian']);
+    Route::get('/walikota/tracking/penyelenggaraan/edit/ttd_walikota_penyelenggaraan/{id}',[WalikotaController::class,'edit_ttd_walikota_penyelenggaraan']);
+    // End Edit Tracking Perizinan
+
+    // Izin Terbit
+    Route::get('/walikota/tracking/pendirian/izin_terbit_pendirian/{id}',[WalikotaController::class,'izin_terbit_pendirian']);
+    Route::get('/walikota/tracking/penyelenggaraan/izin_terbit_penyelenggaraan/{id}',[WalikotaController::class,'izin_terbit_penyelenggaraan']);
+    // End Izin Terbit
+
+    // Download Izin Terbit
+    Route::get('/walikota/tracking/pendirian/download/izin_terbit_pendirian/{id}',[WalikotaController::class,'download_izin_terbit_pendirian']);
+    Route::get('/walikota/tracking/penyelenggaraan/download/izin_terbit_penyelenggaraan/{id}',[WalikotaController::class,'download_izin_terbit_penyelenggaraan']);
+
+
 });
 // End Route walikota
 
@@ -277,6 +307,10 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
 //My  Account
 Route::get('/my_account/{id}',[HomeController::class,'my_account']);
+
+Route::get('/testing/izinterbit',function(){
+    return view('walikota.perizinanPendirian.tracking.izinTerbitPdf');
+});
 
 
 
