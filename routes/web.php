@@ -232,7 +232,6 @@ Route::group(['middleware' => 'role:operator'], function(){
 
     Route::get('/operator/tracking/pendirian/edit/{id}',[OperatorController::class,'edit_pendirian']);
     Route::get('/operator/tracking/penyelenggaraan/edit/{id}',[OperatorController::class,'edit_penyelenggaraan']);
-
     // End Tracking Operator
 
 });

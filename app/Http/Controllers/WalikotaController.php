@@ -101,9 +101,6 @@ class WalikotaController extends Controller
         $dompdf->loadHTML($view);
 
         $dompdf->render();
-
-
-
         return $dompdf->stream('surat_izin_terbit'.time().'.pdf');
 
 

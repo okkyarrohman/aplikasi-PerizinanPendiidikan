@@ -3,22 +3,12 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card  align-items-center">
                     <div class="content-1 m-4">
                         <div class="text">
                             <h5 class="text align-items-center">Cari File Dengan QR Code!</h5>
-                            <div id="reader" width="600px"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card  align-items-center">
-                    <div class="content-1 m-4">
-                        <div class="text">
-                            <h5 class="text align-items-center">Hasil</h5>
-                            <div id="hasil-output"></div>
+                            <div id="reader" height="1200"></div>
                         </div>
                     </div>
                 </div>
