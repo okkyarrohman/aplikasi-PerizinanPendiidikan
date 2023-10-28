@@ -53,6 +53,7 @@
                         <td class="border-bottom-0">
                             <a href="/walikota/tracking/pendirian/download/izin_terbit_pendirian/{{ $tracking->id }}"
                                 class="btn btn-success">Download Izin Terbit</a>
+                            <a href="/send-email/{{ $tracking->id }}" class="btn btn-success">Kirim Email</a>
                         </td>
                     </tr>
                 </tbody>

@@ -13,6 +13,7 @@ use App\Http\Controllers\DinasController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PerizinanPendirianController;
 use App\Http\Controllers\PerizinanPenyelenggaraanController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -312,7 +313,8 @@ Route::get('/testing/izinterbit',function(){
 });
 
 
-
+// Send Email
+Route::get('/send-email/{id}',[MailController::class,'send_attach_gmail']);
 
 
 
