@@ -17,6 +17,7 @@ class PerizinanPendirianFactory extends Factory
     public function definition(): array
     {
         return [
+            'user_id' => 9,
             'nama' => $this->faker->name(),
             'email' => $this->faker->email(),
             'telepon' => $this->faker->phoneNumber(),
