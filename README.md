@@ -89,40 +89,40 @@ php artisan serve
 ## Login setiap Role :
 
 ### Role Admin
-#### Email : admin@perizinan.com
-#### Password : admin123
+###### Email : admin@perizinan.com
+###### Password : admin123
 
 ### Role pemohon
-#### Email : pemohon@perizinan.com
-#### Password : pemohon123
+###### Email : pemohon@perizinan.com
+###### Password : pemohon123
 
 ### Role operator
-#### Email : operator@perizinan.com
-#### Password : operator123
+###### Email : operator@perizinan.com
+###### Password : operator123
 
 ### Role verifikator
-#### Email : penyelia@perizinan.com
-#### Password : penyelia123
+###### Email : penyelia@perizinan.com
+###### Password : penyelia123
 
 ### Role surveyor
-#### Email : surveyor@perizinan.com
-#### Password : surveyor123
+###### Email : surveyor@perizinan.com
+###### Password : surveyor123
 
 ### Role kepala dinas
-#### Email : kepala_dinas@perizinan.com
-#### Password : kepaladinas123
+###### Email : kepala_dinas@perizinan.com
+###### Password : kepaladinas123
 
 ### Role walikota
-#### Email : walikota@perizinan.com
-#### Password : walikota123
+###### Email : walikota@perizinan.com
+###### Password : walikota123
 
 ### Role admin dinas
-#### Email : admin_dinas@perizinan.com
-#### Password : admin dinas123
+###### Email : admin_dinas@perizinan.com
+###### Password : admin dinas123
 
 ### Role auditor
-#### Email : auditor@perizinan.com
-#### Password : auditor123
+###### Email : auditor@perizinan.com
+###### Password : auditor123
 
 
 
