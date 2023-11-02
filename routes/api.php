@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\Auth\ForgotPasswordController;
+use App\Http\Controllers\Api\Auth\UserController;
+use App\Http\Controllers\Api\Auth\VerifyEmailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::post('/register', [UserController::class, 'register']);
+Route::post('/forgot-password', [ForgotPasswordController::class, 'forgot']);
+Route::post('/login', [UserController::class, 'login']);
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/user/profile', [UserController::class, 'getUserProfile']);
+    Route::post('/email/resend', [VerifyEmailController::class, 'resend']);
 });
