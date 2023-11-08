@@ -4,8 +4,10 @@ use App\Http\Controllers\Api\Auth\ForgotPasswordController;
 use App\Http\Controllers\Api\Auth\UserController;
 use App\Http\Controllers\Api\Auth\VerifyEmailController;
 use App\Http\Controllers\Api\PendirianController;
+use App\Http\Controllers\Api\PenyelenggaraanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +36,12 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/pendirian', [PendirianController::class, 'create']);
     Route::post('/pendirian/{id}', [PendirianController::class, 'update']);
     Route::delete('/pendirian/{id}', [PendirianController::class, 'delete']);
+
+    // Pendirian
+    Route::get('/penyelenggaraan', [PenyelenggaraanController::class, 'getPenyelenggaraan']);
+    Route::get('/penyelenggaraan/user', [PenyelenggaraanController::class, 'getPenyelenggaraanByUser']);
+    Route::get('/penyelenggaraan/{id}', [PenyelenggaraanController::class, 'getPenyelenggaraanById']);
+    Route::post('/penyelenggaraan', [PenyelenggaraanController::class, 'create']);
+    Route::post('/penyelenggaraan/{id}', [PenyelenggaraanController::class, 'update']);
+    Route::delete('/penyelenggaraan/{id}', [PenyelenggaraanController::class, 'delete']);
 });
