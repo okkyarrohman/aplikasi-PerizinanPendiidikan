@@ -14,12 +14,14 @@ trait ApiResponses
      * @param  int  $statusCode
      * @return \Illuminate\Http\JsonResponse
      */
-    protected function sendSuccessResponse(array $data, string $message, int $statusCode = 200): JsonResponse
+    protected function sendSuccessResponse(array $data, string $message, int $statusCode = 200, array $meta = []): JsonResponse
     {
         return response()->json([
-            'status_code' => $statusCode,
+            'meta' => array_merge([
+                'status_code' => $statusCode,
+                'message' => $message,
+            ], $meta),
             'data' => $data,
-            'message' => $message,
         ], $statusCode);
     }
 

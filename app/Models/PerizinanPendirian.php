@@ -14,8 +14,8 @@ class PerizinanPendirian extends Model
     protected $fillable = [
             'nama',
             'email',
-            'contact',
-            'tipe_dokument',
+            'telepon',
+            'tipe_dokumen',
             'status_dokumen',
             'longtitude',
             'latitude',
@@ -51,4 +51,9 @@ class PerizinanPendirian extends Model
             'sk_yayasan',
             'studi_layak'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

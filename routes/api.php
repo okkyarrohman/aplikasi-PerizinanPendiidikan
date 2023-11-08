@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Auth\ForgotPasswordController;
 use App\Http\Controllers\Api\Auth\UserController;
 use App\Http\Controllers\Api\Auth\VerifyEmailController;
+use App\Http\Controllers\Api\PendirianController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,4 +26,12 @@ Route::post('/login', [UserController::class, 'login']);
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user/profile', [UserController::class, 'getUserProfile']);
     Route::post('/email/resend', [VerifyEmailController::class, 'resend']);
+
+    // Pendirian
+    Route::get('/pendirian', [PendirianController::class, 'getPendirian']);
+    Route::get('/pendirian/user', [PendirianController::class, 'getPendirianByUser']);
+    Route::get('/pendirian/{id}', [PendirianController::class, 'getPendirianById']);
+    Route::post('/pendirian', [PendirianController::class, 'create']);
+    Route::post('/pendirian/{id}', [PendirianController::class, 'update']);
+    Route::delete('/pendirian/{id}', [PendirianController::class, 'delete']);
 });
