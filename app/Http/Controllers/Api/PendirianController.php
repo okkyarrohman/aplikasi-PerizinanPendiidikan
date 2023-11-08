@@ -330,9 +330,46 @@ class PendirianController extends Controller
                 'latitude'
             ]));
 
+            
+
+            $fields = [
+                'surat_permohonan',
+                'ktp',
+                'suket_domisili',
+                'pengurus',
+                'suket_mendirikan',
+                'suket_tanah',
+                'suket_pbh',
+                'suket_perubahanPBH',
+                'suket_rip',
+                'suket_psp',
+                'sukas_perizinan',
+                'sk_izinOperasional',
+                'sertif_bpjs_sehat',
+                'sertif_bpjs_kerja',
+                'denah',
+                'gedung',
+                'akta_pendirian',
+                'surper_kades',
+                'surper_camat',
+                'surat_tanah',
+                'patuh_aturan',
+                'daftar_siswa',
+                'daftar_TKK',
+                'daftar_TKnK',
+                'kurikulum',
+                'sarpras',
+                'sk_yayasan',
+                'studi_layak',
+            ];
+
+            foreach ($fields as $column) {
+                $this->deleteFileIfExists($pendirian->$column, $column);
+            }
+
             // Penyimpanan file (contoh untuk surat_permohonan)
-            if ($request->hasFile('surat_permohonan')) {
-                $this->handleFileUpload($request, $pendirian, 'surat_permohonan');
+            foreach ($fields as $field) {
+                $this->handleFileUpload($request, $pendirian, $field);
             }
 
             // Simpan perubahan data pendirian
