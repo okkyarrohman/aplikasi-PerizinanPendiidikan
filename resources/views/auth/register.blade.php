@@ -27,25 +27,38 @@
                 <div class="col-lg-5 col-12">
                     <div id="auth-left">
                         <h1 class="auth-title">Register.</h1>
-                        <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
+                        <p class="auth-subtitle mb-5">Registration with your data</p>
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div x-show="activeStep === 1" x-transition class="active-step">
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Nama Lengkap</label>
-                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
-                                        name="name">
+                                    <input type="text" class="form-control form-control-xl" name="name">
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Email</label>
-                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
-                                        name="email">
+                                    <input type="text" class="form-control form-control-xl" name="email">
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Password</label>
                                     <input type="password" class="form-control form-control-xl" placeholder="Password"
                                         name="password">
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
 
                                 <div class="button flex">
@@ -57,19 +70,16 @@
                             <div x-show="activeStep === 2" x-transition class="active-step">
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">No Telepon</label>
-                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
-                                        name="telepon">
+                                    <input type="text" class="form-control form-control-xl" name="telepon">
                                 </div>
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Nama Pekerjaan</label>
-                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
-                                        name="pekerjaan">
+                                    <input type="text" class="form-control form-control-xl" name="pekerjaan">
                                 </div>
 
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Nomor NIK</label>
-                                    <input type="number" class="form-control form-control-xl" placeholder="text"
-                                        name="nik">
+                                    <input type="number" class="form-control form-control-xl" name="nik">
                                 </div>
 
                                 <div class="button d-flex justify-content-around align-items-lg-around">
@@ -87,19 +97,16 @@
                             <div x-show="activeStep === 3" x-transition class="active-step">
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Tanggal Lahir</label>
-                                    <input type="date" class="form-control form-control-xl" placeholder="Email"
-                                        name="tanggal_lahir">
+                                    <input type="date" class="form-control form-control-xl" name="tanggal_lahir">
                                 </div>
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Alamat</label>
-                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
-                                        name="alamat">
+                                    <input type="text" class="form-control form-control-xl" name="alamat">
                                 </div>
 
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Domisili</label>
-                                    <input type="text" class="form-control form-control-xl" placeholder="text"
-                                        name="domisili">
+                                    <input type="text" class="form-control form-control-xl" name="domisili">
                                 </div>
 
                                 <div class="button d-flex justify-content-around align-items-lg-around">
@@ -117,19 +124,16 @@
                             <div x-show="activeStep === 4" x-transition class="active-step">
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Kode Pos</label>
-                                    <input type="number" class="form-control form-control-xl" placeholder="Email"
-                                        name="kode_pos">
+                                    <input type="number" class="form-control form-control-xl" name="kode_pos">
                                 </div>
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Kota</label>
-                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
-                                        name="kota">
+                                    <input type="text" class="form-control form-control-xl" name="kota">
                                 </div>
 
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Kecamatan</label>
-                                    <input type="text" class="form-control form-control-xl" placeholder="text"
-                                        name="kecamatan">
+                                    <input type="text" class="form-control form-control-xl" name="kecamatan">
                                 </div>
 
                                 <div class="button d-flex justify-content-around align-items-lg-around">
@@ -147,13 +151,11 @@
                             <div x-show="activeStep === 5" x-transition class="active-step">
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Kelurahan</label>
-                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
-                                        name="kelurahan">
+                                    <input type="text" class="form-control form-control-xl" name="kelurahan">
                                 </div>
                                 <div class="form-group position-relative has-icon-left mb-4">
                                     <label for="" class="form-control">Desa</label>
-                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
-                                        name="desa">
+                                    <input type="text" class="form-control form-control-xl" name="desa">
                                 </div>
 
                                 <select name="roles" hidden>
