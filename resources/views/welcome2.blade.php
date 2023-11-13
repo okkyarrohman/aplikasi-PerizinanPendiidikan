@@ -35,9 +35,21 @@
         <div class="div">
             <img class="img" src="{{ asset('images/logo.png') }}" />
             <div class="div-2">
-                <div class="text-wrapper">Beranda</div>
-                <div class="text-wrapper">Tentang</div>
-                <div class="text-wrapper">Persyaratan</div>
+                <div class="text-wrapper">
+                    <a href="">
+                        <h5>Beranda</h5>
+                    </a>
+                </div>
+                <div class="text-wrapper">
+                    <a href="">
+                        <h5>Tentang</h5>
+                    </a>
+                </div>
+                <div class="text-wrapper">
+                    <a href="">
+                        <h5>Persyaratan</h5>
+                    </a>
+                </div>
                 @if (Route::has('login'))
                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                         @auth
@@ -103,7 +115,6 @@
 
     <div class="frame-3">
         <div class="overlap-group">
-            <img class="group" src="img/group.png" />
             <div class="frame-wrapper">
                 <div class="div-wrapper">
                     <p class="text-wrapper">©Technopolis 2023. Hak Cipta Dilindungi Oleh Undang-undang</p>

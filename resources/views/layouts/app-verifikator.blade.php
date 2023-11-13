@@ -31,8 +31,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo">
                             <a href="index.html">
-                                {{-- <img src="{{ asset('dashboard/assets/images/logo/logo.svg') }}"
-                                    alt="Logo" srcset=""> --}}
+                                <img src="{{ asset('images/logo.png') }}" style="width: 100px; height:100px;">
                             </a>
                         </div>
                         <div class="theme-toggle d-flex gap-2  align-items-center mt-2">

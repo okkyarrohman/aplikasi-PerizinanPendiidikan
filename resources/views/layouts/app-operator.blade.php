@@ -8,13 +8,14 @@
 
     <link rel="stylesheet" href="{{ asset('dashboard/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/css/main/app-dark.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/shared/iconly.css') }}">
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.svg') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.png') }}" type="image/png">
 
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/quill/quill.snow.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/quill/quill.bubble.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('dashboard/css/shared/iconly.css') }}">
+
 
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/filepond/filepond.css') }}">
     <link rel="stylesheet"
@@ -31,8 +32,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo">
                             <a href="index.html">
-                                {{-- <img src="{{ asset('dashboard/assets/images/logo/logo.svg') }}"
-                                    alt="Logo" srcset=""> --}}
+                                <img src="{{ asset('images/logo.png') }}" style="width: 100px; height:100px;">
                             </a>
                         </div>
                         <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
