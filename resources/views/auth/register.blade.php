@@ -168,8 +168,8 @@
                                             Previous</a>
                                     </div>
                                     <div class="btn2">
-                                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5"
-                                            type="submit">
+                                        <button type="submit"
+                                            class="btn btn-primary btn-block btn-lg shadow-lg mt-5">
                                             Submit
                                         </button>
                                     </div>

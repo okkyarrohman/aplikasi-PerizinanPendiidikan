@@ -51,20 +51,20 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'telepon' => ['required', 'string'],
-            'pekerjaan' => ['required', 'string'],
-            'nik' => ['required', 'string'],
-            'tanggal_lahir' => ['required', 'string'],
-            'alamat' => ['required', 'string'],
-            'domisili' => ['required', 'string'],
-            'kode_pos' => ['required', 'string'],
-            'kota' => ['required', 'string'],
-            'kecamatan' => ['required', 'string'],
-            'kelurahan' => ['required', 'string'],
-            'desa' => ['required', 'string'],
+            'name' => ['string', 'max:255'],
+            'email' => [ 'string', 'email', 'max:255', 'unique:users'],
+            'password' => [ 'string', 'min:8', 'confirmed'],
+            'telepon' => [ 'string'],
+            'pekerjaan' => [ 'string'],
+            'nik' => [ 'string'],
+            'tanggal_lahir' => [ 'string'],
+            'alamat' => [ 'string'],
+            'domisili' => [ 'string'],
+            'kode_pos' => [ 'string'],
+            'kota' => [ 'string'],
+            'kecamatan' => [ 'string'],
+            'kelurahan' => [ 'string'],
+            'desa' => [ 'string'],
 
         ]);
     }
