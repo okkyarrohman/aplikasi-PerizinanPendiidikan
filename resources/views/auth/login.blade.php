@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('dashboard/css/pages/auth.css') }}">
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.svg') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.png') }}" type="image/png">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
@@ -71,6 +72,7 @@
         </div>
     </div>
 
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://kit.fontawesome.com/f9a30c1ad2.js" crossorigin="anonymous"></script>
 </body>
 

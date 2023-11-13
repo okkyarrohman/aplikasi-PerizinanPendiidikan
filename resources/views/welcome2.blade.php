@@ -139,19 +139,19 @@
                             <div class="text-wrapper-4">Ikuti Kami</div>
                         </div>
                         <div class="div-4">
-                            <img class="image" src="img/image-23.png" />
+                            <img class="image" src="{{ asset('images/ig.png') }}" />
                             <div class="text-wrapper-5">technopolis</div>
                         </div>
                         <div class="div-4">
-                            <img class="group-2" src="img/group-173.png" />
+                            <img class="group-2" src="{{ asset('images/yt.png') }}" />
                             <div class="text-wrapper-5">technopolis</div>
                         </div>
                         <div class="div-4">
-                            <img class="image" src="img/image-24.png" />
+                            <img class="image" src="{{ asset('images/fb.png') }}" />
                             <div class="text-wrapper-5">technopolis</div>
                         </div>
                         <div class="div-4">
-                            <img class="group-2" src="img/image.png" />
+                            <img class="group-2" src="{{ asset('images/linkedin.png') }}" />
                             <div class="text-wrapper-5">technopolis</div>
                         </div>
                     </div>

@@ -1,238 +1,191 @@
-@extends('layouts.app-without-nav')
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-16">
-                <div class="card align-items-center">
-                    <div class="card-title m-3">
-                        <b>
-                            <h4>Registrasi Account</h4>
-                        </b>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - TecnoPolis</title>
+    <link rel="stylesheet" href="{{ asset('dashboard/css/main/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/pages/auth.css') }}">
+    <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.svg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.png') }}" type="image/png">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <div x-data="{
+        activeStep: 1,
+        next() {
+            this.activeStep = this.activeStep + 1;
+        },
+        prev() {
+            this.activeStep = this.activeStep - 1;
+        }
+    }" x-cloak>
+        <div id="auth">
+            <div class="row h-100">
+                <div class="col-lg-5 col-12">
+                    <div id="auth-left">
+                        <h1 class="auth-title">Register.</h1>
+                        <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <div x-show="activeStep === 1" x-transition class="active-step">
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Nama Lengkap</label>
+                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
+                                        name="name">
+                                </div>
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Email</label>
+                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
+                                        name="email">
+                                </div>
+
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Password</label>
+                                    <input type="password" class="form-control form-control-xl" placeholder="Password"
+                                        name="password">
+                                </div>
+
+                                <div class="button flex">
+                                    <a @click="next()" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">
+                                        Next</a>
+                                </div>
+                            </div>
+
+                            <div x-show="activeStep === 2" x-transition class="active-step">
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">No Telepon</label>
+                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
+                                        name="telepon">
+                                </div>
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Nama Pekerjaan</label>
+                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
+                                        name="pekerjaan">
+                                </div>
+
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Nomor NIK</label>
+                                    <input type="number" class="form-control form-control-xl" placeholder="text"
+                                        name="nik">
+                                </div>
+
+                                <div class="button d-flex justify-content-around align-items-lg-around">
+                                    <div class="btn1"><a @click="prev()"
+                                            class="btn btn-warning btn-block btn-lg shadow-lg mt-5">
+                                            Previous</a>
+                                    </div>
+                                    <div class="btn2"><a @click="next()"
+                                            class="btn btn-primary btn-block btn-lg shadow-lg mt-5">
+                                            Next</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div x-show="activeStep === 3" x-transition class="active-step">
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Tanggal Lahir</label>
+                                    <input type="date" class="form-control form-control-xl" placeholder="Email"
+                                        name="tanggal_lahir">
+                                </div>
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Alamat</label>
+                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
+                                        name="alamat">
+                                </div>
+
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Domisili</label>
+                                    <input type="text" class="form-control form-control-xl" placeholder="text"
+                                        name="domisili">
+                                </div>
+
+                                <div class="button d-flex justify-content-around align-items-lg-around">
+                                    <div class="btn1"><a @click="prev()"
+                                            class="btn btn-warning btn-block btn-lg shadow-lg mt-5">
+                                            Previous</a>
+                                    </div>
+                                    <div class="btn2"><a @click="next()"
+                                            class="btn btn-primary btn-block btn-lg shadow-lg mt-5">
+                                            Next</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div x-show="activeStep === 4" x-transition class="active-step">
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Kode Pos</label>
+                                    <input type="number" class="form-control form-control-xl" placeholder="Email"
+                                        name="kode_pos">
+                                </div>
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Kota</label>
+                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
+                                        name="kota">
+                                </div>
+
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Kecamatan</label>
+                                    <input type="text" class="form-control form-control-xl" placeholder="text"
+                                        name="kecamatan">
+                                </div>
+
+                                <div class="button d-flex justify-content-around align-items-lg-around">
+                                    <div class="btn1"><a @click="prev()"
+                                            class="btn btn-warning btn-block btn-lg shadow-lg mt-5">
+                                            Previous</a>
+                                    </div>
+                                    <div class="btn2"><a @click="next()"
+                                            class="btn btn-primary btn-block btn-lg shadow-lg mt-5">
+                                            Next</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div x-show="activeStep === 5" x-transition class="active-step">
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Kelurahan</label>
+                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
+                                        name="kelurahan">
+                                </div>
+                                <div class="form-group position-relative has-icon-left mb-4">
+                                    <label for="" class="form-control">Desa</label>
+                                    <input type="text" class="form-control form-control-xl" placeholder="Email"
+                                        name="desa">
+                                </div>
+
+                                <select name="roles" hidden>
+                                    <option value="pemohon" selected hidden></option>
+                                </select>
+
+                                <div class="button d-flex justify-content-around align-items-lg-around">
+                                    <div class="btn1"><a @click="prev()"
+                                            class="btn btn-warning btn-block btn-lg shadow-lg mt-5">
+                                            Previous</a>
+                                    </div>
+                                    <div class="btn2">
+                                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5"
+                                            type="submit">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="col-lg-7 d-none d-lg-block">
+                    <div id="auth-right">
                     </div>
                 </div>
             </div>
         </div>
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-            <div class="row justify-content-center">
-                <div class="col-md-8 ">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row mb-3">
-                                <label for="name"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="name" type="text"
-                                        class="form-control @error('name') is-invalid @enderror" name="name" required
-                                        autocomplete="name" autofocus>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script src="https://kit.fontawesome.com/f9a30c1ad2.js" crossorigin="anonymous"></script>
+</body>
 
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="email"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email" required
-                                        autocomplete="email">
-
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="password"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="new-password">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required autocomplete="new-password">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Row 2 --}}
-
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row mb-3">
-                                <label for="telepon"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('No Telepon') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="telepon" type="text" class="form-control " name="telepon" required
-                                        autocomplete="name" autofocus>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="pekerjaan"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Nama Pekerjaan') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="pekerjaan" type="text" class="form-control " name="pekerjaan" required
-                                        autocomplete="name" autofocus>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="nik"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('No NIK') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="nik" type="number" class="form-control " name="nik" required
-                                        autocomplete="name" autofocus>
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
-                </div>
-                {{-- Row 3 --}}
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row mb-3">
-                                <label for="tanggal_lahir"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Tanggal lahir') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="tanggal_lahir" type="date" class="form-control " name="tanggal_lahir"
-                                        required autocomplete="name" autofocus>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="alamat"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Alamat') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="alamat" type="text" class="form-control " name="alamat" required
-                                        autocomplete="name" autofocus>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="domisili"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Domisili') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="domisili" type="text" class="form-control " name="domisili" required
-                                        autocomplete="name" autofocus>
-                                </div>
-                            </div>
-
-
-                            <div class="row mb-3">
-                                <label for="kode_pos"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Kode Pos') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="kode_pos" type="number" class="form-control " name="kode_pos" required
-                                        autocomplete="name" autofocus>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-                {{-- Row 3 --}}
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row mb-3">
-                                <label for="kota"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Kota') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="kota" type="text" class="form-control " name="kota" required
-                                        autocomplete="name" autofocus>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="kecamatan" class="col-md-4 col-form-label text-md-end">Kecam atan</label>
-
-                                <div class="col-md-6">
-                                    <input id="kecamatan" type="text" class="form-control " name="kecamatan" required
-                                        autocomplete="name" autofocus>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="kelurahan"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Kelurahan') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="kelurahan" type="text" class="form-control " name="kelurahan" required
-                                        autocomplete="name" autofocus>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="desa"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Desa') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="desa" type="text" class="form-control " name="desa" required
-                                        autocomplete="name" autofocus>
-                                </div>
-                            </div>
-
-                            <select name="roles" hidden>
-                                <option value="pemohon" selected hidden></option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- Row submit --}}
-            <div class="row">
-                <div class="card align-items-center">
-                    <div class="card-footer d-inline-block w-100"">
-                        <button type="submit"
-                            class="btn btn-primary w-100 justify-center align-items-center">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-@endsection
+</html>
