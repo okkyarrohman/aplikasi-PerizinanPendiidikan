@@ -1,7 +1,8 @@
 .frame {
-  position: relative;
 
-
+   position: relative;
+  width: 1441px;
+  height: 619px;
 }
 
 .frame .img {
@@ -406,4 +407,40 @@
   line-height: var(--noto-sans-semibold-20-line-height);
   font-style: var(--noto-sans-semibold-20-font-style);
 }
+
+
+.content-1 {
+    width: 1360px;
+    height: 500px;
+    display: flex;
+
+}
+
+.text{
+    width: 500px;
+
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transform: translate(-25, -70%);
+    -webkit-transform: translate(-25, -70%);
+    -moz-transform: translate(-25, -70%);
+    -ms-transform: translate(-25, -70%);
+    -o-transform: translate(-25, -70%);
+}
+
+.gambar{
+    width: 500px;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    transform: translate(-25, -70%);
+    -webkit-transform: translate(-25, -70%);
+    -moz-transform: translate(-25, -70%);
+    -ms-transform: translate(-25, -70%);
+    -o-transform: translate(-25, -70%);
+}
+
 
