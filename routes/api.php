@@ -37,7 +37,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/pendirian/{id}', [PendirianController::class, 'update']);
     Route::delete('/pendirian/{id}', [PendirianController::class, 'delete']);
 
-    // Pendirian
+    // penyelenggaraan
     Route::get('/penyelenggaraan', [PenyelenggaraanController::class, 'getPenyelenggaraan']);
     Route::get('/penyelenggaraan/user', [PenyelenggaraanController::class, 'getPenyelenggaraanByUser']);
     Route::get('/penyelenggaraan/{id}', [PenyelenggaraanController::class, 'getPenyelenggaraanById']);
