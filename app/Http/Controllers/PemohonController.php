@@ -7,14 +7,34 @@ use App\Models\Perizinan;
 use App\Models\PerizinanPendirian;
 use App\Models\PerizinanPenyelenggaraan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class PemohonController extends Controller
 {
     public function data_pemohon()
     {
+        $user = Auth::user();
 
-        return view('pemohon.account.edit');
+        return view('pemohon.account.index',compact('user'));
+    }
+
+    public function edit_data_pemohon($id)
+    {
+        $user = Auth::user();
+
+        return view('pemohon.account.edit', compact('user'));
+    }
+
+    public function persyaratan_pendirian(){
+        $user = Auth::user();
+
+        return view('pemohon.persyaratan.pendirian',compact('user'));
+    }
+    public function persyaratan_penyelenggaraan(){
+        $user = Auth::user();
+
+        return view('pemohon.persyaratan.penyelenggaraan',compact('user'));
     }
 
     // Create view for Perizinan Pendirian

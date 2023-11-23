@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Horizontal - Mazer Admin Dashboard</title>
+    <title>Pemohon - Tecnopolis</title>
 
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.svg') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.png') }}" type="image/png">
@@ -27,16 +27,44 @@
                                     alt="Logo"></a>
                         </div>
                         <div class="header-top-right">
-                            <div class="persyaratan mt-2 ml-4">
-                                <a href="/pemohon/persyaratan">
-                                    <h6>Persyaratan</h6>
+                            <div class="permohonan dropdown">
+                                <a href="#" id="topbarUserDropdown"
+                                    class="user-dropdown d-flex align-items-center dropend dropdown-toggle "
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="avatar avatar-md2">
+                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
+                                    </div>
+                                    <div class="text">
+                                        <h6 class="user-dropdown-name">Persyaratan</h6>
+                                    </div>
                                 </a>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-lg"
+                                    aria-labelledby="topbarUserDropdown">
+                                    <li><a class="dropdown-item" href="/pemohon/persyaratan/pendirian">Perizinan
+                                            Pendirian</a></li>
+                                    <li><a class="dropdown-item" href="/pemohon/persyaratan/penyelenggaraan">Perizinan
+                                            Penyelenggaraan</a></li>
+
+                                </ul>
                             </div>
 
-                            <div class="permohonan mt-2">
-                                <a href="/pemohon/perizinan">
-                                    <h6>Permohonan Perizinan</h6>
+                            <div class="permohonan dropdown">
+                                <a href="#" id="topbarUserDropdown"
+                                    class="user-dropdown d-flex align-items-center dropend dropdown-toggle "
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="avatar avatar-md2">
+                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
+                                    </div>
+                                    <div class="text">
+                                        <h6 class="user-dropdown-name">Permohonan</h6>
+                                    </div>
                                 </a>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-lg"
+                                    aria-labelledby="topbarUserDropdown">
+                                    <li><a class="dropdown-item" href="#">Perizinan Pendirian</a></li>
+                                    <li><a class="dropdown-item" href="#">Perizinan Penyelenggaraan</a></li>
+
+                                </ul>
                             </div>
 
                             <div class="chat mt-2">
@@ -99,13 +127,13 @@
                                         <img src="{{ asset('images/orang.png') }}" alt="Avatar">
                                     </div>
                                     <div class="text">
-                                        <h6 class="user-dropdown-name">John Ducky</h6>
+                                        <h6 class="user-dropdown-name">{{ $user->name }}</h6>
                                         <p class="user-dropdown-status text-sm text-muted">Pemohon</p>
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end shadow-lg"
                                     aria-labelledby="topbarUserDropdown">
-                                    <li><a class="dropdown-item" href="#">My Account</a></li>
+                                    <li><a class="dropdown-item" href="/data-pemohon">My Account</a></li>
                                     <li><a class="dropdown-item" href="#">Settings</a></li>
                                     <li>
                                         <hr class="dropdown-divider">

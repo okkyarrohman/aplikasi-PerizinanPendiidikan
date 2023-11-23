@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\KepalaDinasController;
 use App\Http\Controllers\WalikotaController;
 use Illuminate\Support\Facades\Route;
@@ -241,13 +242,16 @@ Route::group(['middleware' => 'role:operator'], function(){
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
-    Route::get('/data-pemohon',[PemohonController::class,'data_pemohon']);
+    Route::get('/data-pemohon',[PemohonController::class,'data_pemohon'])->name('index.account');
+    Route::get('/edit/data-pemohon/{id}',[PemohonController::class,'edit_data_pemohon']);
+    Route::post('/update/data-pemohon',[AccountController::class,'update'])->name('update.account');
+
+
 
     // Menu
     Route::get('/pemohon',[HomeController::class,'index_pemohon'])->name('pemohon');
-    Route::get('/pemohon/persyaratan', function(){
-        return view('pemohon.persyaratan');
-    });
+    Route::get('/pemohon/persyaratan/pendirian', [PemohonController::class,'persyaratan_pendirian']);
+    Route::get('/pemohon/persyaratan/penyelenggaraan', [PemohonController::class,'persyaratan_penyelenggaraan']);
 
     // Menu
 

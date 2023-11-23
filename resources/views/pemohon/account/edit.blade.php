@@ -2,185 +2,121 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body py-4 px-4">
-                        <div class="d-flex align-items-center">
-                            <div class="avatar avatar-xl">
-                                <img src="{{ asset('dashboard/images/faces/1.jpg') }}" alt="Face 1">
-                            </div>
-                            <div class="ms-3 name">
-                                <h5 class="font-bold">John Duck</h5>
-                                <h6 class="text-muted mb-0">@johnducky</h6>
-                            </div>
-                        </div>
+        <div class="title d-flex justify-content-center align-items-center">
+            <h3>Informasi Akun</h3>
+        </div>
+        <br>
+        <form action="{{ route('update.account') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="number" value="{{ $user->id }}" hidden>
+            <div class="gambar d-flex justify-content-center">
+                <div class="d-flex align-items-center">
+                    <div class="avatar avatar-xl">
+                        <img src="{{ asset('dashboard/images/faces/1.jpg') }}" alt="Face 1">
                     </div>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div class="form-group with-title">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="100"></textarea>
-                                <label>Alamat</label>
-                            </div>
-                        </div>
+                    <div class="ms-3 name">
+                        <h3 class="font-bold">{{ $user->name }}</h3>
                     </div>
                 </div>
             </div>
 
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
+            <br>
+
+            <div class="data-diri d-flex justify-content-center">
+                <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Update Profile</h4>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-body">
-                                <div class="form-body">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label>Name Lengkap</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="text" class="form-control" placeholder="Name"
-                                                        id="first-name-icon">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>Nama Pekerjaan</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="text" class="form-control" placeholder="Email"
-                                                        id="first-name-icon">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>Email</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="email" class="form-control" placeholder="Mobile">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>Password</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="password" class="form-control" placeholder="Password">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="card-body py-4 px-4">
+                            <div class=" align-items-center">
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">Nama Pengguna</label>
+                                    <input type="text" name="name" class="form-control"
+                                        placeholder="{{ $user->name }}">
                                 </div>
+                                <br>
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">Nama Pekerjaan</label>
+                                    <input type="text" name="pekerjaan" class="form-control"
+                                        placeholder="{{ $user->pekerjaan }}">
+                                </div>
+                                <br>
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">Nomer Telepon</label>
+                                    <input type="number" name="telepon" class="form-control"
+                                        placeholder="{{ $user->telepon }}">
+                                </div>
+                                <br>
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">NIK</label>
+                                    <input type="number" name="nik" required class="form-control"
+                                        placeholder="{{ $user->nik }}">
+                                </div>
+                                <br>
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">Tempat Lahir</label>
+                                    <input type="text" name="alamat" class="form-control"
+                                        placeholder="{{ $user->alamat }}">
+                                </div>
+
+                                <br>
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">Tanggal Lahir</label>
+                                    <input type="date" name="tanggal_lahir" class="form-control"
+                                        placeholder="{{ $user->tanggal_lahir }}">
+                                </div>
+
+                                <br>
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">Alamat Sesuai KTP</label>
+                                    <input type="text" name="domisili" class="form-control"
+                                        placeholder="{{ $user->domisili }}">
+                                </div>
+
+                                <br>
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">Kota</label>
+                                    <input type="text" name="kota" class="form-control"
+                                        placeholder="{{ $user->kota }}">
+                                </div>
+
+                                <br>
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">Kecamatan</label>
+                                    <input type="text" name="kecamatan" class="form-control"
+                                        placeholder="{{ $user->kecamatan }}">
+                                </div>
+
+                                <br>
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">Kelurahan</label>
+                                    <input type="text" name="kelurahan" class="form-control"
+                                        placeholder="{{ $user->kelurahan }}">
+                                </div>
+
+                                <br>
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">Desa</label>
+                                    <input type="text" name="desa" class="form-control"
+                                        placeholder="{{ $user->desa }}">
+                                </div>
+
+                                <br>
+                                <div class="ms-3 ">
+                                    <label for="first-name-vertical" class="form-label">Kode Pos</label>
+                                    <input type="number" name="kode_pos" class="form-control"
+                                        placeholder="{{ $user->kode_pos }}">
+                                </div>
+
+                                <br>
+                                <div class="button-edit d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary">Update Data Diri</button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-body">
-                                <div class="form-body">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label>No Telepon</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="text" class="form-control" placeholder="Name"
-                                                        id="first-name-icon">
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>NIK</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="number" class="form-control" placeholder="Email"
-                                                        id="first-name-icon">
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>Tempat Lahir </label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="city" class="form-control" placeholder="Mobile">
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>Tanggal Lahir</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="date" class="form-control" placeholder="Password">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>Alamat</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="text" class="form-control" placeholder="Password">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label>Domisili</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group has-icon-left">
-                                                <div class="position-relative">
-                                                    <input type="text" class="form-control" placeholder="Password">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="parent-3 d-inline-block w-100">
-                        <button type="submit"
-                            class="btn btn-outline-primary w-100 justify-center align-items-center">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </form>
     </div>
 @endsection
