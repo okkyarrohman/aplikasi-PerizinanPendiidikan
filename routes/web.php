@@ -267,7 +267,7 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     // End Perizinan Penyelenggaraan create
 
     // Pemohon tracking_pendirian
-    Route::get('/pemohon/tracking_pendirian',[PemohonController::class,'tracking_pendirian']);
+    Route::get('/pemohon/tracking',[PemohonController::class,'tracking_pendirian']);
     Route::get('/pemohon/tracking_penyelenggaraan',[PemohonController::class,'tracking_penyelenggaraan']);
 
     Route::get('/pemohon/show_pendirian/{id}',[PemohonController::class,'show_pendirian']);
@@ -318,3 +318,6 @@ Route::get('/send-email/{id}',[MailController::class,'send_attach_gmail']);
 
 
 
+Route::get('/testing-pemohon', function(){
+    return view('layouts.app-pemohon');
+});
