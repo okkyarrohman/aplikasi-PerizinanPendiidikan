@@ -255,6 +255,10 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
     // Menu
 
+    Route::get('/pemohon/permohonan/pendirian', [PemohonController::class,'permohonan_pendirian']);
+    Route::get('/pemohon/permohonan/penyelenggaraan', [PemohonController::class,'permohonan_penyelenggaraan']);
+
+
     // Perizinan Pendirian create
     Route::get('/pemohon/perizinanPendirian/create-tk',[PemohonController::class,'create_tk']);
     Route::get('/pemohon/perizinanPendirian/create-sd',[PemohonController::class,'create_sd']);

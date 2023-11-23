@@ -37,16 +37,37 @@ class PemohonController extends Controller
         return view('pemohon.persyaratan.penyelenggaraan',compact('user'));
     }
 
+
+    // Index
+    public function permohonan_pendirian(){
+        $user = Auth::user();
+
+        return view('pemohon.permohonan.perizinanPendirian.index', compact('user'));
+    }
+
+    public function permohonan_penyelenggaraan(){
+        $user = Auth::user();
+
+        return view('pemohon.permohonan.perizinanPenyelenggaraan.index', compact('user'));
+    }
+
+
+
+
+
     // Create view for Perizinan Pendirian
     public function create_tk()
     {
+        $user = Auth::user();
 
-        return view('pemohon.perizinanPendirian.createTk');
+        return view('pemohon.permohonan.perizinanPendirian.tk.createTk', compact('user'));
     }
 
     public function create_sd()
     {
-        return view('pemohon.perizinanPendirian.createSd');
+        $user = Auth::user();
+
+        return view('pemohon.permohonan.perizinanPendirian.sd.createSd',compact('user'));
     }
 
     // End Create view for Perizinan Pendirian

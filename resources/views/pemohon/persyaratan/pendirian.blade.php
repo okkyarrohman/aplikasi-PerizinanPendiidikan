@@ -9,7 +9,7 @@
 
         <div class="card">
             <div class="content m-4">
-                <h5> Pendirian TK</h5>
+                <h5>Taman Kanak Kanak</h5>
                 <ol>
                     <li>Scan Surat permohonan
                     </li>
@@ -47,7 +47,7 @@
 
         <div class="card">
             <div class="content m-4">
-                <h5> Pendirian SD/SMP/SMA</h5>
+                <h5>SD/SMP/SMA</h5>
                 <ol>
                     <li>Surat permohonan
                     </li>
