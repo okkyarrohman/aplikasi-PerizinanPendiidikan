@@ -12,19 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PemohonController extends Controller
 {
-    public function data_pemohon()
-    {
-        $user = Auth::user();
 
-        return view('pemohon.account.index',compact('user'));
-    }
-
-    public function edit_data_pemohon($id)
-    {
-        $user = Auth::user();
-
-        return view('pemohon.account.edit', compact('user'));
-    }
 
     public function persyaratan_pendirian(){
         $user = Auth::user();

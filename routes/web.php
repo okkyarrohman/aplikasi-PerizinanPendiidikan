@@ -247,8 +247,8 @@ Route::group(['middleware' => 'role:operator'], function(){
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
-    Route::get('/data-pemohon',[PemohonController::class,'data_pemohon'])->name('index.account');
-    Route::get('/edit/data-pemohon/{id}',[PemohonController::class,'edit_data_pemohon']);
+    Route::get('/data-pemohon',[AccountController::class,'data_pemohon'])->name('index.account');
+    Route::get('/edit/data-pemohon/{id}',[AccountController::class,'edit_data_pemohon']);
     Route::post('/update/data-pemohon',[AccountController::class,'update'])->name('update.account');
 
 
