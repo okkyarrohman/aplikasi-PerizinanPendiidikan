@@ -15,6 +15,12 @@ class OperatorController extends Controller
         return view('operator.tracking.perizinanPendirian.index', compact('user'));
     }
 
+    public function index_penyelenggaraan(){
+        $user = Auth::user();
+
+        return view('operator.tracking.perizinanPenyelenggaraan.index', compact('user'));
+    }
+
 
     // Perizinan Pendirian
     public function checking_berkas_pendirian()
@@ -59,29 +65,32 @@ class OperatorController extends Controller
     // Perizinan Penyelenggaraan
     public function checking_berkas_penyelenggaraan()
     {
+        $user = Auth::user();
         $permohonans = PerizinanPenyelenggaraan::where([
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
-        return view('operator.perizinanPenyelenggaraan.tracking.checkingBerkas.index',compact('permohonans'));
+        return view('operator.tracking.perizinanPenyelenggaraan.checkingBerkas.index',compact('permohonans','user'));
     }
 
         public function dokumen_valid_penyelenggaraan()
     {
+        $user = Auth::user();
         $permohonans = PerizinanPenyelenggaraan::where([
             'status_dokumen' => 'Dokumen Valid'
         ])->get();
 
-        return view('operator.perizinanPenyelenggaraan.tracking.dokumenValid.index',compact('permohonans'));
+        return view('operator.tracking.perizinanPenyelenggaraan.dokumenValid.index',compact('permohonans','user'));
     }
 
         public function dokumen_tidak_valid_penyelenggaraan()
     {
+        $user = Auth::user();
         $permohonans = PerizinanPenyelenggaraan::where([
             'status_dokumen' => 'Dokumen Tidak Valid'
         ])->get();
 
-        return view('operator.perizinanPenyelenggaraan.tracking.dokumenTidakValid.index',compact('permohonans'));
+        return view('operator.tracking.perizinanPenyelenggaraan.dokumenTidakValid.index',compact('permohonans','user'));
     }
     // End Perizinan Penyelenggaraan
 

@@ -226,7 +226,7 @@ Route::group(['middleware' => 'role:operator'], function(){
 
     // Index Tracking Operator
     Route::get('/operator/tracking/pendirian',[OperatorController::class,'index_pendirian']);
-
+    Route::get('/operator/tracking/penyelenggaraan',[OperatorController::class,'index_penyelenggaraan']);
 
     // Tracking Operator
     Route::get('/operator/tracking/pendirian/checking_berkas_pendirian',[OperatorController::class,'checking_berkas_pendirian']);
