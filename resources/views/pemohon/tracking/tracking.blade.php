@@ -26,7 +26,7 @@
                                 <h5>Pengajuan Perizinan Pendirian {{ $no++ }}</h5>
                             </div>
                             <div class="created_at">
-                                <span>{{ $permohonan->created_at }}</span>
+                                <span>{{ $permohonan->nama }}</span>
                             </div>
                             <hr>
                             <div class="isi">

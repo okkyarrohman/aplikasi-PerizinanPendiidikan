@@ -115,22 +115,18 @@ class PemohonController extends Controller
     // Show Tracking
 
 
-    public function tracking_pendirian()
+    public function tracking()
     {
-        $permohonans =   PerizinanPendirian::all();
+        $user = Auth::user();
 
-        return view('pemohon.perizinanPendirian.tracking.tracking',compact('permohonans'));
+        $permohonans = PerizinanPendirian::find(Auth::user());
+
+        return view('pemohon.tracking.tracking',compact('permohonans','user'));
     }
 
-     public function tracking_penyelenggaraan()
-    {
-        $permohonans =   PerizinanPenyelenggaraan::all();
 
 
-        return view('pemohon.perizinanPenyelenggaraan.tracking.tracking',compact('permohonans'));
-    }
-
-    public function show_pendirian($id)
+    public function show($id)
     {
         $permohonans = PerizinanPendirian::where('id',$id)->first();
 

@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\PerizinanPendirian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class PerizinanPendirianController extends Controller
 {
@@ -294,6 +295,7 @@ class PerizinanPendirianController extends Controller
 
         }
         // End Upload File Pendirian
+        $permohonan->user()->associate(Auth::user());
 
         $permohonan->save();
 

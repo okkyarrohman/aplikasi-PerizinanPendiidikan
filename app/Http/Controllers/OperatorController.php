@@ -5,35 +5,52 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PerizinanPendirian;
 use App\Models\PerizinanPenyelenggaraan;
+use Illuminate\Support\Facades\Auth;
 
 class OperatorController extends Controller
 {
+    public function index_pendirian(){
+        $user = Auth::user();
+
+        return view('operator.tracking.perizinanPendirian.index', compact('user'));
+    }
+
+
     // Perizinan Pendirian
     public function checking_berkas_pendirian()
     {
+        $user = Auth::user();
+
         $permohonans = PerizinanPendirian::where([
+            'tipe_dokumen' => 'TK',
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
-        return view('operator.perizinanPendirian.tracking.checkingBerkas.index',compact('permohonans'));
+        return view('operator.tracking.perizinanPendirian.tracking.checkingBerkas.index',compact('permohonans','user'));
     }
 
     public function dokumen_valid_pendirian()
     {
+        $user = Auth::user();
+
         $permohonans = PerizinanPendirian::where([
+            'tipe_dokumen' => 'TK',
             'status_dokumen' => 'Dokumen Valid'
         ])->get();
 
-        return view('operator.perizinanPendirian.tracking.dokumenValid.index',compact('permohonans'));
+        return view('operator.tracking.perizinanPendirian.tracking.dokumenValid.index',compact('permohonans','user'));
     }
 
     public function dokumen_tidak_valid_pendirian()
     {
+        $user = Auth::user();
+
         $permohonans = PerizinanPendirian::where([
+            'tipe_dokumen' => 'TK',
             'status_dokumen' => 'Dokumen Tidak Valid'
         ])->get();
 
-        return view('operator.perizinanPendirian.tracking.dokumenTidakValid.index',compact('permohonans'));
+        return view('operator.tracking.perizinanPendirian.tracking.dokumenTidakValid.index',compact('permohonans','user'));
 
     }
     // End Perizinan Pendirian

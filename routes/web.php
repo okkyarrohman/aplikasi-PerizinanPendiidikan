@@ -223,6 +223,11 @@ Route::group(['middleware' => 'role:auditor'], function(){
 Route::group(['middleware' => 'role:operator'], function(){
     Route::get('/operator',[HomeController::class,'index_operator'])->name('operator');
 
+
+    // Index Tracking Operator
+    Route::get('/operator/tracking/pendirian',[OperatorController::class,'index_pendirian']);
+
+
     // Tracking Operator
     Route::get('/operator/tracking/pendirian/checking_berkas_pendirian',[OperatorController::class,'checking_berkas_pendirian']);
     Route::get('/operator/tracking/pendirian/dokumen_valid_pendirian',[OperatorController::class,'dokumen_valid_pendirian']);
@@ -275,11 +280,9 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     // End Perizinan Penyelenggaraan create
 
     // Pemohon tracking_pendirian
-    Route::get('/pemohon/tracking',[PemohonController::class,'tracking_pendirian']);
-    Route::get('/pemohon/tracking_penyelenggaraan',[PemohonController::class,'tracking_penyelenggaraan']);
+    Route::get('/pemohon/tracking',[PemohonController::class,'tracking']);
 
-    Route::get('/pemohon/show_pendirian/{id}',[PemohonController::class,'show_pendirian']);
-    Route::get('/pemohon/show_penyelenggaraan/{id}',[PemohonController::class,'show_penyelenggaraan']);
+    Route::get('/pemohon/tracking/show/{id}',[PemohonController::class,'show']);
     // End Pemohon Tracking
 
 
