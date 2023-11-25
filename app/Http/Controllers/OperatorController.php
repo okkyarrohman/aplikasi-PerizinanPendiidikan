@@ -22,11 +22,11 @@ class OperatorController extends Controller
         $user = Auth::user();
 
         $permohonans = PerizinanPendirian::where([
-            'tipe_dokumen' => 'TK',
+
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
-        return view('operator.tracking.perizinanPendirian.tracking.checkingBerkas.index',compact('permohonans','user'));
+        return view('operator.tracking.perizinanPendirian.checkingBerkas.index',compact('permohonans','user'));
     }
 
     public function dokumen_valid_pendirian()
@@ -34,11 +34,11 @@ class OperatorController extends Controller
         $user = Auth::user();
 
         $permohonans = PerizinanPendirian::where([
-            'tipe_dokumen' => 'TK',
+
             'status_dokumen' => 'Dokumen Valid'
         ])->get();
 
-        return view('operator.tracking.perizinanPendirian.tracking.dokumenValid.index',compact('permohonans','user'));
+        return view('operator.tracking.perizinanPendirian.dokumenValid.index',compact('permohonans','user'));
     }
 
     public function dokumen_tidak_valid_pendirian()
@@ -46,11 +46,11 @@ class OperatorController extends Controller
         $user = Auth::user();
 
         $permohonans = PerizinanPendirian::where([
-            'tipe_dokumen' => 'TK',
+
             'status_dokumen' => 'Dokumen Tidak Valid'
         ])->get();
 
-        return view('operator.tracking.perizinanPendirian.tracking.dokumenTidakValid.index',compact('permohonans','user'));
+        return view('operator.tracking.perizinanPendirian.dokumenTidakValid.index',compact('permohonans','user'));
 
     }
     // End Perizinan Pendirian
@@ -88,16 +88,20 @@ class OperatorController extends Controller
 
     public function edit_pendirian($id)
     {
+        $user = Auth::user();
+
         $permohonans = PerizinanPendirian::where('id',$id)->first();
 
-        return view('operator.perizinanPendirian.edit',compact('permohonans'));
+        return view('operator.tracking.perizinanPendirian.edit',compact('permohonans','user'));
     }
 
     public function edit_penyelenggaraan($id)
     {
+        $user = Auth::user();
+
         $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
 
-        return view('operator.perizinanPenyelenggaraan.edit',compact('permohonans'));
+        return view('operator.tracking.perizinanPenyelenggaraan.edit',compact('permohonans','user'));
     }
 
 }

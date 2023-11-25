@@ -4,18 +4,16 @@
     <div class="container">
         <div class="card">
             <div class="title d-flex m-4 justify-content-center align-items-center">
-                <h2> Tracking Perizinan</h2>
+                <h2> Tracking Perizinan Pendirian</h2>
             </div>
         </div>
         <br>
 
         <div class="row">
-            <div class="group d-flex justify-content-between">
-                <div class="pendirian">
-                    <h4>Pendirian TK</h4>
-                </div>
+            <div class="group d-flex justify-content-end">
+
                 <div class="status_dokumen">
-                    <h4>Dokumen Tidak Valid</h4>
+                    <h4>Checking Berkas Operator</h4>
                 </div>
             </div>
         </div>
@@ -24,19 +22,19 @@
                 <thead class="text-dark fs-4">
                     <tr>
                         <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">No</h6>
+                        </th>
+                        <th class="border-bottom-0">
                             <h6 class="fw-semibold mb-0">Nama</h6>
                         </th>
                         <th class="border-bottom-0">
                             <h6 class="fw-semibold mb-0">No Telepon</h6>
                         </th>
                         <th class="border-bottom-0">
-                            <h6 class="fw-semibold mb-0">Longtitude</h6>
+                            <h6 class="fw-semibold mb-0">Dibuat</h6>
                         </th>
                         <th class="border-bottom-0">
-                            <h6 class="fw-semibold mb-0">Latitude</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                            <h6 class="fw-semibold mb-0">Alamat</h6>
+                            <h6 class="fw-semibold mb-0">Tipe Dokumen</h6>
                         </th>
                         <th class="border-bottom-0">
                             <h6 class="fw-semibold mb-0">Actions</h6>
@@ -50,22 +48,23 @@
                     <tbody class="tbody">
                         <tr>
                             <td class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">{{ $no++ }}</h6>
+                            </td>
+                            <td class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">{{ $tracking->nama }}</h6>
                             </td>
                             <td class="border-bottom-0">
                                 <h6 class="fw-semibold mb-1">{{ $tracking->telepon }}</h6>
                             </td>
                             <td class="border-bottom-0">
-                                <p class="mb-0 fw-normal">{{ $tracking->longtitude }}</p>
+                                <p class="mb-0 fw-normal">{{ $tracking->created_at }}</p>
                             </td>
                             <td class="border-bottom-0">
-                                <p class="mb-0 fw-normal">{{ $tracking->latitude }}</p>
+                                <p class="mb-0 fw-normal">{{ $tracking->tipe_dokumen }}</p>
                             </td>
                             <td class="border-bottom-0">
-                                <p class="mb-0 fw-normal">{{ $tracking->lokasi }}</p>
-                            </td>
-                            <td class="border-bottom-0">
-                                <a href="#">-</a>
+                                <a href="/operator/tracking/pendirian/edit/{{ $tracking->id }}"
+                                    class="btn btn-success">Edit</a>
                             </td>
                         </tr>
                     </tbody>
