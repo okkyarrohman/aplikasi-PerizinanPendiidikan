@@ -1,4 +1,4 @@
-@extends('layouts.app-surveyor')
+@extends('layouts.app-surveyor2')
 
 @section('content')
     <div class="container">

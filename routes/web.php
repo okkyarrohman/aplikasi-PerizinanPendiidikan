@@ -200,6 +200,8 @@ Route::group(['middleware' => 'role:penyelia'], function(){
 Route::group(['middleware' => 'role:surveyor'], function(){
     Route::get('/surveyor',[HomeController::class,'index_surveyor'])->name('surveyor');
 
+    Route::get('/surveyor/tracking/pendirian',[SurveyorController::class,'index_pendirian']);
+    Route::get('/surveyor/tracking/penyelenggaraan',[SurveyorController::class,'index_penyelenggaraan']);
     // Tracking Perizinan
     Route::get('/surveyor/tracking/pendirian/sedang_disurvey_pendirian',[SurveyorController::class,'sedang_disurvey_pendirian']);
     Route::get('/surveyor/tracking/pendirian/telah_disurvey_pendirian',[SurveyorController::class,'telah_disurvey_pendirian']);

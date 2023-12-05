@@ -1,4 +1,4 @@
-@extends('layouts.app-surveyor')
+@extends('layouts.app-surveyor2')
 
 @section('content')
     <div class="container">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <form class="form form-vertical" method="POST" action="{{ route('pendirian.update') }}"
+            <form class="form form-vertical" method="POST" action="{{ route('penyelenggaraan.update') }}"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="row">
@@ -70,7 +70,9 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Longtitude</label>
-                                                    <h6>{{ $permohonans->longtitude }}</h6>
+                                                    <h6
+                                                        onclick="showMap({{ $permohonans->longtitude }},{{ $permohonans->latitude }})">
+                                                        {{ $permohonans->longtitude }}</h6>
                                                     <input type="text" id="first-name-vertical" class="form-control"
                                                         name="longtitude" value="{{ $permohonans->longtitude }}" hidden>
                                                 </div>

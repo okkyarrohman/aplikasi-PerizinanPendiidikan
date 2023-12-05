@@ -1,4 +1,4 @@
-@extends('layouts.app-surveyor')
+@extends('layouts.app-surveyor2')
 
 @section('content')
     <div class="container">
@@ -51,8 +51,7 @@
                             <p class="mb-0 fw-normal">{{ $tracking->status_dokumen }}</p>
                         </td>
                         <td class="border-bottom-0">
-                            <a href="/surveyor/tracking/penyelenggaraan/edit/sedang_disurvey/{{ $tracking->id }}"
-                                class="btn btn-success">Edit</a>
+                            <h4>-</h4>
                         </td>
                     </tr>
                 </tbody>
