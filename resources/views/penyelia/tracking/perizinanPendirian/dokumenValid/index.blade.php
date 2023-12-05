@@ -1,63 +1,82 @@
-@extends('layouts.app-verifikator')
+@extends('layouts.app-verifikator2')
 
 @section('content')
     <div class="container">
-        <div class="head-container d-flex justify-content-lg-around">
-            <div class="title">
-                <h4>Table Perizinan Pendirian</h4>
+        <div class="card">
+            <div class="title d-flex m-4 justify-content-center align-items-center">
+                <h2> Tracking Perizinan Pendirian</h2>
             </div>
-            <form action="" method="">
-                <div class="search">
-                    <input class="form-control" type="text" name="search" id="" placeholder="Cari No surat">
-                </div>
-            </form>
         </div>
-        <table class="table table-hover m-3">
-            <thead class="text-dark fs-4">
-                <tr>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Nama</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">No Telepon</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Tipe Dokumen</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Status Permohonan</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Actions</h6>
-                    </th>
-                </tr>
-            </thead>
-            @php
-                $no = 1;
-            @endphp
-            @foreach ($permohonans as $tracking)
-                <tbody>
+        <br>
+
+        <div class="row">
+            <div class="group d-flex justify-content-end">
+
+                <div class="status_dokumen">
+                    <h4>Dokumen Valid</h4>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <table class="table table-hover m-4">
+                <thead class="text-dark fs-4">
                     <tr>
-                        <td class="border-bottom-0">
-                            <h6 class="fw-semibold mb-0">{{ $tracking->nama }}</h6>
-                        </td>
-                        <td class="border-bottom-0">
-                            <h6 class="fw-semibold mb-1">{{ $tracking->telepon }}</h6>
-                        </td>
-                        <td class="border-bottom-0">
-                            <p class="mb-0 fw-normal">{{ $tracking->tipe_dokumen }}</p>
-                        </td>
-                        <td class="border-bottom-0">
-                            <p class="mb-0 fw-normal">{{ $tracking->status_dokumen }}</p>
-                        </td>
-                        <td class="border-bottom-0">
-                            <a href="/penyelia/tracking/pendirian/edit/dokumen_valid/{{ $tracking->id }}"
-                                class="btn btn-success">Tugaskan
-                                Surveyor</a>
-                        </td>
+                        <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">No</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">Nama</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">No Telepon</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">Dibuat</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">Tipe Dokumen</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">Actions</h6>
+                        </th>
                     </tr>
-                </tbody>
-            @endforeach
-        </table>
+                </thead>
+                @php
+                    $no = 1;
+                @endphp
+                @foreach ($permohonans as $tracking)
+                    <tbody class="tbody">
+                        <tr>
+                            <td class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">{{ $no++ }}</h6>
+                            </td>
+                            <td class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">{{ $tracking->nama }}</h6>
+                            </td>
+                            <td class="border-bottom-0">
+                                <h6 class="fw-semibold mb-1">{{ $tracking->telepon }}</h6>
+                            </td>
+                            <td class="border-bottom-0">
+                                <p class="mb-0 fw-normal">{{ $tracking->created_at }}</p>
+                            </td>
+                            <td class="border-bottom-0">
+                                <p class="mb-0 fw-normal">{{ $tracking->tipe_dokumen }}</p>
+                            </td>
+                            <td class="border-bottom-0">
+                                <form action="{{ route('statusPendirian.update') }}" method="POST">
+                                    @csrf
+                                    <input type="text" name="id" value="{{ $tracking->id }}" hidden>
+                                    <select name="status_dokumen" id="" hidden>
+                                        <option value="Sedang Disurvey" selected>1</option>
+                                    </select>
+                                    <button class="btn btn-success" type="submit">Tugaskan Surveyor</button>
+                                </form>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                @endforeach
+            </table>
+        </div>
     </div>
 @endsection

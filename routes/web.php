@@ -166,6 +166,8 @@ Route::group(['middleware' => 'role:kepala-dinas'], function(){
 // Route penyelia / Verifikator
 Route::group(['middleware' => 'role:penyelia'], function(){
     Route::get('/penyelia',[HomeController::class,'index_penyelia'])->name('penyelia');
+    Route::get('/penyelia/tracking/pendirian',[PenyeliaController::class,'index_pendirian']);
+    Route::get('/penyelia/tracking/penyelenggaraan',[PenyeliaController::class,'index_penyelenggaraan']);
     // Tracking Perizinan
     Route::get('/penyelia/tracking/pendirian/dokumen_valid_pendirian',[PenyeliaController::class,'dokumen_valid_pendirian']);
     Route::get('/penyelia/tracking/pendirian/sedang_disurvey_pendirian',[PenyeliaController::class,'sedang_disurvey_pendirian']);

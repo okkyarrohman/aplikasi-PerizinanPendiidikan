@@ -60,6 +60,8 @@ class HomeController extends Controller
     }
 
     public function index_penyelia(){
+        $user = Auth::user();
+
         $dokumenValidPendirian = PerizinanPendirian::where([
             'status_dokumen' => 'Dokumen Valid'
         ])->count();
@@ -107,6 +109,7 @@ class HomeController extends Controller
             'totalCheckingBerkas' => $totalCheckingBerkas,
             'totalDokumenSesuai' => $totalDokumenSesuai,
             'totalDokumenTidakSesuai' => $totalDokumenTidakSesuai,
+            'user' => $user
         ]);
     }
 

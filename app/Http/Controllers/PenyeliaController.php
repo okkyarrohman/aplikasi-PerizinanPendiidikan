@@ -5,53 +5,68 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PerizinanPendirian;
 use App\Models\PerizinanPenyelenggaraan;
+use Illuminate\Support\Facades\Auth;
 
 class PenyeliaController extends Controller
 {
+
+
+
     // Pendirian
+    public function index_pendirian(){
+        $user = Auth::user();
+
+        return view('penyelia.tracking.perizinanPendirian.index', compact('user'));
+    }
+
     public function dokumen_valid_pendirian()
     {
+        $user = Auth::user();
         $permohonans = PerizinanPendirian::where([
             'status_dokumen' => 'Dokumen Valid'
         ])->get();
 
-        return view('penyelia.tracking.perizinanPendirian.dokumenValid.index',compact('permohonans'));
+        return view('penyelia.tracking.perizinanPendirian.dokumenValid.index',compact('permohonans','user'));
     }
 
     public function sedang_disurvey_pendirian()
     {
+        $user = Auth::user();
         $permohonans = PerizinanPendirian::where([
             'status_dokumen' => 'Sedang Disurvey'
         ])->get();
 
-        return view('penyelia.tracking.perizinanPendirian.sedangDisurvey.index',compact('permohonans'));
+        return view('penyelia.tracking.perizinanPendirian.sedangDisurvey.index',compact('permohonans','user'));
     }
 
     public function checking_berkas_pendirian()
     {
+        $user = Auth::user();
         $permohonans = PerizinanPendirian::where([
             'status_dokumen' => 'Checking Berkas Verifikator'
         ])->get();
 
-        return view('penyelia.tracking.perizinanPendirian.checkingBerkas.index',compact('permohonans'));
+        return view('penyelia.tracking.perizinanPendirian.checkingBerkas.index',compact('permohonans','user'));
     }
 
     public function dokumen_sesuai_pendirian()
     {
+        $user = Auth::user();
         $permohonans = PerizinanPendirian::where([
             'status_dokumen' => 'Dokumen Sesuai'
         ])->get();
 
-        return view('penyelia.tracking.perizinanPendirian.dokumenSesuai.index',compact('permohonans'));
+        return view('penyelia.tracking.perizinanPendirian.dokumenSesuai.index',compact('permohonans','user'));
     }
 
     public function dokumen_tidak_sesuai_pendirian()
     {
+        $user = Auth::user();
         $permohonans = PerizinanPendirian::where([
             'status_dokumen' => 'Dokumen Tidak Sesuai'
         ])->get();
 
-        return view('penyelia.tracking.perizinanPendirian.dokumenTidakSesuai.index',compact('permohonans'));
+        return view('penyelia.tracking.perizinanPendirian.dokumenTidakSesuai.index',compact('permohonans','user'));
     }
 
     // Penyelenggaraan
