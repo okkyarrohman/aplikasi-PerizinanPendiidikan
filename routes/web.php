@@ -165,6 +165,7 @@ Route::group(['middleware' => 'role:kepala-dinas'], function(){
 
 // Route penyelia / Verifikator
 Route::group(['middleware' => 'role:penyelia'], function(){
+
     Route::get('/penyelia',[HomeController::class,'index_penyelia'])->name('penyelia');
     Route::get('/penyelia/tracking/pendirian',[PenyeliaController::class,'index_pendirian']);
     Route::get('/penyelia/tracking/penyelenggaraan',[PenyeliaController::class,'index_penyelenggaraan']);
@@ -321,9 +322,6 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
 //My  Account
 Route::get('/my_account/{id}',[HomeController::class,'my_account']);
 
-Route::get('/testing/izinterbit',function(){
-    return view('walikota.perizinanPendirian.tracking.izinTerbitPdf');
-});
 
 
 // Send Email
@@ -331,6 +329,3 @@ Route::get('/send-email/{id}',[MailController::class,'send_attach_gmail']);
 
 
 
-Route::get('/testing-pemohon', function(){
-    return view('layouts.app-pemohon');
-});

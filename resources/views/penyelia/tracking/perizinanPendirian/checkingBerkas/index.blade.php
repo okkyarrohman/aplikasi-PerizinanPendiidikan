@@ -63,7 +63,7 @@
                                 <p class="mb-0 fw-normal">{{ $tracking->tipe_dokumen }}</p>
                             </td>
                             <td class="border-bottom-0">
-                                <a href="/operator/tracking/pendirian/edit/{{ $tracking->id }}"
+                                <a href="/penyelia/tracking/pendirian/edit/checking_berkas/{{ $tracking->id }}"
                                     class="btn btn-success">Edit</a>
                             </td>
                         </tr>

@@ -63,15 +63,8 @@
                                 <p class="mb-0 fw-normal">{{ $tracking->tipe_dokumen }}</p>
                             </td>
                             <td class="border-bottom-0">
-                                <form action="{{ route('statusPendirian.update') }}" method="POST">
-                                    @csrf
-                                    <input type="text" name="id" value="{{ $tracking->id }}" hidden>
-                                    <select name="status_dokumen" id="" hidden>
-                                        <option value="Sedang Disurvey" selected>1</option>
-                                    </select>
-                                    <button class="btn btn-success" type="submit">Tugaskan Surveyor</button>
-                                </form>
-
+                                <a href="/penyelia/tracking/pendirian/edit/dokumen_valid/{{ $tracking->id }}"
+                                    class="btn btn-success">Edit</a>
                             </td>
                         </tr>
                     </tbody>
