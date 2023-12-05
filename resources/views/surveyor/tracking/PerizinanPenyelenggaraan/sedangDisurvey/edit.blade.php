@@ -6,12 +6,12 @@
             <div class="col-md-12 ">
                 <div class="card align-items-center">
                     <div class="card-header align-items-center">
-                        <h4 class="card-title align-items-center">Edit Permohonan Perizinan Pendirian
+                        <h4 class="card-title align-items-center">Edit Permohonan Perizinan Penyelenggaraan
                         </h4>
                     </div>
                 </div>
             </div>
-            <form class="form form-vertical" method="POST" action="{{ route('penyelenggaraan.update') }}"
+            <form class="form form-vertical" method="POST" action="{{ route('hasilSurveyPenyelenggaraan.update') }}"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="row">
@@ -70,9 +70,7 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Longtitude</label>
-                                                    <h6
-                                                        onclick="showMap({{ $permohonans->longtitude }},{{ $permohonans->latitude }})">
-                                                        {{ $permohonans->longtitude }}</h6>
+                                                    <h6>{{ $permohonans->longtitude }}</h6>
                                                     <input type="text" id="first-name-vertical" class="form-control"
                                                         name="longtitude" value="{{ $permohonans->longtitude }}" hidden>
                                                 </div>
@@ -109,12 +107,10 @@
                     <div class="col-md-6">
                         <div class="card m-4">
                             <div class="content-1 m-4">
-                                <h6 for="first-name-vertical">Dokumen Hasil Survey</h6>
+                                <h6 for="first-name-vertical">Luas Lahan</h6>
                                 <div class="download">
                                     <div class="nama-file">
-                                        <input type="file"
-                                            value="{{ old('dokumen_survey', $permohonans->dokumen_survey) }}"
-                                            class="form-control" name="dokumen_survey">
+                                        <input type="number" class="form-control" name="luas_lahan">
                                     </div>
                                 </div>
                             </div>
@@ -124,15 +120,51 @@
                     <div class="col-md-6">
                         <div class="card m-4">
                             <div class="content-1 m-4">
-                                <label for="" class="text">Status Dokumen</label>
-                                <select name="status_dokumen" id="" class="form-select form-select">
-                                    <option value="Sedang Disurvey">Sedang Disurvey</option>
-                                    <option value="Telah Disurvey">Telah Disurvey</option>
-                                </select>
+                                <h6 for="first-name-vertical">Luas Bangunan</h6>
+                                <div class="download">
+                                    <div class="nama-file">
+                                        <input type="number" class="form-control" name="luas_bangunan">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card m-4">
+                            <div class="content-1 m-4">
+                                <h6 for="first-name-vertical">Jumlah Sekolah Tiap Kecamatan</h6>
+                                <div class="download">
+                                    <div class="nama-file">
+                                        <input type="number" class="form-control" name="jumlah_sekolah">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card m-4">
+                            <div class="content-1 m-4">
+                                <h6 for="first-name-vertical">GeoTag</h6>
+                                <div class="download">
+                                    <div class="nama-file">
+                                        <input type="file" class="form-control" name="geotag">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <select name="status_dokumen" id="" class="form-select form-select" hidden>
+                    <option value="Telah Disurvey" selected>Telah Disurvey</option>
+                </select>
+
 
                 <div class="row">
                     <div class="card align-items-center">

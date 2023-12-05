@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="{{ asset('dashboard/css/shared/iconly.css') }}">
     @stack('css')
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 </head>
 
 <body>
@@ -105,7 +110,8 @@
                                                 </g>
                                             </svg>
                                             <div class="form-check form-switch fs-6">
-                                                <input class="form-check-input  me-0" type="checkbox" id="toggle-dark">
+                                                <input class="form-check-input  me-0" type="checkbox"
+                                                    id="toggle-dark">
                                                 <label class="form-check-label"></label>
                                             </div>
                                             <svg xmlns="http://www.w3.org/2000/svg"

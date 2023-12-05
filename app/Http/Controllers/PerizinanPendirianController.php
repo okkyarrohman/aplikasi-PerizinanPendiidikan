@@ -588,7 +588,16 @@ class PerizinanPendirianController extends Controller
         $permohonan->luas_bangunan = $req->luas_bangunan;
         $permohonan->jumlah_sekolah = $req->jumlah_sekolah;
 
-        return back()->with('success','Permohonan Berhasil');
+        if($req->hasFile('geotag')){
+            $geotag = $req->file('geotag');
+            $extension = $geotag->getClientOriginalName();
+            $fotoName = date('YmdHis').".".$extension;
+            $geotag->move(storage_path('app/public/perizinanPendirian/geotag',date('YmdHis').".".$req->file('geotag')->getClientOriginalName()),$fotoName);
+            $permohonan->geotag = date('YmdHis').".".$req->file('geotag')->getClientOriginalName();
+        }
+
+        return back()->with('success','Data Berhasil Diupdate');
+
     }
 
 }
