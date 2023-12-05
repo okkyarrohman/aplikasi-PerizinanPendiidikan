@@ -63,7 +63,14 @@
                                 <p class="mb-0 fw-normal">{{ $tracking->tipe_dokumen }}</p>
                             </td>
                             <td class="border-bottom-0">
-
+                                <form action="{{ route('statusPendirian.update') }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $tracking->id }}">
+                                    <input type="hidden" name="status_dokumen" value="Tanda Tangan Kepala Dinas"
+                                        id="">
+                                    <button type="submit" class="btn btn-success">Ajukan TTD Kepala Dinas</button>
+                                </form>
                             </td>
                         </tr>
                     </tbody>

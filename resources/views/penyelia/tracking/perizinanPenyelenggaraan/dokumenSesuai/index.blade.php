@@ -1,16 +1,21 @@
-@extends('layouts.app-verifikator')
+@extends('layouts.app-verifikator2')
 
 @section('content')
     <div class="container">
-        <div class="head-container d-flex justify-content-lg-around">
-            <div class="title">
-                <h4>Table Perizinan Penyelenggaraan</h4>
+        <div class="card">
+            <div class="title d-flex m-4 justify-content-center align-items-center">
+                <h2> Tracking Perizinan Penyelenggaraan</h2>
             </div>
-            <form action="" method="">
-                <div class="search">
-                    <input class="form-control" type="text" name="search" id="" placeholder="Cari No surat">
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="group d-flex justify-content-end">
+
+                <div class="status_dokumen">
+                    <h4>Dokumen Sesuai</h4>
                 </div>
-            </form>
+            </div>
         </div>
         <table class="table table-hover m-3">
             <thead class="text-dark fs-4">

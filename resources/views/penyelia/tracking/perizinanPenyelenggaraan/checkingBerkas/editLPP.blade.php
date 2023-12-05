@@ -1,4 +1,4 @@
-@extends('layouts.app-verifikator')
+@extends('layouts.app-verifikator2')
 
 @section('content')
     <div class="container">
