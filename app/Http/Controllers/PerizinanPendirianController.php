@@ -572,5 +572,24 @@ class PerizinanPendirianController extends Controller
         return back()->with('success','Permohonan Berhasil');
     }
 
+    public function update_hasil_survey(Request $req){
+        $req->validate([
+            'luas_lahan' => ['required'],
+            'luas_bangunan' => ['required'],
+            'jumlah_sekolah' => ['required'],
+            'geotag' => ['required','mimes:jpg,jpeg,png','max:300']
+
+        ]);
+        $permohonan = PerizinanPendirian::find($req->id);
+
+        $permohonan->status_dokumen = $req->status_dokumen;
+
+        $permohonan->luas_lahan = $req->luas_lahan;
+        $permohonan->luas_bangunan = $req->luas_bangunan;
+        $permohonan->jumlah_sekolah = $req->jumlah_sekolah;
+
+        return back()->with('success','Permohonan Berhasil');
+    }
+
 }
 

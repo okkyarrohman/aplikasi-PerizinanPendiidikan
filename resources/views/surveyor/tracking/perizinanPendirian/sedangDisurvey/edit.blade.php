@@ -160,19 +160,11 @@
                 </div>
 
 
-                <div class="row  justify-content-center align-items-center">
-                    <div class="col-md-8">
-                        <div class="card m-4">
-                            <div class="content-1 m-4">
-                                <label for="" class="text">Status Dokumen</label>
-                                <select name="status_dokumen" id="" class="form-select form-select">
-                                    <option value="Sedang Disurvey">Sedang Disurvey</option>
-                                    <option value="Telah Disurvey">Telah Disurvey</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                <select name="status_dokumen" id="" class="form-select form-select" hidden>
+                    <option value="Telah Disurvey" selected>Telah Disurvey</option>
+                </select>
+
 
                 <div class="row">
                     <div class="card align-items-center">
