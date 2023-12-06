@@ -1,18 +1,19 @@
-@extends('layouts.app-walikota2')
+@extends('layouts.app-auditor2')
 
 @section('content')
     <div class="container">
         <div class="card">
             <div class="title d-flex m-4 justify-content-center align-items-center">
-                <h2>Tracking Perizinan Pendirian</h2>
+                <h2> Tracking Perizinan Penyelenggaraan</h2>
             </div>
         </div>
         <br>
 
         <div class="row">
             <div class="group d-flex justify-content-end">
+
                 <div class="status_dokumen">
-                    <h4>Dokumen Ditolak</h4>
+                    <h4>Checking Berkas Verifikator</h4>
                 </div>
             </div>
         </div>

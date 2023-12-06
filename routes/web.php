@@ -12,6 +12,7 @@ use App\Http\Controllers\PenyeliaController;
 use App\Http\Controllers\SurveyorController;
 use App\Http\Controllers\DinasController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuditorController;
 use App\Http\Controllers\PerizinanPendirianController;
 use App\Http\Controllers\PerizinanPenyelenggaraanController;
 use App\Http\Controllers\MailController;
@@ -225,6 +226,36 @@ Route::group(['middleware' => 'role:surveyor'], function(){
 // Route auditor
 Route::group(['middleware' => 'role:auditor'], function(){
     Route::get('/auditor',[HomeController::class,'index_auditor'])->name('auditor');
+
+    Route::get('/auditor/tracking/pendirian',[AuditorController::class,'index_pendirian']);
+    Route::get('/auditor/tracking/penyelenggaraan',[AuditorController::class,'index_penyelenggaraan']);
+
+
+    // Route Monitoring
+    Route::get('/auditor/tracking/pendirian/checking_berkas_operator_pendirian',[AuditorController::class,'checking_berkas_operator_pendirian']);
+    Route::get('/auditor/tracking/pendirian/dokumen_valid_pendirian',[AuditorController::class,'dokumen_valid_pendirian']);
+    Route::get('/auditor/tracking/pendirian/dokumen_tidak_valid_pendirian',[AuditorController::class,'dokumen_tidak_valid_pendirian']);
+    Route::get('/auditor/tracking/pendirian/sedang_disurvey_pendirian',[AuditorController::class,'sedang_disurvey_pendirian']);
+    Route::get('/auditor/tracking/pendirian/telah_disurvey_pendirian',[AuditorController::class,'telah_disurvey_pendirian']);
+    Route::get('/auditor/tracking/pendirian/checking_berkas_verifikator_pendirian',[AuditorController::class,'checking_berkas_verifikator_pendirian']);
+    Route::get('/auditor/tracking/pendirian/dokumen_sesuai_pendirian',[AuditorController::class,'dokumen_sesuai_pendirian']);
+    Route::get('/auditor/tracking/pendirian/tolak_dokumen_pendirian',[AuditorController::class,'tolak_dokumen_pendirian']);
+    Route::get('/auditor/tracking/pendirian/ttd_kepala_dinas_pendirian',[AuditorController::class,'ttd_kepala_dinas_pendirian']);
+    Route::get('/auditor/tracking/pendirian/permohonan_selesai_pendirian',[AuditorController::class,'permohonan_selesai_pendirian']);
+
+    Route::get('/auditor/tracking/penyelenggaraan/checking_berkas_operator_penyelenggaraan',[AuditorController::class,'checking_berkas_operator_penyelenggaraan']);
+    Route::get('/auditor/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan',[AuditorController::class,'dokumen_valid_penyelenggaraan']);
+    Route::get('/auditor/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan',[AuditorController::class,'dokumen_tidak_valid_penyelenggaraan']);
+    Route::get('/auditor/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan',[AuditorController::class,'sedang_disurvey_penyelenggaraan']);
+    Route::get('/auditor/tracking/penyelenggaraan/telah_disurvey_penyelenggaraan',[AuditorController::class,'telah_disurvey_penyelenggaraan']);
+    Route::get('/auditor/tracking/penyelenggaraan/checking_berkas_verifikator_penyelenggaraan',[AuditorController::class,'checking_berkas_verifikator_penyelenggaraan']);
+    Route::get('/auditor/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan',[AuditorController::class,'dokumen_sesuai_penyelenggaraan']);
+    Route::get('/auditor/tracking/penyelenggaraan/tolak_dokumen_penyelenggaraan',[AuditorController::class,'tolak_dokumen_penyelenggaraan']);
+    Route::get('/auditor/tracking/penyelenggaraan/ttd_kepala_dinas_penyelenggaraan',[AuditorController::class,'ttd_kepala_dinas_penyelenggaraan']);
+    Route::get('/auditor/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan',[AuditorController::class,'permohonan_selesai_penyelenggaraan']);
+    // End Route monitoring
+
+
 });
 // End Route auditor
 

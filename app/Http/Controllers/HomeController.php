@@ -120,7 +120,8 @@ class HomeController extends Controller
     }
 
     public function index_auditor(){
-        return view('auditor.dashboard');
+        $user = Auth::user();
+        return view('auditor.dashboard',compact('user'));
     }
 
     public function index_operator(){
