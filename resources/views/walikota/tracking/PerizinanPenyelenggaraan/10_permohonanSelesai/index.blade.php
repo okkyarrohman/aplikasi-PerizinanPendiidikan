@@ -1,10 +1,10 @@
-@extends('layouts.app-kepalaDinas')
+@extends('layouts.app-walikota2')
 
 @section('content')
     <div class="container">
         <div class="head-container d-flex justify-content-lg-around">
             <div class="title">
-                <h4>Table Perizinan Pendirian</h4>
+                <h4>Table Perizinan Penyelenggaraan</h4>
             </div>
             <form action="" method="">
                 <div class="search">
@@ -51,10 +51,7 @@
                             <p class="mb-0 fw-normal">{{ $tracking->status_dokumen }}</p>
                         </td>
                         <td class="border-bottom-0">
-                            <a href="/kepala-dinas/tracking/pendirian/edit/ttd_kepalaDinas/{{ $tracking->id }}"
-                                class="btn btn-success">Edit</a>
-                            {{-- <a href="/kepla-dinas/pendirian/tracking/izin_terbit_pendirian_pdf/{{ $tracking->id }}"
-                                class="btn btn-danger">Download Izin Terbit</a> --}}
+                            -
                         </td>
                     </tr>
                 </tbody>

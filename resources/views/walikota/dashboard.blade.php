@@ -1,4 +1,4 @@
-@extends('layouts.app-walikota')
+@extends('layouts.app-walikota2')
 
 @section('content')
     <div class="container">

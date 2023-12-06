@@ -1,4 +1,4 @@
-@extends('layouts.app-walikota')
+@extends('layouts.app-walikota2')
 
 @section('content')
     <div class="container">
@@ -51,8 +51,7 @@
                             <p class="mb-0 fw-normal">{{ $tracking->status_dokumen }}</p>
                         </td>
                         <td class="border-bottom-0">
-                            <a href="/walikota/tracking/pendirian/edit/ttd_walikota_pendirian/{{ $tracking->id }}"
-                                class="btn btn-success">Download Izin Terbit</a>
+                            -
                         </td>
                     </tr>
                 </tbody>

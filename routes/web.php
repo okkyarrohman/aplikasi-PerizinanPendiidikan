@@ -107,30 +107,32 @@ Route::group(['middleware' => 'role:walikota'], function(){
     Route::get('/walikota',[HomeController::class,'index_walikota'])->name('walikota');
     Route::get('/walikota/notifikasi',[WalikotaController::class,'notifikasi']);
 
+    Route::get('/walikota/tracking/pendirian',[WalikotaController::class,'index_pendirian']);
+    Route::get('/walikota/tracking/penyelenggaraan',[WalikotaController::class,'index_penyelenggaraan']);
+
     // Tracking Dokumen
-    Route::get('/walikota/tracking/pendirian/ttd_walikota_pendirian',[WalikotaController::class,'ttd_walikota_pendirian']);
-    Route::get('/walikota/tracking/pendirian/tolak_pendirian',[WalikotaController::class,'tolak_pendirian']);
-    Route::get('/walikota/tracking/pendirian/izin_terbit_pendirian',[WalikotaController::class,'izin_terbit_pendirian']);
+    Route::get('/walikota/tracking/pendirian/checking_berkas_operator_pendirian',[WalikotaController::class,'checking_berkas_operator_pendirian']);
+    Route::get('/walikota/tracking/pendirian/dokumen_valid_pendirian',[WalikotaController::class,'dokumen_valid_pendirian']);
+    Route::get('/walikota/tracking/pendirian/dokumen_tidak_valid_pendirian',[WalikotaController::class,'dokumen_tidak_valid_pendirian']);
+    Route::get('/walikota/tracking/pendirian/sedang_disurvey_pendirian',[WalikotaController::class,'sedang_disurvey_pendirian']);
+    Route::get('/walikota/tracking/pendirian/telah_disurvey_pendirian',[WalikotaController::class,'telah_disurvey_pendirian']);
+    Route::get('/walikota/tracking/pendirian/checking_berkas_verifikator_pendirian',[WalikotaController::class,'checking_berkas_verifikator_pendirian']);
+    Route::get('/walikota/tracking/pendirian/dokumen_sesuai_pendirian',[WalikotaController::class,'dokumen_sesuai_pendirian']);
+    Route::get('/walikota/tracking/pendirian/tolak_dokumen_pendirian',[WalikotaController::class,'tolak_dokumen_pendirian']);
+    Route::get('/walikota/tracking/pendirian/ttd_kepala_dinas_pendirian',[WalikotaController::class,'ttd_kepala_dinas_pendirian']);
+    Route::get('/walikota/tracking/pendirian/permohonan_selesai_pendirian',[WalikotaController::class,'permohonan_selesai_pendirian']);
 
-    Route::get('/walikota/tracking/penyelenggaraan/ttd_walikota_penyelenggaraan',[WalikotaController::class,'ttd_walikota_penyelenggaraan']);
-    Route::get('/walikota/tracking/penyelenggaraan/tolak_pendirian',[WalikotaController::class,'tolak_penyelenggaraan']);
-    Route::get('/walikota/tracking/penyelenggaraan/izin_terbit_penyelenggaraan',[WalikotaController::class,'izin_terbit_penyelenggaraan']);
-
+    Route::get('/walikota/tracking/penyelenggaraan/checking_berkas_operator_penyelenggaraan',[WalikotaController::class,'checking_berkas_operator_penyelenggaraan']);
+    Route::get('/walikota/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan',[WalikotaController::class,'dokumen_valid_penyelenggaraan']);
+    Route::get('/walikota/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan',[WalikotaController::class,'dokumen_tidak_valid_penyelenggaraan']);
+    Route::get('/walikota/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan',[WalikotaController::class,'sedang_disurvey_penyelenggaraan']);
+    Route::get('/walikota/tracking/penyelenggaraan/telah_disurvey_penyelenggaraan',[WalikotaController::class,'telah_disurvey_penyelenggaraan']);
+    Route::get('/walikota/tracking/penyelenggaraan/checking_berkas_verifikator_penyelenggaraan',[WalikotaController::class,'checking_berkas_verifikator_penyelenggaraan']);
+    Route::get('/walikota/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan',[WalikotaController::class,'dokumen_sesuai_penyelenggaraan']);
+    Route::get('/walikota/tracking/penyelenggaraan/tolak_dokumen_penyelenggaraan',[WalikotaController::class,'tolak_dokumen_penyelenggaraan']);
+    Route::get('/walikota/tracking/penyelenggaraan/ttd_kepala_dinas_penyelenggaraan',[WalikotaController::class,'ttd_kepala_dinas_penyelenggaraan']);
+    Route::get('/walikota/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan',[WalikotaController::class,'permohonan_selesai_penyelenggaraan']);
     // End Tracking Dokumen
-
-    // Edit Tracking Perizinan
-    Route::get('/walikota/tracking/pendirian/edit/ttd_walikota_pendirian/{id}',[WalikotaController::class,'edit_ttd_walikota_pendirian']);
-    Route::get('/walikota/tracking/penyelenggaraan/edit/ttd_walikota_penyelenggaraan/{id}',[WalikotaController::class,'edit_ttd_walikota_penyelenggaraan']);
-    // End Edit Tracking Perizinan
-
-    // Izin Terbit
-    Route::get('/walikota/tracking/pendirian/izin_terbit_pendirian/{id}',[WalikotaController::class,'izin_terbit_pendirian']);
-    Route::get('/walikota/tracking/penyelenggaraan/izin_terbit_penyelenggaraan/{id}',[WalikotaController::class,'izin_terbit_penyelenggaraan']);
-    // End Izin Terbit
-
-    // Download Izin Terbit
-    Route::get('/walikota/tracking/pendirian/download/izin_terbit_pendirian/{id}',[WalikotaController::class,'download_izin_terbit_pendirian']);
-    Route::get('/walikota/tracking/penyelenggaraan/download/izin_terbit_penyelenggaraan/{id}',[WalikotaController::class,'download_izin_terbit_penyelenggaraan']);
 
 
 });
@@ -299,7 +301,6 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     // POST Perizinan
     Route::post('/store/perizinanPendirian',[PerizinanPendirianController::class,'store'])->name('pendirian.store');
     Route::post('/store/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'store'])->name('penyelenggaraan.store');
-
 
     Route::post('/update/perizinanPendirian',[PerizinanPendirianController::class,'update'])->name('pendirian.update');
     Route::post('/update/perizinanPenyelenggaraan',[PerizinanPenyelenggaraanController::class,'update'])->name('penyelenggaraan.update');
