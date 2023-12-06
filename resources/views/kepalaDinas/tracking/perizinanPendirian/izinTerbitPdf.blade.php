@@ -32,7 +32,7 @@
         <table>
 
             <tr>
-                <td style="width: 30%;">Nama:</td>
+                <td style="width: 30%;">Nama: {{ $permohonan->nama }}</td>
                 <td style="width: 5%;">:</td>
                 <td style="width: 65%;"></td>
             </tr>
@@ -43,13 +43,13 @@
             </tr>
             <tr>
                 <td style="width: 30%; vertical-align: top;">Alamat</td>
-                <td style="width: 5%; vertical-align: top;">:</td>
+                <td style="width: 5%; vertical-align: top;">: {{ $permohonan->lokasi }}</td>
                 <td style="width: 65%;"></td>
             </tr>
             <tr>
                 <td style="width: 30%;">Pengajuan Perizinan Pendirian</td>
                 <td style="width: 5%;">:</td>
-                <td style="width: 65%;"></td>
+                <td style="width: 65%;">{{ $permohonan->tipe_dokumen }}</td>
             </tr>
 
         </table>

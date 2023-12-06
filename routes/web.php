@@ -342,6 +342,8 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::post('/update/pendirian/hasilSurvey',[PerizinanPendirianController::class,'update_hasil_survey'])->name('hasilSurveyPendirian.update');
     Route::post('/update/penyelenggaraan/hasilSurvey',[PerizinanPenyelenggaraanController::class,'update_hasil_survey'])->name('hasilSurveyPenyelenggaraan.update');
 
+    Route::post('/update/pendirian/permohonanSelesai',[PerizinanPendirianController::class,'permohonan_selesai'])->name('permohonanSelesai.update');
+
     // END POST Perizinan
 
 
