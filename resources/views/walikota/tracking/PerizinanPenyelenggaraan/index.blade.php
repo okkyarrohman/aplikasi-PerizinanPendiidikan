@@ -133,7 +133,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/walikota/tracking/pendirian/dokumen_sesuai_pendirian">
+                        <a href="/walikota/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan">
                             <h4>Dokumen Sesuai</h4>
                         </a>
                     </div>
@@ -142,7 +142,8 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/walikota/tracking/pendirian/dokumen_sesuai_pendirian" class="btn btn-primary">-></a>
+                            <a href="/walikota/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan"
+                                class="btn btn-primary">-></a>
                         </div>
                     </div>
                 </div>
@@ -151,7 +152,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/walikota/tracking/pendirian/tolak_dokumen_pendirian">
+                        <a href="/walikota/tracking/penyelenggaraan/tolak_dokumen_penyelenggaraan">
                             <h4>Dokumen Ditolak</h4>
                         </a>
                     </div>
@@ -160,7 +161,8 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/walikota/tracking/pendirian/tolak_dokumen_pendirian" class="btn btn-primary">-></a>
+                            <a href="/walikota/tracking/penyelenggaraan/tolak_dokumen_penyelenggaraan"
+                                class="btn btn-primary">-></a>
                         </div>
                     </div>
                 </div>
@@ -169,7 +171,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/walikota/tracking/pendirian/ttd_kepala_dinas_pendirian">
+                        <a href="/walikota/tracking/penyelenggaraan/ttd_kepala_dinas_penyelenggaraan">
                             <h4>Tanda Tangan Kepala Dinas</h4>
                         </a>
                     </div>
@@ -178,7 +180,8 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/walikota/tracking/pendirian/ttd_kepala_dinas_pendirian" class="btn btn-primary">-></a>
+                            <a href="/walikota/tracking/penyelenggaraan/ttd_kepala_dinas_penyelenggaraan"
+                                class="btn btn-primary">-></a>
                         </div>
                     </div>
                 </div>
@@ -189,7 +192,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/walikota/tracking/pendirian/permohonan_selesai_pendirian">
+                        <a href="/walikota/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan">
                             <h4>Permohonan Selesai</h4>
                         </a>
                     </div>
@@ -198,7 +201,7 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/walikota/tracking/pendirian/permohonan_selesai_pendirian"
+                            <a href="/walikota/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan"
                                 class="btn btn-primary">-></a>
                         </div>
                     </div>
