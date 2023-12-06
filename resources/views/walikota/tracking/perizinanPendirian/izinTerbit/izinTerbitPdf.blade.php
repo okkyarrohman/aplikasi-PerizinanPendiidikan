@@ -114,42 +114,33 @@
             </tr>
         </table>
         <br>
-
-        <div class="data-diri">
-            <table>
-                <tr>
-                    <td>Nama Pemohon</td>
-                    <td width="500">: Jarwo Subejo</td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td width="500">: jarwo@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Telepon</td>
-                    <td width="500">: 02837237</td>
-                </tr>
-                <tr>
-                    <td>Lokasi</td>
-                    <td width="500">: benjeng</td>
-                </tr>
-                <tr>
-                    <td>Perizinan </td>
-                    <td width="500">: Pendirian Pendidikan</td>
-                </tr>
-
-                <tr>
-                    <td>Luas Lahan </td>
-                    <td width="500">: 239 Meter</td>
-                </tr>
-                <tr>
-                    <td>Luas Bangunan </td>
-                    <td width="500">: 239 Meter</td>
-                </tr>
-            </table>
-        </div>
-        <br>
-
+        @foreach ($permohonans as $pemohonan)
+            <div class="data-diri">
+                <table>
+                    <tr>
+                        <td>Nama Pemohon</td>
+                        <td width="500">: {{ $pemohonan->nama }}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td width="500">: {{ $pemohonan->email }}</td>
+                    </tr>
+                    <tr>
+                        <td>Telepon</td>
+                        <td width="500">: {{ $pemohonan->telepon }}</td>
+                    </tr>
+                    <tr>
+                        <td>Lokasi</td>
+                        <td width="500">: {{ $pemohonan->lokasi }}</td>
+                    </tr>
+                    <tr>
+                        <td>Perizinan </td>
+                        <td width="500">: Pendirian Pendidikan</td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+        @endforeach
         <table>
             <tr>
                 <td class="text" width="625">Surat Izin ini berlaku selama pemohon melakukan kegiatan operasional
@@ -175,7 +166,12 @@
                         width="90" height="90"><br>
                     <b>Prof Dr Samsul Huda,. SPD,MP,D</b>
                 </td>
-
+                <td class="ttd-walikota" width="300">Walikota Surabaya
+                    <br>
+                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('QRCode/Walikota.png'))) }}"
+                        width="90" height="90"><br>
+                    <b>Prof,Dr Eri Cahyadi S.T,. M.Kom</b>
+                </td>
             </tr>
 
         </table>

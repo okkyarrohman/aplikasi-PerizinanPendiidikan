@@ -610,6 +610,7 @@ class PerizinanPendirianController extends Controller
         $permohonan->status_dokumen = $req->status_dokumen;
         $permohonan->save();
 
+        $imageGaruda = base_64decode();
 
         $data = array('name' => 'jarwo');
             $dompdf = new Dompdf();
