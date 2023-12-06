@@ -46,7 +46,6 @@
             @foreach ($permohonans as $tracking)
                 <tbody>
                     <tr>
-                    <tr>
                         <td class="border-bottom-0">
                             <h6 class="fw-semibold mb-0">{{ $no++ }}</h6>
                         </td>

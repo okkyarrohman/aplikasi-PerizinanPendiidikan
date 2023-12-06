@@ -1,4 +1,4 @@
-@extends('layouts.app-kepalaDinas')
+@extends('layouts.app-kepalaDinas2')
 
 @section('content')
     <div class="container">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <form class="form form-vertical" method="POST" action="{{ route('penyelenggaraan.update') }}"
+            <form class="form form-vertical" method="POST" action="{{ route('statusPendirian.update') }}"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="row">
@@ -70,9 +70,7 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Longtitude</label>
-                                                    <h6
-                                                        onclick="showMap({{ $permohonans->longtitude }},{{ $permohonans->latitude }})">
-                                                        {{ $permohonans->longtitude }}</h6>
+                                                    <h6>{{ $permohonans->longtitude }}</h6>
                                                     <input type="text" id="first-name-vertical" class="form-control"
                                                         name="longtitude" value="{{ $permohonans->longtitude }}" hidden>
                                                 </div>
@@ -103,42 +101,15 @@
                     </div>
                 </div>
 
-
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card m-4">
-                            <div class="content-1 m-4">
-                                <h6 for="first-name-vertical">Dokumen Izin Terbit Sementara</h6>
-                                <div class="download">
-                                    <div class="nama-file">
-                                        <a href="/kepla-dinas/pendirian/tracking/izin_terbit_pendirian_pdf/{{ $permohonans->id }}"
-                                            class="btn btn-danger">Download Izin
-                                            Terbit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="card m-4">
-                            <div class="content-1 m-4">
-                                <label for="" class="text">Status Dokumen</label>
-                                <select name="status_dokumen" id="" class="form-select form-select">
-                                    <option value="Tanda Tangan Walikota">Ajukan Ke Walikota</option>
-                                    <option value="Tolak Dokumen">Tolak Dokumen</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <select name="status_dokumen" id="" class="form-select form-select" hidden>
+                    <option value="Permohonan Selesai" selected>Ajukan Ke Walikota</option>
+                </select>
 
                 <div class="row">
                     <div class="card align-items-center">
                         <div class="card-footer d-inline-block w-100"">
-                            <button type="submit"
-                                class="btn btn-primary w-100 justify-center align-items-center">Submit</button>
+                            <button type="submit" class="btn btn-primary w-100 justify-center align-items-center">Tanda
+                                Tangan</button>
                         </div>
                     </div>
                 </div>

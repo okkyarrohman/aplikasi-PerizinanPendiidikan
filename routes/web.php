@@ -112,7 +112,6 @@ Route::group(['middleware' => 'role:walikota'], function(){
     Route::get('/walikota/tracking/pendirian/tolak_pendirian',[WalikotaController::class,'tolak_pendirian']);
     Route::get('/walikota/tracking/pendirian/izin_terbit_pendirian',[WalikotaController::class,'izin_terbit_pendirian']);
 
-
     Route::get('/walikota/tracking/penyelenggaraan/ttd_walikota_penyelenggaraan',[WalikotaController::class,'ttd_walikota_penyelenggaraan']);
     Route::get('/walikota/tracking/penyelenggaraan/tolak_pendirian',[WalikotaController::class,'tolak_penyelenggaraan']);
     Route::get('/walikota/tracking/penyelenggaraan/izin_terbit_penyelenggaraan',[WalikotaController::class,'izin_terbit_penyelenggaraan']);
@@ -142,13 +141,16 @@ Route::group(['middleware' => 'role:kepala-dinas'], function(){
     Route::get('/kepala-dinas',[HomeController::class,'index_kepalaDinas'])->name('kepala-dinas');
     Route::get('/kepala-dinas/notifikasi',[KepalaDinasController::class,'notifikasi']);
 
+    Route::get('/kepala-dinas/tracking/pendirian',[KepalaDinasController::class,'index_pendirian']);
+    Route::get('/kepala-dinas/tracking/penyelenggaraan',[KepalaDinasController::class,'index_penyelenggaraan']);
 
     // Tracking Dokumen
     Route::get('/kepala-dinas/tracking/pendirian/ttd_kepalaDinas_pendirian',[KepalaDinasController::class,'ttd_kepalaDinas_pendirian']);
-    Route::get('/kepala-dinas/tracking/pendirian/ttd_walikota_pendirian',[KepalaDinasController::class,'ttd_walikota_pendirian']);
+    Route::get('/kepala-dinas/tracking/pendirian/permohonan_selesai_pendirian',[KepalaDinasController::class,'permohonan_selesai_pendirian']);
 
     Route::get('/kepala-dinas/tracking/penyelenggaraan/ttd_kepalaDinas_penyelenggaraan',[KepalaDinasController::class,'ttd_kepalaDinas_penyelenggaraan']);
-    Route::get('/kepala-dinas/tracking/penyelenggaraan/ttd_walikota_penyelenggaraan',[KepalaDinasController::class,'ttd_walikota_penyelenggaraan']);
+    Route::get('/kepala-dinas/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan',[KepalaDinasController::class,'permohonan_selesai_penyelenggaraan']);
+
     // End Tracking Dokumen
 
     // Edit Tracking Perizinan

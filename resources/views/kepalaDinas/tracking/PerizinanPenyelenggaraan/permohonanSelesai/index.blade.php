@@ -1,4 +1,4 @@
-@extends('layouts.app-kepalaDinas')
+@extends('layouts.app-kepalaDinas2')
 
 @section('content')
     <div class="container">
@@ -51,10 +51,7 @@
                             <p class="mb-0 fw-normal">{{ $tracking->status_dokumen }}</p>
                         </td>
                         <td class="border-bottom-0">
-                            <a href="/kepala-dinas/tracking/pendirian/edit/ttd_kepalaDinas/{{ $tracking->id }}"
-                                class="btn btn-success">Edit</a>
-                            {{-- <a href="/kepla-dinas/pendirian/tracking/izin_terbit_pendirian_pdf/{{ $tracking->id }}"
-                                class="btn btn-danger">Download Izin Terbit</a> --}}
+                            <h4>-</h4>
                         </td>
                     </tr>
                 </tbody>
