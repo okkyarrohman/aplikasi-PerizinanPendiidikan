@@ -610,11 +610,18 @@ class PerizinanPendirianController extends Controller
         $permohonan->status_dokumen = $req->status_dokumen;
         $permohonan->save();
 
-        $imageGaruda = base_64decode();
+        $imgGaruda = public_path('QRCode/garuda.jpg');
+        $jadiGaruda = base64_decode($imgGaruda);
+
+        $ttdKepalaDinas = public_path('QRCode/ttd-kepala-dinas.jpg');
+        $jadiTTD = base64_decode($ttdKepalaDinas);
+
+
+
 
         $data = array('name' => 'jarwo');
             $dompdf = new Dompdf();
-            $view = view('kepalaDinas.tracking.perizinanPendirian.izinTerbitPdf',compact('permohonan'));
+            $view = view('kepalaDinas.tracking.perizinanPendirian.izinTerbitPdf',compact('permohonan','jadiGaruda','jadiTTD'));
             $dompdf->loadHTML($view);
             $dompdf->render();
 
