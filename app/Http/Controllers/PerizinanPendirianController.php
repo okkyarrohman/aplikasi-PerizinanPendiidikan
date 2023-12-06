@@ -572,7 +572,8 @@ class PerizinanPendirianController extends Controller
 
         $permohonan->status_dokumen = $req->status_dokumen;
         $permohonan->save();
-        return back()->with('success','Permohonan Berhasil');
+
+        return back()->with('success','Status Dokumen Berhasil Diupdate');
     }
 
     public function update_hasil_survey(Request $req){
@@ -625,8 +626,7 @@ class PerizinanPendirianController extends Controller
 
             $message->from('eightech@company.com','EighTech');
         });
-
-        return redirect()->route('kepala-dinas')->with('success','Permohonan Selesai, Surat Izin Terbit Telah DIkirim')
+        return redirect()->route('kepala-dinas')->with('success','Permohonan Selesai, Surat Izin Terbit Telah DIkirim');
     }
 
 }

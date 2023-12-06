@@ -273,4 +273,32 @@ class PerizinanPenyelenggaraanController extends Controller
         return back()->with('success','Data Berhasil Diupdate');
 
     }
+
+    public function permohonan_selesai(Request $req){
+        $permohonan = PerizinanPendirian::find($req->id);
+
+        $permohonan->status_dokumen = $req->status_dokumen;
+        $permohonan->save();
+
+
+        $data = array('name' => 'jarwo');
+            $dompdf = new Dompdf();
+            $view = view('kepalaDinas.tracking.perizinanPendirian.izinTerbitPdf',compact('permohonan'));
+            $dompdf->loadHTML($view);
+            $dompdf->render();
+
+        $emailPemohon = $permohonan->email;
+
+        Mail::send(['file' => 'mail'], $data, function ($message)use($dompdf,$emailPemohon) {
+            $message->to($emailPemohon)->subject('Surat Izin Terbit');
+
+            $message->attachData($dompdf->output(),'surat_izin_terbit.pdf');
+
+            $message->from('eightech@company.com','EighTech');
+        });
+
+        return redirect()->route('kepala-dinas')->with('success','Permohonan Selesai, Surat Izin Terbit Telah DIkirim')
+    }
+
+
 }

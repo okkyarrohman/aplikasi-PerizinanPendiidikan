@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <form class="form form-vertical" method="POST" action="{{ route('permohonanSelesai.update') }}"
+            <form class="form form-vertical" method="POST" action="{{ route('permohonanSelesaiPendirian.update') }}"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="row">
