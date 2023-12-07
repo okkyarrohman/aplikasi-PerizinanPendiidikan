@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\PerizinanPenyelenggaraan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Dompdf\Dompdf;
 
 class PerizinanPenyelenggaraanController extends Controller
 {
@@ -275,7 +278,7 @@ class PerizinanPenyelenggaraanController extends Controller
     }
 
     public function permohonan_selesai(Request $req){
-        $permohonan = PerizinanPendirian::find($req->id);
+        $permohonan = PerizinanPenyelenggaraan::find($req->id);
 
         $permohonan->status_dokumen = $req->status_dokumen;
         $permohonan->save();
@@ -297,7 +300,7 @@ class PerizinanPenyelenggaraanController extends Controller
             $message->from('eightech@company.com','EighTech');
         });
 
-        return redirect()->route('kepala-dinas')->with('success','Permohonan Selesai, Surat Izin Terbit Telah DIkirim')
+        return redirect()->route('kepala-dinas')->with('success','Permohonan Selesai, Surat Izin Terbit Telah DIkirim');
     }
 
 

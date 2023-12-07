@@ -292,25 +292,41 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/admin',[HomeController::class,'index_admin'])->name('admin');
     Route::get('/admin/tracking',[PerizinanPendirianController::class,'trackings'])->name('trackings');
 
-    // Tracking
-    Route::get('/admin/data-pengguna',[AdminController::class,'data_pengguna']);
-    Route::get('/admin/dokumen-ditolak',[AdminController::class,'dokumen_ditolak']);
-    Route::get('/admin/checking-berkas',[AdminController::class,'checking_berkas']);
-    Route::get('/admin/dokumen-valid',[AdminController::class,'dokumen_valid']);
-    Route::get('/admin/dokumen-tidak-valid',[AdminController::class,'dokumenTidak_valid']);
-    Route::get('/admin/sedang-disurvey',[AdminController::class,'sedang_disurvey']);
-    Route::get('/admin/telah-disurvey',[AdminController::class,'telah_disurvey']);
-    Route::get('/admin/izin-terbit',[AdminController::class,'izin_terbit']);
-    // Tracking
 
-    //Route Perizinan Pendirian
+    Route::get('/admin/tracking/pendirian',[AdminController::class,'index_pendirian']);
+    Route::get('/admin/tracking/penyelenggaraan',[AdminController::class,'index_penyelenggaraan']);
+
+    // Route Monitoring
+    Route::get('/admin/tracking/pendirian/checking_berkas_operator_pendirian',[AdminController::class,'checking_berkas_operator_pendirian']);
+    Route::get('/admin/tracking/pendirian/dokumen_valid_pendirian',[AdminController::class,'dokumen_valid_pendirian']);
+    Route::get('/admin/tracking/pendirian/dokumen_tidak_valid_pendirian',[AdminController::class,'dokumen_tidak_valid_pendirian']);
+    Route::get('/admin/tracking/pendirian/sedang_disurvey_pendirian',[AdminController::class,'sedang_disurvey_pendirian']);
+    Route::get('/admin/tracking/pendirian/telah_disurvey_pendirian',[AdminController::class,'telah_disurvey_pendirian']);
+    Route::get('/admin/tracking/pendirian/checking_berkas_verifikator_pendirian',[AdminController::class,'checking_berkas_verifikator_pendirian']);
+    Route::get('/admin/tracking/pendirian/dokumen_sesuai_pendirian',[AdminController::class,'dokumen_sesuai_pendirian']);
+    Route::get('/admin/tracking/pendirian/tolak_dokumen_pendirian',[AdminController::class,'tolak_dokumen_pendirian']);
+    Route::get('/admin/tracking/pendirian/ttd_kepala_dinas_pendirian',[AdminController::class,'ttd_kepala_dinas_pendirian']);
+    Route::get('/admin/tracking/pendirian/permohonan_selesai_pendirian',[AdminController::class,'permohonan_selesai_pendirian']);
+
+    Route::get('/admin/tracking/penyelenggaraan/checking_berkas_operator_penyelenggaraan',[AdminController::class,'checking_berkas_operator_penyelenggaraan']);
+    Route::get('/admin/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan',[AdminController::class,'dokumen_valid_penyelenggaraan']);
+    Route::get('/admin/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan',[AdminController::class,'dokumen_tidak_valid_penyelenggaraan']);
+    Route::get('/admin/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan',[AdminController::class,'sedang_disurvey_penyelenggaraan']);
+    Route::get('/admin/tracking/penyelenggaraan/telah_disurvey_penyelenggaraan',[AdminController::class,'telah_disurvey_penyelenggaraan']);
+    Route::get('/admin/tracking/penyelenggaraan/checking_berkas_verifikator_penyelenggaraan',[AdminController::class,'checking_berkas_verifikator_penyelenggaraan']);
+    Route::get('/admin/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan',[AdminController::class,'dokumen_sesuai_penyelenggaraan']);
+    Route::get('/admin/tracking/penyelenggaraan/tolak_dokumen_penyelenggaraan',[AdminController::class,'tolak_dokumen_penyelenggaraan']);
+    Route::get('/admin/tracking/penyelenggaraan/ttd_kepala_dinas_penyelenggaraan',[AdminController::class,'ttd_kepala_dinas_penyelenggaraan']);
+    Route::get('/admin/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan',[AdminController::class,'permohonan_selesai_penyelenggaraan']);
+    // End Create Route monitoring
+
+    //Route Create Perizinan Pendirian
     Route::get('/admin/perizinanPendirian/create-tk',[AdminController::class,'create_tk']);
     Route::get('/admin/perizinanPendirian/create-sd',[AdminController::class,'create_sd']);
 
-    route::resource('admin/perizinanPendirian',PerizinanPendirianController::class,);
     //End Route Perizinan Pendirian
 
-    // Route Perizinan Penyelenggaraan
+    // Route Create Perizinan Penyelenggaraan
     Route::get('admin/perizinanPenyelenggaraan/create-sd-smp',[AdminController::class,'create_sd_smp']);
     Route::get('admin/perizinanPenyelenggaraan/create-lpnp',[AdminController::class,'create_lpnp']);
     Route::get('admin/perizinanPenyelenggaraan/create-lpp',[AdminController::class,'create_lpp']);
@@ -318,9 +334,7 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('admin/perizinanPenyelenggaraan/create-pklpk',[AdminController::class,'create_pklpk']);
     Route::get('admin/perizinanPenyelenggaraan/create-ppo',[AdminController::class,'create_ppo']);
     Route::get('admin/perizinanPenyelenggaraan/create-ptn-univ',[AdminController::class,'create_ptn_univ']);
-
-    route::resource('admin/perizinanPenyelenggaraan',PerizinanPenyelenggaraanController::class,);
-    // End Route Perizinan Penyelenggaraan
+    // End Route Create Perizinan Penyelenggaraan
 
     //Arsip
     Route::get('/admin/arsip',[AdminController::class,'arsip']);

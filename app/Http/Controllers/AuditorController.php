@@ -127,7 +127,7 @@ class AuditorController extends Controller
     // Monitoring Penyelenggaraan
     public function checking_berkas_operator_penyelenggaraan()
     {
-         $user = Auth::user();
+        $user = Auth::user();
         $permohonans = PerizinanPenyelenggaraan::where([
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
