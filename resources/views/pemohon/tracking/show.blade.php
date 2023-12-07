@@ -35,7 +35,7 @@
                             <input type="text" placeholder="{{ $permohonans->surat_terbit }}" class="form-control"
                                 disabled>
                             <br>
-                            <a href="#" class="btn btn-danger">Download Surat Perizinan</a>
+                            <a href="#" class="btn btn-danger">Download Surat </a>
                         @else
                             <input type="text" placeholder="{{ $permohonans->surat_terbit }}" class="form-control"
                                 disabled>
@@ -67,9 +67,7 @@
                                 QrCode::format('png')->size(197)->generate(Request::url()),
                             ) !!} ">
                             <br>
-                            <a href="" class="btn btn-primary m-3">
-                                <span>Download QR Code</span>
-                            </a>
+
                         </div>
                     </div>
                 </div>
