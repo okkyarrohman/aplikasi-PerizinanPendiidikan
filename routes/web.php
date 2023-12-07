@@ -257,14 +257,33 @@ Route::group(['middleware' => 'role:auditor'], function(){
 // Route dinas
 Route::group(['middleware' => 'role:dinas'], function(){
     Route::get('/dinas',[HomeController::class,'index_dinas'])->name('dinas');
-    Route::get('/dinas/tracking',[DinasController::class,'tracking']);
-    Route::get('/dinas/dokumen-ditolak',[DinasController::class,'dokumen_ditolak']);
-    Route::get('/dinas/checking-berkas',[DinasController::class,'checking_berkas']);
-    Route::get('/dinas/dokumen-valid',[DinasController::class,'dokumen_valid']);
-    Route::get('/dinas/dokumen-tidak-valid',[DinasController::class,'dokumenTidak_valid']);
-    Route::get('/dinas/sedang-disurvey',[DinasController::class,'sedang_disurvey']);
-    Route::get('/dinas/telah-disurvey',[DinasController::class,'telah_disurvey']);
-    Route::get('/dinas/izin-terbit',[DinasController::class,'izin_terbit']);
+
+    Route::get('/dinas/tracking/pendirian',[DinasController::class,'index_pendirian']);
+    Route::get('/dinas/tracking/penyelenggaraan',[DinasController::class,'index_penyelenggaraan']);
+
+    // Route Monitoring
+    Route::get('/dinas/tracking/pendirian/checking_berkas_operator_pendirian',[DinasController::class,'checking_berkas_operator_pendirian']);
+    Route::get('/dinas/tracking/pendirian/dokumen_valid_pendirian',[DinasController::class,'dokumen_valid_pendirian']);
+    Route::get('/dinas/tracking/pendirian/dokumen_tidak_valid_pendirian',[DinasController::class,'dokumen_tidak_valid_pendirian']);
+    Route::get('/dinas/tracking/pendirian/sedang_disurvey_pendirian',[DinasController::class,'sedang_disurvey_pendirian']);
+    Route::get('/dinas/tracking/pendirian/telah_disurvey_pendirian',[DinasController::class,'telah_disurvey_pendirian']);
+    Route::get('/dinas/tracking/pendirian/checking_berkas_verifikator_pendirian',[DinasController::class,'checking_berkas_verifikator_pendirian']);
+    Route::get('/dinas/tracking/pendirian/dokumen_sesuai_pendirian',[DinasController::class,'dokumen_sesuai_pendirian']);
+    Route::get('/dinas/tracking/pendirian/tolak_dokumen_pendirian',[DinasController::class,'tolak_dokumen_pendirian']);
+    Route::get('/dinas/tracking/pendirian/ttd_kepala_dinas_pendirian',[DinasController::class,'ttd_kepala_dinas_pendirian']);
+    Route::get('/dinas/tracking/pendirian/permohonan_selesai_pendirian',[DinasController::class,'permohonan_selesai_pendirian']);
+
+    Route::get('/dinas/tracking/penyelenggaraan/checking_berkas_operator_penyelenggaraan',[DinasController::class,'checking_berkas_operator_penyelenggaraan']);
+    Route::get('/dinas/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan',[DinasController::class,'dokumen_valid_penyelenggaraan']);
+    Route::get('/dinas/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan',[DinasController::class,'dokumen_tidak_valid_penyelenggaraan']);
+    Route::get('/dinas/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan',[DinasController::class,'sedang_disurvey_penyelenggaraan']);
+    Route::get('/dinas/tracking/penyelenggaraan/telah_disurvey_penyelenggaraan',[DinasController::class,'telah_disurvey_penyelenggaraan']);
+    Route::get('/dinas/tracking/penyelenggaraan/checking_berkas_verifikator_penyelenggaraan',[DinasController::class,'checking_berkas_verifikator_penyelenggaraan']);
+    Route::get('/dinas/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan',[DinasController::class,'dokumen_sesuai_penyelenggaraan']);
+    Route::get('/dinas/tracking/penyelenggaraan/tolak_dokumen_penyelenggaraan',[DinasController::class,'tolak_dokumen_penyelenggaraan']);
+    Route::get('/dinas/tracking/penyelenggaraan/ttd_kepala_dinas_penyelenggaraan',[DinasController::class,'ttd_kepala_dinas_penyelenggaraan']);
+    Route::get('/dinas/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan',[DinasController::class,'permohonan_selesai_penyelenggaraan']);
+    // End Route monitoring
 });
 // End Route dinas
 
@@ -305,6 +324,9 @@ Route::group(['middleware' => 'role:admin'], function(){
 
     //Arsip
     Route::get('/admin/arsip',[AdminController::class,'arsip']);
+
+
+
 });
 // End Routes Admin
 
