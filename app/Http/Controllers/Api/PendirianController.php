@@ -44,7 +44,7 @@ class PendirianController extends Controller
             if ($request->has('month')) {
                 $query->whereMonth('created_at', $request->input('month'));
             }
-
+          
             // Retrieve all data without pagination
             $pendirian = $query->get();
 
