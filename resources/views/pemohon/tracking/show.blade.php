@@ -39,6 +39,19 @@
                 <div class="card bg-warning">
                     <div class="content-1 m-4">
                         <h6 for="">Status Permohonan Perizinan Anda Sedang Dalam Tahap : </h6>
+                        @if ($permohonans->status_dokumen == 'Dokumen Tidak Valid')
+                            {
+                            <h1>Dokumen Anda Tidak Valid, Silahkan Perbaiki Dokumen Anda</h1>
+                            <a href="" class="btn btn-success">Edit</a>
+                            }
+                        @elseif ($permohonans->status_dokumen == 'Dokumen Ditolak')
+                            {
+                            <h1> Dokumen Anda Ditolak, Silahkan Upload Ulang dari Awal</h1>
+                            <a href="" class="btn btn-danger">Ajukan Ulang</a>
+                        }@else{
+                            <h1>{{ $permohonans->status_dokumen }}</h1>
+                            }
+                        @endif
                         <h1>{{ $permohonans->status_dokumen }}</h1>
                     </div>
                 </div>

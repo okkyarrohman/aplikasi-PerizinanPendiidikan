@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card">
             <div class="title d-flex m-4 justify-content-center align-items-center">
-                <h2>Tracking Perizinan Pendirian</h2>
+                <h2>Monitoring Perizinan Pendirian</h2>
             </div>
         </div>
         <br>

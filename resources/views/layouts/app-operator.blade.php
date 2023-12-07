@@ -44,7 +44,7 @@
                                         <img src="{{ asset('images/orang.png') }}" alt="Avatar">
                                     </div>
                                     <div class="text">
-                                        <h6 class="user-dropdown-name">Tracking</h6>
+                                        <h6 class="user-dropdown-name">Monitoring</h6>
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end shadow-lg"

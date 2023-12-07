@@ -24,7 +24,8 @@
                                         <div class="row">
                                             <input type="hidden" name="tipe_dokumen"
                                                 value="Lembaga Pelatihan Non Pemerintah" hidden>
-                                            <input type="hidden" name="status_dokumen" value="Checking Berkas" hidden>
+                                            <input type="hidden" name="status_dokumen" value="Checking Berkas Operator"
+                                                hidden>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Nama Lengkap</label>

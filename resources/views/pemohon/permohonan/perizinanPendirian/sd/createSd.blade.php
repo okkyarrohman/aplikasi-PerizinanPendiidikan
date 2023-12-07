@@ -43,7 +43,8 @@
                                                 </div>
                                             </div>
                                             <input type="hidden" name="tipe_dokumen" value="SD/SMP/SMA" hidden>
-                                            <input type="hidden" name="status_dokumen" value="Checking Berkas" hidden>
+                                            <input type="hidden" name="status_dokumen" value="Checking Berkas Operator"
+                                                hidden>
                                         </div>
                                     </div>
                                 </div>
