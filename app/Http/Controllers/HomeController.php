@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\PerizinanPenyelenggaraan;
 use App\Models\PerizinanPendirian;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -26,29 +27,41 @@ class HomeController extends Controller
      */
 
     public function index(Request $request){
-        $verified   =  User::where($request->id)->get();
 
-        return view('pemohon.dashboard',compact('verified'));
+        $verified   =  User::where($request->id)->get();
+        $user = Auth::user();
+
+        return view('pemohon.dashboard',compact('verified','user'));
     }
 
 
     public function index_admin(){
-        return view('admin.dashboard');
+        $user = Auth::user();
+
+        return view('admin.dashboard',compact('user'));
     }
 
     public function index_dinas(){
-        return view('dinas.dashboard');
+        $user = Auth::user();
+
+        return view('dinas.dashboard' ,compact('user'));
     }
 
     public function index_walikota(){
-        return view('walikota.dashboard');
+        $user = Auth::user();
+
+        return view('walikota.dashboard' ,compact('user'));
     }
 
     public function index_kepalaDinas(){
-        return view('kepalaDinas.dashboard');
+        $user = Auth::user();
+
+        return view('kepalaDinas.dashboard',compact('user'));
     }
 
     public function index_penyelia(){
+        $user = Auth::user();
+
         $dokumenValidPendirian = PerizinanPendirian::where([
             'status_dokumen' => 'Dokumen Valid'
         ])->count();
@@ -96,18 +109,24 @@ class HomeController extends Controller
             'totalCheckingBerkas' => $totalCheckingBerkas,
             'totalDokumenSesuai' => $totalDokumenSesuai,
             'totalDokumenTidakSesuai' => $totalDokumenTidakSesuai,
+            'user' => $user
         ]);
     }
 
     public function index_surveyor(){
-        return view('surveyor.dashboard');
+        $user = Auth::user();
+
+        return view('surveyor.dashboard',compact('user'));
     }
 
     public function index_auditor(){
-        return view('auditor.dashboard');
+        $user = Auth::user();
+        return view('auditor.dashboard',compact('user'));
     }
 
     public function index_operator(){
+        $user = Auth::user();
+
         $checkingBerkasPendirian = PerizinanPendirian::where([
             'status_dokumen' => 'Checking Berkas Operator'
         ])->count();
@@ -136,11 +155,15 @@ class HomeController extends Controller
             'totalCheckingBerkas' => $totalCheckingBerkas,
             'totalDokumenValid' => $totalDokumenValid,
             'totalDokumenTidakValid' => $totalDokumenTidakValid,
+            'user' => $user,
         ]);
     }
 
     public function index_pemohon(){
-        return view('pemohon.dashboard');
+        $user = Auth::user();
+
+
+        return view('pemohon.dashboard',compact('user'));
     }
 
     public function my_account($id)

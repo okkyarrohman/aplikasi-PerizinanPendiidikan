@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(UserSeeder::class);
 
 
-        PerizinanPendirian::factory(30)->create();
-        PerizinanPenyelenggaraan::factory(30)->create();
+        PerizinanPendirian::factory(100)->create();
+        PerizinanPenyelenggaraan::factory(100)->create();
 
 
     }

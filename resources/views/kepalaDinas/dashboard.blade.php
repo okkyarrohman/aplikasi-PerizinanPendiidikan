@@ -1,4 +1,4 @@
-@extends('layouts.app-kepalaDinas')
+@extends('layouts.app-kepalaDinas2')
 
 @section('content')
     <div class="container">

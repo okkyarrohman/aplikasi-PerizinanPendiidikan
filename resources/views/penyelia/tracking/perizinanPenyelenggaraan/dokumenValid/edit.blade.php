@@ -1,4 +1,4 @@
-@extends('layouts.app-verifikator')
+@extends('layouts.app-verifikator2')
 
 @section('content')
     <div class="container">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <form class="form form-vertical" method="POST" action="{{ route('penyelenggaraan.update') }}"
+            <form class="form form-vertical" method="POST" action="{{ route('statusPenyelenggaraan.update') }}"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="row">

@@ -6,6 +6,10 @@ namespace App\Http\Controllers;
 use App\Models\PerizinanPendirian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Models\User;
+use Dompdf\Dompdf;
 
 class PerizinanPendirianController extends Controller
 {
@@ -294,6 +298,7 @@ class PerizinanPendirianController extends Controller
 
         }
         // End Upload File Pendirian
+        $permohonan->user()->associate(Auth::user());
 
         $permohonan->save();
 
@@ -567,7 +572,69 @@ class PerizinanPendirianController extends Controller
 
         $permohonan->status_dokumen = $req->status_dokumen;
         $permohonan->save();
-        return back()->with('success','Permohonan Berhasil');
+
+        return back()->with('success','Status Dokumen Berhasil Diupdate');
+    }
+
+    public function update_hasil_survey(Request $req){
+        $req->validate([
+            'luas_lahan' => ['required'],
+            'luas_bangunan' => ['required'],
+            'jumlah_sekolah' => ['required'],
+            'geotag' => ['required','mimes:jpg,jpeg,png','max:300']
+
+        ]);
+        $permohonan = PerizinanPendirian::find($req->id);
+
+        $permohonan->status_dokumen = $req->status_dokumen;
+
+        $permohonan->luas_lahan = $req->luas_lahan;
+        $permohonan->luas_bangunan = $req->luas_bangunan;
+        $permohonan->jumlah_sekolah = $req->jumlah_sekolah;
+
+        if($req->hasFile('geotag')){
+            $geotag = $req->file('geotag');
+            $extension = $geotag->getClientOriginalName();
+            $fotoName = date('YmdHis').".".$extension;
+            $geotag->move(storage_path('app/public/perizinanPendirian/geotag',date('YmdHis').".".$req->file('geotag')->getClientOriginalName()),$fotoName);
+            $permohonan->geotag = date('YmdHis').".".$req->file('geotag')->getClientOriginalName();
+        }
+
+        return back()->with('success','Data Berhasil Diupdate');
+    }
+
+
+    public function permohonan_selesai(Request $req){
+        $permohonan = PerizinanPendirian::find($req->id);
+
+        $permohonan->status_dokumen = $req->status_dokumen;
+        $permohonan->save();
+
+        $imgGaruda = public_path('QRCode/garuda.jpg');
+        $jadiGaruda = base64_decode($imgGaruda);
+
+        $ttdKepalaDinas = public_path('QRCode/ttd-kepala-dinas.jpg');
+        $jadiTTD = base64_decode($ttdKepalaDinas);
+
+
+
+
+        $data = array('name' => 'jarwo');
+            $dompdf = new Dompdf();
+            $view = view('kepalaDinas.tracking.perizinanPendirian.izinTerbitPdf',compact('permohonan','jadiGaruda','jadiTTD'));
+            $dompdf->loadHTML($view);
+            $dompdf->render();
+
+        $emailPemohon = $permohonan->email;
+
+        Mail::send(['file' => 'mail'], $data, function ($message)use($dompdf,$emailPemohon) {
+            $message->to($emailPemohon)->subject('Surat Izin Terbit');
+
+            $message->attachData($dompdf->output(),'surat_izin_terbit.pdf');
+
+            $message->from('eightech@company.com','EighTech');
+        });
+        return redirect()->route('kepala-dinas')->with('success','Permohonan Selesai, Surat Izin Terbit Telah DIkirim');
     }
 
 }

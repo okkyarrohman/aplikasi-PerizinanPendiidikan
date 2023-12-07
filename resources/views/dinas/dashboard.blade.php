@@ -1,4 +1,4 @@
-@extends('layouts.app-dinas')
+@extends('layouts.app-dinas2')
 
 @section('content')
     <div class="container">

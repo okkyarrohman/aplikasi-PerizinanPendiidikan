@@ -7,26 +7,55 @@ use App\Models\Perizinan;
 use App\Models\PerizinanPendirian;
 use App\Models\PerizinanPenyelenggaraan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class PemohonController extends Controller
 {
-    public function data_pemohon()
-    {
 
-        return view('pemohon.account.edit');
+
+    public function persyaratan_pendirian(){
+        $user = Auth::user();
+
+        return view('pemohon.persyaratan.pendirian',compact('user'));
     }
+    public function persyaratan_penyelenggaraan(){
+        $user = Auth::user();
+
+        return view('pemohon.persyaratan.penyelenggaraan',compact('user'));
+    }
+
+
+    // Index
+    public function permohonan_pendirian(){
+        $user = Auth::user();
+
+        return view('pemohon.permohonan.perizinanPendirian.index', compact('user'));
+    }
+
+    public function permohonan_penyelenggaraan(){
+        $user = Auth::user();
+
+        return view('pemohon.permohonan.perizinanPenyelenggaraan.index', compact('user'));
+    }
+
+
+
+
 
     // Create view for Perizinan Pendirian
     public function create_tk()
     {
+        $user = Auth::user();
 
-        return view('pemohon.perizinanPendirian.createTk');
+        return view('pemohon.permohonan.perizinanPendirian.tk.createTk', compact('user'));
     }
 
     public function create_sd()
     {
-        return view('pemohon.perizinanPendirian.createSd');
+        $user = Auth::user();
+
+        return view('pemohon.permohonan.perizinanPendirian.sd.createSd',compact('user'));
     }
 
     // End Create view for Perizinan Pendirian
@@ -74,27 +103,25 @@ class PemohonController extends Controller
     // Show Tracking
 
 
-    public function tracking_pendirian()
+    public function tracking()
     {
-        $permohonans =   PerizinanPendirian::all();
+        $user = Auth::user();
 
-        return view('pemohon.perizinanPendirian.tracking.tracking',compact('permohonans'));
+        $permohonans = PerizinanPendirian::find(Auth::user());
+
+        return view('pemohon.tracking.tracking',compact('permohonans','user'));
     }
 
-     public function tracking_penyelenggaraan()
+
+
+    public function show($id)
     {
-        $permohonans =   PerizinanPenyelenggaraan::all();
-
-
-        return view('pemohon.perizinanPenyelenggaraan.tracking.tracking',compact('permohonans'));
-    }
-
-    public function show_pendirian($id)
-    {
+        $user = Auth::user();
         $permohonans = PerizinanPendirian::where('id',$id)->first();
 
-        return view('pemohon.perizinanPendirian.tracking.show',[
+        return view('pemohon.tracking.show',[
             'permohonans' => $permohonans,
+            'user' => $user,
         ]);
     }
 

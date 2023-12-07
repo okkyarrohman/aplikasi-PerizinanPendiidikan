@@ -20,10 +20,10 @@ class MailController extends Controller
             $dompdf->loadHTML($view);
             $dompdf->render();
 
+        $emailPemohon = $permohonans->email;
 
-
-        Mail::send(['file' => 'mail'], $data, function ($message)use($dompdf,$permohonans) {
-            $message->to('amarulj22@gmail.com')->subject('Surat Izin Terbit');
+        Mail::send(['file' => 'mail'], $data, function ($message)use($dompdf,$emailPemohon) {
+            $message->to($emailPemohon)->subject('Surat Izin Terbit');
 
             $message->attachData($dompdf->output(),'surat_izin_terbit.pdf');
 
