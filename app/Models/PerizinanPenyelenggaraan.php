@@ -30,7 +30,11 @@ class PerizinanPenyelenggaraan extends Model
         'doc_keuangan',
         'surat_otorisasi',
         'program_akademik',
-        'sarpras'
+        'sarpras',
+        'luas_lahan',
+        'luas_bangunan',
+        'jumlah_sekolah',
+        'geotag'
     ];
     public function user()
     {

@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\Auth\ForgotPasswordController;
-use App\Http\Controllers\Api\Auth\UserController;
+use App\Http\Controllers\Api\Auth\UserController as AuthUserController;
+use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\Auth\VerifyEmailController;
 use App\Http\Controllers\Api\PendirianController;
 use App\Http\Controllers\Api\PenyelenggaraanController;
@@ -21,12 +22,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('/register', [UserController::class, 'register']);
+Route::post('/register', [AuthUserController::class, 'register']);
 Route::post('/forgot-password', [ForgotPasswordController::class, 'forgot']);
-Route::post('/login', [UserController::class, 'login']);
+Route::post('/login', [AuthUserController::class, 'login']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::get('/user/profile', [UserController::class, 'getUserProfile']);
+    Route::get('/user/profile', [AuthUserController::class, 'getUserProfile']);
     Route::post('/email/resend', [VerifyEmailController::class, 'resend']);
 
     // Pendirian
@@ -44,4 +45,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/penyelenggaraan', [PenyelenggaraanController::class, 'create']);
     Route::post('/penyelenggaraan/{id}', [PenyelenggaraanController::class, 'update']);
     Route::delete('/penyelenggaraan/{id}', [PenyelenggaraanController::class, 'delete']);
+
+    Route::apiResource('users', UserController::class);
 });

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ChangeStatusMail;
 use App\Models\PerizinanPenyelenggaraan;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 
@@ -17,8 +19,6 @@ class PenyelenggaraanController extends Controller
     public function getPenyelenggaraan(Request $request)
 {
     try {
-        $limit = $request->input('limit', 10);
-        $offset = $request->input('offset', 0);
         $statusDokumen = $request->input('status_dokumen');
         $tipeDokumen = $request->input('tipe_dokumen');
 
@@ -32,15 +32,14 @@ class PenyelenggaraanController extends Controller
             $query->where('tipe_dokumen', $tipeDokumen);
         }
 
+        // Retrieve all data without pagination
+        $penyelenggaraan = $query->get();
+
         $totalData = $query->count();
 
         if ($totalData == 0) {
             return $this->sendErrorResponse('Data not found.', 404);
         }
-
-        $penyelenggaraan = $query->offset($offset)->limit($limit)->get();
-        $totalCurrentData = $penyelenggaraan->count();
-        $currentPage = ceil(($offset + 1) / $limit);
 
         return $this->sendSuccessResponse(
             ['data' => $penyelenggaraan],
@@ -48,14 +47,13 @@ class PenyelenggaraanController extends Controller
             200,
             [
                 'total_data' => $totalData,
-                'total_current_data' => $totalCurrentData,
-                'current_page' => $currentPage,
             ]
         );
     } catch (Exception $e) {
         return $this->sendErrorResponse($e->getMessage(), 500);
     }
 }
+
 
 
     public function getPenyelenggaraanByUser(Request $request)
@@ -253,6 +251,11 @@ class PenyelenggaraanController extends Controller
             } // Sesuaikan dengan nama kolom file
 
             $penyelenggaraan->save();
+
+            $targetStatuses = ['Dokumen Tidak Valid', 'Dokumen Tidak Sesuai', 'Permohonan Ditolak'];
+            if (in_array($penyelenggaraan->status_dokumen, $targetStatuses)) {
+                Mail::to($penyelenggaraan->email)->send(new ChangeStatusMail($penyelenggaraan));
+            }
 
             return $this->sendSuccessResponse([
                 'data' => $penyelenggaraan,
