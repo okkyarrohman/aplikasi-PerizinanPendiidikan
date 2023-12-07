@@ -53,8 +53,8 @@ class UserController extends Controller
                 'desa' => $request->desa,
             ]);
 
-
-            // Kirim email verifikasi
+            $user->assignRole("pemohon");
+            
             $user->sendEmailVerificationNotification();
 
             return $this->sendSuccessResponse(
@@ -75,54 +75,57 @@ class UserController extends Controller
 
 
     public function login(Request $request)
-    {
-        try {
-            $request->validate([
-                'email' => 'required|string|email',
-                'password' => 'required|string',
-                'remember_me' => 'boolean',
-            ]);
+{
+    try {
+        $request->validate([
+            'identity' => 'required|string',
+            'password' => 'required|string',
+            'remember_me' => 'boolean',
+        ]);
 
-            $credentials = $request->only('email', 'password');
+        $credentials = [
+            filter_var($request->input('identity'), FILTER_VALIDATE_EMAIL) ? 'email' : 'telepon' => $request->input('identity'),
+            'password' => $request->input('password'),
+        ];
 
-            if (Auth::attempt($credentials, $request->input('remember_me', false))) {
-                $user = Auth::user();
-                $role = $user->getRoleNames();
-                $token = $user->createToken('auth-token')->plainTextToken;
-                $addedMessage = "";
-    
-                if (!$user->hasVerifiedEmail()) {
-                    $addedMessage = " Please verify your email to access all features.";
-                }
+        if (Auth::attempt($credentials, $request->input('remember_me', false))) {
+            $user = Auth::user();
+            $role = $user->getRoleNames();
+            $token = $user->createToken('auth-token')->plainTextToken;
+            $addedMessage = "";
 
-                if ($request->input('remember_me', false)) {
-                    $addedMessage .= " You will be remembered.";
-                }
-    
-                return $this->sendSuccessResponse(
-                    [
-                        'name' => $user->name,
-                        'email' => $user->email,
-                        'email_verified' => $user->hasVerifiedEmail(),
-                        'role' => $role,
-                        'token' => $token,
-                    ],
-                    "Login successful." . $addedMessage,
-                    200
-                );
-            } else {
-                throw ValidationException::withMessages([
-                    'message' => ['Invalid credentials.'],
-                ]);
+            if (!$user->hasVerifiedEmail()) {
+                $addedMessage = " Please verify your email to access all features.";
             }
-        } catch (ValidationException $validationException) {
-            return $this->sendValidationErrorResponse($validationException);
-        } catch (\Exception $e) {
-            // Tangani kesalahan umum
-            return $this->sendErrorResponse('Registration failed. Please try again.', 500);
-        }
 
+            if ($request->input('remember_me', false)) {
+                $addedMessage .= " You will be remembered.";
+            }
+
+            return $this->sendSuccessResponse(
+                [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'email_verified' => $user->hasVerifiedEmail(),
+                    'role' => $role,
+                    'token' => $token,
+                ],
+                "Login successful." . $addedMessage,
+                200
+            );
+        } else {
+            throw ValidationException::withMessages([
+                'message' => ['Invalid credentials.'],
+            ]);
+        }
+    } catch (ValidationException $validationException) {
+        return $this->sendValidationErrorResponse($validationException);
+    } catch (\Exception $e) {
+        // Handle common errors
+        return $this->sendErrorResponse('Login failed. Please try again.', 500);
     }
+}
 
     public function getUserProfile(Request $request)
     {

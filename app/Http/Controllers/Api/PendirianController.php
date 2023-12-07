@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ChangeStatusMail;
 use App\Models\PerizinanPendirian;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class PendirianController extends Controller
@@ -16,31 +18,21 @@ class PendirianController extends Controller
     public function getPendirian(Request $request)
     {
         try {
-            $limit = $request->input('limit', 10); // Default limit: 10
-            $offset = $request->input('offset', 0); // Default offset: 0
-
             $query = PerizinanPendirian::query();
 
-            // Filter berdasarkan status dokumen
             if ($request->has('status_dokumen')) {
                 $query->where('status_dokumen', $request->input('status_dokumen'));
             }
 
-            // Filter berdasarkan tipe dokumen
             if ($request->has('tipe_dokumen')) {
                 $query->where('tipe_dokumen', $request->input('tipe_dokumen'));
             }
 
+            // Retrieve all data without pagination
+            $pendirian = $query->get();
+
             // Mendapatkan total data tanpa pagination
-            $totalData = $query->count();
-
-            // Mendapatkan data pendirian dengan pagination
-            $pendirian = $query->offset($offset)->limit($limit)->get();
-            // Menghitung total data yang sedang ditampilkan
-            $totalCurrentData = $pendirian->count();
-
-            // Menghitung halaman saat ini
-            $currentPage = ceil(($offset + 1) / $limit);
+            $totalData = $pendirian->count();
 
             if ($totalData == 0) {
                 return $this->sendErrorResponse('Data not found.', 404);
@@ -52,8 +44,6 @@ class PendirianController extends Controller
                 200,
                 [
                     'total_data' => $totalData,
-                    'total_current_data' => $totalCurrentData,
-                    'current_page' => $currentPage,
                 ]
             );
         } catch (Exception $e) {
@@ -61,6 +51,9 @@ class PendirianController extends Controller
             return $this->sendErrorResponse($e->getMessage(), 500);
         }
     }
+
+
+
 
     public function getPendirianByUser(Request $request)
     {
@@ -330,7 +323,7 @@ class PendirianController extends Controller
                 'latitude'
             ]));
 
-            
+
 
             $fields = [
                 'surat_permohonan',
@@ -374,6 +367,11 @@ class PendirianController extends Controller
 
             // Simpan perubahan data pendirian
             $pendirian->save();
+
+            $targetStatuses = ['Dokumen Tidak Valid', 'Dokumen Tidak Sesuai', 'Permohonan Ditolak'];
+            if (in_array($pendirian->status_dokumen, $targetStatuses)) {
+                Mail::to($pendirian->email)->send(new ChangeStatusMail($pendirian));
+            }
 
             return $this->sendSuccessResponse([
                 'data' => $pendirian,
