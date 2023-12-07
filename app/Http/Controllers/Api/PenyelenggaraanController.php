@@ -32,6 +32,21 @@ class PenyelenggaraanController extends Controller
             $query->where('tipe_dokumen', $tipeDokumen);
         }
 
+        // Filter berdasarkan hari ini
+        if ($request->has('today')) {
+            $query->whereDate('created_at', now()->toDateString());
+        }
+
+        // Filter berdasarkan date
+        if ($request->has('date')) {
+            $query->whereDate('created_at', $request->input('date'));
+        }
+
+        // Filter berdasarkan bulan
+        if ($request->has('month')) {
+            $query->whereMonth('created_at', $request->input('month'));
+        }
+
         // Retrieve all data without pagination
         $penyelenggaraan = $query->get();
 
