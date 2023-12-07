@@ -1,4 +1,4 @@
-@extends('layouts.app-dinas2')
+@extends('layouts.app-admin2')
 
 @section('content')
     <div class="container">
@@ -13,7 +13,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/dinas/tracking/penyelenggaraan/checking_berkas_operator_penyelenggaraan">
+                        <a href="/admin/tracking/penyelenggaraan/checking_berkas_operator_penyelenggaraan">
                             <h4>Checking Berkas Operator</h4>
                         </a>
                     </div>
@@ -22,7 +22,7 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/dinas/tracking/penyelenggaraan/checking_berkas_operator_penyelenggaraan"
+                            <a href="/admin/tracking/penyelenggaraan/checking_berkas_operator_penyelenggaraan"
                                 class="btn btn-primary">></a>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/dinas/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan">
+                        <a href="/admin/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan">
                             <h4>Dokumen Valid</h4>
                         </a>
                     </div>
@@ -41,7 +41,7 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/dinas/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan"
+                            <a href="/admin/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan"
                                 class="btn btn-primary">-></a>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/dinas/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan">
+                        <a href="/admin/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan">
                             <h4>Dokumen Tidak Valid</h4>
                         </a>
                     </div>
@@ -60,7 +60,7 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/dinas/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan"
+                            <a href="/admin/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan"
                                 class="btn btn-primary">-></a>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/dinas/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan">
+                        <a href="/admin/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan">
                             <h4>Sedang Disurvey</h4>
                         </a>
                     </div>
@@ -82,7 +82,7 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/dinas/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan"
+                            <a href="/admin/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan"
                                 class="btn btn-primary">-></a>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/dinas/tracking/penyelenggaraan/telah_disurvey_penyelenggaraan">
+                        <a href="/admin/tracking/penyelenggaraan/telah_disurvey_penyelenggaraan">
                             <h4>Telah Disurvey</h4>
                         </a>
                     </div>
@@ -101,7 +101,7 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/dinas/tracking/penyelenggaraan/telah_disurvey_penyelenggaraan"
+                            <a href="/admin/tracking/penyelenggaraan/telah_disurvey_penyelenggaraan"
                                 class="btn btn-primary">-></a>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/dinas/tracking/penyelenggaraan/checking_berkas_verifikator_penyelenggaraan">
+                        <a href="/admin/tracking/penyelenggaraan/checking_berkas_verifikator_penyelenggaraan">
                             <h4>Checking Berkas Verifikator</h4>
                         </a>
                     </div>
@@ -120,7 +120,7 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/dinas/tracking/penyelenggaraan/checking_berkas_verifikator_penyelenggaraan"
+                            <a href="/admin/tracking/penyelenggaraan/checking_berkas_verifikator_penyelenggaraan"
                                 class="btn btn-primary">-></a>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/dinas/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan">
+                        <a href="/admin/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan">
                             <h4>Dokumen Sesuai</h4>
                         </a>
                     </div>
@@ -142,7 +142,7 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/dinas/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan"
+                            <a href="/admin/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan"
                                 class="btn btn-primary">-></a>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/dinas/tracking/penyelenggaraan/tolak_dokumen_penyelenggaraan">
+                        <a href="/admin/tracking/penyelenggaraan/tolak_dokumen_penyelenggaraan">
                             <h4>Dokumen Ditolak</h4>
                         </a>
                     </div>
@@ -161,7 +161,7 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/dinas/tracking/penyelenggaraan/tolak_dokumen_penyelenggaraan"
+                            <a href="/admin/tracking/penyelenggaraan/tolak_dokumen_penyelenggaraan"
                                 class="btn btn-primary">-></a>
                         </div>
                     </div>
@@ -171,7 +171,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/dinas/tracking/penyelenggaraan/ttd_kepala_dinas_penyelenggaraan">
+                        <a href="/admin/tracking/penyelenggaraan/ttd_kepala_dinas_penyelenggaraan">
                             <h4>Tanda Tangan Kepala Dinas</h4>
                         </a>
                     </div>
@@ -180,7 +180,7 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/dinas/tracking/penyelenggaraan/ttd_kepala_dinas_penyelenggaraan"
+                            <a href="/admin/tracking/penyelenggaraan/ttd_kepala_dinas_penyelenggaraan"
                                 class="btn btn-primary">-></a>
                         </div>
                     </div>
@@ -192,7 +192,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="title-card m-4">
-                        <a href="/dinas/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan">
+                        <a href="/admin/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan">
                             <h4>Permohonan Selesai</h4>
                         </a>
                     </div>
@@ -201,7 +201,7 @@
                             <h4>80</h4>
                         </div>
                         <div class="next">
-                            <a href="/dinas/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan"
+                            <a href="/admin/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan"
                                 class="btn btn-primary">-></a>
                         </div>
                     </div>
