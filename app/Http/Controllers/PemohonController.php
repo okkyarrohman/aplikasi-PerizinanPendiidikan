@@ -116,10 +116,12 @@ class PemohonController extends Controller
 
     public function show($id)
     {
+        $user = Auth::user();
         $permohonans = PerizinanPendirian::where('id',$id)->first();
 
-        return view('pemohon.perizinanPendirian.tracking.show',[
+        return view('pemohon.tracking.show',[
             'permohonans' => $permohonans,
+            'user' => $user,
         ]);
     }
 

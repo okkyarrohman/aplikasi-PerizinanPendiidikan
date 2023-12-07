@@ -31,7 +31,16 @@
                     </div>
                     <div class="content-3 m-lg-4">
                         <label for="">Surat izin Terbit : </label>
-                        <input type="text" placeholder="{{ $permohonans->surat_terbit }}" class="form-control" disabled>
+                        @if ($permohonans->status_dokumen == 'Permohonan Selesai')
+                            <input type="text" placeholder="{{ $permohonans->surat_terbit }}" class="form-control"
+                                disabled>
+                            <br>
+                            <a href="#" class="btn btn-danger">Download Surat Perizinan</a>
+                        @else
+                            <input type="text" placeholder="{{ $permohonans->surat_terbit }}" class="form-control"
+                                disabled>
+                        @endif
+
                     </div>
                 </div>
             </div>
@@ -40,19 +49,14 @@
                     <div class="content-1 m-4">
                         <h6 for="">Status Permohonan Perizinan Anda Sedang Dalam Tahap : </h6>
                         @if ($permohonans->status_dokumen == 'Dokumen Tidak Valid')
-                            {
-                            <h1>Dokumen Anda Tidak Valid, Silahkan Perbaiki Dokumen Anda</h1>
-                            <a href="" class="btn btn-success">Edit</a>
-                            }
+                            <h4>Dokumen Anda Tidak Valid, Silahkan Perbaiki dan Upload Ulang</h4>
+                            <a href="#" class="btn btn-success">Edit</a>
                         @elseif ($permohonans->status_dokumen == 'Dokumen Ditolak')
-                            {
-                            <h1> Dokumen Anda Ditolak, Silahkan Upload Ulang dari Awal</h1>
-                            <a href="" class="btn btn-danger">Ajukan Ulang</a>
-                        }@else{
+                            <h4>Dokumen Anda Tidak Valid, Silahkan Perbaiki dan Upload Ulang</h4>
+                            <a href="#" class="btn btn-danger">Upload Ulang</a>
+                        @else
                             <h1>{{ $permohonans->status_dokumen }}</h1>
-                            }
                         @endif
-                        <h1>{{ $permohonans->status_dokumen }}</h1>
                     </div>
                 </div>
 

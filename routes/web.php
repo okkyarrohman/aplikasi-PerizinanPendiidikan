@@ -71,7 +71,7 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     // Pemohon tracking_pendirian
     Route::get('/pemohon/tracking',[PemohonController::class,'tracking']);
 
-    Route::get('/pemohon/tracking/show/{id}',[PemohonController::class,'show']);
+    Route::get('/pemohon/show_pendirian/{id}',[PemohonController::class,'show']);
     // End Pemohon Tracking
 });
 // End Route pemohon
