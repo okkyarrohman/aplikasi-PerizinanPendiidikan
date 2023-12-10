@@ -64,7 +64,7 @@
                             </td>
                             <td class="border-bottom-0">
                                 <a href="/operator/tracking/pendirian/edit/{{ $tracking->id }}"
-                                    class="btn btn-success">Edit</a>
+                                    class="btn btn-success">Validasi Dokumen</a>
                             </td>
                         </tr>
                     </tbody>

@@ -13,7 +13,7 @@
             <div class="group d-flex justify-content-end">
 
                 <div class="status_dokumen">
-                    <h4>Checking Berkas Operator</h4>
+                    <h4>Checking Berkas Verifikator</h4>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
                             </td>
                             <td class="border-bottom-0">
                                 <a href="/penyelia/tracking/pendirian/edit/checking_berkas/{{ $tracking->id }}"
-                                    class="btn btn-success">Edit</a>
+                                    class="btn btn-success">Validasi Dokumen</a>
                             </td>
                         </tr>
                     </tbody>

@@ -134,6 +134,15 @@
 
                             <div class="row justify-content-center">
                                 <div class="col-md-6">
+                                    <label for="">Telepon</label>
+                                    <input type="text" name="telepon" class="form-control"
+                                        placeholder="Masukkan Nama">
+                                    <br>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
                                     <label for="">Email</label>
                                     <input type="email" name="email" class="form-control"
                                         placeholder="Masukkan Nama">
@@ -175,6 +184,15 @@
                                 <div class="col-md-6">
                                     <label for="">Nama</label>
                                     <input type="text" name="name" class="form-control"
+                                        placeholder="Masukkan Nama">
+                                    <br>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <label for="">Telepon</label>
+                                    <input type="text" name="telepon" class="form-control"
                                         placeholder="Masukkan Nama">
                                     <br>
                                 </div>

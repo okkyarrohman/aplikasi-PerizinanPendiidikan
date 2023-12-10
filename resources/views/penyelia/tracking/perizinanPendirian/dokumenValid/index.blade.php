@@ -64,7 +64,7 @@
                             </td>
                             <td class="border-bottom-0">
                                 <a href="/penyelia/tracking/pendirian/edit/dokumen_valid/{{ $tracking->id }}"
-                                    class="btn btn-success">Edit</a>
+                                    class="btn btn-success">Tugaskan Surveyor</a>
                             </td>
                         </tr>
                     </tbody>
