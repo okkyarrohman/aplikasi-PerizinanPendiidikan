@@ -34,7 +34,7 @@ Route::get('/', function () {
 });
 
 Auth::routes(['verify' => true]);
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index']);
 
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon','verify'], function(){
@@ -44,8 +44,8 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::post('/update/data-pemohon',[AccountController::class,'update'])->name('update.account');
 
     // Menu
-    Route::get('/pemohon',[HomeController::class,'index_pemohon'])->name('pemohon');
-    Route::get('/pemohon/persyaratan/pendirian', [PemohonController::class,'persyaratan_pendirian']);
+    Route::get('/pemohon',[HomeController::class,'index_pemohon']);
+    Route::get('/pemohon/persyaratan/pendirian', [PemohonController::class,'persyaratan_pendirian'])->name('pemohon');
     Route::get('/pemohon/persyaratan/penyelenggaraan', [PemohonController::class,'persyaratan_penyelenggaraan']);
 
     // Menu
