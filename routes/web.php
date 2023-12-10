@@ -340,16 +340,7 @@ Route::group(['middleware' => 'role:admin'], function(){
     // Create Akun Pengguna
     Route::get('/admin/informasiAkun',[AdminController::class,'informasiAkun']);
 
-    Route::get('/admin/tambahAkun/operator',[AdminController::class,'createOperator']);
-    Route::get('/admin/tambahAkun/penyelia',[AdminController::class,'createPenyelia']);
-    Route::get('/admin/tambahAkun/surveyor',[AdminController::class,'createSurveyor']);
-    Route::get('/admin/tambahAkun/kepalaDinas',[AdminController::class,'createKepalaDinas']);
-    Route::get('/admin/tambahAkun/auditor',[AdminController::class,'createAuditor']);
-    Route::get('/admin/tambahAkun/walikota',[AdminController::class,'createWalikota']);
-    Route::get('/admin/tambahAkun/dinas',[AdminController::class,'createDinas']);
-
-
-    Route::post('/admin/tambahAkun/operator',[RegisterController::class,'createOperator'])->name('create.Operator');
+    Route::post('/admin/tambahAkun/operator',[RegisterController::class,'createOperator'])->name('akun.operator');
     Route::post('/admin/tambahAkun/penyelia',[RegisterController::class,'createPenyelia'])->name('create.Penyelia');
     Route::post('/admin/tambahAkun/surveyor',[RegisterController::class,'createSurveyor'])->name('create.Surveyor');
     Route::post('/admin/tambahAkun/kepalaDinas',[RegisterController::class,'createKepalaDinas'])->name('create.KepalaDinas');

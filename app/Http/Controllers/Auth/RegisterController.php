@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\User;
+
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -97,16 +98,19 @@ class RegisterController extends Controller
         return $newUser->assignRole("pemohon");
     }
 
-    protected function createOperator(Request $request){
+    public function createOperator(array $data){
 
 
-        $newUser = New User();
-        $newUser->name = $request->name;
-        $newUser->email = $request->email;
-        $newUser->password = Hash::make([$request->password]);
+        $newUser = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'telepon' => $data['telepon'],
 
+        ]);
 
-        $newUser->assignRole("operator");
+            $newUser->assignRole("operator");
+
 
         return redirect()->route('admin')->with('success','Account Operator Berhasil dibuat');
     }
