@@ -28,7 +28,6 @@ class OperatorController extends Controller
         $user = Auth::user();
 
         $permohonans = PerizinanPendirian::where([
-
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
@@ -52,7 +51,6 @@ class OperatorController extends Controller
         $user = Auth::user();
 
         $permohonans = PerizinanPendirian::where([
-
             'status_dokumen' => 'Dokumen Tidak Valid'
         ])->get();
 

@@ -13,6 +13,7 @@ use App\Http\Controllers\SurveyorController;
 use App\Http\Controllers\DinasController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuditorController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PerizinanPendirianController;
 use App\Http\Controllers\PerizinanPenyelenggaraanController;
 use App\Http\Controllers\MailController;
@@ -335,6 +336,27 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('admin/perizinanPenyelenggaraan/create-ppo',[AdminController::class,'create_ppo']);
     Route::get('admin/perizinanPenyelenggaraan/create-ptn-univ',[AdminController::class,'create_ptn_univ']);
     // End Route Create Perizinan Penyelenggaraan
+
+    // Create Akun Pengguna
+    Route::get('/admin/informasiAkun',[AdminController::class,'informasiAkun']);
+
+    Route::get('/admin/tambahAkun/operator',[AdminController::class,'createOperator']);
+    Route::get('/admin/tambahAkun/penyelia',[AdminController::class,'createPenyelia']);
+    Route::get('/admin/tambahAkun/surveyor',[AdminController::class,'createSurveyor']);
+    Route::get('/admin/tambahAkun/kepalaDinas',[AdminController::class,'createKepalaDinas']);
+    Route::get('/admin/tambahAkun/auditor',[AdminController::class,'createAuditor']);
+    Route::get('/admin/tambahAkun/walikota',[AdminController::class,'createWalikota']);
+    Route::get('/admin/tambahAkun/dinas',[AdminController::class,'createDinas']);
+
+
+    Route::post('/admin/tambahAkun/operator',[RegisterController::class,'createOperator'])->name('create.Operator');
+    Route::post('/admin/tambahAkun/penyelia',[RegisterController::class,'createPenyelia'])->name('create.Penyelia');
+    Route::post('/admin/tambahAkun/surveyor',[RegisterController::class,'createSurveyor'])->name('create.Surveyor');
+    Route::post('/admin/tambahAkun/kepalaDinas',[RegisterController::class,'createKepalaDinas'])->name('create.KepalaDinas');
+    Route::post('/admin/tambahAkun/auditor',[RegisterController::class,'createAuditor'])->name('create.Auditor');
+    Route::post('/admin/tambahAkun/walikota',[RegisterController::class,'createWalikota'])->name('create.Walikota');
+    Route::post('/admin/tambahAkun/dinas',[RegisterController::class,'createDinas'])->name('create.Dinas');
+    // End Create Akun Pengguna
 
     //Arsip
     Route::get('/admin/arsip',[AdminController::class,'arsip']);

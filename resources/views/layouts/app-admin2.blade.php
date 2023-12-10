@@ -87,9 +87,7 @@
                             </div>
 
                             <div class="permohonan dropdown">
-                                <a href="#" id="topbarUserDropdown"
-                                    class="user-dropdown d-flex align-items-center dropend dropdown-toggle "
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <a href="/admin/informasiAkun" class="user-dropdown d-flex align-items-center">
                                     <div class="avatar avatar-md2">
                                         <img src="{{ asset('images/orang.png') }}" alt="Avatar">
                                     </div>
@@ -97,17 +95,7 @@
                                         <h6 class="user-dropdown-name">Informasi Akun</h6>
                                     </div>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end shadow-lg"
-                                    aria-labelledby="topbarUserDropdown">
-                                    <li><a class="dropdown-item" href="/admin/tracking/pendirian">Operator</a></li>
-                                    <li><a class="dropdown-item" href="/admin/tracking/pendirian">Verifikator</a></li>
-                                    <li><a class="dropdown-item" href="/admin/tracking/pendirian">Surveyor</a></li>
-                                    <li><a class="dropdown-item" href="/admin/tracking/pendirian">Kepala Dinas</a></li>
-                                    <li><a class="dropdown-item" href="/admin/tracking/pendirian">Walikota</a></li>
-                                    <li><a class="dropdown-item" href="/admin/tracking/pendirian">Auditor</a></li>
-                                    <li><a class="dropdown-item" href="/admin/tracking/pendirian">Admin Dinas</a></li>
 
-                                </ul>
                             </div>
 
                             <div class="dropdown">

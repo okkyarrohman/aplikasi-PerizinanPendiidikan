@@ -94,6 +94,95 @@ class RegisterController extends Controller
             'desa' => $data['desa'],
         ]);
 
-        return $newUser->assignRole('pemohon');
+        return $newUser->assignRole("pemohon");
     }
+
+    protected function createOperator(Request $request){
+
+
+        $newUser = New User();
+        $newUser->name = $request->name;
+        $newUser->email = $request->email;
+        $newUser->password = Hash::make([$request->password]);
+
+
+        $newUser->assignRole("operator");
+
+        return redirect()->route('admin')->with('success','Account Operator Berhasil dibuat');
+    }
+
+    protected function createPenyelia(array $data){
+        $newUser = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        $newUser->assignRole("penyelia");
+
+        return redirect()->route('admin')->with('success','Account Operator Berhasil dibuat');
+    }
+
+    protected function createSurveyor(array $data){
+        $newUser = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        $newUser->assignRole("surveyor");
+
+        return redirect()->route('admin')->with('success','Account Operator Berhasil dibuat');
+    }
+
+    protected function createKepalaDinas(array $data){
+        $newUser = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        $newUser->assignRole("kepala-dinas");
+
+        return redirect()->route('admin')->with('success','Account Operator Berhasil dibuat');
+    }
+
+    protected function createAuditor(array $data){
+        $newUser = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        $newUser->assignRole("auditor");
+
+        return redirect()->route('admin')->with('success','Account Operator Berhasil dibuat');
+    }
+
+    protected function createDinas(array $data){
+        $newUser = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        $newUser->assignRole("dinas");
+
+        return redirect()->route('admin')->with('success','Account Operator Berhasil dibuat');
+    }
+
+    protected function createWalikota(array $data){
+        $newUser = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        $newUser->assignRole("walikota");
+
+        return redirect()->route('admin')->with('success','Account Operator Berhasil dibuat');
+    }
+
+
+
 }

@@ -11,12 +11,14 @@ use App\Models\PerizinanPenyelenggaraan;
 
 class AdminController extends Controller
 {
-    public function data_pengguna()
-    {
-        $users = User::paginate(10);
+    public function informasiAkun(){
+        $user = Auth::user();
+        $allAccount = User::all();
 
-        return view('admin.dataPengguna',compact('users'));
+        return view('admin.informasiAkun.index',compact('allAccount','user'));
     }
+
+
 
 
 
