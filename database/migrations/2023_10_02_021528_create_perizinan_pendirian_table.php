@@ -58,11 +58,7 @@ return new class extends Migration
             $table->string('sk_yayasan')->nullable();
             $table->string('studi_layak')->nullable();
 
-            // Column Surveyor
-            $table->string('luas_lahan')->nullable();
-            $table->string('luas_bangunan')->nullable();
-            $table->string('jumlah_sekolah')->nullable();
-            $table->string('geotag')->nullable();
+
 
             $table->timestamps();
         });
