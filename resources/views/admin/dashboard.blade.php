@@ -125,12 +125,14 @@
                             style="align-self: stretch; color: #A2A3A7; font-size: 17.08px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                             Perizinan Pendirian Sekolah TK, SD, SMP, SMA/SMK.</div>
                     </div>
-                    <div
-                        style="align-self: stretch; padding: 14.23px; background: #004B99; border-radius: 17.08px; justify-content: center; align-items: center; gap: 14.23px; display: inline-flex">
+                    <a href="#"
+                        style="display: inline-flex; align-self: stretch; padding: 14.23px; background: #004B99; border-radius: 17.08px; justify-content: center; align-items: center; gap: 14.23px; text-decoration: none;">
                         <div
-                            style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
-                            Lihat Data</div>
-                    </div>
+                            style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
+                            Lihat Data
+                        </div>
+                    </a>
+
                 </div>
             </center>
         </div>
@@ -326,12 +328,14 @@
                             style="align-self: stretch; color: #A2A3A7; font-size: 17.08px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                             Permohonan Penyelenggaraan Oleh Instansi Pendidikan, Non-Pemerintah, dan lainnya.</div>
                     </div>
-                    <div
-                        style="align-self: stretch; padding: 14.23px; background: #004B99; border-radius: 17.08px; justify-content: center; align-items: center; gap: 14.23px; display: inline-flex">
+                    <a href="#"
+                        style="display: inline-flex; align-self: stretch; padding: 14.23px; background: #004B99; border-radius: 17.08px; justify-content: center; align-items: center; gap: 14.23px; text-decoration: none;">
                         <div
-                            style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
-                            Lihat Data</div>
-                    </div>
+                            style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
+                            Lihat Data
+                        </div>
+                    </a>
+
                 </div>
             </center>
         </div>
@@ -578,7 +582,7 @@
                     <div
                         style="color: #45484F; font-size: 19.07px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
                         Data Sekolah Pada Setiap Kecamatan</div>
-                    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; ">
                         <div style="display: flex; width: 100%;">
                             <div
                                 style="flex: 1; text-align: center;  background: #CCDBEB; border-radius: 5.45px; border: 1.36px #2B69AA solid; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; margin-right: 10px;">
