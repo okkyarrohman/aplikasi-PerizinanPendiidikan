@@ -35,7 +35,7 @@ Route::get('/', function () {
 });
 
 Auth::routes(['verify' => true]);
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('pemohon');
 
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon','verify'], function(){
@@ -46,7 +46,7 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
     // Menu
     Route::get('/pemohon',[HomeController::class,'index_pemohon']);
-    Route::get('/pemohon/persyaratan/pendirian', [PemohonController::class,'persyaratan_pendirian'])->name('pemohon');
+    Route::get('/pemohon/persyaratan/pendirian', [PemohonController::class,'persyaratan_pendirian']);
     Route::get('/pemohon/persyaratan/penyelenggaraan', [PemohonController::class,'persyaratan_penyelenggaraan']);
 
     // Menu
@@ -405,9 +405,6 @@ Route::get('/send-email/{id}',[MailController::class,'send_attach_gmail']);
 
 
 
-route::get('/contoh-doc', function(){
-    return view('docIzinTerbit');
-});
 
 
 

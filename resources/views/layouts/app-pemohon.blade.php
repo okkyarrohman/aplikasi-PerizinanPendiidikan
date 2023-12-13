@@ -23,7 +23,7 @@
                 <div class="header-top">
                     <div class="container">
                         <div class="logo">
-                            <a href="index.html"><img src="{{ asset('images/logo.png') }}" width="25" height="25"
+                            <a href="/home"><img src="{{ asset('images/logo.png') }}" width="25" height="25"
                                     alt="Logo"></a>
                         </div>
                         <div class="header-top-right">
