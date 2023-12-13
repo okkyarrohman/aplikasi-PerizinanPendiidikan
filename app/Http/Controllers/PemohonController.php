@@ -33,10 +33,30 @@ class PemohonController extends Controller
         return view('pemohon.permohonan.perizinanPendirian.index', compact('user'));
     }
 
+    public function berhasil_pendirian(){
+        $user = Auth::user();
+
+
+        $berhasil = PerizinanPendirian::latest()->limit(1)->get();
+
+        return view('pemohon.permohonan.perizinanPendirian.berhasil', compact('user','berhasil'));
+    }
+
+
+
     public function permohonan_penyelenggaraan(){
         $user = Auth::user();
 
         return view('pemohon.permohonan.perizinanPenyelenggaraan.index', compact('user'));
+    }
+
+     public function berhasil_penyelenggaraan(){
+        $user = Auth::user();
+
+
+        $berhasil = PerizinanPenyelenggaraan::latest()->limit(1)->get();
+
+        return view('pemohon.permohonan.perizinanPenyelenggaraan.berhasil', compact('user','berhasil'));
     }
 
 

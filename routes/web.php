@@ -51,8 +51,11 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
     // Menu
 
-    Route::get('/pemohon/permohonan/pendirian', [PemohonController::class,'permohonan_pendirian'])->name('permohonan.pendirian');
-    Route::get('/pemohon/permohonan/penyelenggaraan', [PemohonController::class,'permohonan_penyelenggaraan'])->name('permohonan.penyelenggaraan');
+    Route::get('/pemohon/permohonan/pendirian', [PemohonController::class,'permohonan_pendirian']);
+    Route::get('/pemohon/permohonan/penyelenggaraan', [PemohonController::class,'permohonan_penyelenggaraan']);
+
+    Route::get('/pemohon/permohonan/pendirian/berhasil', [PemohonController::class,'berhasil_pendirian'])->name('permohonan.pendirian');
+    Route::get('/pemohon/permohonan/penyelenggaraan/berhasil', [PemohonController::class,'berhasil_penyelenggaraan'])->name('permohonan.penyelenggaraan');
 
 
     // Perizinan Pendirian create
