@@ -349,7 +349,7 @@
                     <div
                         style="width: 433.33px; justify-content: center; align-items: center; gap: 140.28px; display: inline-flex; margin-top: 10px; margin-left:10px;">
                         <div
-                            style="flex: 1 1 0; color: #45484F; font-size: 19.44px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
+                            style="flex: 1 1 0; color: #45484F; font-size: 19.44px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word; margin-left:3%;">
                             Laporan Surat Masuk</div>
                         <div
                             style="flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 2.78px; display: inline-flex;  margin-top: 10px; margin-left:10px;">
@@ -363,7 +363,7 @@
                     </div>
                     <div style="justify-content: flex-start; align-items: center; gap: 16.67px; display: inline-flex">
                         <div
-                            style="text-align: center; color: #45484F; font-size: 16.67px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
+                            style="text-align: center; color: #45484F; font-size: 16.67px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word; margin-left:12%;">
                             Filter</div>
                         <div style="justify-content: center; align-items: center; gap: 5.56px; display: flex">
                             <select
@@ -374,7 +374,7 @@
                             </select>
                         </div>
                     </div>
-                    <div style="margin-left: 20%;">
+                    <div style="margin-left: 20%; ">
                         <div class="card-body" style="w-full;">
                             <canvas id="SuratMasuk" width="300" height="300"></canvas>
                             <script>
@@ -481,7 +481,7 @@
                     <div
                         style="width: 454px; justify-content: center; align-items: center; gap: 146.97px; display: inline-flex;  margin-top: 10px; margin-left:10px;">
                         <div
-                            style="flex: 1 1 0; color: #45484F; font-size: 20.37px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
+                            style="flex: 1 1 0; color: #45484F; font-size: 20.37px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word; margin-left:8%;">
                             Status Dokumen</div>
                         <div
                             style="flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 2.91px; display: inline-flex;  margin-top: 10px; margin-left:10px;">
@@ -495,7 +495,7 @@
                     </div>
                     <div style="justify-content: flex-start; align-items: center; gap: 16.67px; display: inline-flex">
                         <div
-                            style="text-align: center; color: #45484F; font-size: 16.67px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
+                            style="text-align: center; color: #45484F; font-size: 16.67px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word; margin-left:24%;">
                             Filter</div>
                         <div style="justify-content: center; align-items: center; gap: 5.56px; display: flex">
                             <select
