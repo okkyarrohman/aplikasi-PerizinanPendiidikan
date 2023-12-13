@@ -3,34 +3,30 @@ var optionsProfileVisit = {
 		position: 'back'
 	},
 	dataLabels: {
-		enabled:false
+		enabled: false
 	},
 	chart: {
-		type: 'bar',
+		type: 'pie', // Change to 'pie' for a pie chart
 		height: 300
 	},
 	fill: {
-		opacity:1
+		opacity: 1
 	},
 	plotOptions: {
 	},
-	series: [{
-		name: 'sales',
-		data: [9,20,30,20,10,20,30,20,10,20,30,20]
-	}],
+	series: [9, 20, 30, 20, 10, 20, 30, 20, 10, 20, 30, 20], // Use an array directly for the series
+	labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], // Add labels for each data point
 	colors: '#435ebe',
-	xaxis: {
-		categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul", "Aug","Sep","Oct","Nov","Dec"],
-	},
-}
-let optionsVisitorsProfile  = {
+};
+
+var optionsVisitorsProfile = {
 	series: [70, 30],
 	labels: ['Male', 'Female'],
-	colors: ['#435ebe','#55c6e8'],
+	colors: ['#435ebe', '#55c6e8'],
 	chart: {
 		type: 'donut',
 		width: '100%',
-		height:'350px'
+		height: '350px'
 	},
 	legend: {
 		position: 'bottom'
@@ -42,7 +38,7 @@ let optionsVisitorsProfile  = {
 			}
 		}
 	}
-}
+};
 
 var optionsEurope = {
 	series: [{
@@ -50,8 +46,8 @@ var optionsEurope = {
 		data: [310, 800, 600, 430, 540, 340, 605, 805,430, 540, 340, 605]
 	}],
 	chart: {
+		type: 'pie',
 		height: 80,
-		type: 'area',
 		toolbar: {
 			show:false,
 		},
@@ -104,7 +100,7 @@ let optionsIndonesia = {
 
 
 var chartProfileVisit = new ApexCharts(document.querySelector("#chart-profile-visit"), optionsProfileVisit);
-var chartVisitorsProfile = new ApexCharts(document.getElementById('chart-visitors-profile'), optionsVisitorsProfile)
+var chartVisitorsProfile = new ApexCharts(document.getElementById('chart-visitors-profile'), optionsVisitorsProfile);
 var chartEurope = new ApexCharts(document.querySelector("#chart-europe"), optionsEurope);
 var chartAmerica = new ApexCharts(document.querySelector("#chart-america"), optionsAmerica);
 var chartIndonesia = new ApexCharts(document.querySelector("#chart-indonesia"), optionsIndonesia);
@@ -113,4 +109,4 @@ chartIndonesia.render();
 chartAmerica.render();
 chartEurope.render();
 chartProfileVisit.render();
-chartVisitorsProfile.render()
+chartVisitorsProfile.render();

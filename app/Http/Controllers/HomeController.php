@@ -8,16 +8,14 @@ use App\Models\PerizinanPenyelenggaraan;
 use App\Models\PerizinanPendirian;
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
-{
+class HomeController extends Controller {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware(['auth','verified']);
+    public function __construct() {
+        $this->middleware(['auth', 'verified']);
     }
 
     /**
@@ -26,40 +24,40 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function index(Request $request){
+    public function index(Request $request) {
 
-        $verified   =  User::where($request->id)->get();
+        $verified = User::where($request->id)->get();
         $user = Auth::user();
 
-        return view('pemohon.persyaratan.pendirian',compact('verified','user'));
+        return view('pemohon.persyaratan.pendirian', compact('verified', 'user'));
     }
 
 
-    public function index_admin(){
+    public function index_admin() {
         $user = Auth::user();
 
-        return view('admin.dashboard',compact('user'));
+        return view('admin.dashboard', compact('user'));
     }
 
-    public function index_dinas(){
+    public function index_dinas() {
         $user = Auth::user();
 
-        return view('dinas.dashboard' ,compact('user'));
+        return view('dinas.dashboard', compact('user'));
     }
 
-    public function index_walikota(){
+    public function index_walikota() {
         $user = Auth::user();
 
-        return view('walikota.dashboard' ,compact('user'));
+        return view('walikota.dashboard', compact('user'));
     }
 
-    public function index_kepalaDinas(){
+    public function index_kepalaDinas() {
         $user = Auth::user();
 
-        return view('kepalaDinas.dashboard',compact('user'));
+        return view('kepalaDinas.dashboard', compact('user'));
     }
 
-    public function index_penyelia(){
+    public function index_penyelia() {
         $user = Auth::user();
 
         $dokumenValidPendirian = PerizinanPendirian::where([
@@ -103,7 +101,7 @@ class HomeController extends Controller
         $totalDokumenTidakSesuai = $dokumenTidakSesuaiPendirian + $dokumenTidakSesuaiPenyelenggaraan;
 
 
-        return view('penyelia.dashboard',[
+        return view('penyelia.dashboard', [
             'totalDokumenValid' => $totalDokumenValid,
             'totalSedangSurvey' => $totalSedangSurvey,
             'totalCheckingBerkas' => $totalCheckingBerkas,
@@ -113,18 +111,18 @@ class HomeController extends Controller
         ]);
     }
 
-    public function index_surveyor(){
+    public function index_surveyor() {
         $user = Auth::user();
 
-        return view('surveyor.dashboard',compact('user'));
+        return view('surveyor.dashboard', compact('user'));
     }
 
-    public function index_auditor(){
+    public function index_auditor() {
         $user = Auth::user();
-        return view('auditor.dashboard',compact('user'));
+        return view('auditor.dashboard', compact('user'));
     }
 
-    public function index_operator(){
+    public function index_operator() {
         $user = Auth::user();
 
         $checkingBerkasPendirian = PerizinanPendirian::where([
@@ -151,7 +149,7 @@ class HomeController extends Controller
         ])->count();
         $totalDokumenTidakValid = $dokumenTidakValidPendirian + $dokumenTidakValidPenyelenggaraan;
 
-        return view('operator.dashboard',[
+        return view('operator.dashboard', [
             'totalCheckingBerkas' => $totalCheckingBerkas,
             'totalDokumenValid' => $totalDokumenValid,
             'totalDokumenTidakValid' => $totalDokumenTidakValid,
@@ -159,15 +157,14 @@ class HomeController extends Controller
         ]);
     }
 
-    public function index_pemohon(){
+    public function index_pemohon() {
         $user = Auth::user();
 
 
-        return view('pemohon.dashboard',compact('user'));
+        return view('pemohon.dashboard', compact('user'));
     }
 
-    public function my_account($id)
-    {
+    public function my_account($id) {
         $account = User::find($id)->get();
 
         return view('my_account.dashboard');

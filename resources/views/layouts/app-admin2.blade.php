@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{ asset('dashboard/css/shared/iconly.css') }}">
     @stack('css')
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 
 </head>
