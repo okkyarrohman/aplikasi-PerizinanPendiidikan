@@ -14,12 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // $this->call(RoleSeeder::class);
-        // $this->call(UserSeeder::class);
+        $this->call(RoleSeeder::class);
+        $this->call(UserSeeder::class);
 
 
-        PerizinanPendirian::factory(100)->create();
-        PerizinanPenyelenggaraan::factory(100)->create();
+        // PerizinanPendirian::factory(100)->create();
+        // PerizinanPenyelenggaraan::factory(100)->create();
 
 
     }
