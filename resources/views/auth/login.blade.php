@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ asset('dashboard/css/pages/auth.css') }}">
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.svg') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.png') }}" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
@@ -32,9 +34,7 @@
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" class="form-control form-control-xl" placeholder="Email"
                                 name="email">
-                            <div class="form-control-icon">
-                                <i class="bi bi-person"></i>
-                            </div>
+
                         </div>
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -44,9 +44,7 @@
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="password" class="form-control form-control-xl" placeholder="Password"
                                 name="password">
-                            <div class="form-control-icon">
-                                <i class="bi bi-shield-lock"></i>
-                            </div>
+
                         </div>
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -72,7 +70,7 @@
                     </form>
                     <div class="text-center text-lg fs-4">
                         <p class="text-gray-600">Belum Punya Akun? <a href="/register" class="font-bold">Daftar
-                            </a>.</p>
+                            </a></p>
                     </div>
                 </div>
             </div>

@@ -6,10 +6,10 @@
             <div class="col-md-6">
                 <div class="group d-flex">
                     <div class="button-back mx-4">
-                        <a href="{{ route('back') }}" class="btn btn-outline-secondary">Back</a>
+                        <a href="{{ route('back') }}"><i class="fa fa-solid fa-arrow-left"></i></a>
                     </div>
                     <div class="text">
-                        <h4>Permohonan Perizinan Pendirian</h4>
+                        <h4>Permohonan Perizinan Penyelenggaraan</h4>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,14 @@
                     <div class="card">
                         <div class="card-title m-4">
                             <a href="/pemohon/perizinanPenyelenggaraan/create_sd_smp">
-                                <h6>Sekolah Dasar dan Menegah</h6>
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Sekolah Dasar dan Menegah</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -33,7 +40,14 @@
                     <div class="card">
                         <div class="card-title m-4">
                             <a href="/pemohon/perizinanPenyelenggaraan/create_ptn_univ">
-                                <h6>Perguruan Tinggi dan Universitas</h6>
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Perguruan Tinggi Dan Universitas</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -45,7 +59,14 @@
                     <div class="card">
                         <div class="card-title m-4">
                             <a href="/pemohon/perizinanPenyelenggaraan/create_lpp">
-                                <h6>Lembaga Pelatihan Profesional</h6>
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Lembaga Pelatihan Profesional</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -57,7 +78,14 @@
                     <div class="card">
                         <div class="card-title m-4">
                             <a href="/pemohon/perizinanPenyelenggaraan/create_lpnp">
-                                <h6>Lembaga Pendidikan Non-Pemerintah</h6>
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Lembaga Pelatihan Non Pemerintah</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -69,7 +97,14 @@
                     <div class="card">
                         <div class="card-title m-4">
                             <a href="/pemohon/perizinanPenyelenggaraan/create_ppo">
-                                <h6>Pusah Pembelajaran Online</h6>
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Pusat Pembelajaran Online</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
                             </a>
                         </div>
 
@@ -80,7 +115,14 @@
                     <div class="card">
                         <div class="card-title m-4">
                             <a href="/pemohon/perizinanPenyelenggaraan/create_lpts">
-                                <h6>Lembaga Pendidikan Tinggi Swasta</h6>
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Lembaga Pendidikan Tinggi Swasta</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -93,7 +135,15 @@
                     <div class="card">
                         <div class="card-title m-4">
                             <a href="/pemohon/perizinanPenyelenggaraan/create_pklpk">
-                                <h6>Pendidikan Khusus dan Lembaga Pelatihan Keterampilan</h6>
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Pendidikan Khusus dan Lembaga
+                                            Pelatihan Keterampilan</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
                             </a>
                         </div>
 

@@ -21,7 +21,8 @@
 
                 <div class="group d-flex">
                     <div class="button-back mx-4">
-                        <a href="{{ route('back') }}" class="btn btn-outline-secondary">Back</a>
+                        <a href="{{ route('back') }}">
+                            <i class="fa fa-solid fa-arrow-left"></i></a>
                     </div>
                     <div class="text">
                         <h4>Lupa Kata Sandi</h4>

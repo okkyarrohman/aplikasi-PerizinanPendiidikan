@@ -83,22 +83,38 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end shadow-lg"
                                     aria-labelledby="topbarUserDropdown">
-                                    <li><a class="dropdown-item" href="#">Perizinan Pendirian</a></li>
-                                    <li><a class="dropdown-item" href="#">Perizinan Penyelenggaraan</a></li>
+                                    <li><a class="dropdown-item" href="/pemohon/arsip/pendirian">Perizinan Pendirian</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="/pemohon/arsip/penyelenggaraan">Perizinan
+                                            Penyelenggaraan</a></li>
                                 </ul>
                             </div>
 
-                            <div class="chat mt-2">
-                                <a href="/chatify">
-                                    <h6>Chat</h6>
+                            <div class="permohonan ">
+                                <a href="/chatify" id="topbarUserDropdown"
+                                    class="user-dropdown d-flex align-items-center ">
+                                    <div class="avatar avatar-md2">
+                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
+                                    </div>
+                                    <div class="text">
+                                        <h6 class="user-dropdown-name">Chat</h6>
+                                    </div>
                                 </a>
                             </div>
 
-                            <div class="tracking mt-2">
-                                <a href="/pemohon/tracking">
-                                    <h6>Tracking</h6>
+
+                            <div class="permohonan ">
+                                <a href="/pemohon/tracking" id="topbarUserDropdown"
+                                    class="user-dropdown d-flex align-items-center ">
+                                    <div class="avatar avatar-md2">
+                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
+                                    </div>
+                                    <div class="text">
+                                        <h6 class="user-dropdown-name">Tracking</h6>
+                                    </div>
                                 </a>
                             </div>
+
 
 
 

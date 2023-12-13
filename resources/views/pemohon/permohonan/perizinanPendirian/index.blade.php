@@ -16,7 +16,9 @@
             <div class="col-md-6">
                 <div class="group d-flex">
                     <div class="button-back mx-4">
-                        <a href="{{ route('back') }}" class="btn btn-outline-secondary">Back</a>
+                        <a href="{{ route('back') }}">
+                            <i class="fa fa-solid fa-arrow-left"></i>
+                        </a>
                     </div>
                     <div class="text">
                         <h4>Permohonan Perizinan Pendirian</h4>
@@ -33,7 +35,14 @@
                     <div class="card">
                         <div class="card-title m-3">
                             <a href="/pemohon/perizinanPendirian/create-tk">
-                                <h6>Pendirian TK</h6>
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Pendirian TK</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -44,7 +53,14 @@
                     <div class="card">
                         <div class="card-title m-3">
                             <a href="/pemohon/perizinanPendirian/create-sd">
-                                <h6>Pendirian SD/SMP/SMA</h6>
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Pendirian SD/SMP/SMA</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
                             </a>
                         </div>
                     </div>

@@ -131,6 +131,9 @@
                             style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
                             Lihat Data
                         </div>
+                        <div class="icons">
+                            <i class="fa fa-solid fa-arrow-right"></i>
+                        </div>
                     </a>
 
                 </div>
@@ -334,6 +337,7 @@
                             style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
                             Lihat Data
                         </div>
+                        <i class="fa fa-solid fa-arrow-right"></i>
                     </a>
 
                 </div>

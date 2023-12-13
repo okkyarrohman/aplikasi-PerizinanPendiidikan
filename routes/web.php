@@ -78,6 +78,14 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
     Route::get('/pemohon/show/{id}',[PemohonController::class,'show']);
     // End Pemohon Tracking
+
+    // Hitory Arsip
+    Route::get('/pemohon/arsip/pendirian',[PemohonController::class,'arsip_pendirian']);
+    Route::get('/pemohon/arsip/penyelenggaraan',[PemohonController::class,'arsip_penyelenggaraan']);
+
+    // End History
+
+
 });
 // End Route pemohon
 

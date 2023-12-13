@@ -162,6 +162,29 @@ class PemohonController extends Controller
         ]);
     }
 
+    // Arsip dan History
+    public function arsip_pendirian(){
+        $user = Auth::user();
+
+        $permohonans = PerizinanPendirian::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->get();
+
+        return view('pemohon.arsip.pendirian.index',compact('user','permohonans'));
+
+    }
+
+    public function arsip_penyelenggaraan(){
+        $user = Auth::user();
+
+         $permohonans = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->get();
+
+        return view('pemohon.arsip.penyelenggaraan.index',compact('user','permohonans'));
+
+    }
+    // End Arsip dan History
 
 
 }
