@@ -1,15 +1,5 @@
 @extends('layouts.app-pemohon')
 
-@push('css')
-    <style>
-        .sikil {
-            position: relative;
-            right: 20px;
-            bottom: 1px;
-
-        }
-    </style>
-@endpush
 @section('content')
     <div class="container">
         <div class="row mt-4">

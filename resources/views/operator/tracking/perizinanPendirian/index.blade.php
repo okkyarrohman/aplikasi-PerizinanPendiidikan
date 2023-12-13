@@ -2,68 +2,65 @@
 
 @section('content')
     <div class="container">
-        <div class="card">
-            <div class="title d-flex m-4 justify-content-center align-items-center">
-                <h2> Tracking Perizinan Pendirian</h2>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="group d-flex">
+                    <div class="button-back mx-4">
+                        <a href="{{ route('back') }}">
+                            <i class="fa fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+                    <div class="text">
+                        <h4>Permohonan Perizinan Pendirian</h4>
+                    </div>
+                </div>
             </div>
         </div>
         <br>
+        <br>
 
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card shadow-lg">
-                    <div class="title-card m-4">
-                        <a href="/operator/tracking/pendirian/checking_berkas_pendirian">
-                            <h4>Checking Berkas Operator</h4>
-                        </a>
-                    </div>
-                    <div class="group d-flex m-4 justify-content-lg-around">
-                        <div class="jumlah">
-                            <h4>80</h4>
-                        </div>
-                        <div class="next">
-                            <a href="/operator/tracking/pendirian/checking_berkas_pendirian" class="btn btn-primary">></a>
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-title m-3">
+                            <a href="/operator/monitoring/pendirian/tk">
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Pendirian TK</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="card shadow-lg">
-                    <div class="title-card m-4">
-                        <a href="/operator/tracking/pendirian/dokumen_valid_pendirian">
-                            <h4>Dokumen Valid</h4>
-                        </a>
-                    </div>
-                    <div class="group d-flex m-4 justify-content-lg-around">
-                        <div class="jumlah">
-                            <h4>80</h4>
-                        </div>
-                        <div class="next">
-                            <a href="/operator/tracking/pendirian/dokumen_valid_pendirian" class="btn btn-primary">-></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card shadow-lg">
-                    <div class="title-card m-4">
-                        <a href="/operator/tracking/pendirian/dokumen_tidak_valid_pendirian">
-                            <h4>Dokumen Tidak Valid</h4>
-                        </a>
-                    </div>
-                    <div class="group d-flex m-4 justify-content-lg-around">
-                        <div class="jumlah">
-                            <h4>80</h4>
-                        </div>
-                        <div class="next">
-                            <a href="/operator/tracking/pendirian/dokumen_tidak_valid_pendirian"
-                                class="btn btn-primary">-></a>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-title m-3">
+                            <a href="/pemohon/perizinanPendirian/create-sd">
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Pendirian SD/SMP/SMA</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection
+
+    @push('footer')
+        <div class="sikil">
+            <img src="{{ asset('pemohon/img/footer.png') }}" alt="" width="360" height="203">
+        </div>
+    @endpush

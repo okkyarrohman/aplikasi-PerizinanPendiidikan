@@ -98,7 +98,16 @@ Route::group(['middleware' => 'role:operator'], function(){
     Route::get('/operator/tracking/pendirian',[OperatorController::class,'index_pendirian']);
     Route::get('/operator/tracking/penyelenggaraan',[OperatorController::class,'index_penyelenggaraan']);
 
+    // Monitoring
+
+
+    // End Monitoring
+    Route::get('/operator/monitoring/pendirian/tk',[OperatorController::class,'pendirian_tk']);
+
+
     // Tracking Operator
+
+
     Route::get('/operator/tracking/pendirian/checking_berkas_pendirian',[OperatorController::class,'checking_berkas_pendirian']);
     Route::get('/operator/tracking/pendirian/dokumen_valid_pendirian',[OperatorController::class,'dokumen_valid_pendirian']);
     Route::get('/operator/tracking/pendirian/dokumen_tidak_valid_pendirian',[OperatorController::class,'dokumen_tidak_valid_pendirian']);

@@ -23,6 +23,18 @@ class OperatorController extends Controller
 
 
     // Perizinan Pendirian
+     public function pendirian_tk()
+    {
+        $user = Auth::user();
+
+        $permohonans = PerizinanPendirian::where([
+            'tipe_dokumen' => 'TK',
+            'status_dokumen' => 'Checking Berkas Operator'
+        ])->get();
+
+        return view('operator.tracking.perizinanPendirian.tk.index',compact('permohonans','user'));
+    }
+
     public function checking_berkas_pendirian()
     {
         $user = Auth::user();

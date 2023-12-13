@@ -37,6 +37,17 @@
                                 </a>
                             </div>
 
+                            <div class="permohonan">
+                                <a href="#" id="topbarUserDropdown"
+                                    class="user-dropdown d-flex align-items-center">
+                                    <div class="avatar avatar-md2">
+                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
+                                    </div>
+                                    <div class="text">
+                                        <h6 class="user-dropdown-name">Chat</h6>
+                                    </div>
+                                </a>
+                            </div>
 
                             <div class="permohonan dropdown">
                                 <a href="#" id="topbarUserDropdown"
@@ -56,6 +67,30 @@
                                     <li><a class="dropdown-item" href="/operator/tracking/penyelenggaraan">Perizinan
                                             Penyelenggaraan</a></li>
                                 </ul>
+                            </div>
+
+                            <div class="permohonan">
+                                <a href="#" id="topbarUserDropdown"
+                                    class="user-dropdown d-flex align-items-center">
+                                    <div class="avatar avatar-md2">
+                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
+                                    </div>
+                                    <div class="text">
+                                        <h6 class="user-dropdown-name">Dokumen Selesai</h6>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="permohonan">
+                                <a href="#" id="topbarUserDropdown"
+                                    class="user-dropdown d-flex align-items-center">
+                                    <div class="avatar avatar-md2">
+                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
+                                    </div>
+                                    <div class="text">
+                                        <h6 class="user-dropdown-name">Persyaratan</h6>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="dropdown">
@@ -78,7 +113,8 @@
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
                                                 role="img" class="iconify iconify--system-uicons" width="20"
-                                                height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
+                                                height="20" preserveAspectRatio="xMidYMid meet"
+                                                viewBox="0 0 21 21">
                                                 <g fill="none" fill-rule="evenodd" stroke="currentColor"
                                                     stroke-linecap="round" stroke-linejoin="round">
                                                     <path
@@ -94,7 +130,8 @@
                                                 </g>
                                             </svg>
                                             <div class="form-check form-switch fs-6">
-                                                <input class="form-check-input  me-0" type="checkbox" id="toggle-dark">
+                                                <input class="form-check-input  me-0" type="checkbox"
+                                                    id="toggle-dark">
                                                 <label class="form-check-label"></label>
                                             </div>
                                             <svg xmlns="http://www.w3.org/2000/svg"
