@@ -3,13 +3,18 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-12 ">
-                <div class="card align-items-center">
-                    <h4 class="card card-title m-4">Tracking Pengajuan Dokumen Perizinan</h4>
+            <div class="col-md-6">
+                <div class="group d-flex">
+                    <div class="button-back mx-4">
+                        <a href="{{ route('back') }}" class="btn btn-outline-secondary">Back</a>
+                    </div>
+                    <div class="text">
+                        <h4>Status Dokumen</h4>
+                    </div>
                 </div>
             </div>
         </div>
-
+        {{--
         <div class="row">
             <div class="col-md-7">
                 <div class="card">
@@ -68,6 +73,36 @@
                             ) !!} ">
                             <br>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-8">
+                <div class="card shadow-lg m-4">
+                    <div class="card-body">
+                        <div class="icons text-center">
+                            <img src="{{ asset('pemohon/img/orangStatus.png') }}" alt="" width="144"
+                                height="301">
+                        </div>
+                        <br>
+                        <div class="content text-center">
+                            <span>
+                                Status Dokumen Anda :
+                            </span>
+                            <h4>{{ $permohonans->status_dokumen }}</h4>
+                        </div>
+                        <div class="content-2 m-4">
+                            <div class="visible-print text-center">
+                                <img src="data:image/png;base64, {!! base64_encode(
+                                    QrCode::format('png')->size(197)->generate(Request::url()),
+                                ) !!} ">
+                                <br>
+
+                            </div>
                         </div>
                     </div>
                 </div>
