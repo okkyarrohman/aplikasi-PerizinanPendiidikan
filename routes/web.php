@@ -51,8 +51,8 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
     // Menu
 
-    Route::get('/pemohon/permohonan/pendirian', [PemohonController::class,'permohonan_pendirian']);
-    Route::get('/pemohon/permohonan/penyelenggaraan', [PemohonController::class,'permohonan_penyelenggaraan']);
+    Route::get('/pemohon/permohonan/pendirian', [PemohonController::class,'permohonan_pendirian'])->name('permohonan.pendirian');
+    Route::get('/pemohon/permohonan/penyelenggaraan', [PemohonController::class,'permohonan_penyelenggaraan'])->name('permohonan.penyelenggaraan');
 
 
     // Perizinan Pendirian create
@@ -406,13 +406,7 @@ route::get('/contoh-doc', function(){
     return view('docIzinTerbit');
 });
 
-Route::get('/login-test', function(){
-    return view('auth.login3');
-});
 
-Route::get('/register-test', function(){
-    return view('auth.register3');
-});
 
 Route::get('back', function(){
     return back();

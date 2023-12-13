@@ -303,7 +303,7 @@ class PerizinanPendirianController extends Controller
         $permohonan->save();
 
 
-        return back()->with('success','Permohonan Berhasil');
+        return redirect()->route('permohonan.pendirian')->with('sukses_dikirim','Dokumen Anda Berhasil Dikirim');
 
     }
 

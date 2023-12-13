@@ -64,37 +64,45 @@ class PemohonController extends Controller
     // Create View for Perizinan Penyelenggaraan
     public function create_sd_smp()
     {
-        return view('pemohon.perizinanPenyelenggaraan.sd-smp.create');
+        $user = Auth::user();
+
+        return view('pemohon.permohonan.perizinanPenyelenggaraan.sd-smp.create',compact('user'));
     }
 
     public function create_ptn_univ()
     {
-        return view('pemohon.perizinanPenyelenggaraan.ptn-univ.create');
+        $user = Auth::user();
+        return view('pemohon.permohonan.perizinanPenyelenggaraan.ptn-univ.create',compact('user'));
     }
 
     public function create_lpp()
     {
-        return view('pemohon.perizinanPenyelenggaraan.lpp.create');
+         $user = Auth::user();
+        return view('pemohon.permohonan.perizinanPenyelenggaraan.lpp.create',compact('user'));
     }
 
     public function create_lpnp()
     {
-        return view('pemohon.perizinanPenyelenggaraan.lpnp.create');
+         $user = Auth::user();
+        return view('pemohon.permohonan.perizinanPenyelenggaraan.lpnp.create',compact('user'));
     }
 
     public function create_ppo()
     {
-        return view('pemohon.perizinanPenyelenggaraan.ppo.create');
+         $user = Auth::user();
+        return view('pemohon.permohonan.perizinanPenyelenggaraan.ppo.create',compact('user'));
     }
 
     public function create_lpts()
     {
-        return view('pemohon.perizinanPenyelenggaraan.lpts.create');
+         $user = Auth::user();
+        return view('pemohon.permohonan.perizinanPenyelenggaraan.lpts.create',compact('user'));
     }
 
     public function create_pklpk()
     {
-        return view('pemohon.perizinanPenyelenggaraan.pklpk.create');
+         $user = Auth::user();
+        return view('pemohon.permohonan.perizinanPenyelenggaraan.pklpk.create',compact('user'));
     }
     //  End Create view for Perizinan Penyelenggaraan
 

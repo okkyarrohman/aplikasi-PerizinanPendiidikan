@@ -188,18 +188,33 @@
         </div>
     </div>
 
+
     @stack('js')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{{ asset('dashboard/js/bootstrap.js') }}"></script>
     <script src="{{ asset('dashboard/js/app.js') }}"></script>
 
 
     <script src="{{ asset('dashboard/js/pages/horizontal-layout.js') }}"></script>
-    {{-- <script src="assets/js/pages/horizontal-layout.js"></script> --}}
+    <script src="assets/js/pages/horizontal-layout.js"></script>
 
     <script src="{{ asset('dashboard/extensions/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/pages/dashboard.js') }}"></script>
 
+    <footer class="footer absolute">
+        @stack('footer')
+    </footer>
 
+    @if (Session::has('sukses_dikirim'))
+        <script>
+            swal({
+                title: "Berhasil dikirim",
+                text: "{!! Session::get('sukses_dikirim') !!}",
+                icon: "{!! asset('pemohon/img/sukses.png') !!}",
+                button: "Okay",
+            })
+        </script>
+    @endif
 </body>
 
 </html>
