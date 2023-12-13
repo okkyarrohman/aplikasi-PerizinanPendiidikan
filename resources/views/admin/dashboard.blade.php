@@ -343,17 +343,16 @@
             </center>
         </div>
         <div style="display: flex; justify-content: space-between; width: 80%; margin: auto;">
-
-            <div class="row" style="width: 48%; margin-right: 2%;">
+            <div class="card shadow-lg" style="width: 48%; margin-right: 2%;">
                 <div
                     style="width: 433.33px; height: 78.89px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11.11px; display: inline-flex">
                     <div
-                        style="width: 433.33px; justify-content: center; align-items: center; gap: 140.28px; display: inline-flex">
+                        style="width: 433.33px; justify-content: center; align-items: center; gap: 140.28px; display: inline-flex; margin-top: 10px; margin-left:10px;">
                         <div
                             style="flex: 1 1 0; color: #45484F; font-size: 19.44px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
                             Laporan Surat Masuk</div>
                         <div
-                            style="flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 2.78px; display: inline-flex">
+                            style="flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 2.78px; display: inline-flex;  margin-top: 10px; margin-left:10px;">
                             <div
                                 style="text-align: center; color: #D4AA2E; font-size: 13.89px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                                 Hari ini</div>
@@ -406,10 +405,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="width: 48%;">
+            <div class="card shadow-lg" style="width: 48%;">
                 <div style="width: 479px; height: 447.81px; position: relative">
                     <div
-                        style="width: 94.88px; height: 48.97px; left: 200px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 3.06px; display: inline-flex">
+                        style="width: 94.88px; height: 48.97px; left: 200px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 3.06px; display: inline-flex; margin-top: 10px;">
                         <div
                             style="text-align: center; color: #D4AA2E; font-size: 15.30px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                             Tahun 2023
@@ -470,25 +469,22 @@
                                     },
                                 });
                             </script>
-
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div style="display: flex; justify-content: space-between; width: 80%; margin: auto;">
-            <div class="row" style="width: 48%; margin-right: 2%; margin-top: 5%;">
+            <div class="card shadow-lg" style="width: 48%; margin-right: 2%; margin-top: 5%;">
                 <div
                     style="width: 454px; height: 82.55px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11.64px; display: inline-flex">
                     <div
-                        style="width: 454px; justify-content: center; align-items: center; gap: 146.97px; display: inline-flex">
+                        style="width: 454px; justify-content: center; align-items: center; gap: 146.97px; display: inline-flex;  margin-top: 10px; margin-left:10px;">
                         <div
                             style="flex: 1 1 0; color: #45484F; font-size: 20.37px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
                             Status Dokumen</div>
                         <div
-                            style="flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 2.91px; display: inline-flex">
+                            style="flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 2.91px; display: inline-flex;  margin-top: 10px; margin-left:10px;">
                             <div
                                 style="text-align: center; color: #D4AA2E; font-size: 14.55px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                                 Hari ini</div>
@@ -515,7 +511,6 @@
                             <canvas id="StatusDokumen" width="300" height="300"></canvas>
                             <script>
                                 const ctx2 = document.getElementById('StatusDokumen').getContext('2d');
-
                                 new Chart(ctx2, {
                                     type: 'pie',
                                     data: {
@@ -540,15 +535,22 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="width: 48%; margin-top:10%;">
+            <div class="card shadow-lg" style="width: 48%; margin-top:5%;">
                 <div style="width: 479px; height: 447.81px; position: relative">
-                    <div
+                    {{-- <div
                         style="width: 94.88px; height: 48.97px; left: 191.29px; top: -40px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 3.06px; display: inline-flex">
                         <div style="display: flex; justify-content: flex-end;">
                             <div
                                 style="flex: 1 1 0; color: #45484F; font-size: 20.37px; font-family: 'Noto Sans'; font-weight: 600; word-wrap: break-word; text-align: right; white-space: nowrap;">
                                 Status Dokumen
                             </div>
+                        </div>
+                    </div> --}}
+                    <div
+                        style="width: 454px; justify-content: center; align-items: center; gap: 146.97px; display: inline-flex; text-align: center; margin-top: 10px;">
+                        <div
+                            style="flex: 1 1 0; color: #45484F; font-size: 20.37px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
+                            Status Dokumen
                         </div>
                     </div>
 
@@ -586,13 +588,15 @@
                 </div>
             </div>
         </div>
-        <div style="display: flex; justify-content: space-between; width: 80%; margin-left:200px;">
-            <div class="row" style="width: 48%;">
+        <div style="display: flex; justify-content: space-between; width: 80%; margin: auto;">
+            <div class="card shadow-lg" style="width: 48%; margin-right: 2%; margin-top: 6%;">
                 <div
-                    style="width: 425px; height: 310.36px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 16.35px; display: inline-flex; ">
+                    style="width: 425px; height: 310.36px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 16.35px; display: inline-flex; margin: auto;">
                     <div
-                        style="color: #45484F; font-size: 19.07px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
-                        Data Sekolah Pada Setiap Kecamatan</div>
+                        style="color: #45484F; font-size: 19.07px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word; text-align: center;">
+                        Data Sekolah Pada Setiap Kecamatan
+                    </div>
+
                     <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; ">
                         <div style="display: flex; width: 100%;">
                             <div
