@@ -5,7 +5,7 @@
         <div class="row" style="margin-bottom: 5%;">
             <center>
                 <div
-                    style="width: 1016px; height: 269.07px; padding: 17.08px; background: #FBFBFB; border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
+                    style="w-full; width: 750px; height: 269.07px; padding: 17.08px; background: #FBFBFB; border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
                     <div
                         style="padding-left: 4.27px; padding-right: 4.27px; padding-top: 7.12px; padding-bottom: 7.12px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 14.23px; display: flex">
                         <div style="width: 75.91px; height: 69.91px; position: relative">
@@ -130,8 +130,10 @@
                         <div
                             style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
                             Lihat Data
+                            <i class="fa fa-arrow-right"></i>
                         </div>
                     </a>
+
 
                 </div>
             </center>
@@ -139,7 +141,7 @@
         <div class="row" style="margin-bottom: 5%;">
             <center>
                 <div
-                    style="width: 1016px; height: 269.07px; padding: 17.08px; background: #FBFBFB; border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
+                    style="w-full; width: 750px; height: 269.07px; padding: 17.08px; background: #FBFBFB; border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
                     <div style="width: 84.45px; height: 84.14px; position: relative; background: white">
                         <div style="width: 59.77px; height: 82.80px; left: 12.81px; top: 1.42px; position: absolute">
                             <div style="width: 51.02px; height: 76.83px; left: 0px; top: 0px; position: absolute">
@@ -333,6 +335,7 @@
                         <div
                             style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
                             Lihat Data
+                            <i class="fa fa-arrow-right"></i>
                         </div>
                     </a>
 
@@ -372,9 +375,9 @@
                             </select>
                         </div>
                     </div>
-                    <div>
-                        <div class="card-body">
-                            <canvas id="SuratMasuk" width="400" height="400"></canvas>
+                    <div style="margin-left: 20%;">
+                        <div class="card-body" style="w-full;">
+                            <canvas id="SuratMasuk" width="300" height="300"></canvas>
                             <script>
                                 const ctx = document.getElementById('SuratMasuk');
 
@@ -393,8 +396,10 @@
                                             y: {
                                                 beginAtZero: true
                                             }
-                                        }
+                                        },
+                                        responsive: false
                                     }
+
                                 });
                             </script>
                         </div>
@@ -404,7 +409,7 @@
             <div class="row" style="width: 48%;">
                 <div style="width: 479px; height: 447.81px; position: relative">
                     <div
-                        style="width: 94.88px; height: 48.97px; left: 191.29px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 3.06px; display: inline-flex">
+                        style="width: 94.88px; height: 48.97px; left: 200px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 3.06px; display: inline-flex">
                         <div
                             style="text-align: center; color: #D4AA2E; font-size: 15.30px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                             Tahun 2023
@@ -415,9 +420,9 @@
                         </div>
                     </div>
 
-                    <div style="margin-top: 10%;">
+                    <div style="margin-top: 20%; margin-left: 18%;">
                         <div class="card-body">
-                            <canvas id="Permohonan" width="400" height="400"></canvas>
+                            <canvas id="Permohonan" width="330" height="330"></canvas>
                             <script>
                                 const ctx3 = document.getElementById('Permohonan').getContext('2d');
 
@@ -448,7 +453,13 @@
                                                     beginAtZero: true,
                                                 },
                                             }],
+                                            yAxes: [{
+                                                ticks: {
+                                                    beginAtZero: true,
+                                                },
+                                            }],
                                         },
+                                        responsive: false,
                                         legend: {
                                             display: true,
                                             position: 'top', // Adjust as needed
@@ -468,7 +479,7 @@
             </div>
         </div>
         <div style="display: flex; justify-content: space-between; width: 80%; margin: auto;">
-            <div class="row" style="width: 48%; margin-right: 2%; margin-top: 8%;">
+            <div class="row" style="width: 48%; margin-right: 2%; margin-top: 5%;">
                 <div
                     style="width: 454px; height: 82.55px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11.64px; display: inline-flex">
                     <div
@@ -499,9 +510,9 @@
                             </select>
                         </div>
                     </div>
-                    <div>
+                    <div style="margin-left: 20%;">
                         <div class="card-body">
-                            <canvas id="StatusDokumen" width="400" height="400"></canvas>
+                            <canvas id="StatusDokumen" width="300" height="300"></canvas>
                             <script>
                                 const ctx2 = document.getElementById('StatusDokumen').getContext('2d');
 
@@ -520,7 +531,8 @@
                                             y: {
                                                 beginAtZero: true
                                             }
-                                        }
+                                        },
+                                        responsive: false
                                     }
                                 });
                             </script>
@@ -531,20 +543,19 @@
             <div class="row" style="width: 48%; margin-top:10%;">
                 <div style="width: 479px; height: 447.81px; position: relative">
                     <div
-                        style="width: 94.88px; height: 48.97px; left: 191.29px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 3.06px; display: inline-flex">
+                        style="width: 94.88px; height: 48.97px; left: 191.29px; top: -40px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 3.06px; display: inline-flex">
                         <div style="display: flex; justify-content: flex-end;">
-
                             <div
                                 style="flex: 1 1 0; color: #45484F; font-size: 20.37px; font-family: 'Noto Sans'; font-weight: 600; word-wrap: break-word; text-align: right; white-space: nowrap;">
                                 Status Dokumen
                             </div>
-
                         </div>
                     </div>
 
-                    <div style="margin-top: 18%;">
+
+                    <div style="margin-top: 10%; margin-left: 18%;">
                         <div class="card-body">
-                            <canvas id="Status" width="400" height="400"></canvas>
+                            <canvas id="Status" width="300" height="300"></canvas>
                             <script>
                                 const ctx4 = document.getElementById('Status').getContext('2d');
 
@@ -575,8 +586,8 @@
                 </div>
             </div>
         </div>
-        <div style="display: flex; justify-content: space-between; width: 80%; margin: auto;">
-            <div class="row" style="width: 48%; margin-right: 2%; margin-top: 8%;">
+        <div style="display: flex; justify-content: space-between; width: 80%; margin-left:200px;">
+            <div class="row" style="width: 48%;">
                 <div
                     style="width: 425px; height: 310.36px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 16.35px; display: inline-flex; ">
                     <div

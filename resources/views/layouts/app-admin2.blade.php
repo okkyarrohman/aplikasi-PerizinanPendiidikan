@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.png') }}" type="image/png">
     <link rel="stylesheet" href="{{ asset('dashboard/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/css/main/app-dark.css') }}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('dashboard/css/shared/iconly.css') }}">
     @stack('css')
 
