@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PerizinanPendirianController;
 use App\Http\Controllers\PerizinanPenyelenggaraanController;
 use App\Http\Controllers\MailController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -404,3 +405,15 @@ Route::get('/send-email/{id}',[MailController::class,'send_attach_gmail']);
 route::get('/contoh-doc', function(){
     return view('docIzinTerbit');
 });
+
+Route::get('/login-test', function(){
+    return view('auth.login3');
+});
+
+Route::get('/register-test', function(){
+    return view('auth.register3');
+});
+
+Route::get('back', function(){
+    return back();
+})->name('back');
