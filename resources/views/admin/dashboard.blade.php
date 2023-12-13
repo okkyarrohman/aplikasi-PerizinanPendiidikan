@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row" style="margin-bottom: 5%;">
             <center>
-                <div
-                    style="w-full; width: 750px; height: 269.07px; padding: 17.08px; background: #FBFBFB; border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
+                <div class="card shadow-lg"
+                    style="w-full; width: 750px; height: 269.07px; padding: 17.08px;  border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
                     <div
                         style="padding-left: 4.27px; padding-right: 4.27px; padding-top: 7.12px; padding-bottom: 7.12px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 14.23px; display: flex">
                         <div style="width: 75.91px; height: 69.91px; position: relative">
@@ -140,8 +140,8 @@
         </div>
         <div class="row" style="margin-bottom: 5%;">
             <center>
-                <div
-                    style="w-full; width: 750px; height: 269.07px; padding: 17.08px; background: #FBFBFB; border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
+                <div class="card shadow-lg"
+                    style="w-full; width: 750px; height: 269.07px; padding: 17.08px;  border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
                     <div style="width: 84.45px; height: 84.14px; position: relative; background: white">
                         <div style="width: 59.77px; height: 82.80px; left: 12.81px; top: 1.42px; position: absolute">
                             <div style="width: 51.02px; height: 76.83px; left: 0px; top: 0px; position: absolute">
