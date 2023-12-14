@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="row">
-            @php
+            {{-- @php
                 $no = 1;
             @endphp
             @foreach ($permohonans as $permohonan)
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @endforeach --}}
         </div>
     </div>
 @endsection

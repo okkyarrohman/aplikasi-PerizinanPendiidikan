@@ -29,7 +29,8 @@ class HomeController extends Controller {
         $verified = User::where($request->id)->get();
         $user = Auth::user();
 
-        return view('pemohon.persyaratan.pendirian', compact('verified', 'user'));
+
+        return view('pemohon.dashboard',compact('verified','user'));
     }
 
 

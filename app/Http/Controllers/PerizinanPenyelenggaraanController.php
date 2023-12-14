@@ -130,7 +130,7 @@ class PerizinanPenyelenggaraanController extends Controller
 
         $permohonan->save();
 
-        return back()->with('success', 'data berhasil dikirim');
+    return redirect()->route('permohonan.penyelenggaraan')->with('sukses_dikirim','Dokumen Anda Berhasil Dikirim');
     }
     public function update(Request $req)
     {

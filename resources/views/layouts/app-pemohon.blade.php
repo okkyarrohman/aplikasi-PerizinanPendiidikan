@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="{{ asset('dashboard/css/shared/iconly.css') }}">
     @stack('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
@@ -23,7 +25,7 @@
                 <div class="header-top">
                     <div class="container">
                         <div class="logo">
-                            <a href="index.html"><img src="{{ asset('images/logo.png') }}" width="25" height="25"
+                            <a href="/home"><img src="{{ asset('images/logo.png') }}" width="25" height="25"
                                     alt="Logo"></a>
                         </div>
                         <div class="header-top-right">
@@ -81,22 +83,38 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end shadow-lg"
                                     aria-labelledby="topbarUserDropdown">
-                                    <li><a class="dropdown-item" href="#">Perizinan Pendirian</a></li>
-                                    <li><a class="dropdown-item" href="#">Perizinan Penyelenggaraan</a></li>
+                                    <li><a class="dropdown-item" href="/pemohon/arsip/pendirian">Perizinan Pendirian</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="/pemohon/arsip/penyelenggaraan">Perizinan
+                                            Penyelenggaraan</a></li>
                                 </ul>
                             </div>
 
-                            <div class="chat mt-2">
-                                <a href="/chatify">
-                                    <h6>Chat</h6>
+                            <div class="permohonan ">
+                                <a href="/chatify" id="topbarUserDropdown"
+                                    class="user-dropdown d-flex align-items-center ">
+                                    <div class="avatar avatar-md2">
+                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
+                                    </div>
+                                    <div class="text">
+                                        <h6 class="user-dropdown-name">Chat</h6>
+                                    </div>
                                 </a>
                             </div>
 
-                            <div class="tracking mt-2">
-                                <a href="/pemohon/tracking">
-                                    <h6>Tracking</h6>
+
+                            <div class="permohonan ">
+                                <a href="/pemohon/tracking" id="topbarUserDropdown"
+                                    class="user-dropdown d-flex align-items-center ">
+                                    <div class="avatar avatar-md2">
+                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
+                                    </div>
+                                    <div class="text">
+                                        <h6 class="user-dropdown-name">Tracking</h6>
+                                    </div>
                                 </a>
                             </div>
+
 
 
 
@@ -188,18 +206,33 @@
         </div>
     </div>
 
+
     @stack('js')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{{ asset('dashboard/js/bootstrap.js') }}"></script>
     <script src="{{ asset('dashboard/js/app.js') }}"></script>
 
 
     <script src="{{ asset('dashboard/js/pages/horizontal-layout.js') }}"></script>
-    {{-- <script src="assets/js/pages/horizontal-layout.js"></script> --}}
+    <script src="assets/js/pages/horizontal-layout.js"></script>
 
     <script src="{{ asset('dashboard/extensions/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/pages/dashboard.js') }}"></script>
 
+    <footer class="footer absolute">
+        @stack('footer')
+    </footer>
 
+    @if (Session::has('sukses_dikirim'))
+        <script>
+            swal({
+                title: "Berhasil dikirim",
+                text: "{!! Session::get('sukses_dikirim') !!}",
+                icon: "{!! asset('pemohon/img/sukses.png') !!}",
+                button: "Okay",
+            })
+        </script>
+    @endif
 </body>
 
 </html>

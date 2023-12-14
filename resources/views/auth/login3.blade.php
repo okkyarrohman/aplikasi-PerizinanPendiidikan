@@ -4,82 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Tecnopolis</title>
+    <title>Login - Tecnopolis</title>
     <link rel="stylesheet" href="{{ asset('dashboard/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/css/pages/auth.css') }}">
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.svg') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/favicon.png') }}" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
 <body>
     <div id="auth">
-        <br>
-        <br>
-        <div class="row h-100 justify-content-center">
-            <div class="col-lg-10 rounded-4 bg-secondary-subtle">
+        <div class="row h-100">
+            <div class="col-lg-6 col-12">
+                <div id="auth-right">
+                    <img src="{{ asset('nonUser/img/login-pemohon.png') }}" alt="" width="696"
+                        height="1026">
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
                 <div id="auth-left">
                     <div class="logo d-flex justify-content-center">
                         <img src="{{ asset('images/logo.png') }}" alt="" width="140" height="140">
                     </div>
                     <br>
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
-
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="Nama Lengkap"
-                                name="name">
-                        </div>
-
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" class="form-control form-control-xl" placeholder="Email"
                                 name="email">
+                            <div class="form-control-icon">
+                                <i class="bi bi-person"></i>
+                            </div>
                         </div>
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="NIK" name="nik">
-                        </div>
-
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="Alamat Domisili"
-                                name="domisili">
-                        </div>
-
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="password" class="form-control form-control-xl" placeholder="Password"
                                 name="password">
+                            <div class="form-control-icon">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
                         </div>
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl"
-                                placeholder="Masukkan Ulang Kata Sandi" name="">
+                        <div class="form-check form-check-lg d-flex justify-content-center">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label text-gray-600" for="flexCheckDefault">
+                                Ingat Kata Sandi
+                            </label>
+                        </div>
+                        <div class="forgot-password d-flex justify-content-end">
+                            @if (Route::has('password.request'))
+                                <a class="btn btn-link" href="{{ route('password.request') }}" style="color: red;">
+                                    {{ __('Lupa Kata Sandi?') }}
+                                </a>
+                            @endif
                         </div>
 
                         <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" type="submit">
-                            {{ __('Buat Akun') }}</button>
+                            {{ __('Masuk') }}</button>
                     </form>
                     <div class="text-center text-lg fs-4">
-                        <p class="text-gray-600">Sudah Punya Akun? <a href="/login" class="font-bold">Masuk
-                            </a></p>
+                        <p class="text-gray-600">Belum Punya Akun? <a href="/register" class="font-bold">Daftar
+                            </a>.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <br>
-    <br>
+
 
     <script src="https://kit.fontawesome.com/f9a30c1ad2.js" crossorigin="anonymous"></script>
 </body>

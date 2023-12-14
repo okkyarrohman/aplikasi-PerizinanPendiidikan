@@ -2,38 +2,65 @@
 
 @section('content')
     <div class="container">
-        <div class="titke">
-            <h3>Permohonan Perizinan Pendirian</h3>
-        </div>
-        <br>
-
-        <d class="content">
-            <div class="row">
-                <div class="cold-md-6 col-6">
-                    <div class="card">
-                        <div class="card-title m-4">
-                            <a href="/pemohon/perizinanPendirian/create-tk">
-                                <h6>Pendirian TK</h6>
-                            </a>
-                        </div>
-                        <div class="card-content m-4">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, commodi?</p>
-                        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="group d-flex">
+                    <div class="button-back mx-4">
+                        <a href="{{ route('back') }}">
+                            <i class="fa fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+                    <div class="text">
+                        <h4>Permohonan Perizinan Pendirian</h4>
                     </div>
                 </div>
+            </div>
+        </div>
+        <br>
+        <br>
 
-                <div class="cold-md-6 col-6">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6">
                     <div class="card">
-                        <div class="card-title m-4">
-                            <a href="/pemohon/perizinanPendirian/create-sd">
-                                <h6>Pendirian SD/SMP/SMA</h6>
+                        <div class="card-title m-3">
+                            <a href="/pemohon/perizinanPendirian/create-tk">
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Pendirian TK</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
                             </a>
-                        </div>
-                        <div class="card-content m-4">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, commodi?</p>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
-@endsection
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-title m-3">
+                            <a href="/pemohon/perizinanPendirian/create-sd">
+                                <div class="group-3 d-flex justify-content-between">
+                                    <div class="group-a">
+                                        <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Pendirian SD/SMP/SMA</h6>
+                                    </div>
+                                    <div class="group-c">
+                                        <i class="fa fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endsection
+
+    @push('footer')
+        <div class="sikil">
+            <img src="{{ asset('pemohon/img/footer.png') }}" alt="" width="360" height="203">
+        </div>
+    @endpush

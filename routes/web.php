@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PerizinanPendirianController;
 use App\Http\Controllers\PerizinanPenyelenggaraanController;
 use App\Http\Controllers\MailController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Route::get('/', function () {
 });
 
 Auth::routes(['verify' => true]);
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('pemohon');
 
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon','verify'], function(){
@@ -45,13 +46,16 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
     // Menu
     Route::get('/pemohon',[HomeController::class,'index_pemohon']);
-    Route::get('/pemohon/persyaratan/pendirian', [PemohonController::class,'persyaratan_pendirian'])->name('pemohon');
+    Route::get('/pemohon/persyaratan/pendirian', [PemohonController::class,'persyaratan_pendirian']);
     Route::get('/pemohon/persyaratan/penyelenggaraan', [PemohonController::class,'persyaratan_penyelenggaraan']);
 
     // Menu
 
     Route::get('/pemohon/permohonan/pendirian', [PemohonController::class,'permohonan_pendirian']);
     Route::get('/pemohon/permohonan/penyelenggaraan', [PemohonController::class,'permohonan_penyelenggaraan']);
+
+    Route::get('/pemohon/permohonan/pendirian/berhasil', [PemohonController::class,'berhasil_pendirian'])->name('permohonan.pendirian');
+    Route::get('/pemohon/permohonan/penyelenggaraan/berhasil', [PemohonController::class,'berhasil_penyelenggaraan'])->name('permohonan.penyelenggaraan');
 
 
     // Perizinan Pendirian create
@@ -74,6 +78,14 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
     Route::get('/pemohon/show/{id}',[PemohonController::class,'show']);
     // End Pemohon Tracking
+
+    // Hitory Arsip
+    Route::get('/pemohon/arsip/pendirian',[PemohonController::class,'arsip_pendirian']);
+    Route::get('/pemohon/arsip/penyelenggaraan',[PemohonController::class,'arsip_penyelenggaraan']);
+
+    // End History
+
+
 });
 // End Route pemohon
 
@@ -86,7 +98,16 @@ Route::group(['middleware' => 'role:operator'], function(){
     Route::get('/operator/tracking/pendirian',[OperatorController::class,'index_pendirian']);
     Route::get('/operator/tracking/penyelenggaraan',[OperatorController::class,'index_penyelenggaraan']);
 
+    // Monitoring
+
+
+    // End Monitoring
+    Route::get('/operator/monitoring/pendirian/tk',[OperatorController::class,'pendirian_tk']);
+
+
     // Tracking Operator
+
+
     Route::get('/operator/tracking/pendirian/checking_berkas_pendirian',[OperatorController::class,'checking_berkas_pendirian']);
     Route::get('/operator/tracking/pendirian/dokumen_valid_pendirian',[OperatorController::class,'dokumen_valid_pendirian']);
     Route::get('/operator/tracking/pendirian/dokumen_tidak_valid_pendirian',[OperatorController::class,'dokumen_tidak_valid_pendirian']);
@@ -401,6 +422,9 @@ Route::get('/send-email/{id}',[MailController::class,'send_attach_gmail']);
 
 
 
-route::get('/contoh-doc', function(){
-    return view('docIzinTerbit');
-});
+
+
+
+Route::get('back', function(){
+    return back();
+})->name('back');

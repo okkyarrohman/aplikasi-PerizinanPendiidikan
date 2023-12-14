@@ -52,22 +52,23 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['string', 'max:255'],
-            'email' => [ 'string', 'email', 'max:255', 'unique:users'],
-            'password' => [ 'string', 'min:8', 'confirmed'],
-            'telepon' => [ 'string'],
-            'pekerjaan' => [ 'string'],
-            'nik' => [ 'string'],
-            'tanggal_lahir' => [ 'string'],
-            'alamat' => [ 'string'],
-            'domisili' => [ 'string'],
-            'kode_pos' => [ 'string'],
-            'kota' => [ 'string'],
-            'kecamatan' => [ 'string'],
-            'kelurahan' => [ 'string'],
-            'desa' => [ 'string'],
-
+            'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:8',
+                'telepon' => 'nullable|string',
+                'pekerjaan' => 'nullable|string',
+                'nik' => 'nullable|string',
+                'tanggal_lahir' => 'nullable|string',
+                'alamat' => 'nullable|string',
+                'domisili' => 'nullable|string',
+                'kode_pos' => 'nullable|string',
+                'kota' => 'nullable|string',
+                'kecamatan' => 'nullable|string',
+                'kelurahan' => 'nullable|string',
+                'desa' => 'nullable|string',
         ]);
+
+
     }
 
     /**
@@ -82,19 +83,11 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'telepon' => $data['telepon'],
-            'pekerjaan' => $data['pekerjaan'],
             'nik' => $data['nik'],
-            'tanggal_lahir' => $data['tanggal_lahir'],
-            'alamat' => $data['alamat'],
             'domisili' => $data['domisili'],
-            'kode_pos' => $data['kode_pos'],
-            'kota' => $data['kota'],
-            'kecamatan' => $data['kecamatan'],
-            'kelurahan' => $data['kelurahan'],
-            'desa' => $data['desa'],
-        ]);
 
+        ]);
+        // dd($newUser);
         return $newUser->assignRole("pemohon");
     }
 
