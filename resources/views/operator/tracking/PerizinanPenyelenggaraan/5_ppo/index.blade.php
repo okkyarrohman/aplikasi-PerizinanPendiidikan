@@ -11,7 +11,7 @@
                         </a>
                     </div>
                     <div class="text">
-                        <h4>Pendirian TK</h4>
+                        <h4>Penyelenggaraan Pusat Pembelajaran Online</h4>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,8 @@
                 </div>
                 <div class="col-md-3">
                     <div class="content m-2 text-center">
-                        <a href="/operator/tracking/pendirian/edit/{{ $pemohon->id }}" class="btn btn-primary">Validasi</a>
+                        <a href="/operator/tracking/penyelenggaraan/edit/{{ $pemohon->id }}}"
+                            class="btn btn-primary">Validasi</a>
                     </div>
                 </div>
             </div>

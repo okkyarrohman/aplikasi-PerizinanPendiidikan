@@ -99,26 +99,27 @@ Route::group(['middleware' => 'role:operator'], function(){
     Route::get('/operator/tracking/penyelenggaraan',[OperatorController::class,'index_penyelenggaraan']);
 
     // Monitoring
-
-
-    // End Monitoring
     Route::get('/operator/monitoring/pendirian/tk',[OperatorController::class,'pendirian_tk']);
+    Route::get('/operator/monitoring/pendirian/sd',[OperatorController::class,'pendirian_sd']);
 
-
-    // Tracking Operator
-
-
-    Route::get('/operator/tracking/pendirian/checking_berkas_pendirian',[OperatorController::class,'checking_berkas_pendirian']);
-    Route::get('/operator/tracking/pendirian/dokumen_valid_pendirian',[OperatorController::class,'dokumen_valid_pendirian']);
-    Route::get('/operator/tracking/pendirian/dokumen_tidak_valid_pendirian',[OperatorController::class,'dokumen_tidak_valid_pendirian']);
-
-    Route::get('/operator/tracking/penyelenggaraan/checking_berkas_penyelenggaraan',[OperatorController::class,'checking_berkas_penyelenggaraan']);
-    Route::get('/operator/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan',[OperatorController::class,'dokumen_valid_penyelenggaraan']);
-    Route::get('/operator/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan',[OperatorController::class,'dokumen_tidak_valid_penyelenggaraan']);
+    Route::get('/operator/monitoring/penyelenggaraan/sd',[OperatorController::class,'penyelenggaraan_sd']);
+    Route::get('/operator/monitoring/penyelenggaraan/ptn',[OperatorController::class,'penyelenggaraan_ptn']);
+    Route::get('/operator/monitoring/penyelenggaraan/lpp',[OperatorController::class,'penyelenggaraan_lpp']);
+    Route::get('/operator/monitoring/penyelenggaraan/lpnp',[OperatorController::class,'penyelenggaraan_lpnp']);
+    Route::get('/operator/monitoring/penyelenggaraan/ppo',[OperatorController::class,'penyelenggaraan_ppo']);
+    Route::get('/operator/monitoring/penyelenggaraan/lpts',[OperatorController::class,'penyelenggaraan_lpts']);
+    Route::get('/operator/monitoring/penyelenggaraan/pklpk',[OperatorController::class,'penyelenggaraan_pklpk']);
 
     Route::get('/operator/tracking/pendirian/edit/{id}',[OperatorController::class,'edit_pendirian']);
     Route::get('/operator/tracking/penyelenggaraan/edit/{id}',[OperatorController::class,'edit_penyelenggaraan']);
-    // End Tracking Operator
+    // End Monitoring
+
+    // Persyaratan
+    Route::get('/operator/persyaratan/pendirian', [OperatorController::class,'persyaratan_pendirian']);
+    Route::get('/operator/persyaratan/penyelenggaraan', [OperatorController::class,'persyaratan_penyelenggaraan']);
+    // END PERSYARATAN
+
+
 
 });
 // End Route operator

@@ -150,10 +150,25 @@ class HomeController extends Controller {
         ])->count();
         $totalDokumenTidakValid = $dokumenTidakValidPendirian + $dokumenTidakValidPenyelenggaraan;
 
+        $permohonanSelesaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+        $permohonanSelesaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+
+        $totalPermohonanSelesai = $permohonanSelesaiPendirian + $permohonanSelesaiPenyelenggaraan;
+
+        $semuaPendirian = PerizinanPendirian::all()->count();
+        $semuaPenyelenggaraan = PerizinanPenyelenggaraan::all()->count();
+
         return view('operator.dashboard', [
             'totalCheckingBerkas' => $totalCheckingBerkas,
             'totalDokumenValid' => $totalDokumenValid,
             'totalDokumenTidakValid' => $totalDokumenTidakValid,
+            'totalPermohonanSelesai' => $totalPermohonanSelesai,
+            'semuaPendirian' => $semuaPendirian,
+            'semuaPenyelenggaraan' => $semuaPenyelenggaraan,
             'user' => $user,
         ]);
     }

@@ -42,7 +42,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-title m-3">
-                            <a href="/pemohon/perizinanPendirian/create-sd">
+                            <a href="/operator/monitoring/pendirian/sd">
                                 <div class="group-3 d-flex justify-content-between">
                                     <div class="group-a">
                                         <h6><i class="fa fa-solid fa-list-ul mx-4"></i>Pendirian SD/SMP/SMA</h6>

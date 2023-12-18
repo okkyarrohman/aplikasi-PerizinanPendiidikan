@@ -11,7 +11,7 @@
                         </a>
                     </div>
                     <div class="text">
-                        <h4>Pendirian TK</h4>
+                        <h4>Pendirian SD</h4>
                     </div>
                 </div>
             </div>

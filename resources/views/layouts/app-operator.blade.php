@@ -81,9 +81,10 @@
                                 </a>
                             </div>
 
-                            <div class="permohonan">
+                            <div class="permohonan dropdown">
                                 <a href="#" id="topbarUserDropdown"
-                                    class="user-dropdown d-flex align-items-center">
+                                    class="user-dropdown d-flex align-items-center dropend dropdown-toggle "
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="avatar avatar-md2">
                                         <img src="{{ asset('images/orang.png') }}" alt="Avatar">
                                     </div>
@@ -91,6 +92,13 @@
                                         <h6 class="user-dropdown-name">Persyaratan</h6>
                                     </div>
                                 </a>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-lg"
+                                    aria-labelledby="topbarUserDropdown">
+                                    <li><a class="dropdown-item" href="/operator/persyaratan/pendirian">Perizinan
+                                            Pendirian</a></li>
+                                    <li><a class="dropdown-item" href="/operator/persyaratan/penyelenggaraan">Perizinan
+                                            Penyelenggaraan</a></li>
+                                </ul>
                             </div>
 
                             <div class="dropdown">

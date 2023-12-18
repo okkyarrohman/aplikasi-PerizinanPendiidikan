@@ -125,7 +125,7 @@
                             style="align-self: stretch; color: #A2A3A7; font-size: 17.08px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                             Perizinan Pendirian Sekolah TK, SD, SMP, SMA/SMK.</div>
                     </div>
-                    <a href="#"
+                    <a href="/operator/tracking/pendirian"
                         style="display: inline-flex; align-self: stretch; padding: 14.23px; background: #004B99; border-radius: 17.08px; justify-content: center; align-items: center; gap: 14.23px; text-decoration: none;">
                         <div
                             style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
@@ -330,7 +330,7 @@
                             style="align-self: stretch; color: #A2A3A7; font-size: 17.08px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                             Permohonan Penyelenggaraan Oleh Instansi Pendidikan, Non-Pemerintah, dan lainnya.</div>
                     </div>
-                    <a href="#"
+                    <a href="/operator/tracking/penyelenggaraan"
                         style="display: inline-flex; align-self: stretch; padding: 14.23px; background: #004B99; border-radius: 17.08px; justify-content: center; align-items: center; gap: 14.23px; text-decoration: none;">
                         <div
                             style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
@@ -380,14 +380,17 @@
                             <canvas id="SuratMasuk" width="300" height="300"></canvas>
                             <script>
                                 const ctx = document.getElementById('SuratMasuk');
+                                const semuaPendirian = JSON.parse('{!! json_encode($semuaPendirian) !!}')
+                                const semuaPenyelenggaraan = JSON.parse('{!! json_encode($semuaPenyelenggaraan) !!}')
+
 
                                 new Chart(ctx, {
                                     type: 'pie',
                                     data: {
-                                        labels: ['Permohonan Perizinan', 'Permohonan Penyelenggaraan'],
+                                        labels: ['Permohonan Perndirian', 'Permohonan Penyelenggaraan'],
                                         datasets: [{
                                             label: '# of Votes',
-                                            data: [12, 19],
+                                            data: [semuaPendirian, semuaPenyelenggaraan],
                                             borderWidth: 1
                                         }]
                                     },
@@ -515,6 +518,9 @@
                             <canvas id="StatusDokumen" width="300" height="300"></canvas>
                             <script>
                                 const ctx2 = document.getElementById('StatusDokumen').getContext('2d');
+                                const totalDokumenDiajukan = JSON.parse('{!! json_encode($totalCheckingBerkas) !!}')
+                                const totalDokumenDiproses = JSON.parse('{!! json_encode($totalCheckingBerkas) !!}')
+                                const totalDokumenSelesai = JSON.parse('{!! json_encode($totalPermohonanSelesai) !!}')
 
                                 new Chart(ctx2, {
                                     type: 'pie',
@@ -522,7 +528,7 @@
                                         labels: ['Dokumen Diajukan', 'Dokumen Diproses', 'Dokumen Selesai'],
                                         datasets: [{
                                             label: '# of Votes',
-                                            data: [18, 15, 20],
+                                            data: [totalDokumenDiajukan, totalDokumenDiproses, totalDokumenSelesai],
                                             borderWidth: 1
                                         }]
                                     },
@@ -558,6 +564,9 @@
                             <canvas id="Status" width="300" height="300"></canvas>
                             <script>
                                 const ctx4 = document.getElementById('Status').getContext('2d');
+                                const totalDokumenValid = JSON.parse('{!! json_encode($totalDokumenValid) !!}')
+                                const totalDokumenTidakValid = JSON.parse('{!! json_encode($totalDokumenTidakValid) !!}')
+
 
                                 new Chart(ctx4, {
                                     type: 'pie',
@@ -565,7 +574,7 @@
                                         labels: ['Dokumen Valid', 'Dokumen Tidak Valid'],
                                         datasets: [{
                                             label: '# of Votes',
-                                            data: [18, 15],
+                                            data: [totalDokumenValid, totalDokumenTidakValid],
                                             borderWidth: 1
                                         }]
                                     },
