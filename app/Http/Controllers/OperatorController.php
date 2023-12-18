@@ -156,7 +156,7 @@ public function edit_pendirian($id)
 
 
 
-     public function persyaratan_pendirian(){
+    public function persyaratan_pendirian(){
         $user = Auth::user();
 
         return view('operator.persyaratan.pendirian',compact('user'));
@@ -176,74 +176,6 @@ public function edit_pendirian($id)
 
 
 
-    public function checking_berkas_pendirian()
-    {
-        $user = Auth::user();
-
-        $permohonans = PerizinanPendirian::where([
-            'status_dokumen' => 'Checking Berkas Operator'
-        ])->get();
-
-        return view('operator.tracking.perizinanPendirian.checkingBerkas.index',compact('permohonans','user'));
-    }
-
-    public function dokumen_valid_pendirian()
-    {
-        $user = Auth::user();
-
-        $permohonans = PerizinanPendirian::where([
-
-            'status_dokumen' => 'Dokumen Valid'
-        ])->get();
-
-        return view('operator.tracking.perizinanPendirian.dokumenValid.index',compact('permohonans','user'));
-    }
-
-    public function dokumen_tidak_valid_pendirian()
-    {
-        $user = Auth::user();
-
-        $permohonans = PerizinanPendirian::where([
-            'status_dokumen' => 'Dokumen Tidak Valid'
-        ])->get();
-
-        return view('operator.tracking.perizinanPendirian.dokumenTidakValid.index',compact('permohonans','user'));
-
-    }
-    // End Perizinan Pendirian
-
-
-    // Perizinan Penyelenggaraan
-    public function checking_berkas_penyelenggaraan()
-    {
-        $user = Auth::user();
-        $permohonans = PerizinanPenyelenggaraan::where([
-            'status_dokumen' => 'Checking Berkas Operator'
-        ])->get();
-
-        return view('operator.tracking.perizinanPenyelenggaraan.checkingBerkas.index',compact('permohonans','user'));
-    }
-
-        public function dokumen_valid_penyelenggaraan()
-    {
-        $user = Auth::user();
-        $permohonans = PerizinanPenyelenggaraan::where([
-            'status_dokumen' => 'Dokumen Valid'
-        ])->get();
-
-        return view('operator.tracking.perizinanPenyelenggaraan.dokumenValid.index',compact('permohonans','user'));
-    }
-
-        public function dokumen_tidak_valid_penyelenggaraan()
-    {
-        $user = Auth::user();
-        $permohonans = PerizinanPenyelenggaraan::where([
-            'status_dokumen' => 'Dokumen Tidak Valid'
-        ])->get();
-
-        return view('operator.tracking.perizinanPenyelenggaraan.dokumenTidakValid.index',compact('permohonans','user'));
-    }
-    // End Perizinan Penyelenggaraan
 
 
 

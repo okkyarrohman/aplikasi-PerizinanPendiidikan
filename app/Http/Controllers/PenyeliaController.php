@@ -11,13 +11,15 @@ class PenyeliaController extends Controller
 {
     public function index_pendirian(){
         $user = Auth::user();
+        $permohonans = PerizinanPendirian::paginate(10);
 
-        return view('penyelia.tracking.perizinanPendirian.index', compact('user'));
+        return view('penyelia.tracking.perizinanPendirian.index', compact('user','permohonans'));
     }
     public function index_penyelenggaraan(){
         $user = Auth::user();
+        $permohonans = PerizinanPenyelenggaraan::paginate(10);
 
-        return view('penyelia.tracking.perizinanPenyelenggaraan.index', compact('user'));
+        return view('penyelia.tracking.perizinanPenyelenggaraan.index', compact('user','permohonans'));
     }
 
 

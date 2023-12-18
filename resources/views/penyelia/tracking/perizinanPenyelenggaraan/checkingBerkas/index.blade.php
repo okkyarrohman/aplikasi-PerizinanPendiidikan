@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card">
             <div class="title d-flex m-4 justify-content-center align-items-center">
-                <h2> Tracking Perizinan Penyelenggaraan</h2>
+                <h2> Monitoring Perizinan Penyelenggaraan</h2>
             </div>
         </div>
         <br>
@@ -29,9 +29,7 @@
                     <th class="border-bottom-0">
                         <h6 class="fw-semibold mb-0">Tipe Dokumen</h6>
                     </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Status Permohonan</h6>
-                    </th>
+
                     <th class="border-bottom-0">
                         <h6 class="fw-semibold mb-0">Actions</h6>
                     </th>
@@ -52,12 +50,10 @@
                         <td class="border-bottom-0">
                             <p class="mb-0 fw-normal">{{ $tracking->tipe_dokumen }}</p>
                         </td>
-                        <td class="border-bottom-0">
-                            <p class="mb-0 fw-normal">{{ $tracking->status_dokumen }}</p>
-                        </td>
+
                         <td class="border-bottom-0">
                             <a href="/penyelia/tracking/penyelenggaraan/edit/checking_berkas/{{ $tracking->id }}"
-                                class="btn btn-success">Lihat</a>
+                                class="btn btn-primary">Validasi</a>
                         </td>
                     </tr>
                 </tbody>

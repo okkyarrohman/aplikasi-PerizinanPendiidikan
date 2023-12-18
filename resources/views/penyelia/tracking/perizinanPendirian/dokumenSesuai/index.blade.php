@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card">
             <div class="title d-flex m-4 justify-content-center align-items-center">
-                <h2> Tracking Perizinan Pendirian</h2>
+                <h2> Monitoring Perizinan Pendirian</h2>
             </div>
         </div>
         <br>
@@ -69,7 +69,7 @@
                                     <input type="hidden" name="id" value="{{ $tracking->id }}">
                                     <input type="hidden" name="status_dokumen" value="Tanda Tangan Kepala Dinas"
                                         id="">
-                                    <button type="submit" class="btn btn-success">Ajukan TTD Kepala Dinas</button>
+                                    <button type="submit" class="btn btn-primary">Ajukan TTD</button>
                                 </form>
                             </td>
                         </tr>

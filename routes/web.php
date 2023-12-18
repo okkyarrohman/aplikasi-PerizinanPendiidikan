@@ -429,3 +429,7 @@ Route::get('/send-email/{id}',[MailController::class,'send_attach_gmail']);
 Route::get('back', function(){
     return back();
 })->name('back');
+
+Route::get('/verifikasi',function(){
+    return view('auth.verify3');
+});

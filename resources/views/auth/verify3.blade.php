@@ -36,11 +36,6 @@
         <br>
         <div class="row justify-content-center">
             <div class="col-md-8">
-                @if (session('resent'))
-                    <div class="alert alert-success" role="alert">
-                        {{ __('Email Verifikasi Berhasil Dikirim, Silahkan check Inbox Mail') }}
-                    </div>
-                @endif
                 <div class="card">
                     <div class="card-header text-center">
                         <img src="{{ asset('nonUser/img/verifikasiemail.png') }}" alt="" width="332"
@@ -51,7 +46,11 @@
                     </div>
                 </div>
                 <div class="card-body">
-
+                    @if (session('resent'))
+                        <div class="alert alert-success" role="alert">
+                            {{ __('Email Verifikasi Berhasil Dikirim, Silahkan check Inbox Mail') }}
+                        </div>
+                    @endif
 
                     <div class="section m-2 justify-content-center text-center">
                         <h6>{{ __('Tidak Mendapatkan Link Verifikasi?') }}</h6>

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card">
             <div class="title d-flex m-4 justify-content-center align-items-center">
-                <h2> Tracking Perizinan Pendirian</h2>
+                <h2> Monitoring Perizinan Pendirian</h2>
             </div>
         </div>
         <br>
@@ -64,7 +64,7 @@
                             </td>
                             <td class="border-bottom-0">
                                 <a href="/penyelia/tracking/pendirian/edit/dokumen_valid/{{ $tracking->id }}"
-                                    class="btn btn-success">Tugaskan Surveyor</a>
+                                    class="btn btn-primary">Tugaskan Surveyor</a>
                             </td>
                         </tr>
                     </tbody>
