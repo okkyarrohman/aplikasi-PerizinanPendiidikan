@@ -6,7 +6,7 @@
             <div class="col-md-12 ">
                 <div class="card align-items-center">
                     <div class="card-header align-items-center">
-                        <h4 class="card-title align-items-center">Edit Permohonan Perizinan Pendirian
+                        <h4 class="card-title align-items-center">Tanda Tangan Permohonan Perizinan Pendirian
                         </h4>
                     </div>
                 </div>

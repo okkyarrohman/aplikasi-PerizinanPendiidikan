@@ -55,7 +55,51 @@ class HomeController extends Controller {
     public function index_kepalaDinas() {
         $user = Auth::user();
 
-        return view('kepalaDinas.dashboard', compact('user'));
+        $checkingBerkasPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Checking Berkas Operator'
+        ])->count();
+        $checkingBerkasPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Checking Berkas Operator'
+        ])->count();
+        $totalCheckingBerkas = $checkingBerkasPendirian + $checkingBerkasPenyelenggaraan;
+
+        $dokumenValidPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $dokumenValidPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $totalDokumenValid = $dokumenValidPendirian + $dokumenValidPenyelenggaraan;
+
+        $dokumenTidakValidPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Tidak Valid'
+        ])->count();
+        $dokumenTidakValidPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Tidak Valid'
+        ])->count();
+        $totalDokumenTidakValid = $dokumenTidakValidPendirian + $dokumenTidakValidPenyelenggaraan;
+
+        $permohonanSelesaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+        $permohonanSelesaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+
+        $totalPermohonanSelesai = $permohonanSelesaiPendirian + $permohonanSelesaiPenyelenggaraan;
+
+        $semuaPendirian = PerizinanPendirian::all()->count();
+        $semuaPenyelenggaraan = PerizinanPenyelenggaraan::all()->count();
+
+        return view('kepalaDinas.dashboard', [
+            'totalCheckingBerkas' => $totalCheckingBerkas,
+            'totalDokumenValid' => $totalDokumenValid,
+            'totalDokumenTidakValid' => $totalDokumenTidakValid,
+            'totalPermohonanSelesai' => $totalPermohonanSelesai,
+            'semuaPendirian' => $semuaPendirian,
+            'semuaPenyelenggaraan' => $semuaPenyelenggaraan,
+            'user' => $user,
+        ]);
     }
 
     public function index_penyelia() {

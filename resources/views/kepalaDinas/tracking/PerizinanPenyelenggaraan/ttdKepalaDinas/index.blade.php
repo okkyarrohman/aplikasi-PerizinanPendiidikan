@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card">
             <div class="title d-flex m-4 justify-content-center align-items-center">
-                <h2>Tracking Perizinan Penyelenggaraan</h2>
+                <h2>Tanda Tangan Perizinan Penyelenggaraan</h2>
             </div>
         </div>
         <br>

@@ -7,19 +7,26 @@ use App\Models\PerizinanPendirian;
 use App\Models\PerizinanPenyelenggaraan;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 
 class KepalaDinasController extends Controller
 {
     public function index_pendirian(){
         $user = Auth::user();
+        $permohonans = PerizinanPendirian::paginate(10);
 
-        return view('kepalaDinas.tracking.perizinanPendirian.index', compact('user'));
+        $lastSevenDays = PerizinanPendirian::where('updated_at','>=',now()->subDays(7))->get();
+
+        // dd($lastSevenDays);
+
+
+        return view('kepalaDinas.tracking.perizinanPendirian.index', compact('user','permohonans','lastSevenDays'));
     }
     public function index_penyelenggaraan(){
         $user = Auth::user();
-
-        return view('kepalaDinas.tracking.perizinanPenyelenggaraan.index', compact('user'));
+        $permohonans = PerizinanPenyelenggaraan::paginate(10);
+        return view('kepalaDinas.tracking.perizinanPenyelenggaraan.index', compact('user','permohonans','permohonanMelebihi'));
     }
 
 

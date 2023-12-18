@@ -79,7 +79,6 @@
                             </tbody>
                         @endforeach
                     </table>
-
                 </div>
                 {{ $permohonans->links() }}
             </div>
