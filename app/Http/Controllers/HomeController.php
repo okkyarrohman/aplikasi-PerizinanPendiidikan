@@ -94,13 +94,24 @@ class HomeController extends Controller {
         $totalDokumenSesuai = $dokumenSesuaiPendirian + $dokumenSesuaiPenyelenggaraan;
 
         $dokumenTidakSesuaiPendirian = PerizinanPendirian::where([
-            'status_dokumen' => 'Dokumen Tidak Sesuai'
+            'status_dokumen' => 'Dokumen Ditolak'
         ])->count();
         $dokumenTidakSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
-            'status_dokumen' => 'Dokumen Tidak Sesuai'
+            'status_dokumen' => 'Dokumen Ditolak'
         ])->count();
         $totalDokumenTidakSesuai = $dokumenTidakSesuaiPendirian + $dokumenTidakSesuaiPenyelenggaraan;
 
+         $permohonanSelesaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+        $permohonanSelesaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+
+        $totalPermohonanSelesai = $permohonanSelesaiPendirian + $permohonanSelesaiPenyelenggaraan;
+
+        $semuaPendirian = PerizinanPendirian::all()->count();
+        $semuaPenyelenggaraan = PerizinanPenyelenggaraan::all()->count();
 
         return view('penyelia.dashboard', [
             'totalDokumenValid' => $totalDokumenValid,
@@ -108,6 +119,9 @@ class HomeController extends Controller {
             'totalCheckingBerkas' => $totalCheckingBerkas,
             'totalDokumenSesuai' => $totalDokumenSesuai,
             'totalDokumenTidakSesuai' => $totalDokumenTidakSesuai,
+            'totalPermohonanSelesai' => $totalPermohonanSelesai,
+            'semuaPendirian' => $semuaPendirian,
+            'semuaPenyelenggaraan' => $semuaPenyelenggaraan,
             'user' => $user
         ]);
     }

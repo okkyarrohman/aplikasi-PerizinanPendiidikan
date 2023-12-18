@@ -430,6 +430,3 @@ Route::get('back', function(){
     return back();
 })->name('back');
 
-Route::get('/verifikasi',function(){
-    return view('auth.verify3');
-});

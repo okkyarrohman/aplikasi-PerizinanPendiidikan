@@ -162,7 +162,7 @@
 
 
                 <select name="status_dokumen" id="" class="form-select form-select" hidden>
-                    <option value="Telah Disurvey" selected>Telah Disurvey</option>
+                    <option value="Checking Berkas Verifikator" selected>Telah Disurvey</option>
                 </select>
 
 
