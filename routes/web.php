@@ -217,6 +217,11 @@ Route::group(['middleware' => 'role:kepala-dinas'], function(){
     // Izin Terbit PDF
     Route::get('/kepla-dinas/pendirian/tracking/izin_terbit_pendirian_pdf/{id}',[KepalaDinasController::class,'izin_terbit_pendirian_pdf']);
 
+    // Notifikasi
+    Route::get('/kepla-dinas/notifikasi/pendirian',[KepalaDinasController::class,'notifikasi_pendirian']);
+    Route::get('/kepla-dinas/notifikasi/penyelenggaraan',[KepalaDinasController::class,'notifikasi_penyelenggaraan']);
+
+
 
 });
 // End Route kepala-dinas

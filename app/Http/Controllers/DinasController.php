@@ -18,7 +18,7 @@ class DinasController extends Controller
     public function index_penyelenggaraan(){
         $user = Auth::user();
 
-        return view('dinas.tracking.perizinanPenyelenggaraan.index', compact('user'));
+        return view('dinas.tracking.PerizinanPenyelenggaraan.index', compact('user'));
     }
 
 
@@ -132,7 +132,7 @@ class DinasController extends Controller
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
-        return view('dinas.tracking.perizinanPenyelenggaraan.1_checkingBerkasOperator.index',compact('permohonans','user'));
+        return view('dinas.tracking.PerizinanPenyelenggaraan.1_checkingBerkasOperator.index',compact('permohonans','user'));
     }
 
     public function dokumen_valid_penyelenggaraan()
@@ -142,7 +142,7 @@ class DinasController extends Controller
             'status_dokumen' => 'Dokumen Valid'
         ])->get();
 
-        return view('dinas.tracking.perizinanPenyelenggaraan.2_dokumenValid.index',compact('permohonans','user'));
+        return view('dinas.tracking.PerizinanPenyelenggaraan.2_dokumenValid.index',compact('permohonans','user'));
     }
 
     public function dokumen_tidak_valid_penyelenggaraan()
@@ -152,7 +152,7 @@ class DinasController extends Controller
             'status_dokumen' => 'Dokumen Tidak Valid'
         ])->get();
 
-        return view('dinas.tracking.perizinanPenyelenggaraan.3_dokumenTidakValid.index',compact('permohonans','user'));
+        return view('dinas.tracking.PerizinanPenyelenggaraan.3_dokumenTidakValid.index',compact('permohonans','user'));
     }
 
     public function sedang_disurvey_penyelenggaraan()
@@ -162,7 +162,7 @@ class DinasController extends Controller
             'status_dokumen' => 'Sedang Disurvey'
         ])->get();
 
-        return view('dinas.tracking.perizinanPenyelenggaraan.4_sedangDisurvey.index',compact('permohonans','user'));
+        return view('dinas.tracking.PerizinanPenyelenggaraan.4_sedangDisurvey.index',compact('permohonans','user'));
     }
 
     public function telah_disurvey_penyelenggaraan()
@@ -172,7 +172,7 @@ class DinasController extends Controller
             'status_dokumen' => 'Telah Disurvey'
         ])->get();
 
-        return view('dinas.tracking.perizinanPenyelenggaraan.5_telahDisurvey.index',compact('permohonans','user'));
+        return view('dinas.tracking.PerizinanPenyelenggaraan.5_telahDisurvey.index',compact('permohonans','user'));
     }
 
     public function checking_berkas_verifikator_penyelenggaraan()
@@ -182,7 +182,7 @@ class DinasController extends Controller
             'status_dokumen' => 'Checking Berkas Verifikator'
         ])->get();
 
-        return view('dinas.tracking.perizinanPenyelenggaraan.6_checkingBerkasVerifikator.index',compact('permohonans','user'));
+        return view('dinas.tracking.PerizinanPenyelenggaraan.6_checkingBerkasVerifikator.index',compact('permohonans','user'));
     }
 
     public function dokumen_sesuai_penyelenggaraan()
@@ -192,7 +192,7 @@ class DinasController extends Controller
             'status_dokumen' => 'Dokumen Sesuai'
         ])->get();
 
-        return view('dinas.tracking.perizinanPenyelenggaraan.7_dokumenSesuai.index',compact('permohonans','user'));
+        return view('dinas.tracking.PerizinanPenyelenggaraan.7_dokumenSesuai.index',compact('permohonans','user'));
     }
 
     public function tolak_dokumen_penyelenggaraan()
@@ -202,7 +202,7 @@ class DinasController extends Controller
             'status_dokumen' => 'Dokumen Ditolak'
         ])->get();
 
-        return view('dinas.tracking.perizinanPenyelenggaraan.8_tolakDokumen.index',compact('permohonans','user'));
+        return view('dinas.tracking.PerizinanPenyelenggaraan.8_tolakDokumen.index',compact('permohonans','user'));
     }
 
     public function ttd_kepala_dinas_penyelenggaraan()
@@ -212,7 +212,7 @@ class DinasController extends Controller
             'status_dokumen' => 'Tanda Tangan Kepala Dinas'
         ])->get();
 
-        return view('dinas.tracking.perizinanPenyelenggaraan.9_ttdKepalaDinas.index',compact('permohonans','user'));
+        return view('dinas.tracking.PerizinanPenyelenggaraan.9_ttdKepalaDinas.index',compact('permohonans','user'));
     }
 
     public function permohonan_selesai_penyelenggaraan()
@@ -222,7 +222,7 @@ class DinasController extends Controller
             'status_dokumen' => 'Permohonan Selesai'
         ])->get();
 
-        return view('dinas.tracking.perizinanPenyelenggaraan.10_permohonanSelesai.index',compact('permohonans','user'));
+        return view('dinas.tracking.PerizinanPenyelenggaraan.10_permohonanSelesai.index',compact('permohonans','user'));
     }
 
     // End Monitioring Penyelenggaraan

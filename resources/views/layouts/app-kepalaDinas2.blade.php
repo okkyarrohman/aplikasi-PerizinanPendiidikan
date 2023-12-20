@@ -40,11 +40,24 @@
                             </div>
 
                             <div class="permohonan dropdown">
-                                <a href="#" class="user-dropdown d-flex align-items-center">
+                                <a href="#" id="topbarUserDropdown"
+                                    class="user-dropdown d-flex align-items-center dropend dropdown-toggle "
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="avatar avatar-md2">
+                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
+                                    </div>
                                     <div class="text">
                                         <h6 class="user-dropdown-name">Notifikasi</h6>
                                     </div>
                                 </a>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-lg"
+                                    aria-labelledby="topbarUserDropdown">
+                                    <li><a class="dropdown-item" href="/kepla-dinas/notifikasi/pendirian">Perizinan
+                                            Pendirian</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="/kepala-dinas/notifikasi/penyelenggaraan">Perizinan
+                                            Penyelenggaraan</a></li>
+                                </ul>
                             </div>
 
 
@@ -106,7 +119,8 @@
                                                 </g>
                                             </svg>
                                             <div class="form-check form-switch fs-6">
-                                                <input class="form-check-input  me-0" type="checkbox" id="toggle-dark">
+                                                <input class="form-check-input  me-0" type="checkbox"
+                                                    id="toggle-dark">
                                                 <label class="form-check-label"></label>
                                             </div>
                                             <svg xmlns="http://www.w3.org/2000/svg"

@@ -78,11 +78,7 @@
                                         <p class="fw-semibold mb-1">{{ $pemohon->updated_at }}</p>
                                     </td>
                                     <td class="border-bottom-0">
-                                        @if ($lastSevenDays)
-                                            <p class="text text-warning">Sedang Diproses</p>
-                                        @else
-                                            <p class="text text-danger">Melebihi batas <br> layanan</p>
-                                        @endif
+                                        {{ $pemohon->status_dokumen }}
                                     </td>
                                 </tr>
                             </tbody>

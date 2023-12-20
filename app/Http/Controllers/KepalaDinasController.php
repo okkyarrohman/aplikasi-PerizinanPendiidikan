@@ -30,7 +30,18 @@ class KepalaDinasController extends Controller
     }
 
 
+    public function notifikasi_pendirian(){
+        $user = Auth::user();
+        $lastSevenDays = PerizinanPendirian::where('updated_at','<=',now()->subDays(7))->get();
 
+        return view('kepalaDinas.notifikasi.pendirian',compact('user','lastSevenDays'));
+    }
+    public function notifikasi_penyelenggaraan(){
+        $user = Auth::user();
+        $lastSevenDays = PerizinanPenyelenggaraan::where('updated_at','<=',now()->subDays(7))->get();
+
+        return view('kepalaDinas.notifikasi.penyelenggaraan',compact('user','lastSevenDays'));
+    }
 
     public function ttd_kepalaDinas_pendirian()
     {
