@@ -457,6 +457,11 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/download/program_akademik/{id}',[DownloadController::class,'download_program_akademik']);
     Route::get('/download/sarprasP/{id}',[DownloadController::class,'download_sarprasP']);
 
+    Route::get('/download/geotag_pendirian/{id}',[DownloadController::class,'download_geotag_pendirian']);
+    Route::get('/download/geotag_penyelenggaraan/{id}',[DownloadController::class,'download_geotag_penyelenggaraan']);
+
+
+
 // End Download Berkas
 
 //My  Account

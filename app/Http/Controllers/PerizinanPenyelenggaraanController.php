@@ -250,7 +250,7 @@ class PerizinanPenyelenggaraanController extends Controller
     }
 
     public function update_hasil_survey(Request $req){
-         $req->validate([
+        $req->validate([
             'luas_lahan' => 'required',
             'luas_bangunan' => 'required',
             'jumlah_sekolah' => 'required',
@@ -272,6 +272,8 @@ class PerizinanPenyelenggaraanController extends Controller
             $geotag->move(storage_path('app/public/perizinanPenyelenggaraan/geotag',date('YmdHis').".".$req->file('geotag')->getClientOriginalName()),$fotoName);
             $permohonan->geotag = date('YmdHis').".".$req->file('geotag')->getClientOriginalName();
         }
+
+        $permohonan->save();
 
         return redirect()->route('surveyor')->with('sukses_dikirim','Data Berhasil Diupdate');
 

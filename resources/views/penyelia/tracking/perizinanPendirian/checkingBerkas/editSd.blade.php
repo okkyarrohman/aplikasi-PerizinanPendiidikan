@@ -93,6 +93,7 @@
                                                         name="lokasi" value="{{ $permohonans->lokasi }}" hidden>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>

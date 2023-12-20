@@ -93,6 +93,38 @@
                                                         name="lokasi" value="{{ $permohonans->lokasi }}" hidden>
                                                 </div>
                                             </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-vertical">Luas Lahan</label>
+                                                    <h6>
+                                                        {{ $permohonans->luas_lahan }}
+                                                    </h6>
+                                                    <input type="text" id="first-name-vertical" class="form-control"
+                                                        name="luas_lahan" value="{{ $permohonans->luas_lahan }}" hidden>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-vertical">Luas Bangunan</label>
+                                                    <h6>
+                                                        {{ $permohonans->luas_bangunan }}
+                                                    </h6>
+                                                    <input type="text" id="first-name-vertical" class="form-control"
+                                                        name="luas_bangunan" value="{{ $permohonans->luas_bangunan }}"
+                                                        hidden>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-vertical">Jumlah Sekolah</label>
+                                                    <h6>
+                                                        {{ $permohonans->jumlah_sekolah }}
+                                                    </h6>
+                                                    <input type="text" id="first-name-vertical" class="form-control"
+                                                        name="jumlah_sekolah" value="{{ $permohonans->jumlah_sekolah }}"
+                                                        hidden>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -263,14 +295,15 @@
                     <div class="col-md-6">
                         <div class="card m-4">
                             <div class="content-1 m-4">
-                                <h6 for="first-name-vertical">Dokumen Hasil Survey</h6>
+                                <h6 for="first-name-vertical">Geotag</h6>
                                 <div class="download">
                                     <div class="nama-file">
-                                        <input value="{{ old('dokumen_survey', $permohonans->dokumen_survey) }}"
-                                            class="form-control" name="dokumen_survey" hidden>
+                                        <input value="{{ old('geotag', $permohonans->geotag) }}" class="form-control"
+                                            name="geotag" hidden>
                                     </div>
                                     <div class="action">
-                                        <a href="" class="btn btn-danger">Download</a>
+                                        <a href="/download/geotag_penyelenggaraan/{{ $permohonans->id }}"
+                                            class="btn btn-danger">Download</a>
                                     </div>
                                 </div>
                             </div>

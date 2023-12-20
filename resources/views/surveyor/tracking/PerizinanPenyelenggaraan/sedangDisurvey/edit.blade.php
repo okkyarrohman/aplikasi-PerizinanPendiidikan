@@ -160,10 +160,8 @@
                 </div>
 
 
+                <input type="text" name="status_dokumen" value="Checking Berkas Verifikator" hidden>
 
-                <select name="status_dokumen" id="" class="form-select form-select" hidden>
-                    <option value="Checking Berkas Verifikator" selected>Telah Disurvey</option>
-                </select>
 
 
                 <div class="row">

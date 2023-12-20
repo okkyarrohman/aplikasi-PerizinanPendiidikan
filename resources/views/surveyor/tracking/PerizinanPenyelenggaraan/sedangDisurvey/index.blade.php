@@ -62,7 +62,7 @@
                             <p class="mb-0 fw-normal">{{ $tracking->tipe_dokumen }}</p>
                         </td>
                         <td class="border-bottom-0">
-                            <a href="/surveyor/tracking/pendirian/edit/sedang_disurvey/{{ $tracking->id }}"
+                            <a href="/surveyor/tracking/penyelenggaraan/edit/sedang_disurvey/{{ $tracking->id }}"
                                 class="btn btn-success">Edit</a>
                         </td>
                     </tr>

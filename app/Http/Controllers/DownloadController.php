@@ -226,6 +226,18 @@ class DownloadController extends Controller
         return response()->download($path);
     }
 
+
+    public function download_geotag_pendirian($id){
+        $permohonans = PerizinanPendirian::where('id',$id)->first();
+        $path = storage_path("app/public/perizinanPendirian/geotag/{$permohonans->geotag}");
+        return response()->download($path);
+    }
+    public function download_geotag_penyelenggaraan($id){
+        $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
+        $path = storage_path("app/public/perizinanPenyelenggaraan/geotag/{$permohonans->geotag}");
+        return response()->download($path);
+    }
+
     // End Penyelenggaraan
 
 
