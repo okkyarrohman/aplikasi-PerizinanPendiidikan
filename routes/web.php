@@ -14,6 +14,7 @@ use App\Http\Controllers\DinasController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuditorController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\PerizinanPendirianController;
 use App\Http\Controllers\PerizinanPenyelenggaraanController;
 use App\Http\Controllers\MailController;
@@ -43,9 +44,6 @@ Route::get('/persyaratan-pendirian', function(){
     return view('persyaratanPendirian');
 });
 
-Route::get('/persyaratan-penyelenggaraan', function(){
-    return view('persyaratanPenyelenggaraan');
-});
 
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon','verify'], function(){
@@ -412,15 +410,62 @@ Route::group(['middleware' => 'role:admin'], function(){
 
 
 // Download Berkas
-    Route::get('/download/surat-pemohonan/{id}',[OperatorController::class,'download_suratPemohon']);
-    Route::get('/download/ktp/{id}',[OperatorController::class,'download_ktp']);
-    Route::get('/download/ijazah/{id}',[OperatorController::class,'download_ijazah']);
-    Route::get('/download/surat-tanda-regist/{id}',[OperatorController::class,'download_suratTandaRegist']);
-    Route::get('/download/surat-persetujuan-kerja/{id}',[OperatorController::class,'download_suratPersetujuanKerja']);
-    Route::get('/download/surat-pernyataan-praktik/{id}',[OperatorController::class,'download_suratPernyataanPraktik']);
-    Route::get('/download/surat-rekomendasi-profesi/{id}',[OperatorController::class,'download_suratRekomendasiProfesi']);
-    Route::get('/download/surat-keterangan-praktek/{id}',[OperatorController::class,'download_suratKeteranganPraktek']);
-    Route::get('/download/dokumen-hasil-survey/{id}',[OperatorController::class,'download_dokumenSurvey']);
+    // Pendirian
+    Route::get('/download/surat-pemohonan/{id}',[DownloadController::class,'download_suratPemohon']);
+    Route::get('/download/ktp/{id}',[DownloadController::class,'download_ktp']);
+    Route::get('/download/suket_domisili/{id}',[DownloadController::class,'download_suket_domisili']);
+    Route::get('/download/pengurus/{id}',[DownloadController::class,'download_pengurus']);
+    Route::get('/download/suket_mendirikan/{id}',[DownloadController::class,'download_suket_mendirikan']);
+    Route::get('/download/suket_tanah/{id}',[DownloadController::class,'download_suket_tanah']);
+    Route::get('/download/suket_pbh/{id}',[DownloadController::class,'download_suket_pbh']);
+    Route::get('/download/suket_perubahanPBH/{id}',[DownloadController::class,'download_suket_perubahanPBH']);
+    Route::get('/download/suket_rip/{id}',[DownloadController::class,'download_suket_rip']);
+    Route::get('/download/suket_psp/{id}',[DownloadController::class,'download_suket_psp']);
+    Route::get('/download/sukas_perizinan/{id}',[DownloadController::class,'download_sukas_perizinan']);
+    Route::get('/download/sk_izinOperasional/{id}',[DownloadController::class,'download_sk_izinOperasional']);
+    Route::get('/download/sertif_bpjs_sehat/{id}',[DownloadController::class,'download_sertif_bpjs_sehat']);
+    Route::get('/download/sertif_bpjs_kerja/{id}',[DownloadController::class,'download_sertif_bpjs_kerja']);
+    Route::get('/download/denah/{id}',[DownloadController::class,'download_denah']);
+    Route::get('/download/gedung/{id}',[DownloadController::class,'download_gedung']);
+    Route::get('/download/akta_pendirian/{id}',[DownloadController::class,'download_akta_pendirian']);
+    Route::get('/download/surper_kades/{id}',[DownloadController::class,'download_surper_kades']);
+    Route::get('/download/surper_camat/{id}',[DownloadController::class,'download_surper_camat']);
+    Route::get('/download/surat_tanah/{id}',[DownloadController::class,'download_surat_tanah']);
+    Route::get('/download/patuh_aturan/{id}',[DownloadController::class,'download_patuh_aturan']);
+    Route::get('/download/daftar_siswa/{id}',[DownloadController::class,'download_daftar_siswa']);
+    Route::get('/download/daftar_TKK/{id}',[DownloadController::class,'download_daftar_TKK']);
+    Route::get('/download/daftar_TKnK/{id}',[DownloadController::class,'download_daftar_TKnK']);
+    Route::get('/download/kurikulum/{id}',[DownloadController::class,'download_kurikulum']);
+    Route::get('/download/sarpras/{id}',[DownloadController::class,'download_sarpras']);
+    Route::get('/download/sk_yayasan/{id}',[DownloadController::class,'download_sk_yayasan']);
+    Route::get('/download/studi_layak/{id}',[DownloadController::class,'download_studi_layak']);
+    // End Pendirian
+
+    // Penyelenggaraan
+    Route::get('/download/doc_pendirian/{id}',[DownloadController::class,'download_doc_pendirian']);
+    Route::get('/download/identitas_pemilik/{id}',[DownloadController::class,'download_identitas_pemilik']);
+    Route::get('/download/identitas_pengajar/{id}',[DownloadController::class,'download_identitas_pengajar']);
+    Route::get('/download/kualifikasi_pengajar/{id}',[DownloadController::class,'download_kualifikasi_pengajar']);
+    Route::get('/download/kurikulumP/{id}',[DownloadController::class,'download_kurikulumP']);
+    Route::get('/download/doc_keuangan/{id}',[DownloadController::class,'download_doc_keuangan']);
+    Route::get('/download/surat_otorisasi/{id}',[DownloadController::class,'download_surat_otorisasi']);
+    Route::get('/download/program_akademik/{id}',[DownloadController::class,'download_program_akademik']);
+    Route::get('/download/sarprasP/{id}',[DownloadController::class,'download_sarprasP']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // End Download Berkas
 
 //My  Account

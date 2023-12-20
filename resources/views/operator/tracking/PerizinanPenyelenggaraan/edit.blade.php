@@ -120,7 +120,8 @@
                                                                     class="form-control" name="doc_pendirian" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_pendirian/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -137,7 +138,8 @@
                                                                     class="form-control" name="identitas_pemilik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/identitas_pemilik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -154,7 +156,8 @@
                                                                     class="form-control" name="identitas_pengajar" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/identitas_pengajar/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -182,7 +185,8 @@
                                                                     class="form-control" name="kurikulum" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/kurikulumP/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -199,7 +203,8 @@
                                                                     class="form-control" name="doc_keuangan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_keuangan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -216,7 +221,8 @@
                                                                     class="form-control" name="surat_otorisasi" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surat_otorisasi/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -249,7 +255,8 @@
                                                                     class="form-control" name="doc_pendirian" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_pendirian/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -265,7 +272,8 @@
                                                                     class="form-control" name="identitas_pemilik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/identitas_pemilik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -283,7 +291,8 @@
                                                                     hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/kualifikasi_pengajar/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -300,7 +309,8 @@
                                                                     class="form-control" name="kurikulum" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/kurikulumP/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -328,7 +338,8 @@
                                                                     class="form-control" name="doc_keuangan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_keuangan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -345,7 +356,8 @@
                                                                     class="form-control" name="surat_otorisasi" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surat_otorisasi/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -362,7 +374,8 @@
                                                                     class="form-control" name="program_akademik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/program_akademik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -377,7 +390,8 @@
                                                                     class="form-control" name="sarpras" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/sarprasP/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -410,7 +424,8 @@
                                                                     class="form-control" name="doc_pendirian" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_pendirian/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -427,7 +442,8 @@
                                                                     class="form-control" name="identitas_pemilik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/identitas_pemilik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -445,7 +461,8 @@
                                                                     hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/kualifikasi_pengajar/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -461,7 +478,8 @@
                                                                     class="form-control" name="kurikulum" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/kurikulumP/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -489,7 +507,8 @@
                                                                     class="form-control" name="doc_keuangan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_keuangan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -506,7 +525,8 @@
                                                                     class="form-control" name="surat_otorisasi" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surat_otorisasi/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -524,7 +544,8 @@
                                                                     class="form-control" name="program_akademik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/program_akademik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -556,7 +577,8 @@
                                                                     class="form-control" name="doc_pendirian" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_pendirian/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -572,7 +594,8 @@
                                                                     class="form-control" name="identitas_pemilik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/identitas_pemilik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -588,7 +611,8 @@
                                                                     class="form-control" name="kurikulum" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/kurikulumP/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -616,7 +640,8 @@
                                                                     class="form-control" name="doc_keuangan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_keuangan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -633,7 +658,8 @@
                                                                     class="form-control" name="surat_otorisasi" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surat_otorisasi/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -651,7 +677,8 @@
                                                                     class="form-control" name="program_akademik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/program_akademik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -683,7 +710,8 @@
                                                                     class="form-control" name="doc_pendirian" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_pendirian/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -700,7 +728,8 @@
                                                                     class="form-control" name="identitas_pemilik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/identitas_pemilik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -717,7 +746,8 @@
                                                                     class="form-control" name="kurikulum" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/kurikulumP/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -745,7 +775,8 @@
                                                                     class="form-control" name="doc_keuangan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_keuangan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -762,7 +793,8 @@
                                                                     class="form-control" name="surat_otorisasi" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surat_otorisasi/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -780,7 +812,8 @@
                                                                     class="form-control" name="program_akademik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/program_akademik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -812,7 +845,8 @@
                                                                     class="form-control" name="doc_pendirian" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_pendirian/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -828,7 +862,8 @@
                                                                     class="form-control" name="identitas_pemilik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/identitas_pemilik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -846,7 +881,8 @@
                                                                     hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/kualifikasi_pengajar/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -863,7 +899,8 @@
                                                                     class="form-control" name="kurikulum" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/kurikulumP/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -891,7 +928,8 @@
                                                                     class="form-control" name="doc_keuangan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_keuangan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -909,7 +947,8 @@
                                                                     class="form-control" name="surat_otorisasi" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surat_otorisasi/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -926,7 +965,8 @@
                                                                     class="form-control" name="program_akademik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/program_akademik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -959,7 +999,8 @@
                                                                     class="form-control" name="doc_pendirian" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_pendirian/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -976,7 +1017,8 @@
                                                                     class="form-control" name="identitas_pemilik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/identitas_pemilik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -992,7 +1034,8 @@
                                                                     class="form-control" name="kurikulum" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/kurikulumP/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -1020,7 +1063,8 @@
                                                                     class="form-control" name="doc_keuangan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/doc_keuangan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -1037,7 +1081,8 @@
                                                                     class="form-control" name="surat_otorisasi" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surat_otorisasi/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -1056,7 +1101,8 @@
                                                                     class="form-control" name="program_akademik" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/program_akademik/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>

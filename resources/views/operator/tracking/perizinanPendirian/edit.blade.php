@@ -119,7 +119,8 @@
                                                                     class="form-control" name="surat_permohonan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surat-pemohonan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -134,7 +135,8 @@
                                                                     class="form-control" name="ktp" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/ktp/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -151,7 +153,8 @@
                                                                     class="form-control" name="suket_domisili" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/suket_domisili/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -168,7 +171,8 @@
                                                                     class="form-control" name="suket_mendirikan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/suket_mendirikan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -184,7 +188,8 @@
                                                                     class="form-control" name="suket_tanah" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/suket_tanah/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -202,7 +207,8 @@
                                                                     class="form-control" name="suket_pbh" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/suket_pbh/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -218,7 +224,8 @@
                                                                     class="form-control" name="sertif_bpjs_sehat" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/sertif_bpjs_sehat/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -235,7 +242,8 @@
                                                                     class="form-control" name="sertif_bpjs_kerja" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/sertif_bpjs_kerja/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -263,7 +271,8 @@
                                                                     class="form-control" name="denah" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/denah/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -278,7 +287,8 @@
                                                                     class="form-control" name="gedung" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/gedung/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -294,7 +304,8 @@
                                                                     class="form-control" name="akta_pendirian" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/akta_pendirian/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -310,7 +321,8 @@
                                                                     class="form-control" name="surper_kades" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surper_kades/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -326,7 +338,8 @@
                                                                     class="form-control" name="surper_camat" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surper_camat/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -342,7 +355,8 @@
                                                                     class="form-control" name="surat_tanah" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surat_tanah/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -359,7 +373,8 @@
                                                                     class="form-control" name="patuh_aturan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/patuh_aturan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -374,7 +389,8 @@
                                                                 class="form-control" name="daftar_siswa" hidden>
                                                         </div>
                                                         <div class="action">
-                                                            <a href="" class="btn btn-danger">Download</a>
+                                                            <a href="/download/daftar_siswa/{{ $permohonans->id }}"
+                                                                class="btn btn-danger">Download</a>
                                                         </div>
                                                     </div>
                                                     <hr>
@@ -405,7 +421,8 @@
                                                                     class="form-control" name="daftar_TKK" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/daftar_TKK/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -422,7 +439,8 @@
                                                                         class="form-control" name="daftar_TKnK" hidden>
                                                                 </div>
                                                                 <div class="action">
-                                                                    <a href="" class="btn btn-danger">Download</a>
+                                                                    <a href="/download/daftar_TKnK/{{ $permohonans->id }}"
+                                                                        class="btn btn-danger">Download</a>
                                                                 </div>
                                                             </div>
                                                             <hr>
@@ -439,7 +457,8 @@
                                                                     class="form-control" name="kurikulum" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/kurikulum/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -454,7 +473,8 @@
                                                                     class="form-control" name="sarpras" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/sarpras/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -472,7 +492,8 @@
                                                                     class="form-control" name="sk_yayasan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/sk_yayasan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -488,7 +509,8 @@
                                                                     class="form-control" name="studi_layak" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/studi_layak/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -521,7 +543,8 @@
                                                                     class="form-control" name="surat_permohonan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/surat-pemohonan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -536,7 +559,8 @@
                                                                     class="form-control" name="ktp" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/ktp/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -553,7 +577,8 @@
                                                                     class="form-control" name="suket_domisili" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/suket_domisili/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -570,7 +595,8 @@
                                                                     class="form-control" name="pengurus" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/pengurus/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -587,7 +613,8 @@
                                                                     class="form-control" name="suket_mendirikan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/suket_mendirikan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -617,7 +644,8 @@
                                                                     class="form-control" name="suket_tanah" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/suket_tanah/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -634,7 +662,8 @@
                                                                     class="form-control" name="suket_pbh" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/suket_pbh/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -651,7 +680,8 @@
                                                                     class="form-control" name="suket_perubahanPBH" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/suket_perubahanPBH/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -668,7 +698,8 @@
                                                                     class="form-control" name="suket_rip" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/suket_rip/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -685,7 +716,8 @@
                                                                     class="form-control" name="suket_psp" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/suket_psp/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -716,7 +748,8 @@
                                                                     class="form-control" name="sukas_perizinan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/sukas_perizinan/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -734,7 +767,8 @@
                                                                         hidden>
                                                                 </div>
                                                                 <div class="action">
-                                                                    <a href="" class="btn btn-danger">Download</a>
+                                                                    <a href="/download/sk_izinOperasional/{{ $permohonans->id }}"
+                                                                        class="btn btn-danger">Download</a>
                                                                 </div>
                                                             </div>
                                                             <hr>
@@ -751,7 +785,8 @@
                                                                     class="form-control" name="sertif_bpjs_sehat" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/sertif_bpjs_sehat/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -768,7 +803,8 @@
                                                                     class="form-control" name="sertif_bpjs_kerja" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="" class="btn btn-danger">Download</a>
+                                                                <a href="/download/sertif_bpjs_kerja/{{ $permohonans->id }}"
+                                                                    class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
                                                         <hr>
