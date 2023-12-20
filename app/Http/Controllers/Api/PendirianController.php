@@ -149,7 +149,7 @@ class PendirianController extends Controller
                 'longtitude' => 'required|string',
                 'latitude' => 'required|string',
                 // Sesuaikan dengan aturan validasi untuk kolom lainnya
-
+                'lokasi' => 'required|string',
                 'surat_permohonan' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
                 'ktp' => ['max:300', 'mimes:pdf,jpg,jpeg,png'],
@@ -217,6 +217,7 @@ class PendirianController extends Controller
                 'status_dokumen' => "Checking Berkas Operator",
                 'longtitude' => $request->input('longtitude'),
                 'latitude' => $request->input('latitude'),
+                'lokasi' => $request->input('lokasi')
             ]);
 
             $pendirian->user()->associate(Auth::user());
