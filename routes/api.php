@@ -47,4 +47,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::delete('/penyelenggaraan/{id}', [PenyelenggaraanController::class, 'delete']);
 
     Route::apiResource('users', UserController::class);
+    Route::patch('user/profile', [UserController::class, 'updateProfile']);
 });

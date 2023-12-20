@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Mail\ChangeStatusMail;
 use App\Models\PerizinanPenyelenggaraan;
+use Dompdf\Dompdf;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -270,6 +271,26 @@ class PenyelenggaraanController extends Controller
             $targetStatuses = ['Dokumen Tidak Valid', 'Dokumen Tidak Sesuai', 'Permohonan Ditolak'];
             if (in_array($penyelenggaraan->status_dokumen, $targetStatuses)) {
                 Mail::to($penyelenggaraan->email)->send(new ChangeStatusMail($penyelenggaraan));
+            } elseif ($penyelenggaraan->status_dokumen == "Permohonan Selesai") {
+
+                $data = array('name' => 'jarwo');
+
+                $perizinan = $penyelenggaraan;
+
+                $dompdf = new Dompdf();
+                $view = view('emails.izinTerbitPdf', compact('perizinan'));
+                $dompdf->loadHTML($view);
+                $dompdf->render();
+
+                $emailPemohon = $penyelenggaraan->email;
+
+                Mail::send(['file' => 'mail'], $data, function ($message) use ($dompdf, $emailPemohon) {
+                    $message->to($emailPemohon)->subject('Surat Izin Terbit');
+
+                    $message->attachData($dompdf->output(), 'surat_izin_terbit.pdf');
+
+                    $message->from('eightech@company.com', 'EighTech');
+                });
             }
 
             return $this->sendSuccessResponse([
