@@ -80,37 +80,8 @@
         </div>
     </div>
 
-    <br>
 
-    <div class="frame">
-        <img class="img" src="{{ asset('images/frame-1.png') }}" />
-        <div class="div">
-            <div class="div-2">
-                <div class="text-wrapper">
-                    <h5>VISI</h5>
-                </div>
-                <p class="p">
-                    Menjadi perusahaan yang terdepan dan terpercaya dalam pengembangan website dan aplikasi mobile
-                    yang
-                    inovatif, berkualitas, dan memberikan solusi terbaik bagi klien.
-                </p>
-            </div>
-            <div class="div-3">
-                <div class="text-wrapper-2">
-                    <h5>MISI</h5>
-                </div>
-                <p class="memberikan-layanan">
-                    Memberikan layanan pengembangan website dan aplikasi mobile yang berkualitas daninovatif untuk
-                    memenuhi
-                    kebutuhan klien. <br />Menjalin kerja sama yang kuat dengan klien dan pihak terkait untuk
-                    memastikan
-                    kepuasan klien dan keberhasilan proyek. <br />Meningkatkan profitabilitas perusahaan dengan
-                    pertumbuhan yang
-                    berkelanjutan dan memberikan manfaat bagi seluruh stakeholder.
-                </p>
-            </div>
-        </div>
-    </div>
+
 
 
     <div class="frame-3">

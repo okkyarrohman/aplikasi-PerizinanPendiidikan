@@ -36,6 +36,16 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 Route::get('/home', [HomeController::class, 'index'])->name('pemohon');
+Route::get('/tentang', function(){
+    return view('tentang');
+});
+Route::get('/persyaratan-pendirian', function(){
+    return view('persyaratanPendirian');
+});
+
+Route::get('/persyaratan-penyelenggaraan', function(){
+    return view('persyaratanPenyelenggaraan');
+});
 
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon','verify'], function(){
