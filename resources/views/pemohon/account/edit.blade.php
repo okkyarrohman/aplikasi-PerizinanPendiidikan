@@ -8,7 +8,7 @@
         <br>
         <form action="{{ route('update.account') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="number" value="{{ $user->id }}" hidden>
+            <input type="hidden" name="id" value="{{ $user->id }}" hidden>
             <div class="gambar d-flex justify-content-center">
                 <div class="d-flex align-items-center">
                     <div class="avatar avatar-xl">

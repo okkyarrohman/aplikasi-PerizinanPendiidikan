@@ -44,6 +44,10 @@ Route::get('/persyaratan-pendirian', function(){
     return view('persyaratanPendirian');
 });
 
+Route::get('/persyaratan-penyelenggaraan', function(){
+    return view('persyaratanPenyelenggaraan');
+});
+
 
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon','verify'], function(){
@@ -85,6 +89,7 @@ Route::group(['middleware' => 'role:pemohon','verify'], function(){
     Route::get('/pemohon/tracking',[PemohonController::class,'tracking']);
 
     Route::get('/pemohon/show/{id}',[PemohonController::class,'show']);
+     Route::get('/pemohon/show_penyelenggaraan/{id}',[PemohonController::class,'show_penyelenggaraan']);
     // End Pemohon Tracking
 
     // Hitory Arsip
@@ -411,7 +416,7 @@ Route::group(['middleware' => 'role:admin'], function(){
 
 // Download Berkas
     // Pendirian
-    Route::get('/download/surat-pemohonan/{id}',[DownloadController::class,'download_suratPemohon']);
+    Route::get('/download/surat_pemohonan/{id}',[DownloadController::class,'download_surat_permohonan']);
     Route::get('/download/ktp/{id}',[DownloadController::class,'download_ktp']);
     Route::get('/download/suket_domisili/{id}',[DownloadController::class,'download_suket_domisili']);
     Route::get('/download/pengurus/{id}',[DownloadController::class,'download_pengurus']);
@@ -451,20 +456,6 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/download/surat_otorisasi/{id}',[DownloadController::class,'download_surat_otorisasi']);
     Route::get('/download/program_akademik/{id}',[DownloadController::class,'download_program_akademik']);
     Route::get('/download/sarprasP/{id}',[DownloadController::class,'download_sarprasP']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // End Download Berkas
 

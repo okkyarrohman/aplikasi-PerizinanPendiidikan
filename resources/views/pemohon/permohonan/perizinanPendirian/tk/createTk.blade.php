@@ -19,7 +19,7 @@
                                 <div class="card-body">
                                     <div class="form-body">
                                         <div class="row">
-                                            <input type="hidden" name="tipe_dokumen" value="Perizinan Pendirian TK" hidden>
+                                            <input type="hidden" name="tipe_dokumen" value="TK" hidden>
                                             <input type="hidden" name="status_dokumen" value="Checking Berkas Operator"
                                                 hidden>
                                             <div class="col-12">

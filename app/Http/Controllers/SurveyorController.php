@@ -21,7 +21,7 @@ class SurveyorController extends Controller
         $user = Auth::user();
         $permohonans = PerizinanPenyelenggaraan::paginate(10);
 
-        return view('surveyor.tracking.perizinanPenyelenggaraan.index', compact('user','permohonans'));
+        return view('surveyor.tracking.PerizinanPenyelenggaraan.index', compact('user','permohonans'));
     }
 
     public function sedang_disurvey_pendirian()
@@ -51,7 +51,7 @@ class SurveyorController extends Controller
             'status_dokumen' => 'Sedang Disurvey'
         ])->get();
 
-        return view('surveyor.tracking.perizinanPenyelenggaraan.sedangDisurvey.index',compact('permohonans','user'));
+        return view('surveyor.tracking.PerizinanPenyelenggaraan.sedangDisurvey.index',compact('permohonans','user'));
     }
 
     public function telah_disurvey_penyelenggaraan()
@@ -61,7 +61,7 @@ class SurveyorController extends Controller
             'status_dokumen' => 'Telah Disurvey'
         ])->get();
 
-        return view('surveyor.tracking.perizinanPenyelenggaraan.telahDisurvey.index',compact('permohonans','user'));
+        return view('surveyor.tracking.PerizinanPenyelenggaraan.telahDisurvey.index',compact('permohonans','user'));
     }
 
     public function edit_sedang_disurvey_pendirian($id)
@@ -77,7 +77,7 @@ class SurveyorController extends Controller
         $user = Auth::user();
         $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
 
-        return view('surveyor.tracking.perizinanPenyelenggaraan.sedangDisurvey.edit',compact('permohonans','user'));
+        return view('surveyor.tracking.PerizinanPenyelenggaraan.sedangDisurvey.edit',compact('permohonans','user'));
     }
 
 

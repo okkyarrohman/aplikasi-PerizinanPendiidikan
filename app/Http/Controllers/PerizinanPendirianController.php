@@ -309,8 +309,6 @@ class PerizinanPendirianController extends Controller
 
     public function update(Request $req)
     {
-
-
         $permohonan = PerizinanPendirian::find($req->id);
         $permohonan->nama = $req->nama;
         $permohonan->email = $req->email;
@@ -578,10 +576,10 @@ class PerizinanPendirianController extends Controller
 
     public function update_hasil_survey(Request $req){
         $req->validate([
-            'luas_lahan' => ['required'],
-            'luas_bangunan' => ['required'],
-            'jumlah_sekolah' => ['required'],
-            'geotag' => ['required','mimes:jpg,jpeg,png','max:300']
+            'luas_lahan' => 'required',
+            'luas_bangunan' => 'required',
+            'jumlah_sekolah' => 'required',
+            'geotag' => 'required|mimes:png,jpg|max:300',
 
         ]);
         $permohonan = PerizinanPendirian::find($req->id);
@@ -600,7 +598,9 @@ class PerizinanPendirianController extends Controller
             $permohonan->geotag = date('YmdHis').".".$req->file('geotag')->getClientOriginalName();
         }
 
-        return back()->with('success','Data Berhasil Diupdate');
+        $permohonan->save();
+
+        return redirect()->route('surveyor')->with('sukses_dikirim','Data Berhasil Diupdate');
     }
 
 

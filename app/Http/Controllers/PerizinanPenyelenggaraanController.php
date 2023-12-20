@@ -13,24 +13,24 @@ class PerizinanPenyelenggaraanController extends Controller
     public function store(Request $req)
     {
         $req->validate([
-            'nama' => ['string'],
-            'email' => ['string'],
-            'telepon' => ['required'],
-            'tipe_dokumen' => ['required'],
-            'status_dokumen' => ['required'],
-            'longtitude' => ['required'],
-            'latitude' => ['required'],
+            'nama' => 'required',
+            'email' => 'required',
+            'telepon' => 'required',
+            'tipe_dokumen' => 'required',
+            'status_dokumen' => 'required',
+            'longtitude' => 'required',
+            'latitude' => 'required',
 
             // Validate File Untuk Pendirian TK
-            'doc_pendirian' => ['max:300','mimes:pdf'], //Maks = 300Kb
-            'identitas_pemilik' => ['max:300','mimes:pdf,jpg,jpeg,png'], //Maks = 300Kb
-            'identitas_pengajar' => ['max:300','mimes:pdf'], //Maks = 300Kb
-            'kualifikasi_pengajar' => ['max:300','mimes:pdf'], //Maks = 300Kb
-            'kurikulum' => ['max:300','mimes:pdf'], //Maks = 300Kb
-            'doc_keuangan' => ['max:300','mimes:pdf'], //Maks = 300Kb
-            'surat_otorisasi' => ['max:300','mimes:pdf'], //Maks = 300Kb
-            'program_akademik' => ['max:300','mimes:pdf'], //Maks = 300Kb
-            'sarpras' => ['max:300','mimes:pdf'], //Maks = 300Kb
+            'doc_pendirian' => 'mimes:pdf|max:300', //Maks = 300Kb
+            'identitas_pemilik' => 'mimes:pdf|max:300', //Maks = 300Kb
+            'identitas_pengajar' => 'mimes:pdf|max:300',
+            'kualifikasi_pengajar' => 'mimes:pdf|max:300',
+            'kurikulum' => 'mimes:pdf|max:300',
+            'doc_keuangan' => 'mimes:pdf|max:300',
+            'surat_otorisasi' => 'mimes:pdf|max:300',
+            'program_akademik' => 'mimes:pdf|max:300',
+            'sarpras' => 'mimes:pdf|max:300',
              //End Validate File Untuk Pendirian TK
 
         ]);
@@ -46,7 +46,7 @@ class PerizinanPenyelenggaraanController extends Controller
         $permohonan->latitude = $req->latitude;
         $permohonan->lokasi = $req->lokasi;
         // END POST Form Umum
-
+        $permohonan->user()->associate(Auth::user());
 
         // REQUEST FILE Perizinan Penyelenggaraan
         if($req->file())
@@ -250,11 +250,11 @@ class PerizinanPenyelenggaraanController extends Controller
     }
 
     public function update_hasil_survey(Request $req){
-        $req->validate([
-            'luas_lahan' => ['required'],
-            'luas_bangunan' => ['required'],
-            'jumlah_sekolah' => ['required'],
-            'geotag' => ['required','mimes:jpg,jpeg,png','max:300']
+         $req->validate([
+            'luas_lahan' => 'required',
+            'luas_bangunan' => 'required',
+            'jumlah_sekolah' => 'required',
+            'geotag' => 'required|mimes:png,jpg|max:300',
 
         ]);
         $permohonan = PerizinanPenyelenggaraan::find($req->id);
@@ -273,7 +273,7 @@ class PerizinanPenyelenggaraanController extends Controller
             $permohonan->geotag = date('YmdHis').".".$req->file('geotag')->getClientOriginalName();
         }
 
-        return back()->with('success','Data Berhasil Diupdate');
+        return redirect()->route('surveyor')->with('sukses_dikirim','Data Berhasil Diupdate');
 
     }
 

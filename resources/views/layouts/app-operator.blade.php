@@ -69,17 +69,6 @@
                                 </ul>
                             </div>
 
-                            <div class="permohonan">
-                                <a href="#" id="topbarUserDropdown"
-                                    class="user-dropdown d-flex align-items-center">
-                                    <div class="avatar avatar-md2">
-                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
-                                    </div>
-                                    <div class="text">
-                                        <h6 class="user-dropdown-name">Dokumen Selesai</h6>
-                                    </div>
-                                </a>
-                            </div>
 
                             <div class="permohonan dropdown">
                                 <a href="#" id="topbarUserDropdown"

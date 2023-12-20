@@ -52,8 +52,6 @@ class PemohonController extends Controller
 
      public function berhasil_penyelenggaraan(){
         $user = Auth::user();
-
-
         $berhasil = PerizinanPenyelenggaraan::latest()->limit(1)->get();
 
         return view('pemohon.permohonan.perizinanPenyelenggaraan.berhasil', compact('user','berhasil'));
@@ -155,9 +153,11 @@ class PemohonController extends Controller
 
     public function show_penyelenggaraan($id)
     {
+        $user = Auth::user();
         $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
 
-        return view('pemohon.perizinanPenyelenggaraan.tracking.show',[
+        return view('pemohon.tracking.show_penyelenggaraan',[
+            'user' => $user,
             'permohonans' => $permohonans,
         ]);
     }

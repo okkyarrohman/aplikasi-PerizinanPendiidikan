@@ -23,7 +23,7 @@
                                             <p>Tipe Dokumen : {{ $permohonan->tipe_dokumen }}</p>
                                         </div>
                                         <div class="action">
-                                            <a href="/pemohon/show/{{ $permohonan->id }}">
+                                            <a href="/pemohon/show_penyelenggaraan/{{ $permohonan->id }}">
                                                 <span class="badge text-bg-primary">Lihat</span>
                                             </a>
                                         </div>

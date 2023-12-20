@@ -15,33 +15,7 @@
             </div>
         </div>
         <div class="row">
-            {{-- @php
-                $no = 1;
-            @endphp
-            @foreach ($permohonans as $permohonan)
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="content-2 m-4">
-                            <div class="title">
-                                <h5>Pengajuan Perizinan Pendirian {{ $no++ }}</h5>
-                            </div>
-                            <div class="created_at">
-                                <span>{{ $permohonan->nama }}</span>
-                            </div>
-                            <hr>
-                            <div class="isi">
-                                <p>Surat pengajuan Permohonan Akan diterima setelah 14 hari kerja</p>
-                                <p>Tipe Dokumen : {{ $permohonan->tipe_dokumen }}</p>
-                            </div>
-                            <div class="action">
-                                <a href="/pemohon/show_pendirian/{{ $permohonan->id }}">
-                                    <span class="badge text-bg-primary">Show</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach --}}
+
         </div>
     </div>
 @endsection

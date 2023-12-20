@@ -26,7 +26,7 @@ class KepalaDinasController extends Controller
     public function index_penyelenggaraan(){
         $user = Auth::user();
         $permohonans = PerizinanPenyelenggaraan::paginate(10);
-        return view('kepalaDinas.tracking.perizinanPenyelenggaraan.index', compact('user','permohonans','permohonanMelebihi'));
+        return view('kepalaDinas.tracking.PerizinanPenyelenggaraan.index', compact('user','permohonans'));
     }
 
 
