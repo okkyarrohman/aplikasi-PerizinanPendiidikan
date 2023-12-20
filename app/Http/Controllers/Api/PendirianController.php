@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Mail\ChangeStatusMail;
 use App\Models\PerizinanPendirian;
+use Carbon\Carbon;
+use Dompdf\Dompdf;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -44,7 +46,7 @@ class PendirianController extends Controller
             if ($request->has('month')) {
                 $query->whereMonth('created_at', $request->input('month'));
             }
-          
+
             // Retrieve all data without pagination
             $pendirian = $query->get();
 
@@ -389,6 +391,27 @@ class PendirianController extends Controller
             $targetStatuses = ['Dokumen Tidak Valid', 'Dokumen Tidak Sesuai', 'Permohonan Ditolak'];
             if (in_array($pendirian->status_dokumen, $targetStatuses)) {
                 Mail::to($pendirian->email)->send(new ChangeStatusMail($pendirian));
+
+            } elseif ($pendirian->status_dokumen == "Permohonan Selesai") {
+
+                $data = array('name' => 'jarwo');
+
+                $perizinan = $pendirian;
+
+                $dompdf = new Dompdf();
+                $view = view('emails.izinTerbitPdf', compact('perizinan'));
+                $dompdf->loadHTML($view);
+                $dompdf->render();
+
+                $emailPemohon = $pendirian->email;
+
+                Mail::send(['file' => 'mail'], $data, function ($message) use ($dompdf, $emailPemohon) {
+                    $message->to($emailPemohon)->subject('Surat Izin Terbit');
+
+                    $message->attachData($dompdf->output(), 'surat_izin_terbit.pdf');
+
+                    $message->from('eightech@company.com', 'EighTech');
+                });
             }
 
             return $this->sendSuccessResponse([
