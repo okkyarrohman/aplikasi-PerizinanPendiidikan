@@ -33,7 +33,7 @@
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" class="form-control form-control-xl" placeholder="Email"
-                                name="email">
+                                name="email" required>
 
                         </div>
                         @error('email')
@@ -43,7 +43,7 @@
                         @enderror
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="password" class="form-control form-control-xl" placeholder="Password"
-                                name="password">
+                                name="password" required>
 
                         </div>
                         @error('password')

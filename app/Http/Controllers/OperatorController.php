@@ -23,7 +23,7 @@ class OperatorController extends Controller
 
 
     // Perizinan Pendirian
-     public function pendirian_tk()
+    public function pendirian_tk()
     {
         $user = Auth::user();
 

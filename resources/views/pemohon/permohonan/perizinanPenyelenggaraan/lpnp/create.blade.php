@@ -99,7 +99,7 @@
                                                     <label for="first-name-vertical">Dokumen Pendirian atau izin Operasi
                                                         Organisasi</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="doc_pendirian" placeholder="First Name">
+                                                        name="doc_pendirian" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -107,7 +107,7 @@
                                                     <label for="first-name-vertical">Identitas Pemilik atau
                                                         Organisasi</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="identitas_pemilik" placeholder="First Name">
+                                                        name="identitas_pemilik" placeholder="First Name" required>
                                                 </div>
                                             </div>
 
@@ -116,7 +116,7 @@
                                                     <label for="first-name-vertical">Kurikulum dan Deskripsi
                                                         Program</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="kurikulum" placeholder="First Name">
+                                                        name="kurikulum" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -136,7 +136,7 @@
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Dokumen Keuangan Organisasi</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="doc_keuangan" placeholder="First Name">
+                                                        name="doc_keuangan" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -144,7 +144,7 @@
                                                     <label for="first-name-vertical">Surat Izin dari Otorisasi Pendidikan
                                                         atau lembaga terkait</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="surat_otorisasi" placeholder="First Name">
+                                                        name="surat_otorisasi" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -152,7 +152,7 @@
                                                     <label for="first-name-vertical">Program pendidikan atau Pelatihan yang
                                                         akan diselenggarakan </label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="program_akademik" placeholder="First Name">
+                                                        name="program_akademik" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                         </div>

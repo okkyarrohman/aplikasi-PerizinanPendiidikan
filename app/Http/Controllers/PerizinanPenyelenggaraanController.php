@@ -238,7 +238,7 @@ class PerizinanPenyelenggaraanController extends Controller
 
         $permohonan->save();
 
-        return back()->with('success', 'data berhasil dikirim');
+        return back()->with('sukses_dikirim', 'data berhasil dikirim');
     }
 
     public function update_status_dokumen(Request $req)
@@ -247,7 +247,7 @@ class PerizinanPenyelenggaraanController extends Controller
 
         $permohonan->status_dokumen = $req->status_dokumen;
         $permohonan->save();
-        return back()->with('success','Permohonan Berhasil');
+        return back()->with('sukses_dikirim','Permohonan Berhasil');
     }
 
     public function update_hasil_survey(Request $req){
@@ -318,7 +318,7 @@ class PerizinanPenyelenggaraanController extends Controller
             $message->from('eightech@company.com','EighTech');
         });
 
-        return redirect()->route('kepala-dinas')->with('success','Permohonan Selesai, Surat Izin Terbit Telah DIkirim');
+        return redirect()->route('kepala-dinas')->with('sukses_dikirim','Permohonan Selesai, Surat Izin Terbit Telah DIkirim');
     }
 
 

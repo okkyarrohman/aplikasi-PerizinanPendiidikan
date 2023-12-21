@@ -99,7 +99,7 @@
                                                     <label for="first-name-vertical">Dokumen Pendirian atau izin Operasi
                                                         Lembaga Institusi Pendidikan Tinggi Swasta</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="doc_pendirian" placeholder="First Name">
+                                                        name="doc_pendirian" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -107,7 +107,7 @@
                                                     <label for="first-name-vertical">Identitas Pemilik atau
                                                         Rektor</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="identitas_pemilik" placeholder="First Name">
+                                                        name="identitas_pemilik" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -115,7 +115,7 @@
                                                     <label for="first-name-vertical">Kualifikasi Staff Pengajar dan
                                                         Dosen</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="kualifikasi_pengajar" placeholder="First Name">
+                                                        name="kualifikasi_pengajar" placeholder="First Name" required>
                                                 </div>
                                             </div>
 
@@ -124,7 +124,7 @@
                                                     <label for="first-name-vertical">Kurikulum dan Deskripsi
                                                         Mata Pelajaran</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="kurikulum" placeholder="First Name">
+                                                        name="kurikulum" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -144,7 +144,7 @@
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Dokumen Keuangan Institusi</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="doc_keuangan" placeholder="First Name">
+                                                        name="doc_keuangan" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -152,7 +152,7 @@
                                                     <label for="first-name-vertical">Surat Izin Akreditasi dari Otorisasi
                                                         Pendidikan Setempat atau Badan Akreditasi</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="surat_otorisasi" placeholder="First Name">
+                                                        name="surat_otorisasi" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -160,7 +160,7 @@
                                                     <label for="first-name-vertical">Program Akademik Yang
                                                         Ditawarkan</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="program_akademik" placeholder="First Name">
+                                                        name="program_akademik" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                         </div>

@@ -97,7 +97,7 @@
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Akta Pendirian</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="doc_pendirian" placeholder="First Name">
+                                                        name="doc_pendirian" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -105,14 +105,14 @@
                                                     <label for="first-name-vertical">Identitas Pemilik atau Kepala
                                                         Sekolah</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="identitas_pemilik" placeholder="First Name">
+                                                        name="identitas_pemilik" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Identitas Pengajar atau Staff</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="identitas_pengajar" placeholder="First Name">
+                                                        name="identitas_pengajar" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -132,14 +132,14 @@
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Kurikulum Yang Digunakan</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="kurikulum" placeholder="First Name">
+                                                        name="kurikulum" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Dokumen Keuangan Sekolah</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="doc_keuangan" placeholder="First Name">
+                                                        name="doc_keuangan" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -147,7 +147,7 @@
                                                     <label for="first-name-vertical">Surat Izin Otorisasi Pendidikan
                                                         Setempat</label>
                                                     <input type="file" id="first-name-vertical" class="form-control"
-                                                        name="surat_otorisasi" placeholder="First Name">
+                                                        name="surat_otorisasi" placeholder="First Name" required>
                                                 </div>
                                             </div>
                                         </div>

@@ -95,7 +95,8 @@
                                                     <label for="first-name-vertical">Scan Surat permohonan</label>
                                                     <input type="file" id="first-name-vertical"
                                                         class="form-control @error('surat_permohonan') is-invalid @enderror"
-                                                        name="surat_permohonan" placeholder="First Name" accept="pdf*/">
+                                                        name="surat_permohonan" placeholder="First Name" accept="pdf*/"
+                                                        required>
                                                     @error('surat_permohonan')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}
@@ -108,7 +109,7 @@
                                                     <label for="first-name-vertical">Scan KTP penanggung Jawab</label>
                                                     <input type="file" id="first-name-vertical"
                                                         class="form-control @error('ktp') is-invalid @enderror"
-                                                        name="ktp" placeholder="First Name">
+                                                        name="ktp" placeholder="First Name" required>
                                                     @error('ktp')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}
@@ -122,7 +123,7 @@
                                                         kepala desa/ lurah</label>
                                                     <input type="file" id="first-name-vertical"
                                                         class="form-control @error('suket_domisili') is-invalid @enderror"
-                                                        name="suket_domisili" placeholder="First Name">
+                                                        name="suket_domisili" placeholder="First Name" required>
                                                     @error('suket_domisili')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}
@@ -136,7 +137,7 @@
                                                         tugas</label>
                                                     <input type="file" id="first-name-vertical"
                                                         class="form-control @error('pengurus') is-invalid @enderror"
-                                                        name="pengurus" placeholder="First Name">
+                                                        name="pengurus" placeholder="First Name" required>
                                                     @error('pengurus')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}
@@ -149,7 +150,7 @@
                                                     <label for="first-name-vertical">Scan Izin Mendirikan Bangunan</label>
                                                     <input type="file" id="first-name-vertical"
                                                         class="form-control @error('suket_mendirikan') is-invalid @enderror"
-                                                        name="suket_mendirikan" placeholder="First Name">
+                                                        name="suket_mendirikan" placeholder="First Name" required>
                                                     @error('suket_mendirikan')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}
@@ -176,7 +177,7 @@
                                                         (sertifikat/segel/akta jual tanah)</label>
                                                     <input type="file" id="first-name-vertical"
                                                         class="form-control @error('suket_tanah') is-invalid @enderror"
-                                                        name="suket_tanah" placeholder="First Name">
+                                                        name="suket_tanah" placeholder="First Name" required>
                                                     @error('suket_tanah')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}
@@ -190,7 +191,7 @@
                                                         telah disahkan</label>
                                                     <input type="file" id="first-name-vertical"
                                                         class="form-control @error('suket_pbh') is-invalid @enderror"
-                                                        name="suket_pbh" placeholder="First Name">
+                                                        name="suket_pbh" placeholder="First Name" required>
                                                     @error('suket_pbh')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}
@@ -218,7 +219,7 @@
                                                         berlaku)</label>
                                                     <input type="file" id="first-name-vertical"
                                                         class="form-control @error('suket_rip') is-invalid @enderror"
-                                                        name="suket_rip" placeholder="First Name">
+                                                        name="suket_rip" placeholder="First Name" required>
                                                     @error('suket_rip')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}
@@ -244,7 +245,7 @@
                                                         penyelenggaraan</label>
                                                     <input type="file" id="first-name-vertical"
                                                         class="form-control @error('suket_psp') is-invalid @enderror"
-                                                        name="suket_psp" placeholder="First Name">
+                                                        name="suket_psp" placeholder="First Name" required>
                                                     @error('suket_psp')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}
@@ -286,7 +287,7 @@
                                                         kesehatan</label>
                                                     <input type="file" id="first-name-vertical"
                                                         class="form-control @error('sertif_bpjs_sehat') is-invalid @enderror"
-                                                        name="sertif_bpjs_sehat" placeholder="First Name">
+                                                        name="sertif_bpjs_sehat" placeholder="First Name" required>
                                                     @error('sertif_bpjs_sehat')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}
@@ -300,7 +301,7 @@
                                                         ketenagakerjaan</label>
                                                     <input type="file" id="first-name-vertical"
                                                         class="form-control @error('sertif_bpjs_kerja') is-invalid @enderror"
-                                                        name="sertif_bpjs_kerja" placeholder="First Name">
+                                                        name="sertif_bpjs_kerja" placeholder="First Name" required>
                                                     @error('sertif_bpjs_kerja')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}

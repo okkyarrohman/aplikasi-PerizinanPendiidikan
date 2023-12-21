@@ -95,13 +95,13 @@ class PemohonController extends Controller
 
     public function create_lpp()
     {
-         $user = Auth::user();
+        $user = Auth::user();
         return view('pemohon.permohonan.perizinanPenyelenggaraan.lpp.create',compact('user'));
     }
 
     public function create_lpnp()
     {
-         $user = Auth::user();
+        $user = Auth::user();
         return view('pemohon.permohonan.perizinanPenyelenggaraan.lpnp.create',compact('user'));
     }
 

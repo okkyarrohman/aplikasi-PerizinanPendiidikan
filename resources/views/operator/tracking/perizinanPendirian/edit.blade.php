@@ -119,7 +119,7 @@
                                                                     class="form-control" name="surat_permohonan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="/download/surat-pemohonan/{{ $permohonans->id }}"
+                                                                <a href="/download/surat_pemohonan/{{ $permohonans->id }}"
                                                                     class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
@@ -543,7 +543,7 @@
                                                                     class="form-control" name="surat_permohonan" hidden>
                                                             </div>
                                                             <div class="action">
-                                                                <a href="/download/surat-pemohonan/{{ $permohonans->id }}"
+                                                                <a href="/download/surat_pemohonan/{{ $permohonans->id }}"
                                                                     class="btn btn-danger">Download</a>
                                                             </div>
                                                         </div>
