@@ -21,7 +21,7 @@
 
                 <div class="group d-flex">
                     <div class="button-back mx-4">
-                        <a href="{{ route('back') }}">
+                        <a href="javascript:history.back()">
                             <i class="fa fa-solid fa-arrow-left"></i></a>
                     </div>
                     <div class="text">

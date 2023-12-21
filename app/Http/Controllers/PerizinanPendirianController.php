@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 use Dompdf\Dompdf;
 
@@ -607,26 +608,33 @@ class PerizinanPendirianController extends Controller
     public function permohonan_selesai(Request $req){
         $permohonan = PerizinanPendirian::find($req->id);
 
-        $permohonan->status_dokumen = $req->status_dokumen;
-        $permohonan->save();
+
 
         $imgGaruda = public_path('QRCode/garuda.jpg');
         $jadiGaruda = base64_decode($imgGaruda);
 
         $ttdKepalaDinas = public_path('QRCode/ttd-kepala-dinas.jpg');
         $jadiTTD = base64_decode($ttdKepalaDinas);
+        $emailPemohon = $permohonan->email;
 
 
-
-
+        // Convert HTML TO PDF
         $data = array('name' => 'jarwo');
             $dompdf = new Dompdf();
             $view = view('kepalaDinas.tracking.perizinanPendirian.izinTerbitPdf',compact('permohonan','jadiGaruda','jadiTTD'));
             $dompdf->loadHTML($view);
             $dompdf->render();
+            $output = $dompdf->output();
+        // Save To storage
+            $filename = date('YmdHis').'.'."surat_izin_terbit.pdf";
+            Storage::put('public/perizinanPendirian/surat_terbit/'.$filename,$output);
 
-        $emailPemohon = $permohonan->email;
+        // Save To Database
+            $permohonan->surat_terbit = $filename.$req->surat_terbit;
+            $permohonan->status_dokumen = $req->status_dokumen;
+            $permohonan->save();
 
+            // Kirim Email Beserta file Attach
         Mail::send(['file' => 'mail'], $data, function ($message)use($dompdf,$emailPemohon) {
             $message->to($emailPemohon)->subject('Surat Izin Terbit');
 
@@ -634,6 +642,7 @@ class PerizinanPendirianController extends Controller
 
             $message->from('eightech@company.com','EighTech');
         });
+
         return redirect()->route('kepala-dinas')->with('success','Permohonan Selesai, Surat Izin Terbit Telah DIkirim');
     }
 

@@ -167,7 +167,9 @@ class PemohonController extends Controller
         $user = Auth::user();
 
         $permohonans = PerizinanPendirian::where([
-            'status_dokumen' => 'Permohonan Selesai'
+            'user_id' => $user->id,
+            'status_dokumen' => 'Permohonan Selesai',
+
         ])->get();
 
         return view('pemohon.arsip.pendirian.index',compact('user','permohonans'));
@@ -177,8 +179,9 @@ class PemohonController extends Controller
     public function arsip_penyelenggaraan(){
         $user = Auth::user();
 
-         $permohonans = PerizinanPenyelenggaraan::where([
-            'status_dokumen' => 'Permohonan Selesai'
+        $permohonans = PerizinanPenyelenggaraan::where([
+            'user_id' => $user->id,
+            'status_dokumen' => 'Permohonan Selesai',
         ])->get();
 
         return view('pemohon.arsip.penyelenggaraan.index',compact('user','permohonans'));

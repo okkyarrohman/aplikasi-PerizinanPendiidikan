@@ -101,6 +101,7 @@
                     </div>
                 </div>
 
+                <input type="hidden" name="surat_terbit" hidden>
                 <select name="status_dokumen" id="" class="form-select form-select" hidden>
                     <option value="Permohonan Selesai" selected>Ajukan Ke Walikota</option>
                 </select>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Dompdf\Dompdf;
+use Illuminate\Support\Facades\Storage;
 
 class PerizinanPenyelenggaraanController extends Controller
 {
@@ -279,21 +280,36 @@ class PerizinanPenyelenggaraanController extends Controller
 
     }
 
-    public function permohonan_selesai(Request $req){
+   public function permohonan_selesai(Request $req){
         $permohonan = PerizinanPenyelenggaraan::find($req->id);
 
-        $permohonan->status_dokumen = $req->status_dokumen;
-        $permohonan->save();
 
 
-        $data = array('name' => 'jarwo');
-            $dompdf = new Dompdf();
-            $view = view('kepalaDinas.tracking.perizinanPendirian.izinTerbitPdf',compact('permohonan'));
-            $dompdf->loadHTML($view);
-            $dompdf->render();
+        $imgGaruda = public_path('QRCode/garuda.jpg');
+        $jadiGaruda = base64_decode($imgGaruda);
 
+        $ttdKepalaDinas = public_path('QRCode/ttd-kepala-dinas.jpg');
+        $jadiTTD = base64_decode($ttdKepalaDinas);
         $emailPemohon = $permohonan->email;
 
+
+        // Convert HTML TO PDF
+        $data = array('name' => 'jarwo');
+            $dompdf = new Dompdf();
+            $view = view('kepalaDinas.tracking.perizinanPendirian.izinTerbitPdf',compact('permohonan','jadiGaruda','jadiTTD'));
+            $dompdf->loadHTML($view);
+            $dompdf->render();
+            $output = $dompdf->output();
+        // Save To storage
+            $filename = date('YmdHis').'.'."surat_izin_terbit.pdf";
+            Storage::put('public/perizinanPendirian/surat_terbit/'.$filename,$output);
+
+        // Save To Database
+            $permohonan->surat_terbit = $filename.$req->surat_terbit;
+            $permohonan->status_dokumen = $req->status_dokumen;
+            $permohonan->save();
+
+            // Kirim Email Beserta file Attach
         Mail::send(['file' => 'mail'], $data, function ($message)use($dompdf,$emailPemohon) {
             $message->to($emailPemohon)->subject('Surat Izin Terbit');
 
