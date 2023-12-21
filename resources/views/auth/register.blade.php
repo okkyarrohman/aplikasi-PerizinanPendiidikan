@@ -29,8 +29,9 @@
                         @csrf
 
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="Nama Lengkap"
-                                name="name">
+                            <input type="text"
+                                class="form-control form-control-xl @error('name') is-invalid @enderror"
+                                placeholder="Nama Lengkap" name="name" required>
                         </div>
 
                         <div class="form-group position-relative has-icon-left mb-4">
@@ -44,16 +45,19 @@
                         @enderror
 
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="NIK" name="nik">
+                            <input type="text"
+                                class="form-control form-control-xl @error('nik') is-invalid @enderror"
+                                placeholder="NIK" name="nik" required max="16">
                         </div>
 
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="Alamat Domisili"
-                                name="domisili">
+                            <input type="text"
+                                class="form-control form-control-xl @error('domisili') is-invalid @enderror"
+                                placeholder="Alamat Domisili" name="domisili" required>
                         </div>
 
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" placeholder="Password"
+                            <input type="password" class="form-control form-control-xl " placeholder="Password"
                                 name="password">
                         </div>
                         @error('password')

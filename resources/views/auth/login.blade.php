@@ -32,25 +32,17 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="Email"
-                                name="email" required>
-
+                            <input type="text"
+                                class="form-control form-control-xl @error('email') is-invalid @enderror"
+                                placeholder="Email" name="email" required>
                         </div>
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" placeholder="Password"
-                                name="password" required>
-
+                            <input type="password"
+                                class="form-control form-control-xl @error('password') is-invalid @enderror"
+                                placeholder="Password" name="password" required>
                         </div>
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+
                         <div class="form-check form-check-lg d-flex justify-content-center">
                             <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label text-gray-600" for="flexCheckDefault">
