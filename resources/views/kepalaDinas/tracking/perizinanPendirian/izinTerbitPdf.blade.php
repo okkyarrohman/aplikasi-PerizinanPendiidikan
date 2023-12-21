@@ -86,8 +86,8 @@
         <div class="container">
             <div class="row">
                 <div class="items-1">
-                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(storage_path('app/public/ttd/garuda.png'))) }}"
-                        width="90" height="90">
+                    <img src="data:image/jpg;base64,{{ base64_encode(file_get_contents(storage_path('app/public/ttd/pemkot.jpg'))) }}"
+                        width="120" height="100">
 
                     <br>
                 </div>
@@ -107,7 +107,7 @@
         <br>
         <table>
             <tr>
-                <td class="text" width="625">Lembaga Pemerintahan Peraturan Pemerintah (PP) No.66/2010 tentang
+                <td class="text" width="500">Lembaga Pemerintahan Peraturan Pemerintah (PP) No.66/2010 tentang
                     Perubahan atas PP
                     No.17/2010 tentang Pengelolaan dan Penyelenggaraan Pendidikan. Pasal 182 ayat 1 dijelaskan bahwa
                     pembangunan sekolah swasta wajib mendapatkan izin pemerintah, maka dari itu surat ini dibuat untuk

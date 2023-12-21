@@ -125,7 +125,7 @@
                             style="align-self: stretch; color: #A2A3A7; font-size: 17.08px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                             Perizinan Pendirian Sekolah TK, SD, SMP, SMA/SMK.</div>
                     </div>
-                    <a href="/penyelia/tracking/pendirian"
+                    <a href="/surveyor/tracking/pendirian"
                         style="display: inline-flex; align-self: stretch; padding: 14.23px; background: #004B99; border-radius: 17.08px; justify-content: center; align-items: center; gap: 14.23px; text-decoration: none;">
                         <div
                             style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
@@ -330,7 +330,7 @@
                             style="align-self: stretch; color: #A2A3A7; font-size: 17.08px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                             Permohonan Penyelenggaraan Oleh Instansi Pendidikan, Non-Pemerintah, dan lainnya.</div>
                     </div>
-                    <a href="/penyelia/tracking/penyelenggaraan"
+                    <a href="/surveyor/tracking/penyelenggaraan"
                         style="display: inline-flex; align-self: stretch; padding: 14.23px; background: #004B99; border-radius: 17.08px; justify-content: center; align-items: center; gap: 14.23px; text-decoration: none;">
                         <div
                             style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
