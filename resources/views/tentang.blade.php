@@ -73,10 +73,10 @@
             <p>Aplikasi layanan perizinan dibidang pendidikan berbasis mobile dan website yang bertujuan untuk membantu
                 para masyarakat di Kota Surabaya untuk melakukan permohonan perizinan dibidang pendidikan secara online,
                 bisa di mana saja dan kapan saja.</p>
-            <button class="btn btn-warning">Daftar Sekarang</button>
+            <a href="/register" class="btn btn-warning">Daftar Sekarang</a>
         </div>
         <div class="gambar">
-            <img src="{{ asset('images/logo.png') }}" alt="" width="200" height="200">
+            <img src="{{ asset('nonUser/img/peopleNonUser.png') }}" alt="" width="300" height="300">
         </div>
     </div>
 

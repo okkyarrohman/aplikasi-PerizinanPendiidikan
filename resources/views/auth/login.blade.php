@@ -32,15 +32,13 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text"
-                                class="form-control form-control-xl @error('email') is-invalid @enderror"
-                                placeholder="Email" name="email" required>
+                            <input type="text" class="form-control form-control-xl " placeholder="Email"
+                                name="email">
                         </div>
 
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password"
-                                class="form-control form-control-xl @error('password') is-invalid @enderror"
-                                placeholder="Password" name="password" required>
+                            <input type="password" class="form-control form-control-xl " placeholder="Password"
+                                name="password">
                         </div>
 
                         <div class="form-check form-check-lg d-flex justify-content-center">
