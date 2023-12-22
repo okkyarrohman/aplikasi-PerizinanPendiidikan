@@ -22,6 +22,8 @@ class PerizinanPenyelenggaraan extends Model
         'longitude',
         'latitude',
         'lokasi',
+        'dokumen_survey',
+        'surat_terbit',
         'doc_pendirian',
         'identitas_pemilik',
         'identitas_pengajar',

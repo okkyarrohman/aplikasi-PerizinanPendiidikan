@@ -20,7 +20,7 @@ class PerizinanPendirian extends Model
         'longtitude',
         'latitude',
         'lokasi',
-
+        'dokumen_survey',
         'surat_permohonan',
         'ktp',
         'suket_domisili',

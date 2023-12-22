@@ -86,7 +86,9 @@
         <div class="container">
             <div class="row">
                 <div class="items-1">
-                    <img src="data:image/jpg;base64,{{ base64_encode(file_get_contents(storage_path('app/public/ttd/pemkot.jpg'))) }}"
+
+                    <img src="data:image/jpg;base64,{{ base64_encode(file_get_contents(url('/images/ttd/garuda.jpg'))) }}"
+
                         width="120" height="100">
 
                     <br>
@@ -173,7 +175,8 @@
                 <td class="ttd-kepalaDinas" width="300">Kepala Dinas Perizinan kota Surabaya
                     <br>
 
-                    <img src="data:image/jpg;base64,{{ base64_encode(file_get_contents(storage_path('app/public/ttd/ttd-kepala-dinas.jpg'))) }}"
+                    <img src="data:image/jpg;base64,{{ base64_encode(file_get_contents(url('/images/ttd/ttd-kepala-dinas.jpg'))) }}"
+
                         width="90" height="90"><br>
                     <b>Prof Dr Samsul Huda,. SPD,MP,D</b>
                 </td>

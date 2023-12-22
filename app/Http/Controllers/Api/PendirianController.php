@@ -153,65 +153,38 @@ class PendirianController extends Controller
                 'luas_lahan' => 'required|string',
                 'luas_bangunan' => 'required|string',
                 'jumlah_sekolah' => 'required|string',
-                'geotag' => 'required|string',
                 // Sesuaikan dengan aturan validasi untuk kolom lainnya
                 'lokasi' => 'required|string',
+                'dokumen_survey' => ['max:300', 'mimes:pdf'],
                 'surat_permohonan' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'ktp' => ['max:300', 'mimes:pdf,jpg,jpeg,png'],
-                //Maks = 300Kb
                 'suket_domisili' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'pengurus' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'suket_mendirikan' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'suket_tanah' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'suket_pbh' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'suket_perubahanPBH' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'suket_rip' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'suket_psp' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'sukas_perizinan' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'sk_izinOperasional' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'sertif_bpjs_sehat' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'sertif_bpjs_kerja' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'denah' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'gedung' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'akta_pendirian' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'surper_kades' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'surper_camat' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'surat_tanah' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'patuh_aturan' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'daftar_siswa' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'daftar_TKK' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'daftar_TKnK' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'kurikulum' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'sarpras' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'sk_yayasan' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
                 'studi_layak' => ['max:300', 'mimes:pdf'],
-                //Maks = 300Kb
+                'geotag' => ['max:300', 'mimes:pdf,jpg,jpeg,png'],
             ]);
 
             // Membuat data pendirian baru
@@ -227,7 +200,6 @@ class PendirianController extends Controller
                 'luas_lahan' => $request->input('luas_lahan'),
                 'luas_bangunan' => $request->input('luas_bangunan'),
                 'jumlah_sekolah' => $request->input('jumlah_sekolah'),
-                'geotag' => $request->input('geotag'),
             ]);
 
             $pendirian->user()->associate(Auth::user());
@@ -237,6 +209,7 @@ class PendirianController extends Controller
 
             // Penyimpanan file (contoh untuk surat_permohonan)
             if ($request->file()) {
+                $this->handleFileUpload($request, $pendirian, 'dokumen_survey');
                 $this->handleFileUpload($request, $pendirian, 'surat_permohonan');
                 $this->handleFileUpload($request, $pendirian, 'ktp');
                 $this->handleFileUpload($request, $pendirian, 'suket_domisili');
@@ -251,6 +224,21 @@ class PendirianController extends Controller
                 $this->handleFileUpload($request, $pendirian, 'sk_izinOperasional');
                 $this->handleFileUpload($request, $pendirian, 'sertif_bpjs_sehat');
                 $this->handleFileUpload($request, $pendirian, 'sertif_bpjs_kerja');
+                $this->handleFileUpload($request, $pendirian, 'denah');
+                $this->handleFileUpload($request, $pendirian, 'gedung');
+                $this->handleFileUpload($request, $pendirian, 'akta_pendirian');
+                $this->handleFileUpload($request, $pendirian, 'surper_kades');
+                $this->handleFileUpload($request, $pendirian, 'surper_camat');
+                $this->handleFileUpload($request, $pendirian, 'surat_tanah');
+                $this->handleFileUpload($request, $pendirian, 'patuh_aturan');
+                $this->handleFileUpload($request, $pendirian, 'daftar_siswa');
+                $this->handleFileUpload($request, $pendirian, 'daftar_TKK');
+                $this->handleFileUpload($request, $pendirian, 'daftar_TKnK');
+                $this->handleFileUpload($request, $pendirian, 'kurikulum');
+                $this->handleFileUpload($request, $pendirian, 'sarpras');
+                $this->handleFileUpload($request, $pendirian, 'sk_yayasan');
+                $this->handleFileUpload($request, $pendirian, 'studi_layak');
+                $this->handleFileUpload($request, $pendirian, 'geotag');
             }
 
             return $this->sendSuccessResponse([
@@ -277,7 +265,7 @@ class PendirianController extends Controller
                 'luas_lahan' => 'string',
                 'luas_bangunan' => 'string',
                 'jumlah_sekolah' => 'string',
-                'geotag' => 'string',
+
                 // Sesuaikan dengan aturan validasi untuk kolom lainnya
                 'surat_permohonan' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
@@ -335,6 +323,7 @@ class PendirianController extends Controller
                 //Maks = 300Kb
                 'studi_layak' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
+                'geotag' => ['max:300', 'mimes:jpg,jpeg,png'],
             ]);
 
             // Mengambil data pendirian berdasarkan ID
@@ -356,7 +345,6 @@ class PendirianController extends Controller
                 'luas_lahan',
                 'luas_bangunan',
                 'jumlah_sekolah',
-                'geotag',
             ]));
 
 
@@ -390,6 +378,7 @@ class PendirianController extends Controller
                 'sarpras',
                 'sk_yayasan',
                 'studi_layak',
+                'geotag',
             ];
 
             foreach ($fields as $column) {
@@ -420,16 +409,16 @@ class PendirianController extends Controller
                 $jadiTTD = base64_decode($ttdKepalaDinas);
 
                 $dompdf = new Dompdf();
-                $view = view('emails.izinTerbitPdf', compact('perizinan','jadiGaruda','jadiTTD'));
+                $view = view('emails.izinTerbitPdf', compact('perizinan', 'jadiGaruda', 'jadiTTD'));
                 $dompdf->loadHTML($view);
                 $dompdf->render();
                 $output = $dompdf->output();
 
-                $filename = date('YmdHis').'.'."surat_izin_terbit.pdf";
-                Storage::put('public/perizinanPendirian/surat_terbit/'.$filename,$output);
+                $filename = date('YmdHis') . '.' . "surat_izin_terbit.pdf";
+                Storage::put('public/perizinanPendirian/surat_terbit/' . $filename, $output);
 
-            // Save To Database
-                $perizinan->surat_terbit = $filename.$request->surat_terbit;
+                // Save To Database
+                $perizinan->surat_terbit = $filename . $request->surat_terbit;
                 $perizinan->status_dokumen = $request->status_dokumen;
                 $perizinan->save();
 
