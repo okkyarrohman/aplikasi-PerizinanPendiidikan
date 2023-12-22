@@ -195,11 +195,11 @@ class PenyelenggaraanController extends Controller
                 'program_akademik',
                 'sarpras',
             ];
-            
+
             foreach ($fields as $field) {
                 $this->handleFileUpload($request, $penyelenggaraan, $field);
             }
-            
+
 
             return $this->sendSuccessResponse([
                 'data' => $penyelenggaraan,
@@ -238,7 +238,7 @@ class PenyelenggaraanController extends Controller
                 'program_akademik' => ['max:300','mimes:pdf'], //Maks = 300Kb
                 'sarpras' => ['max:300','mimes:pdf'], //Maks = 300Kb
                  //End Validate File Untuk Pendirian TK
-    
+
             ]);
 
             $penyelenggaraan = PerizinanPenyelenggaraan::findOrFail($id);
@@ -277,7 +277,7 @@ class PenyelenggaraanController extends Controller
             foreach ($fields as $column) {
                 $this->deleteFileIfExists($penyelenggaraan->$column, $column);
             }
-            
+
             foreach ($fields as $field) {
                 $this->handleFileUpload($request, $penyelenggaraan, $field);
             } // Sesuaikan dengan nama kolom file

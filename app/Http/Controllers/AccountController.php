@@ -50,7 +50,7 @@ class AccountController extends Controller
 
         $user->update($request->all());
 
-        return redirect()->route('index.account')->with('success','data berhasil diupdate');
+        return back()->with('success','data berhasil diupdate');
     }
 
 

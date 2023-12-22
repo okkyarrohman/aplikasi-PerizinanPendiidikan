@@ -94,7 +94,7 @@
 
                                 <br>
                                 <div class="ms-3 ">
-                                    <label for="first-name-vertical" class="form-label">Desa</label>
+                                    <label for="first-name-vertical" class="form-label">Dusun</label>
                                     <input type="text" name="desa" class="form-control"
                                         placeholder="{{ $user->desa }}">
                                 </div>

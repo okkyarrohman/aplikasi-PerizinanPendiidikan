@@ -19,7 +19,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/penyelenggaraan/checking_berkas_operator_penyelenggaraan"
@@ -38,7 +38,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/penyelenggaraan/dokumen_valid_penyelenggaraan"
@@ -57,7 +57,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/penyelenggaraan/dokumen_tidak_valid_penyelenggaraan"
@@ -79,7 +79,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/penyelenggaraan/sedang_disurvey_penyelenggaraan"
@@ -98,7 +98,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/penyelenggaraan/telah_disurvey_penyelenggaraan"
@@ -117,7 +117,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/penyelenggaraan/checking_berkas_verifikator_penyelenggaraan"
@@ -139,7 +139,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/penyelenggaraan/dokumen_sesuai_penyelenggaraan"
@@ -158,7 +158,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/penyelenggaraan/tolak_dokumen_penyelenggaraan"
@@ -177,7 +177,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/penyelenggaraan/ttd_kepala_dinas_penyelenggaraan"
@@ -198,7 +198,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/penyelenggaraan/permohonan_selesai_penyelenggaraan"

@@ -52,9 +52,7 @@ Route::get('/persyaratan-penyelenggaraan', function(){
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
-    Route::get('/data-pemohon',[AccountController::class,'data_pemohon'])->name('index.account');
-    Route::get('/edit/data-pemohon/{id}',[AccountController::class,'edit_data_pemohon']);
-    Route::post('/update/data-pemohon',[AccountController::class,'update'])->name('update.account');
+
 
     // Menu
     Route::get('/pemohon',[HomeController::class,'index_pemohon']);
@@ -493,8 +491,10 @@ Route::get('/my_account/{id}',[HomeController::class,'my_account']);
 // Send Email
 Route::get('/send-email/{id}',[MailController::class,'send_attach_gmail']);
 
-
-
+// Data User
+    Route::get('/data-pemohon',[AccountController::class,'data_pemohon'])->name('index.account');
+    Route::get('/edit/data-pemohon/{id}',[AccountController::class,'edit_data_pemohon']);
+    Route::post('/update/data-pemohon',[AccountController::class,'update'])->name('update.account');
 
 
 

@@ -1,11 +1,11 @@
-@extends('layouts.app-auditor2')
+@extends('layouts.app-verifikator2')
 
 @section('content')
     <div class="container">
         <div class="row" style="margin-bottom: 5%;">
             <center>
-                <div class="card shadow-lg"
-                    style="w-full; width: 750px; height: 269.07px; padding: 17.08px;  border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
+                <div
+                    style="w-full; width: 750px; height: 269.07px; padding: 17.08px; background: #FBFBFB; border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
                     <div
                         style="padding-left: 4.27px; padding-right: 4.27px; padding-top: 7.12px; padding-bottom: 7.12px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 14.23px; display: flex">
                         <div style="width: 75.91px; height: 69.91px; position: relative">
@@ -125,7 +125,7 @@
                             style="align-self: stretch; color: #A2A3A7; font-size: 17.08px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                             Perizinan Pendirian Sekolah TK, SD, SMP, SMA/SMK.</div>
                     </div>
-                    <a href="#"
+                    <a href="/auditor/tracking/pendirian"
                         style="display: inline-flex; align-self: stretch; padding: 14.23px; background: #004B99; border-radius: 17.08px; justify-content: center; align-items: center; gap: 14.23px; text-decoration: none;">
                         <div
                             style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
@@ -140,8 +140,8 @@
         </div>
         <div class="row" style="margin-bottom: 5%;">
             <center>
-                <div class="card shadow-lg"
-                    style="w-full; width: 750px; height: 269.07px; padding: 17.08px;  border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
+                <div
+                    style="w-full; width: 750px; height: 269.07px; padding: 17.08px; background: #FBFBFB; border-radius: 17.08px; border: 1.42px rgba(0, 75, 153, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17.08px; display: inline-flex">
                     <div style="width: 84.45px; height: 84.14px; position: relative; background: white">
                         <div style="width: 59.77px; height: 82.80px; left: 12.81px; top: 1.42px; position: absolute">
                             <div style="width: 51.02px; height: 76.83px; left: 0px; top: 0px; position: absolute">
@@ -330,7 +330,7 @@
                             style="align-self: stretch; color: #A2A3A7; font-size: 17.08px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                             Permohonan Penyelenggaraan Oleh Instansi Pendidikan, Non-Pemerintah, dan lainnya.</div>
                     </div>
-                    <a href="#"
+                    <a href="/auditor/tracking/penyelenggaraan"
                         style="display: inline-flex; align-self: stretch; padding: 14.23px; background: #004B99; border-radius: 17.08px; justify-content: center; align-items: center; gap: 14.23px; text-decoration: none;">
                         <div
                             style="color: #FBFBFB; font-size: 17.08px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
@@ -343,16 +343,17 @@
             </center>
         </div>
         <div style="display: flex; justify-content: space-between; width: 80%; margin: auto;">
-            <div class="card shadow-lg" style="width: 48%; margin-right: 2%;">
+
+            <div class="row" style="width: 48%; margin-right: 2%;">
                 <div
                     style="width: 433.33px; height: 78.89px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11.11px; display: inline-flex">
                     <div
-                        style="width: 433.33px; justify-content: center; align-items: center; gap: 140.28px; display: inline-flex; margin-top: 10px; margin-left:10px;">
+                        style="width: 433.33px; justify-content: center; align-items: center; gap: 140.28px; display: inline-flex">
                         <div
-                            style="flex: 1 1 0; color: #45484F; font-size: 19.44px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word; margin-left:3%;">
+                            style="flex: 1 1 0; color: #45484F; font-size: 19.44px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
                             Laporan Surat Masuk</div>
                         <div
-                            style="flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 2.78px; display: inline-flex;  margin-top: 10px; margin-left:10px;">
+                            style="flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 2.78px; display: inline-flex">
                             <div
                                 style="text-align: center; color: #D4AA2E; font-size: 13.89px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                                 Hari ini</div>
@@ -363,7 +364,7 @@
                     </div>
                     <div style="justify-content: flex-start; align-items: center; gap: 16.67px; display: inline-flex">
                         <div
-                            style="text-align: center; color: #45484F; font-size: 16.67px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word; margin-left:12%;">
+                            style="text-align: center; color: #45484F; font-size: 16.67px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
                             Filter</div>
                         <div style="justify-content: center; align-items: center; gap: 5.56px; display: flex">
                             <select
@@ -374,19 +375,22 @@
                             </select>
                         </div>
                     </div>
-                    <div style="margin-left: 20%; ">
+                    <div style="margin-left: 20%;">
                         <div class="card-body" style="w-full;">
                             <canvas id="SuratMasuk" width="300" height="300"></canvas>
                             <script>
                                 const ctx = document.getElementById('SuratMasuk');
+                                const semuaPendirian = JSON.parse('{!! json_encode($semuaPendirian) !!}')
+                                const semuaPenyelenggaraan = JSON.parse('{!! json_encode($semuaPenyelenggaraan) !!}')
+
 
                                 new Chart(ctx, {
                                     type: 'pie',
                                     data: {
-                                        labels: ['Permohonan Perizinan', 'Permohonan Penyelenggaraan'],
+                                        labels: ['Permohonan Perndirian', 'Permohonan Penyelenggaraan'],
                                         datasets: [{
                                             label: '# of Votes',
-                                            data: [12, 19],
+                                            data: [semuaPendirian, semuaPenyelenggaraan],
                                             borderWidth: 1
                                         }]
                                     },
@@ -405,10 +409,10 @@
                     </div>
                 </div>
             </div>
-            <div class="card shadow-lg" style="width: 48%;">
+            <div class="row" style="width: 48%;">
                 <div style="width: 479px; height: 447.81px; position: relative">
                     <div
-                        style="width: 94.88px; height: 48.97px; left: 200px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 3.06px; display: inline-flex; margin-top: 10px;">
+                        style="width: 94.88px; height: 48.97px; left: 200px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 3.06px; display: inline-flex">
                         <div
                             style="text-align: center; color: #D4AA2E; font-size: 15.30px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                             Tahun 2023
@@ -469,22 +473,25 @@
                                     },
                                 });
                             </script>
+
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div style="display: flex; justify-content: space-between; width: 80%; margin: auto;">
-            <div class="card shadow-lg" style="width: 48%; margin-right: 2%; margin-top: 5%;">
+            <div class="row" style="width: 48%; margin-right: 2%; margin-top: 5%;">
                 <div
                     style="width: 454px; height: 82.55px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11.64px; display: inline-flex">
                     <div
-                        style="width: 454px; justify-content: center; align-items: center; gap: 146.97px; display: inline-flex;  margin-top: 10px; margin-left:10px;">
+                        style="width: 454px; justify-content: center; align-items: center; gap: 146.97px; display: inline-flex">
                         <div
-                            style="flex: 1 1 0; color: #45484F; font-size: 20.37px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word; margin-left:8%;">
+                            style="flex: 1 1 0; color: #45484F; font-size: 20.37px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
                             Status Dokumen</div>
                         <div
-                            style="flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 2.91px; display: inline-flex;  margin-top: 10px; margin-left:10px;">
+                            style="flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 2.91px; display: inline-flex">
                             <div
                                 style="text-align: center; color: #D4AA2E; font-size: 14.55px; font-family: Noto Sans; font-weight: 400; word-wrap: break-word">
                                 Hari ini</div>
@@ -495,7 +502,7 @@
                     </div>
                     <div style="justify-content: flex-start; align-items: center; gap: 16.67px; display: inline-flex">
                         <div
-                            style="text-align: center; color: #45484F; font-size: 16.67px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word; margin-left:24%;">
+                            style="text-align: center; color: #45484F; font-size: 16.67px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
                             Filter</div>
                         <div style="justify-content: center; align-items: center; gap: 5.56px; display: flex">
                             <select
@@ -511,13 +518,17 @@
                             <canvas id="StatusDokumen" width="300" height="300"></canvas>
                             <script>
                                 const ctx2 = document.getElementById('StatusDokumen').getContext('2d');
+                                const totalDokumenDiajukan = JSON.parse('{!! json_encode($totalCheckingBerkas) !!}')
+                                const totalDokumenDiproses = JSON.parse('{!! json_encode($totalCheckingBerkas) !!}')
+                                const totalDokumenSelesai = JSON.parse('{!! json_encode($totalPermohonanSelesai) !!}')
+
                                 new Chart(ctx2, {
                                     type: 'pie',
                                     data: {
                                         labels: ['Dokumen Diajukan', 'Dokumen Diproses', 'Dokumen Selesai'],
                                         datasets: [{
                                             label: '# of Votes',
-                                            data: [18, 15, 20],
+                                            data: [totalDokumenDiajukan, totalDokumenDiproses, totalDokumenSelesai],
                                             borderWidth: 1
                                         }]
                                     },
@@ -535,22 +546,15 @@
                     </div>
                 </div>
             </div>
-            <div class="card shadow-lg" style="width: 48%; margin-top:5%;">
+            <div class="row" style="width: 48%; margin-top:10%;">
                 <div style="width: 479px; height: 447.81px; position: relative">
-                    {{-- <div
+                    <div
                         style="width: 94.88px; height: 48.97px; left: 191.29px; top: -40px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 3.06px; display: inline-flex">
                         <div style="display: flex; justify-content: flex-end;">
                             <div
                                 style="flex: 1 1 0; color: #45484F; font-size: 20.37px; font-family: 'Noto Sans'; font-weight: 600; word-wrap: break-word; text-align: right; white-space: nowrap;">
                                 Status Dokumen
                             </div>
-                        </div>
-                    </div> --}}
-                    <div
-                        style="width: 454px; justify-content: center; align-items: center; gap: 146.97px; display: inline-flex; text-align: center; margin-top: 10px;">
-                        <div
-                            style="flex: 1 1 0; color: #45484F; font-size: 20.37px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word;">
-                            Status Dokumen
                         </div>
                     </div>
 
@@ -560,14 +564,17 @@
                             <canvas id="Status" width="300" height="300"></canvas>
                             <script>
                                 const ctx4 = document.getElementById('Status').getContext('2d');
+                                const totalDokumenValid = JSON.parse('{!! json_encode($totalDokumenSesuai) !!}')
+                                const totalDokumenTidakValid = JSON.parse('{!! json_encode($totalDokumenTidakSesuai) !!}')
+
 
                                 new Chart(ctx4, {
                                     type: 'pie',
                                     data: {
-                                        labels: ['Dokumen Valid', 'Dokumen Tidak Valid'],
+                                        labels: ['Dokumen Sesuai', 'Dokumen Tidak Sesuai'],
                                         datasets: [{
                                             label: '# of Votes',
-                                            data: [18, 15],
+                                            data: [totalDokumenValid, totalDokumenTidakValid],
                                             borderWidth: 1
                                         }]
                                     },
@@ -588,70 +595,282 @@
                 </div>
             </div>
         </div>
-        <div style="display: flex; justify-content: space-between; width: 80%; margin: auto;">
-            <div class="card shadow-lg" style="width: 48%; margin-right: 2%; margin-top: 6%;">
-                <div
-                    style="width: 425px; height: 310.36px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 16.35px; display: inline-flex; margin: auto;">
-                    <div
-                        style="color: #45484F; font-size: 19.07px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word; text-align: center;">
-                        Data Sekolah Pada Setiap Kecamatan
+        <div>
+            <div class="card shadow-lg">
+                <div style="">
+                    <div class="text text-center">
+                        <h4>Data Sekolah Pada Setiap Kecamatan</h4>
                     </div>
-
-                    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; ">
-                        <div style="display: flex; width: 100%;">
+                    <div style="display: flex; flex-direction: column;  align-items: center; ">
+                        <div style="display: flex; align-items:beetween; width:60%;">
                             <div
-                                style="flex: 1; text-align: center;  background: #CCDBEB; border-radius: 5.45px; border: 1.36px #2B69AA solid; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; margin-right: 10px;">
+                                style="flex: 1; text-align: left;  background: #CCDBEB; border-radius: 5.45px; border: 1.36px #2B69AA solid; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600;">
                                 Kecamatan
                             </div>
                             <div
                                 style="display: flex; justify-content: center; align-items: center; background: #CCDBEB; border-radius: 5.45px; border: 1.36px #2B69AA solid; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; margin-left: 10px;">
                                 Jumlah Sekolah
                             </div>
-
-
                         </div>
 
                         <div style="display: flex; width: 100%;">
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
-                                Gurah</div>
+                                Tegalsari</div>
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
-                                120</div>
+                                30</div>
                         </div>
 
                         <div style="display: flex; width: 100%;">
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
-                                Ngasem</div>
+                                Genteng</div>
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
-                                132</div>
+                                18</div>
                         </div>
 
                         <div style="display: flex; width: 100%;">
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
-                                Pagu</div>
+                                Bubutan</div>
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
-                                100</div>
+                                28</div>
                         </div>
 
                         <div style="display: flex; width: 100%;">
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
-                                Plemahan</div>
+                                Simokerto</div>
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
-                                45</div>
+                                18</div>
+                        </div>
+
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Pabean Cantikan</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                14</div>
+                        </div>
+
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Semampir</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                34</div>
+                        </div>
+
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Krembangan</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                31</div>
+                        </div>
+
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Kenjeran</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                20</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Bulak</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                12</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Tambak Sari</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                36</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Gubeng</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                23</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Rungkut</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                23</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Tenggilis Mejoyo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                15</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Gunung Anyar</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                14</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Sukolilo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                31</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Mulyorejo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                23</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Sawahan</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                41</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Wonokromo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                33</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Karangpilang</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                12</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Dukuh Pakis</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                22</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Wiyung</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                15</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Wonocolo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                17</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Gayungan</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                14</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Jambangan </div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                7</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Tandes</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                18</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Sukomanunggal</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                24</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Asemrowo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                7</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Benowo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                14</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Pakal</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                15</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Lakarsantri</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                18</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                SambiKerep</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                10</div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
-
         </div>
         <div style="height: 100%;"></div>
     @endsection

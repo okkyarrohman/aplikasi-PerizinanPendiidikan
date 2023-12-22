@@ -37,19 +37,205 @@ class HomeController extends Controller {
     public function index_admin() {
         $user = Auth::user();
 
-        return view('admin.dashboard', compact('user'));
+        $dokumenValidPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $dokumenValidPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $totalDokumenValid = $dokumenValidPendirian + $dokumenValidPenyelenggaraan;
+
+        $sedangSurveyPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $sedangSurveyPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $totalSedangSurvey = $sedangSurveyPendirian + $sedangSurveyPenyelenggaraan;
+
+        $checkingBerkasPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $checkingBerkasPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $totalCheckingBerkas = $checkingBerkasPendirian + $checkingBerkasPenyelenggaraan;
+
+        $dokumenSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $dokumenSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $totalDokumenSesuai = $dokumenSesuaiPendirian + $dokumenSesuaiPenyelenggaraan;
+
+        $dokumenTidakSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Ditolak'
+        ])->count();
+        $dokumenTidakSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Ditolak'
+        ])->count();
+        $totalDokumenTidakSesuai = $dokumenTidakSesuaiPendirian + $dokumenTidakSesuaiPenyelenggaraan;
+
+         $permohonanSelesaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+        $permohonanSelesaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+
+        $totalPermohonanSelesai = $permohonanSelesaiPendirian + $permohonanSelesaiPenyelenggaraan;
+
+        $semuaPendirian = PerizinanPendirian::all()->count();
+        $semuaPenyelenggaraan = PerizinanPenyelenggaraan::all()->count();
+
+        return view('admin.dashboard', [
+            'totalDokumenValid' => $totalDokumenValid,
+            'totalSedangSurvey' => $totalSedangSurvey,
+            'totalCheckingBerkas' => $totalCheckingBerkas,
+            'totalDokumenSesuai' => $totalDokumenSesuai,
+            'totalDokumenTidakSesuai' => $totalDokumenTidakSesuai,
+            'totalPermohonanSelesai' => $totalPermohonanSelesai,
+            'semuaPendirian' => $semuaPendirian,
+            'semuaPenyelenggaraan' => $semuaPenyelenggaraan,
+            'user' => $user
+        ]);
     }
 
     public function index_dinas() {
-        $user = Auth::user();
+       $user = Auth::user();
 
-        return view('dinas.dashboard', compact('user'));
+        $dokumenValidPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $dokumenValidPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $totalDokumenValid = $dokumenValidPendirian + $dokumenValidPenyelenggaraan;
+
+        $sedangSurveyPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $sedangSurveyPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $totalSedangSurvey = $sedangSurveyPendirian + $sedangSurveyPenyelenggaraan;
+
+        $checkingBerkasPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $checkingBerkasPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $totalCheckingBerkas = $checkingBerkasPendirian + $checkingBerkasPenyelenggaraan;
+
+        $dokumenSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $dokumenSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $totalDokumenSesuai = $dokumenSesuaiPendirian + $dokumenSesuaiPenyelenggaraan;
+
+        $dokumenTidakSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Ditolak'
+        ])->count();
+        $dokumenTidakSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Ditolak'
+        ])->count();
+        $totalDokumenTidakSesuai = $dokumenTidakSesuaiPendirian + $dokumenTidakSesuaiPenyelenggaraan;
+
+         $permohonanSelesaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+        $permohonanSelesaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+
+        $totalPermohonanSelesai = $permohonanSelesaiPendirian + $permohonanSelesaiPenyelenggaraan;
+
+        $semuaPendirian = PerizinanPendirian::all()->count();
+        $semuaPenyelenggaraan = PerizinanPenyelenggaraan::all()->count();
+
+        return view('dinas.dashboard', [
+            'totalDokumenValid' => $totalDokumenValid,
+            'totalSedangSurvey' => $totalSedangSurvey,
+            'totalCheckingBerkas' => $totalCheckingBerkas,
+            'totalDokumenSesuai' => $totalDokumenSesuai,
+            'totalDokumenTidakSesuai' => $totalDokumenTidakSesuai,
+            'totalPermohonanSelesai' => $totalPermohonanSelesai,
+            'semuaPendirian' => $semuaPendirian,
+            'semuaPenyelenggaraan' => $semuaPenyelenggaraan,
+            'user' => $user
+        ]);
     }
 
     public function index_walikota() {
-        $user = Auth::user();
+      $user = Auth::user();
 
-        return view('walikota.dashboard', compact('user'));
+        $dokumenValidPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $dokumenValidPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $totalDokumenValid = $dokumenValidPendirian + $dokumenValidPenyelenggaraan;
+
+        $sedangSurveyPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $sedangSurveyPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $totalSedangSurvey = $sedangSurveyPendirian + $sedangSurveyPenyelenggaraan;
+
+        $checkingBerkasPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $checkingBerkasPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $totalCheckingBerkas = $checkingBerkasPendirian + $checkingBerkasPenyelenggaraan;
+
+        $dokumenSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $dokumenSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $totalDokumenSesuai = $dokumenSesuaiPendirian + $dokumenSesuaiPenyelenggaraan;
+
+        $dokumenTidakSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Ditolak'
+        ])->count();
+        $dokumenTidakSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Ditolak'
+        ])->count();
+        $totalDokumenTidakSesuai = $dokumenTidakSesuaiPendirian + $dokumenTidakSesuaiPenyelenggaraan;
+
+         $permohonanSelesaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+        $permohonanSelesaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+
+        $totalPermohonanSelesai = $permohonanSelesaiPendirian + $permohonanSelesaiPenyelenggaraan;
+
+        $semuaPendirian = PerizinanPendirian::all()->count();
+        $semuaPenyelenggaraan = PerizinanPenyelenggaraan::all()->count();
+
+        return view('walikota.dashboard', [
+            'totalDokumenValid' => $totalDokumenValid,
+            'totalSedangSurvey' => $totalSedangSurvey,
+            'totalCheckingBerkas' => $totalCheckingBerkas,
+            'totalDokumenSesuai' => $totalDokumenSesuai,
+            'totalDokumenTidakSesuai' => $totalDokumenTidakSesuai,
+            'totalPermohonanSelesai' => $totalPermohonanSelesai,
+            'semuaPendirian' => $semuaPendirian,
+            'semuaPenyelenggaraan' => $semuaPenyelenggaraan,
+            'user' => $user
+        ]);
     }
 
     public function index_kepalaDinas() {
@@ -173,12 +359,137 @@ class HomeController extends Controller {
     public function index_surveyor() {
         $user = Auth::user();
 
-        return view('surveyor.dashboard', compact('user'));
+        $dokumenValidPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $dokumenValidPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $totalDokumenValid = $dokumenValidPendirian + $dokumenValidPenyelenggaraan;
+
+        $sedangSurveyPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $sedangSurveyPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $totalSedangSurvey = $sedangSurveyPendirian + $sedangSurveyPenyelenggaraan;
+
+        $checkingBerkasPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $checkingBerkasPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $totalCheckingBerkas = $checkingBerkasPendirian + $checkingBerkasPenyelenggaraan;
+
+        $dokumenSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $dokumenSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $totalDokumenSesuai = $dokumenSesuaiPendirian + $dokumenSesuaiPenyelenggaraan;
+
+        $dokumenTidakSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Ditolak'
+        ])->count();
+        $dokumenTidakSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Ditolak'
+        ])->count();
+        $totalDokumenTidakSesuai = $dokumenTidakSesuaiPendirian + $dokumenTidakSesuaiPenyelenggaraan;
+
+         $permohonanSelesaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+        $permohonanSelesaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+
+        $totalPermohonanSelesai = $permohonanSelesaiPendirian + $permohonanSelesaiPenyelenggaraan;
+
+        $semuaPendirian = PerizinanPendirian::all()->count();
+        $semuaPenyelenggaraan = PerizinanPenyelenggaraan::all()->count();
+
+        return view('surveyor.dashboard', [
+            'totalDokumenValid' => $totalDokumenValid,
+            'totalSedangSurvey' => $totalSedangSurvey,
+            'totalCheckingBerkas' => $totalCheckingBerkas,
+            'totalDokumenSesuai' => $totalDokumenSesuai,
+            'totalDokumenTidakSesuai' => $totalDokumenTidakSesuai,
+            'totalPermohonanSelesai' => $totalPermohonanSelesai,
+            'semuaPendirian' => $semuaPendirian,
+            'semuaPenyelenggaraan' => $semuaPenyelenggaraan,
+            'user' => $user
+        ]);
     }
 
     public function index_auditor() {
-        $user = Auth::user();
-        return view('auditor.dashboard', compact('user'));
+       $user = Auth::user();
+
+        $dokumenValidPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $dokumenValidPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Valid'
+        ])->count();
+        $totalDokumenValid = $dokumenValidPendirian + $dokumenValidPenyelenggaraan;
+
+        $sedangSurveyPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $sedangSurveyPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Sedang Disurvey'
+        ])->count();
+        $totalSedangSurvey = $sedangSurveyPendirian + $sedangSurveyPenyelenggaraan;
+
+        $checkingBerkasPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $checkingBerkasPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Checking Berkas Verifikator'
+        ])->count();
+        $totalCheckingBerkas = $checkingBerkasPendirian + $checkingBerkasPenyelenggaraan;
+
+        $dokumenSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $dokumenSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Sesuai'
+        ])->count();
+        $totalDokumenSesuai = $dokumenSesuaiPendirian + $dokumenSesuaiPenyelenggaraan;
+
+        $dokumenTidakSesuaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Dokumen Ditolak'
+        ])->count();
+        $dokumenTidakSesuaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Dokumen Ditolak'
+        ])->count();
+        $totalDokumenTidakSesuai = $dokumenTidakSesuaiPendirian + $dokumenTidakSesuaiPenyelenggaraan;
+
+         $permohonanSelesaiPendirian = PerizinanPendirian::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+        $permohonanSelesaiPenyelenggaraan = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Permohonan Selesai'
+        ])->count();
+
+        $totalPermohonanSelesai = $permohonanSelesaiPendirian + $permohonanSelesaiPenyelenggaraan;
+
+        $semuaPendirian = PerizinanPendirian::all()->count();
+        $semuaPenyelenggaraan = PerizinanPenyelenggaraan::all()->count();
+
+        return view('auditor.dashboard', [
+            'totalDokumenValid' => $totalDokumenValid,
+            'totalSedangSurvey' => $totalSedangSurvey,
+            'totalCheckingBerkas' => $totalCheckingBerkas,
+            'totalDokumenSesuai' => $totalDokumenSesuai,
+            'totalDokumenTidakSesuai' => $totalDokumenTidakSesuai,
+            'totalPermohonanSelesai' => $totalPermohonanSelesai,
+            'semuaPendirian' => $semuaPendirian,
+            'semuaPenyelenggaraan' => $semuaPenyelenggaraan,
+            'user' => $user
+        ]);
     }
 
     public function index_operator() {
