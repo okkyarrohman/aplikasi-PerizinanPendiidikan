@@ -153,7 +153,6 @@ class PendirianController extends Controller
                 'luas_lahan' => 'required|string',
                 'luas_bangunan' => 'required|string',
                 'jumlah_sekolah' => 'required|string',
-                'geotag' => 'required|string',
                 // Sesuaikan dengan aturan validasi untuk kolom lainnya
                 'lokasi' => 'required|string',
                 'surat_permohonan' => ['max:300', 'mimes:pdf'],
@@ -212,6 +211,7 @@ class PendirianController extends Controller
                 //Maks = 300Kb
                 'studi_layak' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
+                'geotag' => ['max:300', 'mimes:jpg,jpeg,png'],
             ]);
 
             // Membuat data pendirian baru
@@ -227,7 +227,6 @@ class PendirianController extends Controller
                 'luas_lahan' => $request->input('luas_lahan'),
                 'luas_bangunan' => $request->input('luas_bangunan'),
                 'jumlah_sekolah' => $request->input('jumlah_sekolah'),
-                'geotag' => $request->input('geotag'),
             ]);
 
             $pendirian->user()->associate(Auth::user());
@@ -251,6 +250,7 @@ class PendirianController extends Controller
                 $this->handleFileUpload($request, $pendirian, 'sk_izinOperasional');
                 $this->handleFileUpload($request, $pendirian, 'sertif_bpjs_sehat');
                 $this->handleFileUpload($request, $pendirian, 'sertif_bpjs_kerja');
+                $this->handleFileUpload($request, $pendirian, 'geotag');
             }
 
             return $this->sendSuccessResponse([
@@ -277,7 +277,7 @@ class PendirianController extends Controller
                 'luas_lahan' => 'string',
                 'luas_bangunan' => 'string',
                 'jumlah_sekolah' => 'string',
-                'geotag' => 'string',
+                
                 // Sesuaikan dengan aturan validasi untuk kolom lainnya
                 'surat_permohonan' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
@@ -335,6 +335,7 @@ class PendirianController extends Controller
                 //Maks = 300Kb
                 'studi_layak' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
+                'geotag' => ['max:300', 'mimes:jpg,jpeg,png'],
             ]);
 
             // Mengambil data pendirian berdasarkan ID
@@ -356,11 +357,10 @@ class PendirianController extends Controller
                 'luas_lahan',
                 'luas_bangunan',
                 'jumlah_sekolah',
-                'geotag',
             ]));
-
-
-
+            
+            
+            
             $fields = [
                 'surat_permohonan',
                 'ktp',
@@ -390,6 +390,7 @@ class PendirianController extends Controller
                 'sarpras',
                 'sk_yayasan',
                 'studi_layak',
+                'geotag',
             ];
 
             foreach ($fields as $column) {
