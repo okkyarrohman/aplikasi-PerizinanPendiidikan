@@ -86,8 +86,9 @@
         <div class="container">
             <div class="row">
                 <div class="items-1">
-                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('QRCode/garuda.png'))) }}"
-                        width="90" height="90">
+                    <img src="data:image/jpg;base64,{{ base64_encode(file_get_contents(storage_path('app/public/ttd/pemkot.jpg'))) }}"
+                        width="120" height="100">
+
                     <br>
                 </div>
                 <div class="items-2">
@@ -106,39 +107,51 @@
         <br>
         <table>
             <tr>
-                <td class="text" width="625">Lembaga Pemerintahan Peraturan Pemerintah (PP) No.66/2010 tentang
+                <td class="text" width="500">Lembaga Pemerintahan Peraturan Pemerintah (PP) No.66/2010 tentang
                     Perubahan atas PP
                     No.17/2010 tentang Pengelolaan dan Penyelenggaraan Pendidikan. Pasal 182 ayat 1 dijelaskan bahwa
                     pembangunan sekolah swasta wajib mendapatkan izin pemerintah, maka dari itu surat ini dibuat untuk
-                    memberikan <b>Izin Pendirian Pendidikan Swasta</b>, yang tertera pemohon dibawah ini : </td>
+                    memberikan <b>Izin Pendirian Pendidikan {{ $perizinan->tipe_dokumen }}</b>, yang tertera pemohon
+                    dibawah ini : </td>
             </tr>
         </table>
         <br>
-            <div class="data-diri">
-                <table>
-                    <tr>
-                        <td>Nama Pemohon</td>
-                        <td width="500">: {{ $perizinan->nama }}</td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td width="500">: {{ $perizinan->email }}</td>
-                    </tr>
-                    <tr>
-                        <td>Telepon</td>
-                        <td width="500">: {{ $perizinan->telepon }}</td>
-                    </tr>
-                    <tr>
-                        <td>Lokasi</td>
-                        <td width="500">: {{ $perizinan->lokasi }}</td>
-                    </tr>
-                    <tr>
-                        <td>Perizinan </td>
-                        <td width="500">: Pendirian Pendidikan</td>
-                    </tr>
-                </table>
-            </div>
-            <br>
+
+        <div class="data-diri">
+            <table>
+                <tr>
+                    <td>Nama Pemohon</td>
+                    <td width="500">: {{ $perizinan->nama }}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td width="500">: {{ $perizinan->email }}</td>
+                </tr>
+                <tr>
+                    <td>Telepon</td>
+                    <td width="500">: {{ $perizinan->telepon }}</td>
+                </tr>
+                <tr>
+                    <td>Lokasi</td>
+                    <td width="500">: {{ $perizinan->lokasi }}</td>
+                </tr>
+                <tr>
+                    <td>Perizinan </td>
+                    <td width="500">: Pendirian {{ $perizinan->tipe_dokumen }}</td>
+                </tr>
+
+                <tr>
+                    <td>Luas Lahan </td>
+                    <td width="500">: {{ $perizinan->luas_lahan }} Meter</td>
+                </tr>
+                <tr>
+                    <td>Luas Bangunan </td>
+                    <td width="500">: {{ $perizinan->luas_bangunan }} Meter</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
         <table>
             <tr>
                 <td class="text" width="625">Surat Izin ini berlaku selama pemohon melakukan kegiatan operasional
@@ -150,7 +163,7 @@
 
         <table>
             <tr>
-                <td class="dikeluarkan" width="625">Dikeluarkan Tanggal : Sabtu, 20 Oktober 2023</td>
+                <td class="dikeluarkan" width="625">Dikeluarkan Tanggal : {{ $perizinan->updated_at }}</td>
             </tr>
         </table>
         <br>
@@ -160,16 +173,12 @@
                 <td class="ttd-kepalaDinas" width="300">Kepala Dinas Perizinan kota Surabaya
                     <br>
 
-                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('QRCode/KepalaDinas.png'))) }}"
+                    <img src="data:image/jpg;base64,{{ base64_encode(file_get_contents(storage_path('app/public/ttd/ttd-kepala-dinas.jpg'))) }}"
                         width="90" height="90"><br>
                     <b>Prof Dr Samsul Huda,. SPD,MP,D</b>
                 </td>
-                <td class="ttd-walikota" width="300">Walikota Surabaya
-                    <br>
-                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('QRCode/Walikota.png'))) }}"
-                        width="90" height="90"><br>
-                    <b>Prof,Dr Eri Cahyadi S.T,. M.Kom</b>
-                </td>
+
+
             </tr>
 
         </table>
