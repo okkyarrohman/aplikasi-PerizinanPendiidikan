@@ -141,8 +141,9 @@ class PenyelenggaraanController extends Controller
                 'luas_lahan' => 'required|string',
                 'luas_bangunan' => 'required|string',
                 'jumlah_sekolah' => 'required|string',
-                'geotag' => 'required|string',
                 // Validate File Untuk Pendirian TK
+                'dokumen_survey' => ['max:300', 'mimes:pdf'],
+                'surat_terbit' => ['max:300', 'mimes:pdf'],
                 'doc_pendirian' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
                 'identitas_pemilik' => ['max:300', 'mimes:pdf,jpg,jpeg,png'],
@@ -161,6 +162,7 @@ class PenyelenggaraanController extends Controller
                 //Maks = 300Kb
                 'sarpras' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
+                'geotag' => ['max:300', 'mimes:jpg,jpeg,png'],
                 //End Validate File Untuk Pendirian TK
 
             ]);
@@ -178,13 +180,14 @@ class PenyelenggaraanController extends Controller
                 'luas_lahan' => $request->input('luas_lahan'),
                 'luas_bangunan' => $request->input('luas_bangunan'),
                 'jumlah_sekolah' => $request->input('jumlah_sekolah'),
-                'geotag' => $request->input('geotag'),
             ]);
 
             $penyelenggaraan->user()->associate(Auth::user());
             $penyelenggaraan->save();
 
             $fields = [
+                'dokumen_survey',
+                'surat_terbit',
                 'doc_pendirian',
                 'identitas_pemilik',
                 'identitas_pengajar',
@@ -194,6 +197,7 @@ class PenyelenggaraanController extends Controller
                 'surat_otorisasi',
                 'program_akademik',
                 'sarpras',
+                'geotag',
             ];
             
             foreach ($fields as $field) {
@@ -226,8 +230,9 @@ class PenyelenggaraanController extends Controller
                 'luas_lahan' => 'string',
                 'luas_bangunan' => 'string',
                 'jumlah_sekolah' => 'string',
-                'geotag' => 'string',
                 // Validate File Untuk Pendirian TK
+                'dokumen_survey' => ['max:300','mimes:pdf'], //Maks = 300Kb
+                'surat_terbit' => ['max:300','mimes:pdf'], //Maks = 300Kb
                 'doc_pendirian' => ['max:300','mimes:pdf'], //Maks = 300Kb
                 'identitas_pemilik' => ['max:300','mimes:pdf,jpg,jpeg,png'], //Maks = 300Kb
                 'identitas_pengajar' => ['max:300','mimes:pdf'], //Maks = 300Kb
@@ -238,6 +243,7 @@ class PenyelenggaraanController extends Controller
                 'program_akademik' => ['max:300','mimes:pdf'], //Maks = 300Kb
                 'sarpras' => ['max:300','mimes:pdf'], //Maks = 300Kb
                  //End Validate File Untuk Pendirian TK
+                 'geotag' => ['max:300', 'mimes:jpg,jpeg,png'],
     
             ]);
 
@@ -259,10 +265,11 @@ class PenyelenggaraanController extends Controller
                 'luas_lahan',
                 'luas_bangunan',
                 'jumlah_sekolah',
-                'geotag',
             ]));
 
             $fields = [
+                'dokumen_survey',
+                'surat_terbit',
                 'doc_pendirian',
                 'identitas_pemilik',
                 'identitas_pengajar',
@@ -272,6 +279,7 @@ class PenyelenggaraanController extends Controller
                 'surat_otorisasi',
                 'program_akademik',
                 'sarpras',
+                'geotag'
             ];
 
             foreach ($fields as $column) {
