@@ -142,6 +142,8 @@ class PenyelenggaraanController extends Controller
                 'luas_bangunan' => 'required|string',
                 'jumlah_sekolah' => 'required|string',
                 // Validate File Untuk Pendirian TK
+                'dokumen_survey' => ['max:300', 'mimes:pdf'],
+                'surat_terbit' => ['max:300', 'mimes:pdf'],
                 'doc_pendirian' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
                 'identitas_pemilik' => ['max:300', 'mimes:pdf,jpg,jpeg,png'],
@@ -184,6 +186,8 @@ class PenyelenggaraanController extends Controller
             $penyelenggaraan->save();
 
             $fields = [
+                'dokumen_survey',
+                'surat_terbit',
                 'doc_pendirian',
                 'identitas_pemilik',
                 'identitas_pengajar',
@@ -227,6 +231,8 @@ class PenyelenggaraanController extends Controller
                 'luas_bangunan' => 'string',
                 'jumlah_sekolah' => 'string',
                 // Validate File Untuk Pendirian TK
+                'dokumen_survey' => ['max:300','mimes:pdf'], //Maks = 300Kb
+                'surat_terbit' => ['max:300','mimes:pdf'], //Maks = 300Kb
                 'doc_pendirian' => ['max:300','mimes:pdf'], //Maks = 300Kb
                 'identitas_pemilik' => ['max:300','mimes:pdf,jpg,jpeg,png'], //Maks = 300Kb
                 'identitas_pengajar' => ['max:300','mimes:pdf'], //Maks = 300Kb
@@ -262,6 +268,8 @@ class PenyelenggaraanController extends Controller
             ]));
 
             $fields = [
+                'dokumen_survey',
+                'surat_terbit',
                 'doc_pendirian',
                 'identitas_pemilik',
                 'identitas_pengajar',
