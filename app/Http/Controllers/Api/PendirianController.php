@@ -184,7 +184,7 @@ class PendirianController extends Controller
                 'sarpras' => ['max:300', 'mimes:pdf'],
                 'sk_yayasan' => ['max:300', 'mimes:pdf'],
                 'studi_layak' => ['max:300', 'mimes:pdf'],
-                'geotag' => ['max:300', 'mimes:pdf,jpg,jpeg,png'],
+                'geotag' => ['mimes:pdf,jpg,jpeg,png'],
             ]);
 
             // Membuat data pendirian baru
@@ -323,7 +323,7 @@ class PendirianController extends Controller
                 //Maks = 300Kb
                 'studi_layak' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
-                'geotag' => ['max:300', 'mimes:jpg,jpeg,png'],
+                'geotag' => ['mimes:jpg,jpeg,png'],
             ]);
 
             // Mengambil data pendirian berdasarkan ID
