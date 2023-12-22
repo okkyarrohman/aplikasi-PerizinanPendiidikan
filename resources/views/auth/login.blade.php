@@ -32,7 +32,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl " placeholder="Email"
+                            <input type="text" class="form-control form-control-xl " placeholder="Email/Telepon"
                                 name="email">
                         </div>
 
