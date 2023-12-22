@@ -111,7 +111,7 @@
                     Perubahan atas PP
                     No.17/2010 tentang Pengelolaan dan Penyelenggaraan Pendidikan. Pasal 182 ayat 1 dijelaskan bahwa
                     pembangunan sekolah swasta wajib mendapatkan izin pemerintah, maka dari itu surat ini dibuat untuk
-                    memberikan <b>Izin Pendirian Pendidikan {{ $permohonan->tipe_dokumen }}</b>, yang tertera pemohon
+                    memberikan <b>Izin Pendirian Pendidikan {{ $perizinan->tipe_dokumen }}</b>, yang tertera pemohon
                     dibawah ini : </td>
             </tr>
         </table>
@@ -121,32 +121,32 @@
             <table>
                 <tr>
                     <td>Nama Pemohon</td>
-                    <td width="500">: {{ $permohonan->nama }}</td>
+                    <td width="500">: {{ $perizinan->nama }}</td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td width="500">: {{ $permohonan->email }}</td>
+                    <td width="500">: {{ $perizinan->email }}</td>
                 </tr>
                 <tr>
                     <td>Telepon</td>
-                    <td width="500">: {{ $permohonan->telepon }}</td>
+                    <td width="500">: {{ $perizinan->telepon }}</td>
                 </tr>
                 <tr>
                     <td>Lokasi</td>
-                    <td width="500">: {{ $permohonan->lokasi }}</td>
+                    <td width="500">: {{ $perizinan->lokasi }}</td>
                 </tr>
                 <tr>
                     <td>Perizinan </td>
-                    <td width="500">: Pendirian {{ $permohonan->tipe_dokumen }}</td>
+                    <td width="500">: Pendirian {{ $perizinan->tipe_dokumen }}</td>
                 </tr>
 
                 <tr>
                     <td>Luas Lahan </td>
-                    <td width="500">: {{ $permohonan->luas_lahan }} Meter</td>
+                    <td width="500">: {{ $perizinan->luas_lahan }} Meter</td>
                 </tr>
                 <tr>
                     <td>Luas Bangunan </td>
-                    <td width="500">: {{ $permohonan->luas_bangunan }} Meter</td>
+                    <td width="500">: {{ $perizinan->luas_bangunan }} Meter</td>
                 </tr>
             </table>
         </div>
@@ -163,7 +163,7 @@
 
         <table>
             <tr>
-                <td class="dikeluarkan" width="625">Dikeluarkan Tanggal : {{ $permohonan->updated_at }}</td>
+                <td class="dikeluarkan" width="625">Dikeluarkan Tanggal : {{ $perizinan->updated_at }}</td>
             </tr>
         </table>
         <br>
