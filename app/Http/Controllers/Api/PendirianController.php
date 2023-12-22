@@ -150,6 +150,10 @@ class PendirianController extends Controller
                 'status_dokumen' => 'string',
                 'longtitude' => 'required|string',
                 'latitude' => 'required|string',
+                'luas_lahan' => 'required|string',
+                'luas_bangunan' => 'required|string',
+                'jumlah_sekolah' => 'required|string',
+                'geotag' => 'required|string',
                 // Sesuaikan dengan aturan validasi untuk kolom lainnya
                 'lokasi' => 'required|string',
                 'surat_permohonan' => ['max:300', 'mimes:pdf'],
@@ -219,7 +223,11 @@ class PendirianController extends Controller
                 'status_dokumen' => "Checking Berkas Operator",
                 'longtitude' => $request->input('longtitude'),
                 'latitude' => $request->input('latitude'),
-                'lokasi' => $request->input('lokasi')
+                'lokasi' => $request->input('lokasi'),
+                'luas_lahan' => $request->input('luas_lahan'),
+                'luas_bangunan' => $request->input('luas_bangunan'),
+                'jumlah_sekolah' => $request->input('jumlah_sekolah'),
+                'geotag' => $request->input('geotag'),
             ]);
 
             $pendirian->user()->associate(Auth::user());
@@ -266,6 +274,10 @@ class PendirianController extends Controller
                 'status_dokumen' => 'string',
                 'longtitude' => 'string',
                 'latitude' => 'string',
+                'luas_lahan' => 'string',
+                'luas_bangunan' => 'string',
+                'jumlah_sekolah' => 'string',
+                'geotag' => 'string',
                 // Sesuaikan dengan aturan validasi untuk kolom lainnya
                 'surat_permohonan' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
@@ -340,7 +352,11 @@ class PendirianController extends Controller
                 'tipe_dokumen',
                 'status_dokumen',
                 'longtitude',
-                'latitude'
+                'latitude',
+                'luas_lahan',
+                'luas_bangunan',
+                'jumlah_sekolah',
+                'geotag',
             ]));
 
 
@@ -397,13 +413,27 @@ class PendirianController extends Controller
                 $data = array('name' => 'jarwo');
 
                 $perizinan = $pendirian;
+                $imgGaruda = public_path('QRCode/garuda.jpg');
+                $jadiGaruda = base64_decode($imgGaruda);
+
+                $ttdKepalaDinas = public_path('QRCode/ttd-kepala-dinas.jpg');
+                $jadiTTD = base64_decode($ttdKepalaDinas);
 
                 $dompdf = new Dompdf();
-                $view = view('emails.izinTerbitPdf', compact('perizinan'));
+                $view = view('emails.izinTerbitPdf', compact('perizinan','jadiGaruda','jadiTTD'));
                 $dompdf->loadHTML($view);
                 $dompdf->render();
+                $output = $dompdf->output();
 
-                $emailPemohon = $pendirian->email;
+                $filename = date('YmdHis').'.'."surat_izin_terbit.pdf";
+                Storage::put('public/perizinanPendirian/surat_terbit/'.$filename,$output);
+
+            // Save To Database
+                $perizinan->surat_terbit = $filename.$request->surat_terbit;
+                $perizinan->status_dokumen = $request->status_dokumen;
+                $perizinan->save();
+
+                $emailPemohon = $perizinan->email;
 
                 Mail::send(['file' => 'mail'], $data, function ($message) use ($dompdf, $emailPemohon) {
                     $message->to($emailPemohon)->subject('Surat Izin Terbit');

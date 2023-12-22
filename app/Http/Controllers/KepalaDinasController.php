@@ -7,7 +7,8 @@ use App\Models\PerizinanPendirian;
 use App\Models\PerizinanPenyelenggaraan;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 
 class KepalaDinasController extends Controller
@@ -103,7 +104,21 @@ class KepalaDinasController extends Controller
         return view('kepalaDinas.tracking.perizinanPenyelenggaraan.ttdKepalaDinas.edit',compact('permohonans','user'));
     }
 
+     public function createKepalaDinas(Request $request){
+        $newUser = new User();
+        $newUser->name = $request->name;
+        $newUser->telepon = $request->telepon;
+        $newUser->email = $request->email;
+        $newUser->password = Hash::make($request->password);
 
+        $newUser->assignRole('kepala-dinas');
+
+        $newUser->save();
+
+
+
+        return redirect()->route('admin')->with('sukses_dikirim','Account Operator Berhasil dibuat');
+    }
 
 
 }

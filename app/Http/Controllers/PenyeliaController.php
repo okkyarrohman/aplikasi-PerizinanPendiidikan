@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\PerizinanPendirian;
 use App\Models\PerizinanPenyelenggaraan;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class PenyeliaController extends Controller
 {
@@ -191,6 +193,23 @@ class PenyeliaController extends Controller
             $user = Auth::user();
             return view('penyelia.tracking.perizinanPenyelenggaraan.checkingBerkas.editPKLPK',compact('permohonans','user'));
         }
+    }
+
+
+      public function createPenyelia(Request $request){
+        $newUser = new User();
+        $newUser->name = $request->name;
+        $newUser->telepon = $request->telepon;
+        $newUser->email = $request->email;
+        $newUser->password = Hash::make($request->password);
+
+        $newUser->assignRole('penyelia');
+
+        $newUser->save();
+
+
+
+        return redirect()->route('admin')->with('sukses_dikirim','Account Operator Berhasil dibuat');
     }
 
 }

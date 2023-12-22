@@ -49,8 +49,7 @@
                     <div class="return-dashboard m-4 justify-content-center">
                         <a href="/dinas" class="btn btn-primary"><span>Return to Dashboard</span></a>
                     </div>
-                @endif
-                @if (Auth::user()->hasRole('pemohon'))
+                @elseif (Auth::user()->hasRole('pemohon'))
                     <div class="return-dashboard m-4 justify-content-lg-center">
                         <a href="/pemohon" class="btn btn-primary"><span>Return to Dashboard</span></a>
                     </div>
@@ -83,7 +82,16 @@
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#" class="add-to-favorite"><i class="fas fa-star"></i></a>
-                    <a href="/"><i class="fas fa-home"></i></a>
+                    @if (Auth::user()->hasRole('dinas'))
+                        <a href="/dinas"><i class="fas fa-home"></i></a>
+                    @elseif (Auth::user()->hasRole('surveyor'))
+                        <a href="/surveyor"><i class="fas fa-home"></i></a>
+                    @elseif(Auth::user()->hasRole('pemohon'))
+                        <a href="/home"><i class="fas fa-home"></i></a>
+                    @endif
+
+                    {{-- <a href="/"><i class="fas fa-home"></i></a> --}}
+
                     <a href="#" class="show-infoSide"><i class="fas fa-info-circle"></i></a>
                 </nav>
             </nav>

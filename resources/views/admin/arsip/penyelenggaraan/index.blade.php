@@ -1,4 +1,4 @@
-@extends('layouts.app-pemohon')
+@extends('layouts.app-admin2')
 
 
 @section('content')
@@ -23,7 +23,7 @@
                     <h4>Diajukan Oleh :{{ $permohonan->nama }}</h4>
                 </div>
                 <div class="col-md-4">
-                    <a href="/download/surat_terbit_penyelenggaraan/{{ $permohonan->id }}">
+                    <a href="/download/surat_terbit_penyelenggaraan/{{ $permohonan->id }}}">
                         <i class="fa fa-solid fa-download"></i>
                     </a>
                 </div>

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\PerizinanPendirian;
 use App\Models\PerizinanPenyelenggaraan;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class OperatorController extends Controller
 {
@@ -18,7 +20,7 @@ class OperatorController extends Controller
     public function index_penyelenggaraan(){
         $user = Auth::user();
 
-        return view('operator.tracking.perizinanPenyelenggaraan.index', compact('user'));
+        return view('operator.tracking.PerizinanPenyelenggaraan.index', compact('user'));
     }
 
 
@@ -56,7 +58,7 @@ class OperatorController extends Controller
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
-        return view('operator.tracking.perizinanPenyelenggaraan.1_sd.index',compact('permohonans','user'));
+        return view('operator.tracking.PerizinanPenyelenggaraan.1_sd.index',compact('permohonans','user'));
     }
 
     public function penyelenggaraan_ptn()
@@ -68,7 +70,7 @@ class OperatorController extends Controller
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
-        return view('operator.tracking.perizinanPenyelenggaraan.2_ptn.index',compact('permohonans','user'));
+        return view('operator.tracking.PerizinanPenyelenggaraan.2_ptn.index',compact('permohonans','user'));
     }
 
     public function penyelenggaraan_lpp()
@@ -80,7 +82,7 @@ class OperatorController extends Controller
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
-        return view('operator.tracking.perizinanPenyelenggaraan.3_lpp.index',compact('permohonans','user'));
+        return view('operator.tracking.PerizinanPenyelenggaraan.3_lpp.index',compact('permohonans','user'));
     }
 
     public function penyelenggaraan_lpnp()
@@ -92,7 +94,7 @@ class OperatorController extends Controller
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
-        return view('operator.tracking.perizinanPenyelenggaraan.4_lpnp.index',compact('permohonans','user'));
+        return view('operator.tracking.PerizinanPenyelenggaraan.4_lpnp.index',compact('permohonans','user'));
     }
 
     public function penyelenggaraan_ppo()
@@ -104,7 +106,7 @@ class OperatorController extends Controller
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
-        return view('operator.tracking.perizinanPenyelenggaraan.5_ppo.index',compact('permohonans','user'));
+        return view('operator.tracking.PerizinanPenyelenggaraan.5_ppo.index',compact('permohonans','user'));
     }
 
     public function penyelenggaraan_lpts()
@@ -116,7 +118,7 @@ class OperatorController extends Controller
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
-        return view('operator.tracking.perizinanPenyelenggaraan.6_lpts.index',compact('permohonans','user'));
+        return view('operator.tracking.PerizinanPenyelenggaraan.6_lpts.index',compact('permohonans','user'));
     }
 
     public function penyelenggaraan_pklpk()
@@ -128,12 +130,8 @@ class OperatorController extends Controller
             'status_dokumen' => 'Checking Berkas Operator'
         ])->get();
 
-        return view('operator.tracking.perizinanPenyelenggaraan.7_pklpk.index',compact('permohonans','user'));
+        return view('operator.tracking.PerizinanPenyelenggaraan.7_pklpk.index',compact('permohonans','user'));
     }
-
-
-
-
 
 
 public function edit_pendirian($id)
@@ -151,7 +149,7 @@ public function edit_pendirian($id)
 
         $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
 
-        return view('operator.tracking.perizinanPenyelenggaraan.edit',compact('permohonans','user'));
+        return view('operator.tracking.PerizinanPenyelenggaraan.edit',compact('permohonans','user'));
     }
 
 
@@ -167,6 +165,21 @@ public function edit_pendirian($id)
         return view('operator.persyaratan.penyelenggaraan',compact('user'));
     }
 
+    public function createOperator(Request $request){
+        $newUser = new User();
+        $newUser->name = $request->name;
+        $newUser->telepon = $request->telepon;
+        $newUser->email = $request->email;
+        $newUser->password = Hash::make($request->password);
+
+        $newUser->assignRole('operator');
+
+        $newUser->save();
+
+
+
+        return redirect()->route('admin')->with('sukses_dikirim','Account Operator Berhasil dibuat');
+    }
 
 
 

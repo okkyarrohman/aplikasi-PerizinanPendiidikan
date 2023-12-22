@@ -7,6 +7,8 @@ use App\Models\PerizinanPendirian;
 use App\Models\PerizinanPenyelenggaraan;
 use Dompdf\Dompdf;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class WalikotaController extends Controller
 {
@@ -227,7 +229,21 @@ class WalikotaController extends Controller
         return view('walikota.tracking.perizinanPenyelenggaraan.10_permohonanSelesai.index',compact('permohonans','user'));
     }
 
+      public function createWalikota(Request $request){
+        $newUser = new User();
+        $newUser->name = $request->name;
+        $newUser->telepon = $request->telepon;
+        $newUser->email = $request->email;
+        $newUser->password = Hash::make($request->password);
 
+        $newUser->assignRole('walikota');
+
+        $newUser->save();
+
+
+
+        return redirect()->route('admin')->with('sukses_dikirim','Account Operator Berhasil dibuat');
+    }
 
 
 

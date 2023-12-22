@@ -91,22 +91,7 @@ class RegisterController extends Controller
         return $newUser->assignRole("pemohon");
     }
 
-    public function createOperator(array $data){
 
-
-        $newUser = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'telepon' => $data['telepon'],
-
-        ]);
-
-            $newUser->assignRole("operator");
-
-
-        return redirect()->route('admin')->with('success','Account Operator Berhasil dibuat');
-    }
 
     protected function createPenyelia(array $data){
         $newUser = User::create([

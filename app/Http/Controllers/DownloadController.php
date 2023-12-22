@@ -227,6 +227,10 @@ class DownloadController extends Controller
     }
 
 
+
+
+    // End Penyelenggaraan
+
     public function download_geotag_pendirian($id){
         $permohonans = PerizinanPendirian::where('id',$id)->first();
         $path = storage_path("app/public/perizinanPendirian/geotag/{$permohonans->geotag}");
@@ -238,8 +242,15 @@ class DownloadController extends Controller
         return response()->download($path);
     }
 
-    // End Penyelenggaraan
+    public function download_surat_terbit_pendirian($id){
+        $permohonans = PerizinanPendirian::where('id',$id)->first();
+        $path = storage_path("app/public/perizinanPendirian/surat_terbit/{$permohonans->surat_terbit}");
+        return response()->download($path);
+    }
 
-
-
+     public function download_surat_terbit_penyelenggaraan($id){
+        $permohonans = PerizinanPenyelenggaraan::where('id',$id)->first();
+        $path = storage_path("app/public/perizinanPenyelenggaraan/surat_terbit/{$permohonans->surat_terbit}");
+        return response()->download($path);
+    }
 }
