@@ -162,7 +162,7 @@ class PenyelenggaraanController extends Controller
                 //Maks = 300Kb
                 'sarpras' => ['max:300', 'mimes:pdf'],
                 //Maks = 300Kb
-                'geotag' => ['max:300', 'mimes:jpg,jpeg,png'],
+                'geotag' => ['mimes:jpg,jpeg,png'],
                 //End Validate File Untuk Pendirian TK
 
             ]);
@@ -243,7 +243,8 @@ class PenyelenggaraanController extends Controller
                 'program_akademik' => ['max:300','mimes:pdf'], //Maks = 300Kb
                 'sarpras' => ['max:300','mimes:pdf'], //Maks = 300Kb
                  //End Validate File Untuk Pendirian TK
-                 'geotag' => ['max:300', 'mimes:jpg,jpeg,png'],
+                 'geotag' => ['mimes:jpg,jpeg,png'],
+    
 
             ]);
 
