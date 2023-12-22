@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\PerizinanPendirian;
 use App\Models\PerizinanPenyelenggaraan;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class DinasController extends Controller
 {
@@ -227,5 +229,19 @@ class DinasController extends Controller
 
     // End Monitioring Penyelenggaraan
 
+    public function createDinas(Request $request){
+        $newUser = new User();
+        $newUser->name = $request->name;
+        $newUser->telepon = $request->telepon;
+        $newUser->email = $request->email;
+        $newUser->password = Hash::make($request->password);
 
+        $newUser->assignRole('dinas');
+
+        $newUser->save();
+
+
+
+        return redirect()->route('admin')->with('sukses_dikirim','Account Operator Berhasil dibuat');
+    }
 }

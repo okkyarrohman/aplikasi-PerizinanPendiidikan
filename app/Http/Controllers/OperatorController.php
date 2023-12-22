@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\PerizinanPendirian;
 use App\Models\PerizinanPenyelenggaraan;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class OperatorController extends Controller
 {
@@ -163,6 +165,21 @@ public function edit_pendirian($id)
         return view('operator.persyaratan.penyelenggaraan',compact('user'));
     }
 
+    public function createOperator(Request $request){
+        $newUser = new User();
+        $newUser->name = $request->name;
+        $newUser->telepon = $request->telepon;
+        $newUser->email = $request->email;
+        $newUser->password = Hash::make($request->password);
+
+        $newUser->assignRole('operator');
+
+        $newUser->save();
+
+
+
+        return redirect()->route('admin')->with('sukses_dikirim','Account Operator Berhasil dibuat');
+    }
 
 
 

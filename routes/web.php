@@ -475,13 +475,13 @@ Route::group(['middleware' => 'role:admin'], function(){
 
 
 // Register Account
-    Route::post('/admin/infomasiAkun/operator',[RegisterController::class,'createOperator'])->name('register.operator');
-    Route::post('/admin/infomasiAkun/penyelia',[RegisterController::class,'createPenyelia'])->name('register.penyelia');
-    Route::post('/admin/infomasiAkun/surveyor',[RegisterController::class,'createSurveyor'])->name('register.surveyor');
-    Route::post('/admin/infomasiAkun/kepalaDinas',[RegisterController::class,'createKepalaDinas'])->name('register.kepalaDinas');
-    Route::post('/admin/infomasiAkun/walikota',[RegisterController::class,'createWalikota'])->name('register.walikota');
-    Route::post('/admin/infomasiAkun/auditor',[RegisterController::class,'createAuditor'])->name('register.auditor');
-    Route::post('/admin/infomasiAkun/dinas',[RegisterController::class,'createDinas'])->name('register.dinas');
+    Route::post('/admin/infomasiAkun/operator',[OperatorController::class,'createOperator'])->name('register.operator');
+    Route::post('/admin/infomasiAkun/penyelia',[PenyeliaController::class,'createPenyelia'])->name('register.penyelia');
+    Route::post('/admin/infomasiAkun/surveyor',[SurveyorController::class,'createSurveyor'])->name('register.surveyor');
+    Route::post('/admin/infomasiAkun/kepalaDinas',[KepalaDinasController::class,'createKepalaDinas'])->name('register.kepalaDinas');
+    Route::post('/admin/infomasiAkun/walikota',[WalikotaController::class,'createWalikota'])->name('register.walikota');
+    Route::post('/admin/infomasiAkun/auditor',[AuditorController::class,'createAuditor'])->name('register.auditor');
+    Route::post('/admin/infomasiAkun/dinas',[DinasController::class,'createDinas'])->name('register.dinas');
 // End Register Account
 
 

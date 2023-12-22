@@ -18,10 +18,11 @@
             </div>
             <div class="col-md-2">
                 <div class="card">
-                    <a href="#" class="btn btn-success data-bs-toggle="modal" data-bs-target="#penyelia">Tambah
-                        Akun Verifikator</a>
+                    <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#penyelia">Tambah Akun
+                        Verifikator</a>
                 </div>
             </div>
+
             <div class="col-md-2">
                 <div class="card">
                     <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#surveyor">Tambah Akun
@@ -178,7 +179,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <form method="POST" action="{{ route('akun.operator') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('register.penyelia') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row justify-content-center">
                                 <div class="col-md-6">
@@ -235,7 +236,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <form method="POST" action="{{ route('akun.operator') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('register.surveyor') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row justify-content-center">
                                 <div class="col-md-6">
@@ -292,7 +293,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <form method="POST" action="{{ route('akun.operator') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('register.kepalaDinas') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row justify-content-center">
                                 <div class="col-md-6">
@@ -349,7 +350,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <form method="POST" action="{{ route('akun.operator') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('register.walikota') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row justify-content-center">
                                 <div class="col-md-6">
@@ -407,7 +408,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <form method="POST" action="{{ route('akun.operator') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('register.auditor') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row justify-content-center">
                                 <div class="col-md-6">
@@ -464,7 +465,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <form method="POST" action="{{ route('akun.operator') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('register.dinas') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row justify-content-center">
                                 <div class="col-md-6">
