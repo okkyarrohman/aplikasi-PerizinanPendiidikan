@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card">
             <div class="title d-flex m-4 justify-content-center align-items-center">
-                <h2>Notifikasi Perizinan Pendirian</h2>
+                <h2>Notifikasi Perizinan Penyelenggaraan</h2>
             </div>
             <div class="card-content d-flex justify-content-center align-content-center">
                 <p>yang melebihi batas waktu</p>
