@@ -72,7 +72,7 @@ class KepalaDinasController extends Controller
             'status_dokumen' => 'Tanda Tangan Kepala Dinas'
         ])->get();
 
-        return view('kepalaDinas.tracking.perizinanPenyelenggaraan.ttdKepalaDinas.index',compact('permohonans','user'));
+        return view('kepalaDinas.tracking.PerizinanPenyelenggaraan.ttdKepalaDinas.index',compact('permohonans','user'));
     }
 
     public function permohonan_selesai_penyelenggaraan(){

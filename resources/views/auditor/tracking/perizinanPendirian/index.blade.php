@@ -19,7 +19,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/pendirian/checking_berkas_operator_pendirian"
@@ -38,7 +38,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/pendirian/dokumen_valid_pendirian" class="btn btn-primary">-></a>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/pendirian/dokumen_tidak_valid_pendirian"
@@ -78,7 +78,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/pendirian/sedang_disurvey_pendirian" class="btn btn-primary">-></a>
@@ -96,7 +96,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/pendirian/telah_disurvey_pendirian" class="btn btn-primary">-></a>
@@ -114,7 +114,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/pendirian/checking_berkas_verifikator_pendirian"
@@ -136,7 +136,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/pendirian/dokumen_sesuai_pendirian" class="btn btn-primary">-></a>
@@ -154,7 +154,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/pendirian/tolak_dokumen_pendirian" class="btn btn-primary">-></a>
@@ -172,7 +172,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/pendirian/ttd_kepala_dinas_pendirian" class="btn btn-primary">-></a>
@@ -192,7 +192,7 @@
                     </div>
                     <div class="group d-flex m-4 justify-content-lg-around">
                         <div class="jumlah">
-                            <h4>80</h4>
+                            {{-- <h4>80</h4> --}}
                         </div>
                         <div class="next">
                             <a href="/auditor/tracking/pendirian/permohonan_selesai_pendirian"

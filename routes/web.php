@@ -52,9 +52,7 @@ Route::get('/persyaratan-penyelenggaraan', function(){
 // Route pemohon
 Route::group(['middleware' => 'role:pemohon','verify'], function(){
 
-    Route::get('/data-pemohon',[AccountController::class,'data_pemohon'])->name('index.account');
-    Route::get('/edit/data-pemohon/{id}',[AccountController::class,'edit_data_pemohon']);
-    Route::post('/update/data-pemohon',[AccountController::class,'update'])->name('update.account');
+
 
     // Menu
     Route::get('/pemohon',[HomeController::class,'index_pemohon']);
@@ -195,7 +193,13 @@ Route::group(['middleware' => 'role:surveyor'], function(){
 // Route kepala-dinas
 Route::group(['middleware' => 'role:kepala-dinas'], function(){
     Route::get('/kepala-dinas',[HomeController::class,'index_kepalaDinas'])->name('kepala-dinas');
-    Route::get('/kepala-dinas/notifikasi',[KepalaDinasController::class,'notifikasi']);
+    // Route::get('/kepala-dinas/notifikasi',[KepalaDinasController::class,'notifikasi']);
+
+    // Notifikasi
+    Route::get('/kepla-dinas/notifikasi/pendirian',[KepalaDinasController::class,'notifikasi_pendirian']);
+    Route::get('/kepala-dinas/notifikasi/penyelenggaraan',[KepalaDinasController::class,'notifikasi_penyelenggaraan']);
+
+
 
     Route::get('/kepala-dinas/tracking/pendirian',[KepalaDinasController::class,'index_pendirian']);
     Route::get('/kepala-dinas/tracking/penyelenggaraan',[KepalaDinasController::class,'index_penyelenggaraan']);
@@ -217,9 +221,7 @@ Route::group(['middleware' => 'role:kepala-dinas'], function(){
     // Izin Terbit PDF
     Route::get('/kepla-dinas/pendirian/tracking/izin_terbit_pendirian_pdf/{id}',[KepalaDinasController::class,'izin_terbit_pendirian_pdf']);
 
-    // Notifikasi
-    Route::get('/kepla-dinas/notifikasi/pendirian',[KepalaDinasController::class,'notifikasi_pendirian']);
-    Route::get('/kepla-dinas/notifikasi/penyelenggaraan',[KepalaDinasController::class,'notifikasi_penyelenggaraan']);
+    // Route::get('/kepla-dinas/notifikasi/penyelenggaraan',[KepalaDinasController::class,'notifikasi_penyelenggaraan']);
 
 
 
@@ -230,6 +232,7 @@ Route::group(['middleware' => 'role:kepala-dinas'], function(){
 Route::group(['middleware' => 'role:walikota'], function(){
     Route::get('/walikota',[HomeController::class,'index_walikota'])->name('walikota');
     Route::get('/walikota/notifikasi',[WalikotaController::class,'notifikasi']);
+
 
     Route::get('/walikota/tracking/pendirian',[WalikotaController::class,'index_pendirian']);
     Route::get('/walikota/tracking/penyelenggaraan',[WalikotaController::class,'index_penyelenggaraan']);
@@ -493,8 +496,10 @@ Route::get('/my_account/{id}',[HomeController::class,'my_account']);
 // Send Email
 Route::get('/send-email/{id}',[MailController::class,'send_attach_gmail']);
 
-
-
+// Data User
+    Route::get('/data-pemohon',[AccountController::class,'data_pemohon'])->name('index.account');
+    Route::get('/edit/data-pemohon/{id}',[AccountController::class,'edit_data_pemohon']);
+    Route::post('/update/data-pemohon',[AccountController::class,'update'])->name('update.account');
 
 
 

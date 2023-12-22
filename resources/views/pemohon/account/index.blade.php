@@ -82,7 +82,7 @@
 
                             <br>
                             <div class="ms-3 ">
-                                <label for="first-name-vertical" class="form-label">Desa</label>
+                                <label for="first-name-vertical" class="form-label">Dusun</label>
                                 <input type="disabled" class="form-control" placeholder="{{ $user->desa }}" disabled>
                             </div>
 

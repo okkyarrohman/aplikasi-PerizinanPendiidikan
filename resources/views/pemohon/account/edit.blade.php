@@ -30,7 +30,7 @@
                                 <div class="ms-3 ">
                                     <label for="first-name-vertical" class="form-label">Nama Pengguna</label>
                                     <input type="text" name="name" class="form-control"
-                                        placeholder="{{ $user->name }}">
+                                        placeholder="{{ $user->name }}" value="{{ $user->name }}">
                                 </div>
                                 <br>
                                 <div class="ms-3 ">
@@ -42,13 +42,13 @@
                                 <div class="ms-3 ">
                                     <label for="first-name-vertical" class="form-label">Nomer Telepon</label>
                                     <input type="number" name="telepon" class="form-control"
-                                        placeholder="{{ $user->telepon }}">
+                                        placeholder="{{ $user->telepon }}" value="{{ $user->telepon }}">
                                 </div>
                                 <br>
                                 <div class="ms-3 ">
                                     <label for="first-name-vertical" class="form-label">NIK</label>
                                     <input type="number" name="nik" required class="form-control"
-                                        placeholder="{{ $user->nik }}">
+                                        placeholder="{{ $user->nik }}" {{ $user->nik }}>
                                 </div>
                                 <br>
                                 <div class="ms-3 ">
@@ -94,7 +94,7 @@
 
                                 <br>
                                 <div class="ms-3 ">
-                                    <label for="first-name-vertical" class="form-label">Desa</label>
+                                    <label for="first-name-vertical" class="form-label">Dusun</label>
                                     <input type="text" name="desa" class="form-control"
                                         placeholder="{{ $user->desa }}">
                                 </div>

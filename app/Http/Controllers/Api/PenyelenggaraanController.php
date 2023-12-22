@@ -199,11 +199,11 @@ class PenyelenggaraanController extends Controller
                 'sarpras',
                 'geotag',
             ];
-            
+
             foreach ($fields as $field) {
                 $this->handleFileUpload($request, $penyelenggaraan, $field);
             }
-            
+
 
             return $this->sendSuccessResponse([
                 'data' => $penyelenggaraan,
@@ -245,6 +245,7 @@ class PenyelenggaraanController extends Controller
                  //End Validate File Untuk Pendirian TK
                  'geotag' => ['mimes:jpg,jpeg,png'],
     
+
             ]);
 
             $penyelenggaraan = PerizinanPenyelenggaraan::findOrFail($id);
@@ -285,7 +286,7 @@ class PenyelenggaraanController extends Controller
             foreach ($fields as $column) {
                 $this->deleteFileIfExists($penyelenggaraan->$column, $column);
             }
-            
+
             foreach ($fields as $field) {
                 $this->handleFileUpload($request, $penyelenggaraan, $field);
             } // Sesuaikan dengan nama kolom file

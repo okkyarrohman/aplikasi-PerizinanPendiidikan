@@ -595,65 +595,280 @@
                 </div>
             </div>
         </div>
-        <div style="display: flex; justify-content: space-between; width: 80%; margin-left:200px;">
-            <div class="row" style="width: 48%;">
-                <div
-                    style="width: 425px; height: 310.36px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 16.35px; display: inline-flex; ">
-                    <div
-                        style="color: #45484F; font-size: 19.07px; font-family: Noto Sans; font-weight: 600; word-wrap: break-word">
-                        Data Sekolah Pada Setiap Kecamatan</div>
-                    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; ">
-                        <div style="display: flex; width: 100%;">
+        <div>
+            <div class="card shadow-lg">
+                <div style="">
+                    <div class="text text-center">
+                        <h4>Data Sekolah Pada Setiap Kecamatan</h4>
+                    </div>
+                    <div style="display: flex; flex-direction: column;  align-items: center; ">
+                        <div style="display: flex; align-items:beetween; width:60%;">
                             <div
-                                style="flex: 1; text-align: center;  background: #CCDBEB; border-radius: 5.45px; border: 1.36px #2B69AA solid; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; margin-right: 10px;">
+                                style="flex: 1; text-align: left;  background: #CCDBEB; border-radius: 5.45px; border: 1.36px #2B69AA solid; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600;">
                                 Kecamatan
                             </div>
                             <div
                                 style="display: flex; justify-content: center; align-items: center; background: #CCDBEB; border-radius: 5.45px; border: 1.36px #2B69AA solid; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; margin-left: 10px;">
                                 Jumlah Sekolah
                             </div>
-
-
                         </div>
 
                         <div style="display: flex; width: 100%;">
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
-                                Gurah</div>
+                                Tegalsari</div>
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
-                                120</div>
+                                30</div>
                         </div>
 
                         <div style="display: flex; width: 100%;">
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
-                                Ngasem</div>
+                                Genteng</div>
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
-                                132</div>
+                                18</div>
                         </div>
 
                         <div style="display: flex; width: 100%;">
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
-                                Pagu</div>
+                                Bubutan</div>
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
-                                100</div>
+                                28</div>
                         </div>
 
                         <div style="display: flex; width: 100%;">
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
-                                Plemahan</div>
+                                Simokerto</div>
                             <div
                                 style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
-                                45</div>
+                                18</div>
+                        </div>
+
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Pabean Cantikan</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                14</div>
+                        </div>
+
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Semampir</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                34</div>
+                        </div>
+
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Krembangan</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                31</div>
+                        </div>
+
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Kenjeran</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                20</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Bulak</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                12</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Tambak Sari</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                36</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Gubeng</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                23</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Rungkut</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                23</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Tenggilis Mejoyo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                15</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Gunung Anyar</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                14</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Sukolilo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                31</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Mulyorejo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                23</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Sawahan</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                41</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Wonokromo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                33</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Karangpilang</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                12</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Dukuh Pakis</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                22</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Wiyung</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                15</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Wonocolo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                17</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Gayungan</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                14</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Jambangan </div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                7</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Tandes</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                18</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Sukomanunggal</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                24</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Asemrowo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                7</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Benowo</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                14</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Pakal</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                15</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                Lakarsantri</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                18</div>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 400;">
+                                SambiKerep</div>
+                            <div
+                                style="flex: 1; text-align: center; border-radius: 5.45px; padding: 10px; font-size: 16.35px; font-family: Noto Sans; font-weight: 600; color: #D4AA2E;">
+                                10</div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
 

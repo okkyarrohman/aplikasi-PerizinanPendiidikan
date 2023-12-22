@@ -63,20 +63,20 @@
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Longtitude</label>
                                                     <input type="text" id="first-name-vertical" class="form-control"
-                                                        name="longtitude" placeholder="First Name">
+                                                        name="longtitude">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Latitude</label>
                                                     <input type="text" id="first-name-vertical" class="form-control"
-                                                        name="latitude" placeholder="First Name">
+                                                        name="latitude">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">Lokasi Lengkap</label>
-                                                    <textarea type="text" id="first-name-vertical" class="form-control" name="lokasi" placeholder="First Name"></textarea>
+                                                    <textarea type="text" id="first-name-vertical" class="form-control" name="lokasi"></textarea>
                                                 </div>
                                             </div>
                                         </div>
