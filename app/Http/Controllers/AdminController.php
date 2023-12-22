@@ -18,6 +18,41 @@ class AdminController extends Controller
         return view('admin.informasiAkun.index',compact('allAccount','user'));
     }
 
+  // Arsip dan History
+    public function arsip_pendirian(){
+        $user = Auth::user();
+
+        $permohonans = PerizinanPendirian::where([
+            'status_dokumen' => 'Permohonan Selesai',
+
+        ])->get();
+
+        return view('admin.arsip.pendirian.index',compact('user','permohonans'));
+
+    }
+
+    public function arsip_penyelenggaraan(){
+        $user = Auth::user();
+
+        $permohonans = PerizinanPenyelenggaraan::where([
+            'status_dokumen' => 'Permohonan Selesai',
+        ])->get();
+
+        return view('admin.arsip.penyelenggaraan.index',compact('user','permohonans'));
+
+    }
+
+    public function persyaratan_pendirian(){
+        $user = Auth::user();
+
+        return view('admin.persyaratan.pendirian',compact('user'));
+    }
+    public function persyaratan_penyelenggaraan(){
+        $user = Auth::user();
+
+        return view('admin.persyaratan.penyelenggaraan',compact('user'));
+    }
+
 
 
 

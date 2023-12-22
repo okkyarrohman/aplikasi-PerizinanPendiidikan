@@ -37,18 +37,6 @@
                                 </a>
                             </div>
 
-                            <div class="permohonan">
-                                <a href="#" id="topbarUserDropdown"
-                                    class="user-dropdown d-flex align-items-center">
-                                    <div class="avatar avatar-md2">
-                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
-                                    </div>
-                                    <div class="text">
-                                        <h6 class="user-dropdown-name">Chat</h6>
-                                    </div>
-                                </a>
-                            </div>
-
                             <div class="permohonan dropdown">
                                 <a href="#" id="topbarUserDropdown"
                                     class="user-dropdown d-flex align-items-center dropend dropdown-toggle "
@@ -110,8 +98,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
                                                 role="img" class="iconify iconify--system-uicons" width="20"
-                                                height="20" preserveAspectRatio="xMidYMid meet"
-                                                viewBox="0 0 21 21">
+                                                height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
                                                 <g fill="none" fill-rule="evenodd" stroke="currentColor"
                                                     stroke-linecap="round" stroke-linejoin="round">
                                                     <path

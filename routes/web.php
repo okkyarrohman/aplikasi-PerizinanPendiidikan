@@ -390,9 +390,13 @@ Route::group(['middleware' => 'role:admin'], function(){
     // End Create Akun Pengguna
 
     //Arsip
-    Route::get('/admin/arsip',[AdminController::class,'arsip']);
+    Route::get('/admin/arsip/pendirian',[AdminController::class,'arsip_pendirian']);
+    Route::get('/admin/arsip/penyelenggaraan',[AdminController::class,'arsip_penyelenggaraan']);
 
 
+    // Persyaratan
+    Route::get('/admin/persyaratan/pendirian', [AdminController::class,'persyaratan_pendirian']);
+    Route::get('/admin/persyaratan/penyelenggaraan', [AdminController::class,'persyaratan_penyelenggaraan']);
 
 });
 // End Routes Admin
@@ -465,9 +469,21 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/download/geotag_pendirian/{id}',[DownloadController::class,'download_geotag_pendirian']);
     Route::get('/download/geotag_penyelenggaraan/{id}',[DownloadController::class,'download_geotag_penyelenggaraan']);
 
-
-
+    Route::get('/download/surat_terbit_pendirian/{id}',[DownloadController::class,'download_surat_terbit_pendirian']);
+    Route::get('/download/surat_terbit_penyelenggaraan/{id}',[DownloadController::class,'download_surat_terbit_penyelenggaraan']);
 // End Download Berkas
+
+
+// Register Account
+    Route::post('/admin/infomasiAkun/operator',[RegisterController::class,'createOperator'])->name('register.operator');
+    Route::post('/admin/infomasiAkun/penyelia',[RegisterController::class,'createPenyelia'])->name('register.penyelia');
+    Route::post('/admin/infomasiAkun/surveyor',[RegisterController::class,'createSurveyor'])->name('register.surveyor');
+    Route::post('/admin/infomasiAkun/kepalaDinas',[RegisterController::class,'createKepalaDinas'])->name('register.kepalaDinas');
+    Route::post('/admin/infomasiAkun/walikota',[RegisterController::class,'createWalikota'])->name('register.walikota');
+    Route::post('/admin/infomasiAkun/auditor',[RegisterController::class,'createAuditor'])->name('register.auditor');
+    Route::post('/admin/infomasiAkun/dinas',[RegisterController::class,'createDinas'])->name('register.dinas');
+// End Register Account
+
 
 //My  Account
 Route::get('/my_account/{id}',[HomeController::class,'my_account']);

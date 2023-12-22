@@ -23,7 +23,7 @@
                     <h4>Diajukan Oleh :{{ $permohonan->nama }}</h4>
                 </div>
                 <div class="col-md-4">
-                    <a href="/update/pendirian/permohonanSelesai">
+                    <a href="/download/surat_terbit_pendirian/{{ $permohonan->id }}">
                         <i class="fa fa-solid fa-download"></i>
                     </a>
                 </div>

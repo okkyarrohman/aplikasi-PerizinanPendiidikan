@@ -42,12 +42,25 @@
                             </div>
 
                             <div class="permohonan dropdown">
-                                <a href="#" class=" d-flex align-items-center md2">
+                                <a href="#" id="topbarUserDropdown"
+                                    class="user-dropdown d-flex align-items-center dropend dropdown-toggle "
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="avatar avatar-md2">
+                                        <img src="{{ asset('images/orang.png') }}" alt="Avatar">
+                                    </div>
                                     <div class="text">
                                         <h6 class="user-dropdown-name">History Arsip</h6>
                                     </div>
                                 </a>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-lg"
+                                    aria-labelledby="topbarUserDropdown">
+                                    <li><a class="dropdown-item" href="/admin/arsip/pendirian">Perizinan
+                                            Pendirian</a></li>
+                                    <li><a class="dropdown-item" href="/admin/arsip/penyelenggaraan">Perizinan
+                                            Penyelenggaraan</a></li>
+                                </ul>
                             </div>
+
 
 
                             <div class="permohonan dropdown">
@@ -83,9 +96,9 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end shadow-lg"
                                     aria-labelledby="topbarUserDropdown">
-                                    <li><a class="dropdown-item" href="#">Perizinan
+                                    <li><a class="dropdown-item" href="/admin/persyaratan/pendirian">Perizinan
                                             Pendirian</a></li>
-                                    <li><a class="dropdown-item" href="#">Perizinan
+                                    <li><a class="dropdown-item" href="/admin/persyaratan/penyelenggaraan">Perizinan
                                             Penyelenggaraan</a></li>
                                 </ul>
                             </div>
